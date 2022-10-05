@@ -31,48 +31,64 @@
 <body>
 
 
-<!-- Navbar -->
-<nav class="navbar" aria-label="First navbar example">
+  <nav class="navbar" aria-label="First navbar example">
     <div class="container-fluid">
 
       <a class="navbar-brand" href="#">
         <img src="img/logo.jpg" alt="" id="logo">
       </a>
 
-      <button type="button" class="btn" id="sos_button">SEND SOS</button>
+      
+        
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <!-- <button type="button" class="btn btn-outline-danger" id="sos_button">Large button</button> -->
+        <!-- <button type="button" class="btn btn-outline-danger" id="sos_button">Large button</button> -->
 
-      <div class="collapse navbar-collapse" id="navbarsExample01">
-        <ul class="navbar-nav me-auto mb-2">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav me-auto mb-2">
+              
+              <li class="nav-item">
+                <a class="nav-link active text-secondary" href="homepage.html"><span>Home</span></a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-secondary" href="#" data-bs-toggle="dropdown" aria-expanded="false"><span>Guides & Resources</span></a>
+                    <ul class="dropdown-menu"> 
+                        <li><a class="dropdown-item" href="#">Guides</a></li>
+                        <li><a class="dropdown-item" href="#">Healthcare Institutions</a></li>
+                    </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-secondary" href="#" data-bs-toggle="dropdown" aria-expanded="false"><span>Mental & Emotional</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Breathing Exercise</a></li>
+                  <li><a class="dropdown-item" href="#">Journalling & Inspiration</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-secondary" href="#" data-bs-toggle="dropdown" aria-expanded="false"><span>Social+</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Forum</a></li>
+                  <li><a class="dropdown-item" href="#">Activity Page</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                    <button type="button" class="btn w-100 fs-3" id="sos_button">SEND SOS</button>
+                </a>
+              </li>
+
             </ul>
-          </li>
-        </ul>
-            <form role="search">
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            </form>
-        </div>
+          </div>
+      
     </div>
-</nav>
+  </nav>
   
 
   <!-- Guide Starts Here -->
