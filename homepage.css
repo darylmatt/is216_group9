@@ -1,6 +1,17 @@
 #sos_button{
-    justify-content: end;
+    margin-left: auto;
     border: 3px rgb(254, 112, 138) solid;
     color: rgb(254, 112, 138);
     border-radius: 20px;
 }
+
+#logo{
+    width: 30%;
+}
+
+#header-text{
+    font-family: Lucida Bright;
+    font-size: 30px;
+    font-weight: 10;
+}
+
