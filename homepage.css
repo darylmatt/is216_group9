@@ -4,9 +4,14 @@
 
 #sos_button{
     margin-left: auto;
+    /* display: flex; */
     border: 3px rgb(254, 112, 138) solid;
     color: rgb(254, 112, 138);
     border-radius: 20px;
+}
+
+.sos-nav{
+    margin-left: auto;
 }
 
 #logo{
@@ -23,7 +28,7 @@
     font-weight: 10;
 }
 
-#guide_button{
+#guide_button, #mental_button, #social_button{
     color: white;
     background-color: black;
     text-align: center;
@@ -43,12 +48,31 @@
     background-image: linear-gradient(to right, #e1f7df , #ecebfa);
 }
 
-.card{
+#social-card-1{
+    background-image: linear-gradient(to right, #fcf9e6 , #f1e6fc);
+}
+
+#social-card-2{
+    background-image: linear-gradient(to right, #e1fadc , #e1f4f7);
+}
+
+.mental-card{
     position: relative;
 }
 
-.card .btn{
+.mental-card .btn{
     position: absolute;
-    bottom: 20px;
+    bottom: 10%;
     left: 10%
 }
+
+.social-card{
+    position: relative;
+}
+
+.social-card .btn{
+    position: absolute;
+    bottom: 10%;
+    right: 10%
+}
+
