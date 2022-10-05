@@ -1,3 +1,6 @@
 #sos_button{
     justify-content: end;
+    border: 3px rgb(254, 112, 138) solid;
+    color: rgb(254, 112, 138);
+    border-radius: 20px;
 }
