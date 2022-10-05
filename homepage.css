@@ -2,17 +2,22 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
+span{
+    color: gray;
+}
+
 #sos_button{
     margin-left: auto;
     /* display: flex; */
     border: 3px rgb(254, 112, 138) solid;
-    color: rgb(254, 112, 138);
+    color: white;
+    background-color: rgb(254, 112, 138);
     border-radius: 20px;
 }
 
-.sos-nav{
-    margin-left: auto;
-}
+/* .nav-link{
+    color: gray;
+} */
 
 #logo{
     width: 30%;
@@ -24,8 +29,8 @@
 }
 
 #header-text{
-    font-size: 30px;
-    font-weight: 10;
+    font-size: 50px;
+    font-weight: 20;
 }
 
 #guide_button, #mental_button, #social_button{
@@ -54,6 +59,16 @@
 
 #social-card-2{
     background-image: linear-gradient(to right, #e1fadc , #e1f4f7);
+}
+
+.guide-card{
+    position: relative;
+}
+
+.guide-card .btn{
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
 }
 
 .mental-card{

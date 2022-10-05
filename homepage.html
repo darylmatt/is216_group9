@@ -40,37 +40,49 @@
       </a>
 
       
-        <button type="button" class="btn" id="sos_button">SEND SOS</button>
+        
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <!-- <button type="button" class="btn btn-outline-danger" id="sos_button">Large button</button> -->
 
-        <div class="collapse navbar-collapse" id="navbarsExample01">
+        <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav me-auto mb-2">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="#">
+                    <button type="button" class="btn" id="sos_button">SEND SOS</button>
+                </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="homepage.html"><span>Home</span></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
+
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><span>Guides & Resources</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Guides</a></li>
+                        <li><a class="dropdown-item" href="#">Healthcare Institutions</a></li>
+                    </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><span>Mental & Emotional</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Breathing Exercise</a></li>
+                  <li><a class="dropdown-item" href="#">Journalling & Inspiration</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><span>Social+</span></a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Forum</a></li>
+                  <li><a class="dropdown-item" href="#">Activity Page</a></li>
                 </ul>
               </li>
             </ul>
-            <form role="search">
-              <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            </form>
           </div>
       
     </div>
@@ -107,7 +119,7 @@
     <div class="row">
 
         <div class="col-lg-4">
-            <div class="card h-100 p-5" id="guide-card-1">
+            <div class="card h-100 p-5 guide-card" id="guide-card-1">
                 <div class="card-body">
                   <h5 class="card-title">I am lost about how to carry out my responsibilities</h5>
                   <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
@@ -118,7 +130,7 @@
         </div>
 
         <div class="col-lg-4">
-            <div class="card h-100 p-5" id="guide-card-2">
+            <div class="card h-100 p-5 guide-card" id="guide-card-2">
                 <div class="card-body">
                   <h5 class="card-title">I want to know more about my rights</h5>
                   <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
@@ -129,7 +141,7 @@
         </div>
 
         <div class="col-lg-4">
-            <div class="card h-100 p-5" id="guide-card-3">
+            <div class="card h-100 p-5 guide-card" id="guide-card-3">
                 <div class="card-body">
                   <h5 class="card-title">I need help with my health problems</h5>
                   <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
