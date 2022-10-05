@@ -1,0 +1,44 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+#sos_button{
+    margin-left: auto;
+    border: 3px rgb(254, 112, 138) solid;
+    color: rgb(254, 112, 138);
+    border-radius: 20px;
+}
+
+#logo{
+    width: 30%;
+}
+
+#container_div{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#header-text{
+    font-size: 30px;
+    font-weight: 10;
+}
+
+#guide_button{
+    color: white;
+    background-color: black;
+    text-align: center;
+    border-radius: 20px;
+    /* font-family: cursive; */
+}
+
+#guide-card-1, #mental-card-2{
+    background-image: linear-gradient(to right, #e1f4f7 , #f6ebf7);
+}
+
+#guide-card-2, #mental-card-1{
+    background-image: linear-gradient(to right, #fff6f0 , #faf8e3);
+}
+
+#guide-card-3{
+    background-image: linear-gradient(to right, #e1f7df , #ecebfa);
+}
