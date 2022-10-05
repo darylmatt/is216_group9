@@ -31,14 +31,14 @@
     /* font-family: cursive; */
 }
 
-#guide-card-1{
-    background-image: linear-gradient(to right, #b9faf2 , #fccffc);
+#guide-card-1, #mental-card-2{
+    background-image: linear-gradient(to right, #e1f4f7 , #f6ebf7);
 }
 
-#guide-card-2{
-    background-image: linear-gradient(to right, #facab1 , #f6fac5);
+#guide-card-2, #mental-card-1{
+    background-image: linear-gradient(to right, #fff6f0 , #faf8e3);
 }
 
 #guide-card-3{
-    background-image: linear-gradient(to right, #b7f0a5 , #c1f0f7);
+    background-image: linear-gradient(to right, #e1f7df , #ecebfa);
 }
