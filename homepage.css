@@ -13,8 +13,32 @@
     width: 30%;
 }
 
+#container_div{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 #header-text{
     font-size: 30px;
     font-weight: 10;
 }
 
+#guide_button{
+    color: white;
+    background-color: black;
+    text-align: center;
+    border-radius: 20px;
+    /* font-family: cursive; */
+}
+
+#guide-card-1{
+    background-image: linear-gradient(to right, #b9faf2 , #fccffc);
+}
+
+#guide-card-2{
+    background-image: linear-gradient(to right, #facab1 , #f6fac5);
+}
+
+#guide-card-3{
+    background-image: linear-gradient(to right, #b7f0a5 , #c1f0f7);
+}
