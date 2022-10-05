@@ -2,6 +2,14 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
+.sub-header{
+    font-weight: 200px; 
+    margin: 20px 0px;
+}
+
+#sub-header1, #sub-header3{
+    text-align: end;
+}
 
 #sos_button{
     margin-left: auto;
