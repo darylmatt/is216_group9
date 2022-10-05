@@ -42,3 +42,13 @@
 #guide-card-3{
     background-image: linear-gradient(to right, #e1f7df , #ecebfa);
 }
+
+.card{
+    position: relative;
+}
+
+.card .btn{
+    position: absolute;
+    bottom: 20px;
+    left: 10%
+}
