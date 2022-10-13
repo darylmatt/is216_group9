@@ -1,21 +1,22 @@
 var count = 1;
 
-var prev_button = document.getElementById("prev_button");
-var next_button = document.getElementById("next_button");
+// var prev_button = document.getElementById("prev_button");
+// var next_button = document.getElementById("next_button");
 
-prev_button.addEventListener("click", prev_page);
-next_button.addEventListener("click", next_page);
+// prev_button.addEventListener("click", prev_page);
+// next_button.addEventListener("click", next_page);
 
 function prev_page() {
     count -= 1;
     output_step();
     button_change();
-
 }
 
 function next_page() {
     count += 1;
+    console.log(count);
     output_step();
+    button_change();
 }
 
 function output_step() {
@@ -65,3 +66,149 @@ function output_step() {
         `
     }
 }
+
+function button_change(){
+    var button_div = document.getElementById("buttons")
+
+    if (count == 1) {
+        button_div.innerHTML = 
+        `
+        <div class="col-1"></div>
+        <div class="col-2">
+            <button class="btn btn-lg btn-primary breathing-btn" id="prev_button" disabled>
+                Previous
+            </button>
+        </div>
+        <div class="col-6"></div>
+        <div class="col-2">
+            <button class="btn btn-lg btn-primary" id="next_button breathing-btn" onclick="next_page()">
+                Next
+            </button>
+        </div>
+        <div class="col-1"></div>
+        `
+    }
+    else if(count == 5) {
+        button_div.innerHTML = 
+        `
+        <div class="col-1"></div>
+        <div class="col-2">
+            <button class="btn btn-lg btn-primary breathing-btn" id="prev_button" onclick="prev_page()">
+                Previous
+            </button>
+        </div>
+        <div class="col-6"></div>
+        <div class="col-2">
+            <button class="btn btn-lg btn-primary breathing-btn" id="start_button" onclick="startTimer()" onclick="setTimeout(clearTimer,20000)">
+                Start
+            </button>
+        </div>
+        <div class="col-1"></div>
+        `
+    }
+    else{
+        button_div.innerHTML = 
+        `
+        <div class="col-1"></div>
+        <div class="col-2">
+            <button class="btn btn-lg btn-primary breathing-btn" id="prev_button" onclick="prev_page()">
+                Previous
+            </button>
+        </div>
+        <div class="col-6"></div>
+        <div class="col-2">
+            <button class="btn btn-lg btn-primary breathing-btn" id="next_button" onclick="next_page()">
+                Next
+            </button>
+        </div>
+        <div class="col-1"></div>
+        `
+    }
+}
+
+var time_count = 0;
+var stopper = false;
+function startTimer() {  
+
+    var button_div = document.getElementById("buttons");
+    button_div.innerHTML = "";
+
+    let myTimer = setInterval(breathing, 1000);
+
+    if (time_count != 0) {
+        time_count = 0;
+        clearInterval(myTimer)
+    }
+    console.log(time_count);
+}
+
+
+function breathing() {
+    time_count += 1;
+    var timer_div = document.getElementById("steps")
+
+    if (time_count <= 4) {
+        timer_div.innerHTML =
+        `
+        <h1 class="step">Breathe In...</h1>
+        <h1 class="step">${time_count}</h1>
+        `
+    }
+    else if(time_count <= 11){
+        timer_div.innerHTML =
+        `
+        <h1 class="step">Hold your breath...</h1>
+        <h1 class="step">${time_count}</h1>
+        `
+    }
+    else if(time_count <= 20){
+        timer_div.innerHTML =
+        `
+        <h1 class="step">Breathe out...</h1>
+        <h1 class="step">${time_count}</h1>
+        `
+    }
+
+    if(time_count == 21){
+        // clearInterval(myTimer);
+        var button_div = document.getElementById("buttons");
+        timer_div.innerHTML =
+        `
+        <h1 class="step">Experience Tranquility</h1>
+        `;
+
+        button_div.innerHTML = 
+        `
+        <div class="col-1"></div>
+        <div class="col-2">
+            <button class="btn btn-lg btn-primary breathing-btn" id="stop_button" onclick="startTimer()">
+                Breathe Again
+            </button>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-1"></div>
+        <div class="col-2">
+        <a href="../Mental Health/mental_health_landing.html">
+            <button class="btn btn-lg btn-primary breathing-btn" id="back_button">
+                Go Back
+            </button>
+        </a>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-1"></div>
+        <div class="col-2">
+        <a href="../../HomeLandingAbout/homepage.html">
+            <button class="btn btn-lg btn-primary breathing-btn" id="home_button">
+                Home
+            </button>
+        </a>
+        </div>
+        <div class="col-1"></div>
+    `
+    }
+}
+
+
+
+
+
