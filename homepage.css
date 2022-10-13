@@ -42,3 +42,10 @@
 #guide-card-3{
     background-image: linear-gradient(to right, #e1f7df , #ecebfa);
 }
+
+    
+#newActivity{
+    position:sticky;
+    top:5px;
+    z-index:1;
+}
