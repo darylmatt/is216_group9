@@ -6,6 +6,11 @@ var count = 1;
 // prev_button.addEventListener("click", prev_page);
 // next_button.addEventListener("click", next_page);
 
+// make all the statements into variables , split them into arrays of several variables at once
+// and then send in all the variables into an API request for translation at the start once user loads page
+// this is to lower the number of API requests
+// use the variables which are now translated into the functions
+
 function prev_page() {
     count -= 1;
     output_step();
@@ -34,7 +39,7 @@ function output_step() {
         breather_steps.innerHTML = 
         `
         <h1 class="step">Start by breathing in</h1>
-        <h1 class="step">Breathe in through your nose to the count of four. Imagine taking in all of your surroundings.</h1>
+        <h1 class="step">Breathe in through your nose to the count of 4 (4 seconds). Imagine taking in all of your surroundings.</h1>
         <h1 class="step">Inhale deeply.</h1>
         `
     }
@@ -43,8 +48,8 @@ function output_step() {
         breather_steps.innerHTML = 
         `
         <h1 class="step">Hold your breath.</h1>
-        <h1 class="step">Hold your breath to the count of seven.</h1>
-        <h1 class="step">Feel your self preparing to release the stress and anxiety</h1>
+        <h1 class="step">Hold your breath to the count of seven (Hold for 7 seconds).</h1>
+        <h1 class="step">Feel your self preparing to release the stress and anxiety that you are experiencing.</h1>
         `
     }
 
@@ -52,8 +57,8 @@ function output_step() {
         breather_steps.innerHTML = 
         `
         <h1 class="step">Breathe out.</h1>
-        <h1 class="step">Exhale through your mouth to the count of eight.</h1>
-        <h1 class="step">Breathe out and release all the stress and anxiety built up.</h1>
+        <h1 class="step">Exhale through your mouth to the count of eight (8 seconds).</h1>
+        <h1 class="step">Breathe out slowly and release all the accumulated stress and anxiety.</h1>
         `
     }
 
@@ -62,7 +67,7 @@ function output_step() {
         `
         <h1 class="step">Now you're ready to begin.</h1>
         <h1 class="step">Click 'Start' once you are ready.</h1>
-        <h1 class="step">Go back if you need to see the instructions again.</h1>
+        <h1 class="step">CLick "Previous" to go back if you need to see the instructions again.</h1>
         `
     }
 }
@@ -150,21 +155,21 @@ function breathing() {
     if (time_count <= 4) {
         timer_div.innerHTML =
         `
-        <h1 class="step">Breathe In...</h1>
+        <h1 class="step">Breathe In for 4 seconds...</h1>
         <h1 class="step">${time_count}</h1>
         `
     }
     else if(time_count <= 11){
         timer_div.innerHTML =
         `
-        <h1 class="step">Hold your breath...</h1>
+        <h1 class="step">Hold your breath for 7 seconds... (Till 11 seconds)</h1>
         <h1 class="step">${time_count}</h1>
         `
     }
     else if(time_count <= 20){
         timer_div.innerHTML =
         `
-        <h1 class="step">Breathe out...</h1>
+        <h1 class="step">Breathe out for 8 seconds... (Till 20 seconds)</h1>
         <h1 class="step">${time_count}</h1>
         `
     }
