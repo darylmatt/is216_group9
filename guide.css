@@ -2,17 +2,16 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
-span{
-    color: gray;
-}
-
 #sos_button{
     margin-left: auto;
     /* display: flex; */
     border: 3px rgb(254, 112, 138) solid;
-    color: white;
-    background-color: rgb(254, 112, 138);
+    color: rgb(254, 112, 138);
     border-radius: 20px;
+}
+
+.sos-nav{
+    margin-left: auto;
 }
 
 #logo{
@@ -25,11 +24,11 @@ span{
 }
 
 #header-text{
-    font-size: 50px;
-    font-weight: 20;
+    font-size: 30px;
+    font-weight: 10;
 }
 
-#guide_button{
+#guide_button, #mental_button, #social_button{
     color: white;
     background-color: black;
     text-align: center;
@@ -37,30 +36,49 @@ span{
     /* font-family: cursive; */
 }
 
-#guidecard1{
+#guide-card-1, #mental-card-2{
     background-image: linear-gradient(to right, #e1f4f7 , #f6ebf7);
 }
 
-#guidecard2{
+#guide-card-2, #mental-card-1{
     background-image: linear-gradient(to right, #fff6f0 , #faf8e3);
 }
 
-#guidecard3{
+#guide-card-3{
     background-image: linear-gradient(to right, #e1f7df , #ecebfa);
 }
 
-#guidecard4{
+#social-card-1{
     background-image: linear-gradient(to right, #fcf9e6 , #f1e6fc);
 }
 
+#social-card-2{
+    background-image: linear-gradient(to right, #e1fadc , #e1f4f7);
+}
 
-#guidecard{
+.mental-card{
     position: relative;
 }
 
-#guide_button{
+.mental-card .btn{
     position: absolute;
     bottom: 10%;
-    right: 10%;
+    left: 10%
+}
+
+.social-card{
+    position: relative;
+}
+
+.social-card .btn{
+    position: absolute;
+    bottom: 10%;
+    right: 10%
+}
+
+#banner{
+    background-image: url('img/maid.png');
+    height: 300px;
+    width: 100%;
 }
 
