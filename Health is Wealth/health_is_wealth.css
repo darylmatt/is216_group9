@@ -39,35 +39,22 @@
 }
 
 
-#mental-card-2{
+#mental-card{
     background-image: linear-gradient(to right, #e1f4f7 , #f6ebf7);
 }
 
-#mental-card-1{
-    background-image: linear-gradient(to right, #fff6f0 , #faf8e3);
-}
-
-#mental-card-3{
+#physical-card{
     background-image: linear-gradient(to right, #e1f7df , #ecebfa);
 }
 
-.mental-card:hover{
-    box-shadow: 0 18px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#mental-image:hover{
-    width: 150%;
-}
-
-
-.mental-card{
+.health-card{
     position: relative;
 }
 
-.mental-card .btn{
+.health-card .btn{
     position: absolute;
     bottom: 2%;
-    left: 5%;
+    left: 40%;
     color: white;
     background-color: black;
     text-align: center;
@@ -90,4 +77,8 @@
 .breathing-btn{
     width: 100%;
     /* margin-right: 20%; */
+}
+
+.card:hover{
+    box-shadow: 0 18px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

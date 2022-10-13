@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Health is Wealth</title>
 
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="health_is_wealth.css">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -35,7 +35,7 @@
 <nav class="navbar" aria-label="navbar">
     <div class="container-fluid">
 
-      <a class="navbar-brand" href="/HomeLandingAbout/homepage.html">
+      <a class="navbar-brand" href="../HomeLandingAbout/homepage.html">
         <img src="../img/logo.jpg" alt="" id="logo">
       </a>
 
@@ -94,6 +94,46 @@
     </div>
   </nav>
 
+<div class="container text-center" id="container_div">
+    <p id="header-text">Taking care of your health is the first step.</p>
+    <p id="header-text-subheader">Which aspect would you like to seek?</p>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-6">
+            <div class="card p-5 health-card" id="mental-card" style="height:100%">
+                <div class="card-body text-center">
+                  <p class="card-text">
+                    <img src="../img/human-head-svgrepo-com.svg" alt="" style="width: 50%;">
+                  </p>
+                  <h5 class="card-title mt-5">Mental Health</h5>
+                  <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                  <p class="card-text">Mental Health is just as important as your physical health. Check out the various items DomesticAID offers</p>
+                  <a href="Mental Health/mental_health_landing.html" class="btn mt-5" id="mental_button">Let's Go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card p-5 health-card" id="physical-card" style="height:100%">
+                <div class="card-body text-center">
+                    <p class="card-text">
+                        <img src="../img/gym-weight-svgrepo-com.svg" alt="" style="width: 50%;">
+                    </p>
+                  <h5 class="card-title mt-5">Physical Health</h5>
+                  <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                  <p class="card-text mb-5">Your body is your temple and your carrier in your daily life. Need some help in taking care of it? Find out more here</p>
+                  <a href="Physical Health/categories.html" class="btn mt-5" id="mental_button">Know More</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
 
   <!-- Footer -->
 <div class="container">
@@ -140,6 +180,7 @@
     </footer>
 </div>
 
+<script src="health_wealth.js"></script>
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
