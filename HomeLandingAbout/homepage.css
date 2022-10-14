@@ -54,8 +54,12 @@
     background-image: linear-gradient(to right, #fff6f0 , #faf8e3);
 }
 
-#guide-card-3{
+#guide-card-3, #mental-card-3{
     background-image: linear-gradient(to right, #e1f7df , #ecebfa);
+}
+
+#mental-card-4{
+    background-image: linear-gradient(to right, #f4d6d8 , #ecebfa);
 }
 
 #social-card-1{
@@ -83,7 +87,7 @@
 .mental-card .btn{
     position: absolute;
     bottom: 10%;
-    left: 10%
+    left: 43%
 }
 
 .social-card{

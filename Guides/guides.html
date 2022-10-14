@@ -31,10 +31,11 @@
 <body>
 
 
-  <nav class="navbar" aria-label="First navbar example">
+<!-- Navbar -->
+<nav class="navbar" aria-label="navbar">
     <div class="container-fluid">
 
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/HomeLandingAbout/homepage.html">
         <img src="../img/logo.jpg" alt="" id="logo">
       </a>
 
@@ -51,30 +52,33 @@
             <ul class="navbar-nav me-auto mb-2">
               
               <li class="nav-item">
-                <a class="nav-link active text-secondary" href="homepage.html"><span>Home</span></a>
+                <a class="nav-link active text-secondary" href="/HomeLandingAbout/homepage.html"><span>Home</span></a>
               </li>
 
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-secondary" href="#" data-bs-toggle="dropdown" aria-expanded="false"><span>Guides & Resources</span></a>
+                <a class="nav-link dropdown-toggle text-secondary" href="/Guides/guides.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Guides & Resources</span></a>
                     <ul class="dropdown-menu"> 
-                        <li><a class="dropdown-item" href="#">Guides</a></li>
-                        <li><a class="dropdown-item" href="#">Healthcare Institutions</a></li>
+                        <li><a class="dropdown-item" href="/Guides/guide_care.html">Guides</a></li>
+                        <li><a class="dropdown-item" href="/Guides/guide_rights.html">Rights</a></li>
+                        <li><a class="dropdown-item" href="/Guides/guide_navigation.html">Navigation</a></li>
                     </ul>
               </li>
 
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-secondary" href="#" data-bs-toggle="dropdown" aria-expanded="false"><span>Health is Wealth</span></a>
+                <a class="nav-link dropdown-toggle text-secondary" href="/Health is Wealth/health_is_wealth.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Health is Wealth</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Breathing Exercise</a></li>
-                  <li><a class="dropdown-item" href="#">Journalling & Inspiration</a></li>
+                  <li><a class="dropdown-item" href="/Health is Wealth/Mental Health/breathing.html">Breathing Exercise</a></li>
+                  <li><a class="dropdown-item" href="/Health is Wealth/Mental Health/journalling.html">Journalling & Inspiration</a></li>
+                  <li><a class="dropdown-item" href="/Health is Wealth/Mental Health/mental_guides.html">Mental Wellness Articles</a></li>
+                  <li><a class="dropdown-item" href="/Health is Wealth/Physical Health/categories.html">Physical Healthcare</a></li>
                 </ul>
               </li>
 
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-secondary" href="#" data-bs-toggle="dropdown" aria-expanded="false"><span>Social+</span></a>
+                <a class="nav-link dropdown-toggle text-secondary" href="/Social/social_plus.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Social+</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Forum</a></li>
-                  <li><a class="dropdown-item" href="#">Activity Page</a></li>
+                  <li><a class="dropdown-item" href="/Social/Forum/forum.html">Forum</a></li>
+                  <li><a class="dropdown-item" href="/Social/Activities/activities.html">Activity Page</a></li>
                 </ul>
               </li>
 
@@ -109,13 +113,13 @@
       <div class="row my-3">
         <h1>Categories</h1>
       </div>
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col-lg-3">
                 <div class="card h-100 w-80 p-5" id="guidecard1">
                     <div class="card-body">
-                      <h5 class="card-title">Care</h5>
+                      <h5 class="card-title">Guides</h5>
                       <p class="card-text">Find out about how to provide care for the elderly and children.</p>
-                      <a href="#" class="btn" id="guide_button">Read More</a>
+                      <a href="guide_care.html" class="btn" id="guide_button">Read More</a>
                     </div>
                   </div>
             </div>
@@ -125,7 +129,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Rights & Laws</h5>
                       <p class="card-text">Find out about your rights as a migrant worker and the laws that protect you.</p>
-                      <a href="#" class="btn" id="guide_button">Read More</a>
+                      <a href="guide_rights.html" class="btn" id="guide_button">Read More</a>
                     </div>
                   </div>
             </div>
@@ -135,26 +139,17 @@
                     <div class="card-body">
                       <h5 class="card-title">Navigation</h5>
                       <p class="card-text">Find your way around Singapore and explore new places!</p>
-                      <a href="#" class="btn" id="guide_button">Read More</a>
+                      <a href="guide_navigation.html" class="btn" id="guide_button">Read More</a>
                     </div>
                   </div>
             </div>
 
-            <div class="col-lg-3">
-              <div class="card h-100 w-80 p-5" id="guidecard4">
-                  <div class="card-body">
-                    <h5 class="card-title">Mental & Physical Health</h5>
-                    <p class="card-text">Find out how to get professional medical and emotional help.</p>
-                    <a href="#" class="btn" id="guide_button">Read More</a>
-                  </div>
-                </div>
-          </div>  
-          
+          </div>         
 
           <div class="mt-3">
             <h1>Reccomended Guides</h1>
           </div>
-          <div id="carouselExampleInterval" class="carousel slide mb-4 p-3" data-bs-ride="carousel" style="background-color: lightgoldenrodyellow ">
+          <div id="carouselExampleInterval" class="carousel slide mb-4 p-3" data-bs-ride="carousel" style="background-color: lightgoldenrodyellow">
 
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="5000">
