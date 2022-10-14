@@ -19,8 +19,25 @@ img {
     margin: auto;
 }
 
+#header-text{
+  font-size: 30px;
+  font-weight: 20;
+}
+
+#cat-card-2{
+  background-image: linear-gradient(to right, #e1f4f7 , #f6ebf7);
+}
+
+#cat-card-1{
+  background-image: linear-gradient(to right, #fff6f0 , #faf8e3);
+}
+
+#cat-card-3{
+  background-image: linear-gradient(to right, #e1f7df , #ecebfa);
+}
+
 .flip-card {
-    background-color: transparent;
+    /* background-color: transparent; */
     width: 300px;
     height: 400px;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
