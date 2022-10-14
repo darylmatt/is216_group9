@@ -4,9 +4,8 @@
 }
 
 #desc_card {
-    background-color: #E7FBFE;
-    border-color: #85A2A6;
-    padding: 30px;
+    background-color: #f4ebeb;
+    border-color: #edebc1b3;
     max-height: 100%;
     max-width: 100%;
 }
@@ -51,7 +50,6 @@ img {
     position: relative;
     width: 100%;
     height: 100%;
-    text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
   }
@@ -68,13 +66,13 @@ img {
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
-    text-align: center;
   }
   
   /* Style the front side (fallback if image is missing) */
   /* Style the back side */
   .flip-card-back {
     transform: rotateY(180deg);
+    font-size:18px;
   }
 
   #activityCard{
