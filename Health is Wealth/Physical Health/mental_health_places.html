@@ -244,13 +244,13 @@
             async defer></script>
         
             <div class="jumbotron">          
-              <p class="lead text-center">Get Geo Location</p>
               <form>
-                  <div class="form-group">
-                      <label for="addr">Enter An Address</label>
-                      <input type="text" class="form-control" name="addr" id="addr" placeholder="E.g. Singapore Management University" >
+                  <div class="form-group mt-5">
+                      <input type="text" class="form-control" name="addr" id="addr" placeholder="Enter Address Here...">
+
                       <br><button type="button" onclick="getLoc('addr')" class="btn btn-primary">Get Full Address</button>
                       <button type="button" onclick="getLoc('postcode')" class="btn btn-primary">Get Postal Code</button>
+
                       <!-- the following set the lat, lng values to put a marker on the map-->
                       <input type="hidden" id="lat" name="lat" value="1.2973784" />
                       <input type="hidden" id="lng" name="lng" value="103.8495219" />

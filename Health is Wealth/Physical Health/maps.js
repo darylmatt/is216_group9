@@ -24,12 +24,14 @@
                 console.log(info);
                 
                 document.getElementById("display").innerHTML = info;
+                
                 // refresh the hidden input values with new lat lng coordinates
                 var coordinate = getLatLng(data);
                 document.getElementById("lat").value = coordinate["lat"];
                 document.getElementById("lng").value = coordinate["lng"];
                 // now refresh the map
                 initMap();
+                
             } catch(err) { // show error message
                 // not a good idea to directly show err.message 
                 // as it may contain sensitive info
