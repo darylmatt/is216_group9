@@ -82,6 +82,14 @@
               </li>
 
               <li class="nav-item">
+                <a class="nav-link active text-secondary" href="#"><span>Profile & Settings</span></a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link active text-primary fs-underline" href="#"><span><u>Log Out</u></span></a>
+              </li>
+
+              <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">
                     <button type="button" class="btn w-100 fs-3" id="sos_button">SEND SOS</button>
                 </a>
@@ -92,28 +100,94 @@
       
     </div>
   </nav>
-  
-  <!-- <div class="container-fluid">
-    <div class="row">
-        <div id="carouselExampleSlidesOnly" class="carousel slide w-50 mx-auto" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="2000">
-                <img src="im/maid1.jpg" class="d-block w-100" id="carousel-img">
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="im/maid3.jpg" class="d-block w-100" id="carousel-img">
-              </div>
-              <div class="carousel-item" data-bs-interval="2000">
-                <img src="img/maid4.jpg" class="d-block w-100" id="carousel-img">
-              </div>
-            </div>
-        </div>
-    </div> -->
 
 <div class="container" id="container_div">
-    <h1 id="header-text">Hello (Name)</h1>
-    <h1 id="header-text">How can we help you today?</h1>
+
+  <div class="row">
+    <div class="col-lg-7" style="margin-top: 15%;">
+      <h1 id="header-text">Hello (Name)</h1>
+      <h1 id="header-text">How can we help you today?</h1>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#upcoming_activities" style="background-color: rgb(236, 204, 205);">
+        Upcoming Activities
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="upcoming_activities" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Upcoming Activities</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              
+              <!-- Carousel of activities -->
+              <div id="upcoming_activities_carousel" class="carousel slide" data-bs-ride="carousel">
+
+                <div class="carousel-inner">
+
+                  <div class="carousel-item active" data-bs-interval="5000">
+                    <div class="card m-3 mx-auto" style="width: 18rem;">
+                      <img src="../img/mike.jpg" class="card-img-top my-2 h-100" alt="...">
+                      <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <div class="card m-3 mx-auto" style="width: 18rem;">
+                      <img src="../img/mike.jpg" class="card-img-top my-2 h-100" alt="...">
+                      <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="5000">
+                    <div class="card m-3 mx-auto" style="width: 18rem;">
+                      <img src="../img/mike.jpg" class="card-img-top my-2 h-100" alt="...">
+                      <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#upcoming_activities_carousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#upcoming_activities_carousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn btn-info">View More Details</a>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5 my-5 text-center">
+      <div class="row">
+        <img src="../img/jx.jpg" class="img-fluid d-block mx-auto" alt="" style="border-radius: 150px; width: auto;">
+      </div>
+        <a href="" class="btn btn-info my-3">Edit Profile</a>
+    </div>
+
+
+  </div>
 </div>
+
+
+
+
 
 <div class="container">
 
@@ -318,6 +392,8 @@
         </div>
     </div>
 </div>
+
+
 
 
 <!-- Footer -->
