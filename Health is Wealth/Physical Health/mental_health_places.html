@@ -150,7 +150,7 @@
           <div class="card-body">
             <h5 class="card-title">Psychologists</h5>
             <br>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button onclick="fillTitle(this.id)" id="psychologists" type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -164,7 +164,7 @@
           <div class="card-body">
             <h5 class="card-title">Counsellors</h5>
             <br>            
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button onclick="fillTitle(this.id)"  id="counsellors"  type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -175,11 +175,11 @@
 
       <div class="col-xl-4 col-sm-12">
         <div class="card" id="3">
-          <img src="../../img/socialworker.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+          <img src="../../img/socialworker.jpg" style='height: 300px' class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Social Workers</h5>
             <br>            
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button onclick="fillTitle(this.id)"  id="social workers"  type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -196,7 +196,7 @@
     
       <!-- Modal Header -->
       <div class="modal-header" style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
-        <h1 class="modal-title mx-auto" style="color: white">Guide 1</h1>
+        <h1 class="modal-title mx-auto" style="color: white"></h1>
       </div>
       
       <!-- Modal body -->
@@ -282,7 +282,7 @@
                     <input type="hidden" id="lng" name="lng"/>
 
                 </div>
-                <p id="display" class="lead text-center"></p>   
+                <p id="display" class="lead text-center mt-4"></p>   
             </form>
           </div>
         </div>
