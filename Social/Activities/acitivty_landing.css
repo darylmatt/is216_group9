@@ -4,9 +4,8 @@
 }
 
 #desc_card {
-    background-color: #E7FBFE;
-    border-color: #85A2A6;
-    padding: 30px;
+    background-color: #f4ebeb;
+    border-color: #edebc1b3;
     max-height: 100%;
     max-width: 100%;
 }
@@ -19,8 +18,25 @@ img {
     margin: auto;
 }
 
+#header-text{
+  font-size: 30px;
+  font-weight: 20;
+}
+
+#cat-card-2{
+  background-image: linear-gradient(to right, #e1f4f7 , #f6ebf7);
+}
+
+#cat-card-1{
+  background-image: linear-gradient(to right, #fff6f0 , #faf8e3);
+}
+
+#cat-card-3{
+  background-image: linear-gradient(to right, #e1f7df , #ecebfa);
+}
+
 .flip-card {
-    background-color: transparent;
+    /* background-color: transparent; */
     width: 300px;
     height: 400px;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
@@ -34,7 +50,6 @@ img {
     position: relative;
     width: 100%;
     height: 100%;
-    text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
   }
@@ -51,13 +66,13 @@ img {
     height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
-    text-align: center;
   }
   
   /* Style the front side (fallback if image is missing) */
   /* Style the back side */
   .flip-card-back {
     transform: rotateY(180deg);
+    font-size:18px;
   }
 
   #activityCard{
@@ -74,3 +89,15 @@ img {
     z-index: 1;
   
   }
+
+  #cat_name{
+    font-size:28px;
+  }
+
+  #details{
+    font-size:20px;
+  }
+
+.prog-bar-cust{
+  margin-left: 0;
+}
