@@ -1,28 +1,19 @@
-var http = require('http')
-var fs = require('fs')
-var url = require('url');
-const port = 3000
+const express = require("express");
+const path = require("path");
+let app = express();
+const port = 3000;
 
-const server = http.createServer(function(req, res){
-    res.writeHead(200, { 'Content-Type': 'text/html' })
-    var q = url.parse(req.url, true);
-    var filename = "."+q.pathname;
-    console.log(filename);
-    fs.readFile(filename, function(error,data){
-        if(error){
-            res.writeHead(404);
-            res.write('Error: File Not Found')
-        }else{
-            res.write(data)
-        }
-        res.end()
-    })
+app.use('/img', express.static('img'));
+app.use('/stylesheets', express.static('stylesheets'));
+
+
+app.get('/',(req,res)=>{
+    console.log('index requested');
+    res.sendFile('HomeLandingAbout/homepage.html', { root: __dirname });
+    
 })
 
-server.listen(port, function(error){
-    if(error){
-        console.log('Something went wrong', error)
-    }else{
-        console.log('Server is listening on port ' + port)
-    }
-})
+
+app.listen(port, () => {
+  console.log(`Express is running on port ${port}`);
+});
