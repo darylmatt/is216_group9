@@ -78,55 +78,49 @@ function button_change(){
     if (count == 1) {
         button_div.innerHTML = 
         `
-        <div class="col-1"></div>
-        <div class="col-2">
+        <div class="col">
             <button class="btn btn-lg btn-primary breathing-btn" id="prev_button" disabled>
                 Previous
             </button>
         </div>
-        <div class="col-6"></div>
-        <div class="col-2">
+        <div class="col"></div>
+        <div class="col">
             <button class="btn btn-lg btn-primary" id="next_button breathing-btn" onclick="next_page()">
                 Next
             </button>
         </div>
-        <div class="col-1"></div>
         `
     }
     else if(count == 5) {
         button_div.innerHTML = 
         `
-        <div class="col-1"></div>
-        <div class="col-2">
+        <div class="col">
             <button class="btn btn-lg btn-primary breathing-btn" id="prev_button" onclick="prev_page()">
                 Previous
             </button>
         </div>
-        <div class="col-6"></div>
-        <div class="col-2">
+        <div class="col"></div>
+        <div class="col">
             <button class="btn btn-lg btn-primary breathing-btn" id="start_button" onclick="startTimer()" onclick="setTimeout(clearTimer,20000)">
                 Start
             </button>
         </div>
-        <div class="col-1"></div>
         `
     }
     else{
         button_div.innerHTML = 
         `
-        <div class="col-1"></div>
-        <div class="col-2">
+        <div class="col">
             <button class="btn btn-lg btn-primary breathing-btn" id="prev_button" onclick="prev_page()">
                 Previous
             </button>
         </div>
-        <div class="col-6"></div>
-        <div class="col-2">
+        <div class="col"></div>
+        <div class="col">
             <button class="btn btn-lg btn-primary breathing-btn" id="next_button" onclick="next_page()">
                 Next
             </button>
         </div>
-        <div class="col-1"></div>
         `
     }
 }
@@ -182,33 +176,30 @@ function breathing() {
         <h1 class="step">Experience Tranquility</h1>
         `;
 
+        // button_div.class = "row justify-content-center row-cols-5"
         button_div.innerHTML = 
         `
-        <div class="col-1"></div>
-        <div class="col-2">
+        <div class="col">
             <button class="btn btn-lg btn-primary breathing-btn" id="stop_button" onclick="startTimer()">
                 Breathe Again
             </button>
         </div>
-        <div class="col-1"></div>
-        <div class="col-1"></div>
-        <div class="col-2">
+        
+        <div class="col">
         <a href="../Mental Health/mental_health_landing.html">
-            <button class="btn btn-lg btn-primary breathing-btn" id="back_button">
+            <button class="btn btn-lg btn-primary breathing-btn h-100" id="back_button">
                 Go Back
             </button>
         </a>
         </div>
-        <div class="col-1"></div>
-        <div class="col-1"></div>
-        <div class="col-2">
+        
+        <div class="col">
         <a href="../../HomeLandingAbout/homepage.html">
-            <button class="btn btn-lg btn-primary breathing-btn" id="home_button">
+            <button class="btn btn-lg btn-primary breathing-btn h-100" id="home_button">
                 Home
             </button>
         </a>
         </div>
-        <div class="col-1"></div>
     `
     }
 }
