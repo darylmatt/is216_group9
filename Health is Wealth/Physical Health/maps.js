@@ -53,6 +53,7 @@ function getFullAddress (data) {
 
 function getLatLng(data) {
     var location= data["results"][0]["geometry"]["location"];
+    console.log(location)
     return location; 
 }
 
