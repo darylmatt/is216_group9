@@ -51,7 +51,8 @@
    
 
 </head>
-<body>
+
+<body onload="triggerBtnClick()">
 
 
 <!-- Navbar -->
@@ -272,15 +273,15 @@
             <script>
                 // Initialize and add the map
                 function initMap() {
-                    // default: The location of SIS, SMU
+                    // default: The location of user
                     var lat = parseFloat(document.getElementById("lat").value);
                     var lng = parseFloat(document.getElementById("lng").value);
                     var loc = {lat: lat, lng: lng};
-                    // The map, centered at SIS, SMU
+                
                     var map = new google.maps.Map(
                         // play with the zoom value to zoom in or out
                         document.getElementById('map'), {zoom: 14, center: loc});
-                    // The marker, positioned at SIS, SMU
+                  
                     var marker = new google.maps.Marker({position: loc, map: map});
                 }
             </script>
@@ -294,18 +295,21 @@
             &callback=initMap"
             async defer></script>
         
-            <div class="jumbotron">          
+            <div class="jumbotron" >          
               <form>
                   <div class="form-group mt-5">
-                      <input type="text" class="form-control" name="addr" id="addr" placeholder="Enter Address Here...">
+                      <!-- fetch user's postal and set in value -->
+                      <input type="text" class="form-control" name="addr" id="addr" placeholder="Enter Postal Code Here..." value="11 Jalan Rindu">
 
                       <br>
-                      <button type="button" onclick="getLoc('addr')" class="btn btn-primary">Get Full Address</button>
-                      <button type="button" onclick="getLoc('postcode')" class="btn btn-primary">Get Postal Code</button>
 
+                      <button id="getAddress" type="button" onclick="getLoc('addr')" class="btn btn-primary">Get Full Address</button>
+                      <button id="getPostal" type="button" onclick="getLoc('postcode')" class="btn btn-primary">Get Postal Code</button>
+      
+            
                       <!-- the following set the lat, lng values to put a marker on the map-->
-                      <input type="hidden" id="lat" name="lat" value="1.2973784" />
-                      <input type="hidden" id="lng" name="lng" value="103.8495219" />
+                      <input type="hidden" id="lat" name="lat"/>
+                      <input type="hidden" id="lng" name="lng"/>
 
                   </div>
                   <p id="display" class="lead text-center"></p>   

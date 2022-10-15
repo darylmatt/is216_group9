@@ -99,3 +99,8 @@ function getCountry(data) {
 function countryHelper(addr, index) {  
     return addr["types"][0] == "country" ;
 }
+
+
+function triggerBtnClick(){
+    document.getElementById('getAddress').click();
+}

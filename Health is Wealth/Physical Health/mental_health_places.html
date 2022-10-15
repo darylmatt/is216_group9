@@ -50,7 +50,7 @@
    
 
 </head>
-<body>
+<body onload="triggerBtnClick()">
 
 
 <!-- Navbar -->
@@ -189,87 +189,114 @@
     </div>
   </div>
 
-  <!-- The Modal -->
-  <div class="modal" id="myModal">
-    <div class="modal-dialog modal-dialog-scrollable modal-lg">
-      <div class="modal-content">
+ <!-- The Modal -->
+ <div class="modal" id="myModal">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+    
+      <!-- Modal Header -->
+      <div class="modal-header" style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+        <h1 class="modal-title mx-auto" style="color: white">Guide 1</h1>
+      </div>
       
-        <!-- Modal Header -->
-        <div class="modal-header" style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
-          <h1 class="modal-title mx-auto" style="color: white">Guide 1</h1>
-        </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Location</th>
+              <th>Postal Code</th>
+              <th>Contact</th>
+              <th>Operating Hours</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr>
+              <td>Name 1</td>
+              <td>Location 1</td>
+              <td>Postal 1</td>
+              <td>Contact 1</td>
+              <td>Operating Hours 1</td>
+            </tr>
+
+            <tr>
+              <td>Name 2</td>
+              <td>Location 2</td>
+              <td>Postal 2</td>
+              <td>Contact 2</td>
+              <td>Operating Hours 2</td>
+            </tr> 
+          </tbody>
+
+        </table>
+
         
-        <!-- Modal body -->
-        <div class="modal-body">
-          <h3>Polyclinics in Singapore</h3>
-          <p>
-            <ul>
-              <li>Location 1</li>
-              <li>Location 1</li>
-              <li>Location 1</li>
-            </ul>
-          </p>
-
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, repellendus ut quos ipsam enim quis nulla praesentium necessitatibus officiis officia sapiente provident ullam dolore quas nisi eveniet. Enim, officiis id? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, voluptates et libero at nam expedita molestiae possimus reprehenderit voluptate autem soluta dolor exercitationem delectus corrupti, sapiente eum, dignissimos ratione quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sapiente, tenetur voluptas et perferendis quod rem fugiat sed veniam officiis? Nam eaque amet, numquam est accusantium fuga velit nulla possimus? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem esse voluptatum aliquid eum similique omnis nemo harum minus, ipsum, laboriosam soluta veniam autem hic inventore commodi, fugiat maxime perferendis sunt! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam pariatur non voluptas suscipit nesciunt, ullam eveniet cum earum quas repudiandae ut. Nostrum eos unde dicta quia neque sapiente! Sequi, sit.</p>
-
-          <div id="directions">
-            <h3>Directions</h3>
-            <!--The div element for the map -->
-            <div id="map"></div>
-            <script>
-                // Initialize and add the map
-                function initMap() {
-                    // default: The location of SIS, SMU
-                    var lat = parseFloat(document.getElementById("lat").value);
-                    var lng = parseFloat(document.getElementById("lng").value);
-                    // var uluru = {lat: -25.344, lng: 131.036};
-                    var loc = {lat: lat, lng: lng};
         
-                    // The map, centered at SIS, SMU
-                    var map = new google.maps.Map(
-                        // play with the zoom value to zoom in or out
-                        document.getElementById('map'), {zoom: 14, center: loc});
-                    // The marker, positioned at SIS, SMU
-                    var marker = new google.maps.Marker({position: loc, map: map});
-                }
-            </script>
-            
-            <!--Load the API from the specified URL
-            * The async attribute allows the browser to render the page while the API loads
-            * The key parameter will contain your own API key 
-            * The callback parameter executes the initMap() function
-            -->
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEBeYTGw-Q-PuSz5yF5q2bL5O70yOjOWA
-            &callback=initMap"
-            async defer></script>
-        
-            <div class="jumbotron">          
-              <form>
-                  <div class="form-group mt-5">
-                      <input type="text" class="form-control" name="addr" id="addr" placeholder="Enter Address Here...">
+        <div id="directions">
+          <h3>Directions</h3>
 
-                      <br><button type="button" onclick="getLoc('addr')" class="btn btn-primary">Get Full Address</button>
-                      <button type="button" onclick="getLoc('postcode')" class="btn btn-primary">Get Postal Code</button>
+          <!--The div element for the map -->
+          <div id="map"></div>
+          <script>
+              // Initialize and add the map
+              function initMap() {
+                  // default: The location of user
+                  var lat = parseFloat(document.getElementById("lat").value);
+                  var lng = parseFloat(document.getElementById("lng").value);
+                  var loc = {lat: lat, lng: lng};
+              
+                  var map = new google.maps.Map(
+                      // play with the zoom value to zoom in or out
+                      document.getElementById('map'), {zoom: 14, center: loc});
+                
+                  var marker = new google.maps.Marker({position: loc, map: map});
+              }
+          </script>
+          
+          <!--Load the API from the specified URL
+          * The async attribute allows the browser to render the page while the API loads
+          * The key parameter will contain your own API key 
+          * The callback parameter executes the initMap() function
+          -->
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEBeYTGw-Q-PuSz5yF5q2bL5O70yOjOWA
+          &callback=initMap"
+          async defer></script>
+      
+          <div class="jumbotron" >          
+            <form>
+                <div class="form-group mt-5">
+                    <!-- fetch user's postal and set in value -->
+                    <input type="text" class="form-control" name="addr" id="addr" placeholder="Enter Postal Code Here..." value="11 Jalan Rindu">
 
-                      <!-- the following set the lat, lng values to put a marker on the map-->
-                      <input type="hidden" id="lat" name="lat" value="1.2973784" />
-                      <input type="hidden" id="lng" name="lng" value="103.8495219" />
-                  </div>
-                  <p id="display" class="lead text-center"></p>   
-              </form>
-            </div>
+                    <br>
+
+                    <button id="getAddress" type="button" onclick="getLoc('addr')" class="btn btn-primary">Get Full Address</button>
+                    <button id="getPostal" type="button" onclick="getLoc('postcode')" class="btn btn-primary">Get Postal Code</button>
+    
+          
+                    <!-- the following set the lat, lng values to put a marker on the map-->
+                    <input type="hidden" id="lat" name="lat"/>
+                    <input type="hidden" id="lng" name="lng"/>
+
+                </div>
+                <p id="display" class="lead text-center"></p>   
+            </form>
           </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
-        
-        </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+      
       </div>
     </div>
-  
   </div>
+
+</div>
 
 
 <!-- Footer -->
