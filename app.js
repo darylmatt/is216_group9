@@ -1,8 +1,14 @@
+// INITIALIZING MONGODB CONNECTION 
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb+srv://wad2g9:flannelgang@cluster0.dxjblb1.mongodb.net/test";
+
+// INITIALIZING WEB SERVER WITH NODE.JS, AND MIDDLEWARE FRAMEWORK EXPRESS FOR ROUTING
 const express = require("express");
 const path = require("path");
 let app = express();
 const port = 3000;
 
+// ALLOWING WEB SERVER TO SERVE STATIC FILES
 app.use('/img', express.static('img'));
 app.use('/stylesheets', express.static('stylesheets'));
 
@@ -80,11 +86,18 @@ app.get('/HealthIsWealth/Physical_Health/physical_health_places.html',(req,res)=
 // MENTAL HEALTH - PLACES
 app.get('/HealthIsWealth/Physical_Health/mental_health_places.html',(req,res)=>{
   console.log('index requested');
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+  
+    var dbo = db.db("domesticaid");
+    dbo.collection("facilities").findOne({}, function(err, result) {
+      if (err) throw err;
+      console.log(result.name);
+      db.close();
+    });
+  });
   res.sendFile('/HealthIsWealth//Physical_Health/mental_health_places.html', { root: __dirname });
 })
-
-
-
 
 // GUIDE LANDING
 app.get('/Guides/guides.html',(req,res)=>{
