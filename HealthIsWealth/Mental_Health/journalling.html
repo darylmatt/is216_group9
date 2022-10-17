@@ -28,7 +28,7 @@
     />
 
 </head>
-<body>
+<body onload="getDate()">
 
 
 <!-- Navbar -->
@@ -105,6 +105,8 @@
 
 <div class="container">
 
+  <h1 class="display-2" id="curr_date"></h1>
+  
   <div class="row my-3">
 
     <label for="exampleFormControlTextarea1" class="form-label">Journal down your thoughts...</label>
@@ -121,13 +123,6 @@
   </div>
 
 </div>
-
-
-
-
-
-
-
 
 
   <!-- Footer -->
@@ -176,6 +171,8 @@
 </div>
 
 <!-- <script src="mental_health_breathing.js"></script> -->
+
+<script src="../../scripts/journalling.js"></script>
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
