@@ -8,7 +8,7 @@ const path = require("path");
 let app = express();
 const port = 3000;
 
-// ALLOWING WEB SERVER TO SERVE STATIC FILES
+// ALLOWING WEB SERVER TO SERVE STATIC  (EG IMGS, JAVASCRIPT)
 app.use('/img', express.static('img'));
 app.use('/stylesheets', express.static('stylesheets'));
 
