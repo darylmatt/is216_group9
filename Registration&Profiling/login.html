@@ -21,69 +21,90 @@ href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
 rel="stylesheet"
 />
 </head>
-<body>
-    <section class="vh-100" style="background-color: #F0FFF0; font">
-        <div class="container py-5 h-100">
-          <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col col-xl-10">
-              <div class="card" style="border-radius: 1rem;">
-                <div class="row g-0">
-                  <div class="col-md-6 col-lg-5 d-none d-md-block">
-                    <img src="../img/maid.png">
-                  
-                  </div>
-                  <div class="col-md-6 col-lg-7 d-flex align-items-center" style="background-color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-                    <div class="card-body p-4 p-lg-5 text-black">
-      
-                      <form>
-      
-                        <div class="d-flex align-items-center mb-3 pb-1">
-                        </div>
-      
-                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">DomesticAID</h5>
-      
-                        <div class="form-outline mb-4">
-                          <input type="email" id="form2Example17" class="form-control form-control-lg" />
-                          <label class="form-label" for="form2Example17">Email address</label>
-                        </div>
-      
-                        <div class="form-outline mb-4">
-                          <input type="password" id="form2Example27" class="form-control form-control-lg" />
-                          <label class="form-label" for="form2Example27">Password</label>
-                        </div>
-      
-                        
-                        <div class="pt-1 mb-4">
-                          <button type="button" class="btn btn-outline-secondary btn-rounded" data-mdb-ripple-color="dark">LOG IN</button>
-                        </div>
+<body onload="typeWriter()">
+  <section class="vh-100">
 
-      
-                        <a class="small text-muted" href="#!">Forgot password?</a>
-                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="/Registration&Profiling/login_reg.html"
-                            style="color: #393f81;">Register here</a></p>
+    
+    <div class="container py-5 h-100">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6">
 
-                            <!-- Google login -->
-                            <button class="btn btn-lg btn-block btn-primary" style="background-color: white; color: black;"
-                            type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
-
-                            <!-- Facebook login-->
-                          <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;"
-                            type="submit" href="/auth/facebook"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button>
-                      </form>
-      
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h1 style="text-align: center;" id="demo"></h1>
+          <lottie-player
+            src="https://assets1.lottiefiles.com/private_files/lf30_KTzaOr.json"
+            background="transparent"
+            speed="1"
+            style="width: 100%; height: 500px"
+            hover
+            loop
+            autoplay
+          ></lottie-player>
         </div>
-      </section>
+        
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+          <form>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form1Example13" class="form-control form-control-lg" />
+              <label class="form-label" for="form1Example13">Email address</label>
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="form1Example23" class="form-control form-control-lg" />
+              <label class="form-label" for="form1Example23">Password</label>
+            </div>
+  
+            <div class="d-flex justify-content-around align-items-center mb-4">
+              <!-- Checkbox -->
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                <label class="form-check-label" for="form1Example3"> Remember me </label>
+              </div>
+              <a href="#!">Forgot password?</a>
+            </div>
+  
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-lg btn-block" style="background-color: #FFF5EE; color: black;">Sign in</button>
+  
+            <div class="divider d-flex align-items-center my-4">
+              <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+            </div>
+  
+            <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
+              role="button">
+              <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+            </a>
+           
+
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
     <!-- MDB -->
 <script
 type="text/javascript"
 src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"
 ></script>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<script>
+  var i = 0;
+  var txt = 'DomesticAID';
+  var speed = 100   ;
+  
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("demo").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+  </script>
+  
 </body>
 </html>
