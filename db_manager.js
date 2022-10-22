@@ -5,21 +5,76 @@ MongoClient.connect(url, function(err, db) {
   if (err) throw err;
 
   var dbo = db.db("domesticaid");
-  const facility = {
-    id: "1",
-    name: "Institute of Mental Health",
-    category: "Mental",
-    sub_category: "Counselling",
-    type: "Government",
-    postal: "539747",
-    address: "10 Buangkok View, Buangkok Green, Medical Park, 539747",
-    hours: "Daily, 24 hours",
-    description: "Test description",
-    website: "Institute of Mental Health: Home - IMH"
+
+  //loading thread
+  const thread = {
+    id: "2",
+    title: "Need advise on remitting money",
+    text: "Does anyone have recommendations on reliable and credible service to transfer money back home",
+    category:  "Enquiry",
+    publish_date: "19/10/2022",
+    likes: "2",
+    author: "Alethea"
   }
-  dbo.collection('facilities').insertOne(facility, function(err, res){
+  
+
+  // loading facility
+  /*
+  const facility = {
+    id: "3",
+    name: "SINGHEALTH POLYCLINICS - TAMPINES",
+    category: "polyclinics",
+    sub_category: "",
+    type: "Government",
+    postal: "529203",
+    address: "1 Tampines Street 41 ",
+    hours: "Mon - Fri : 7:30 - 11:00am, 1:30 - 4:00pm",
+    description: "Test description",
+    website: "http://www.singhealth.com.sg",
+    phone: "6643 6969"
+  }
+  */
+ 
+  // loading user
+  /*
+  const account = {
+    id: "1",
+    first_name: "Joy",
+    last_name: "Noelle",
+    birthdate: "06/17/1990", 
+    username: "Joynoelle",
+    email: "joynoelle@gmail.com",
+    postal_code: "540122", 
+    phone_number: "82236536",
+    telegram_handle: "joynoelle",
+    translate_language: "Tagalog"
+  }
+  */
+  
+
+  // loading facility
+  /*
+  const facility = {
+    id: "3",
+    name: "SINGHEALTH POLYCLINICS - TAMPINES",
+    category: "polyclinics",
+    sub_category: "",
+    type: "Government",
+    postal: "529203",
+    address: "1 Tampines Street 41 ",
+    hours: "Mon - Fri : 7:30 - 11:00am, 1:30 - 4:00pm",
+    description: "Test description",
+    website: "http://www.singhealth.com.sg",
+    phone: "6643 6969"
+  }
+  */
+  
+  // inserting data into collection
+  
+  dbo.collection('threads').insertOne(thread, function(err, res){
     if (err) throw err;
     console.log("1 document inserted");
     db.close();
   });
+  
 });

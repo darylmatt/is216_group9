@@ -11,10 +11,16 @@ const port = 3000;
 // ALLOWING WEB SERVER TO SERVE STATIC  (EG IMGS, JAVASCRIPT)
 app.use('/img', express.static('img'));
 app.use('/stylesheets', express.static('stylesheets'));
+app.use('/scripts', express.static('scripts'));
 
 app.get('/',(req,res)=>{
     console.log('index requested');
     res.sendFile('HomeLandingAbout/homepage.html', { root: __dirname });
+})
+
+app.get('/HomeLandingAbout/homepage.html',(req,res)=>{
+  console.log('index requested');
+  res.sendFile('/HomeLandingAbout/homepage.html', { root: __dirname });
 })
 
 //EDIT PROFILLING
@@ -111,10 +117,6 @@ app.get('/Guides/guide_category.html',(req,res)=>{
   res.sendFile('/Guides/guide_category.html', { root: __dirname });
 })
 
-
-
-
-
 // SOCIAL+ 
 app.get('/Social/social_plus.html',(req,res)=>{
   console.log('index requested');
@@ -124,7 +126,21 @@ app.get('/Social/social_plus.html',(req,res)=>{
 //SOCIAL+ FORUM
 app.get('/Social/Forum/forum.html',(req,res)=>{
   console.log('index requested');
+
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("domesticaid");
+    const result = dbo.collection("threads").find().toArray();
+    result.then(data => {
+      global threads = data;
+    })
+  });
+  console.log('hi');
+  console.log(threads);
   res.sendFile('/Social/Forum/forum.html', { root: __dirname });
+  res.set({ username: 'Flavio' });
+  
+ 
 })
 
 //SOCIAL+ ACTIVITIES
