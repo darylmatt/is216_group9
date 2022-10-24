@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthcare Categories</title>
 
-    <link rel="stylesheet" href="guides.css">
-    <script src="maps.js"></script>
+    <link rel="stylesheet" href="../../stylesheets/guides.css">
+    <script src="../../scripts/maps.js""></script>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -27,11 +27,6 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
     rel="stylesheet"
     />
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     
     <style>
       /* Set the size of the div element that contains the map */
@@ -57,7 +52,7 @@
   <div class="container-fluid">
 
     <a class="navbar-brand" href="../../HomeLandingAbout/homepage.html">
-      <img src="../../img/logo.jpg" alt="" id="logo">
+      <img src="../../img/logo.png" alt="" id="logo">
     </a>
 
     
@@ -108,7 +103,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active text-primary fs-underline" href="#"><span><u>Log Out</u></span></a>
+              <a class="nav-link active text-primary" href="#"><span><u>Log Out</u></span></a>
             </li>
 
             <li class="nav-item">
@@ -125,33 +120,26 @@
 
   <!-- Guide Starts Here -->
   <div class="container">
-    <div class="row m-3">
-      <div class="input-group md-form form-sm form-2 pl-0">
-        <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
-              aria-hidden="true"></i></span>
-        </div>
-      </div>
-    </div>
 
     <div class="row my-5">
         <div class="col fw-bold my-auto text-center" style="font-size: 34px; color:#9a616d;">
-            Physical Healthcare Categories
+          Healthcare Categories
         </div>
     </div>
 
 
-    <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3">
-      <div class="col-xl-4 col-sm-12">
+    <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3 justify-content-center">
+      <div class="col-xl-4 col-sm-12 mx-4">
         <div class="card" id="1">
           <img src="../../img/clinic.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
-            <h5 class="card-title">Polyclinics</h5>
+            <h5 class="card-title">Mental Health Facilities</h5>
             <br>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
+            <a href="../../HealthIsWealth/Physical_Health/mental_health_places.html">      
+              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="">
+                Explore
+              </button>
+            </a>  
           </div>
         </div>
       </div>
@@ -161,162 +149,22 @@
         <div class="card" id="2">
           <img src="../../img/hospital.png" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
-            <h5 class="card-title">Government Hospitals</h5>
-            <br>            
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
+            <h5 class="card-title">Physical Health Facilities</h5>
+            <br>   
+            <a href="../../HealthIsWealth/Physical_Health/physical_health_places.html">      
+              <button type="button" class="btn btn-dark" data-toggle="modal" data-target="">
+                Explore
+              </button>
+            </a>   
           </div>
         </div>
       </div>
 
-
-
-      <div class="col-xl-4 col-sm-12">
-        <div class="card" id="3">
-          <img src="../../img/dentalhealthcare.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Dental Health</h5>
-            <br>            
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-    <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3 justify-content-center">
-      <div class="col-xl-4 col-sm-12">
-        <div class="card" id="4">
-          <img src="../../img/derma.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Dermatologists</h5>
-            <br>            
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xl-4 col-sm-12">
-        <div class="card" id="5">
-          <img src="../../img/pharmacy.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Pharmacies</h5>
-            <br>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-
-      
-      <div class="col-xl-4 col-sm-12">
-        <div class="card" id="5">
-          <img src="../../img/ambulance.png" class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Emergency Services</h5>
-            <br>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-    
     </div>
   </div>
 
-  <!-- The Modal -->
-  <div class="modal" id="myModal">
-    <div class="modal-dialog modal-dialog-scrollable modal-lg">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header" style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
-          <h1 class="modal-title mx-auto" style="color: white">Guide 1</h1>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-          <h3>Polyclinics in Singapore</h3>
-          <p>
-            <ul>
-              <li>Location 1</li>
-              <li>Location 1</li>
-              <li>Location 1</li>
-            </ul>
-          </p>
 
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, repellendus ut quos ipsam enim quis nulla praesentium necessitatibus officiis officia sapiente provident ullam dolore quas nisi eveniet. Enim, officiis id? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, voluptates et libero at nam expedita molestiae possimus reprehenderit voluptate autem soluta dolor exercitationem delectus corrupti, sapiente eum, dignissimos ratione quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sapiente, tenetur voluptas et perferendis quod rem fugiat sed veniam officiis? Nam eaque amet, numquam est accusantium fuga velit nulla possimus? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem esse voluptatum aliquid eum similique omnis nemo harum minus, ipsum, laboriosam soluta veniam autem hic inventore commodi, fugiat maxime perferendis sunt! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam pariatur non voluptas suscipit nesciunt, ullam eveniet cum earum quas repudiandae ut. Nostrum eos unde dicta quia neque sapiente! Sequi, sit.</p>
-
-          <div id="directions">
-            <h3>Directions</h3>
-            <!--The div element for the map -->
-            <div id="map"></div>
-            <script>
-                // Initialize and add the map
-                function initMap() {
-                    // default: The location of SIS, SMU
-                    var lat = parseFloat(document.getElementById("lat").value);
-                    var lng = parseFloat(document.getElementById("lng").value);
-                    // var uluru = {lat: -25.344, lng: 131.036};
-                    var loc = {lat: lat, lng: lng};
-        
-                    // The map, centered at SIS, SMU
-                    var map = new google.maps.Map(
-                        // play with the zoom value to zoom in or out
-                        document.getElementById('map'), {zoom: 14, center: loc});
-                    // The marker, positioned at SIS, SMU
-                    var marker = new google.maps.Marker({position: loc, map: map});
-                }
-            </script>
-            
-            <!--Load the API from the specified URL
-            * The async attribute allows the browser to render the page while the API loads
-            * The key parameter will contain your own API key 
-            * The callback parameter executes the initMap() function
-            -->
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEBeYTGw-Q-PuSz5yF5q2bL5O70yOjOWA
-            &callback=initMap"
-            async defer></script>
-        
-            <div class="jumbotron">          
-              <p class="lead text-center">Get Geo Location</p>
-              <form>
-                  <div class="form-group">
-                      <label for="addr">Enter An Address</label>
-                      <input type="text" class="form-control" name="addr" id="addr" placeholder="E.g. Singapore Management University" >
-                      <br><button type="button" onclick="getLoc('addr')" class="btn btn-primary">Get Full Address</button>
-                      <button type="button" onclick="getLoc('postcode')" class="btn btn-primary">Get Postal Code</button>
-                      <!-- the following set the lat, lng values to put a marker on the map-->
-                      <input type="hidden" id="lat" name="lat" value="1.2973784" />
-                      <input type="hidden" id="lng" name="lng" value="103.8495219" />
-                  </div>
-                  <p id="display" class="lead text-center"></p>   
-              </form>
-            </div>
-          </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-        
-        </div>
-      </div>
-    </div>
-  
-  </div>
-
-
-<!-- Footer -->
+  <!-- Footer -->
 <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
@@ -363,12 +211,10 @@
     </ul>
   </footer>
 </div>
+ 
 
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-    
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>
 

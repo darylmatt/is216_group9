@@ -1,5 +1,6 @@
 *{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 span{
@@ -64,3 +65,7 @@ span{
     right: 10%;
 }
 
+#guideCarousel{
+    background-image: linear-gradient(to right, #f4d9c1 , #e1f4f7);
+
+}
