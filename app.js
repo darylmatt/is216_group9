@@ -132,7 +132,7 @@ app.get('/Social/Forum/forum.html',(req,res)=>{
     var dbo = db.db("domesticaid");
     const result = dbo.collection("threads").find().toArray();
     result.then(data => {
-      global threads = data;
+      //global threads = data;
     })
   });
   console.log('hi');
