@@ -27,14 +27,28 @@
     rel="stylesheet"
     />
 
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;800;900&amp;display=swap" rel="stylesheet">
+    <style>
+      #steps{
+        text-align: center;
+        font-size: 50px;
+      }
 
-    <link rel="stylesheet" href="../../stylesheets/mental_health_breathing.css">
+      
+
+      @keyframes blinker{
+        50%{
+          opacity: 0;
+        }
+      }
+    </style>
 
 </head>
-<body>
+<!-- <body onload="typeWriter()"> -->
+<body onload="pageLoad()">
 
-  <nav class="navbar" aria-label="navbar">
+
+<!-- Navbar -->
+<nav class="navbar" aria-label="navbar">
     <div class="container-fluid">
 
       <a class="navbar-brand" href="../../HomeLandingAbout/homepage.html">
@@ -105,20 +119,34 @@
   </nav>
 
 
-<span class="breather">
-  <h1 class="my-5">Focused Breathing</h1>
-  <main>
-      <div></div>
-  </main>
-  <section>
-      <p>Breathe in through the nose as the circle expands</p>
-      <p>Hold, and release through the mouth as it contracts.</p>
-      <p>Repeat as needed.</p> 
-      <label for="number">Adjust timing of breathing in seconds below</label>
-      <input type="number" id="number" value="12" min="1">
-  </section>
-</span>
-  
+<!-- First steps -->
+<div class="container" id="breather">
+
+    <!-- Showing the instructions -->
+    <div class="row" id="steps">
+    </div>
+
+    <div class="row justify-content-center row-cols-3" id="buttons">
+
+        
+        <div class="col">
+            <button class="btn btn-lg btn-primary breathing-btn" id="prev_button" disabled onclick="prev_page()">
+                Previous
+            </button>
+        </div>
+        <div class="col"></div>
+        <div class="col">
+            <button class="btn btn-lg btn-primary breathing-btn" id="next_button" onclick="next_page()">
+                Next
+            </button>
+        </div>
+        
+
+    </div>
+    
+</div>
+
+
 
 <!-- Footer -->
 <div class="container">
@@ -166,7 +194,7 @@
 </div>
 
 <script src="../../scripts/mental_health_breathing.js"></script>
-<!-- <script src="script.js"></script> -->
+
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
