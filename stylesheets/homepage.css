@@ -55,11 +55,11 @@
 }
 
 #guide-card-3, #mental-card-3{
-    background-image: linear-gradient(to right, #e1f7df , #ecebfa);
+    background-image: linear-gradient(to right, #e1f7df , #ebf9fa);
 }
 
 #mental-card-4{
-    background-image: linear-gradient(to right, #f4d6d8 , #ecebfa);
+    background-image: linear-gradient(to right, #e7f6fd , #f2faeb);
 }
 
 #social-card-1{
@@ -67,7 +67,7 @@
 }
 
 #social-card-2{
-    background-image: linear-gradient(to right, #f4d9c1 , #e1f4f7);
+    background-image: linear-gradient(to right, #f9f1f6 , #e1f4f7);
 }
 
 .guide-card{
