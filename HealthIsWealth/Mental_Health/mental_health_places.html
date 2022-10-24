@@ -126,7 +126,15 @@
 
   <!-- Guide Starts Here -->
   <div class="container">
+    
+    <div class="row my-5">
+        <div class="col fw-bold my-auto text-center" style="font-size: 60px; color:#9a616d;">
+            Mental Healthcare Categories
+        </div>
+    </div>
+
     <div class="row m-3">
+      <label for="Search" class="form-label">Search for symptoms or keywords related to what you're experiencing:</label>
       <div class="input-group md-form form-sm form-2 pl-0">
         <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
@@ -136,12 +144,6 @@
       </div>
     </div>
 
-    <div class="row my-5">
-        <div class="col fw-bold my-auto text-center" style="font-size: 34px; color:#9a616d;">
-            Mental Healthcare Categories
-        </div>
-    </div>
-
 
     <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3">
       <div class="col-xl-4 col-sm-12">
@@ -149,7 +151,7 @@
           <img src="../../img/psychologist.jpg" style='height: 300px 'class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Psychologists</h5>
-            <br>
+            <p class="card-text">A Psychologist evaluate patients and gathers their history before diagnosing issues that need attention through the use of tests to develop a treatment plan to ensure the mental health.</p>
             <button onclick="fillTitle(this.id)" id="psychologists" type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
@@ -159,11 +161,11 @@
 
 
       <div class="col-xl-4 col-sm-12">
-        <div class="card" id="2">
+        <div class="card h-100" id="2">
           <img src="../../img/counsellor.jpg" style='height: 300px' class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Counsellors</h5>
-            <br>            
+            <p class="card-text">Counsellors work in confidential settings with individuals who are experiencing personal difficulties, to help them overcome their problems and to make appropriate changes to their lives.</p>           
             <button onclick="fillTitle(this.id)"  id="counsellors"  type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
@@ -178,7 +180,7 @@
           <img src="../../img/socialworker.jpg" style='height: 300px' class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Social Workers</h5>
-            <br>            
+            <p class="card-text">Social Workers assist clients who have issues caused by neglect, abuse, domestic violence and mental health issues. They may also diagnose and treat mental, behavioral, and emotional issues.</p>          
             <button onclick="fillTitle(this.id)"  id="social workers"  type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>

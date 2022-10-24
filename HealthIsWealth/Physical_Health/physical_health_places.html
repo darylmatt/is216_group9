@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../../stylesheets/guides.css">
     <script src="../../scripts/maps.js"></script>
     <script src="../../scripts/modal.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -129,20 +131,21 @@
 
   <!-- Guide Starts Here -->
   <div class="container">
-    <div class="row m-3">
-      <div class="input-group md-form form-sm form-2 pl-0">
-        <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
-              aria-hidden="true"></i></span>
-        </div>
-      </div>
-    </div>
 
     <div class="row my-5">
-        <div class="col fw-bold my-auto text-center" style="font-size: 34px; color:#9a616d;">
-            Physical Healthcare Categories
+        <div class="col fw-bold my-auto text-center" style="font-size: 60px; color:#9a616d;">
+            Physical Healthcare Facilities
         </div>
+    </div>
+
+    <div class="row m-3">
+      <label for="Search" class="form-label">Search for symptoms or keywords related to what you're experiencing:</label>
+      <div class="input-group md-form form-sm form-2 pl-0">
+        <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search Keywords..." aria-label="Search">
+        <div class="input-group-append">
+          <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
+        </div>
+      </div>
     </div>
 
 
@@ -152,7 +155,7 @@
           <img src="../../img/clinic.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Polyclinics</h5>
-            <br>
+            <p class="card-text">Polyclinics are healthcare centres that provide primary care such as medical treatment, preventive healthcare, and health education, at a subsidised cost</p>
             <button onclick="fillTitle(this.id)" type="button" id="polyclinics" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
@@ -166,7 +169,7 @@
           <img src="../../img/hospital.png" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Hospitals</h5>
-            <br>            
+            <p class="card-text">Hospitals provides affordable specialist care for patients, where you can go to when you are facing any medical conditions that cannot be treated normally at general clinics. </p>           
             <button onclick="fillTitle(this.id)" type="button" id="hospitals" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
@@ -174,29 +177,45 @@
         </div>
       </div>
 
+      <div class="col-xl-4 col-sm-12">
+        <div class="card">
+          <img src="../../img/general_practitioner.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+          <div class="card-body">
+            <h5 class="card-title">General Practitioners</h5>
+            <p class="card-text">General practitioners are doctors who provide nonsurgical medical care. General practitioners evaluate patients through exams and tests and diagnose conditions such as diseases or injuries.</p>
+            <button onclick="fillTitle(this.id)" type="button" id="polyclinics" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+              Read More
+            </button>
+          </div>
+        </div>
+      </div>
 
+
+
+      
+    </div>
+
+    <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3 justify-content-center">
 
       <div class="col-xl-4 col-sm-12">
         <div class="card">
           <img src="../../img/dentalhealthcare.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Dental</h5>
-            <br>            
+            <p class="card-text">A Dentist is responsible for performing oral surgery and routine cleanings on patients. They repair and remove teeth, diagnose conditions and tell patients about how to best care for their teeth and gums. </p>            
             <button onclick="fillTitle(this.id)" type="button"  id="dentists" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3 justify-content-center">
       <div class="col-xl-4 col-sm-12">
         <div class="card">
           <img src="../../img/derma.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Dermatologists</h5>
-            <br>            
+            <p class="card-text">A dermatologist specializes in conditions that affect the skin, hair, and nails. Whether it's rashes or wrinkles, no one understands your skin, hair, and nails better than a board-certified dermatologist. </p>            
             <button onclick="fillTitle(this.id)" type="button" id="dermatologists" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
@@ -209,7 +228,7 @@
           <img src="../../img/pharmacy.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Pharmacies</h5>
-            <br>
+            <p class="card-text">Places like Watsons, Unity or Guardian. If you know what medicine to get for your symptoms such as paracetemol, visit these places to get it over the counter </p>
             <button onclick="fillTitle(this.id)" type="button" id="pharmacies" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
