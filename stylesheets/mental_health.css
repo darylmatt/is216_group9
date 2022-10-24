@@ -51,6 +51,10 @@
     background-image: linear-gradient(to right, #e1f7df , #ecebfa);
 }
 
+#mental-card-4{
+    background-image: linear-gradient(to right, #ffe4db , #e4ffef);
+}
+
 .mental-card:hover{
     box-shadow: 0 18px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
