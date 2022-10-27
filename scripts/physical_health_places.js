@@ -1,18 +1,20 @@
-
 console.log("I'm in looping.js")
 
 const root = Vue.createApp({
 
     // Data Properties
     data() {
-        return {
-            facilities: "", 
-
+        return { 
+            facilities: "",
+            testing: "hi"
         }
     },
 
     created(){
-        axios.get("http://localhost:3000/HealthIsWealth/Physical_Health/physical_health_places.html").then( response => { this.facilities = response.facilities});
+        axios.get("http://localhost:3000/HealthIsWealth/Physical_Health/physical_health_places.html").then( response => { 
+            this.facilities = JSON.parse(response.headers.facilities);
+        }
+         );
     }, 
     // Methods
     methods: {
@@ -22,15 +24,7 @@ const root = Vue.createApp({
         
 
     }
-    
-
-
-
-
-
-    
     // Other stuff
-
 })
 
 root.mount("#root")
