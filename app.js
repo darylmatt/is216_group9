@@ -171,7 +171,18 @@ app.get('/Social/Forum/forum.html',(req,res)=>{
 //SOCIAL+ ACTIVITIES
 app.get('/Social/Activities/activities_landing.html',(req,res)=>{
   console.log('index requested');
-  res.sendFile('/Social/Activities/activities_landing.html', { root: __dirname });
+  
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("domesticaid");
+    const result = dbo.collection("activities").find().toArray();
+    result.then(data => {
+      //global threads = data;
+      res.sendFile('/Social/Activities/activities_landing.html', { root: __dirname });
+      res.set('activities', JSON.stringify(data) );
+    })
+    
+  });
 })
 
 
