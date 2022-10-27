@@ -27,93 +27,112 @@
     rel="stylesheet"
     />
 
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 </head>
 <body>
 
 
 <!-- Navbar -->
 <nav class="navbar" aria-label="navbar">
-    <div class="container-fluid">
+  <div class="container-fluid">
 
-      <a class="navbar-brand" href="../HomeLandingAbout/homepage.html">
-        <img src="../img/logo.png" alt="" id="logo">
-      </a>
+    <a class="navbar-brand" href="../HomeLandingAbout/homepage.html">
+      <img src="../img/logo.png" alt="" id="logo">
+    </a>
 
       
-        
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- <button type="button" class="btn btn-outline-danger" id="sos_button">Large button</button> -->
-
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav me-auto mb-2">
-              
-              <li class="nav-item">
-                <a class="nav-link active text-secondary" href="../HomeLandingAbout/homepage.html"><span>Home</span></a>
-              </li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-secondary" href="../Guides/guides.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Guides & Resources</span></a>
-                    <ul class="dropdown-menu"> 
-                        <li><a class="dropdown-item" href="../Guides/guide_care.html">Guides</a></li>
-                        <li><a class="dropdown-item" href="../Guides/guide_rights.html">Rights</a></li>
-                        <li><a class="dropdown-item" href="../Guides/guide_navigation.html">Navigation</a></li>
-                    </ul>
-              </li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-secondary" href="../Health is Wealth/health_is_wealth.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Health is Wealth</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="../Health is Wealth/Mental Health/breathing.html">Breathing Exercise</a></li>
-                  <li><a class="dropdown-item" href="../Health is Wealth/Mental Health/journalling.html">Journalling & Inspiration</a></li>
-                  <li><a class="dropdown-item" href="../Health is Wealth/Mental Health/mental_guides.html">Mental Wellness Articles</a></li>
-                  <li><a class="dropdown-item" href="../Health is Wealth/Physical Health/categories.html">Physical Healthcare</a></li>
-                </ul>
-              </li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-secondary" href="../Social/social_plus.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Social+</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="../Social/Forum/forum.html">Forum</a></li>
-                  <li><a class="dropdown-item" href="../Social/Activities/activities.html">Activity Page</a></li>
-                </ul>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link active text-secondary" href="../Registration & Profiling/edit_profiling.html"><span>Profile & Settings</span></a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link active text-primary fs-underline" href="#"><span><u>Log Out</u></span></a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                    <button type="button" class="btn w-100 fs-3" id="sos_button">SEND SOS</button>
-                </a>
-              </li>
-
-            </ul>
-          </div>
       
-    </div>
-  </nav>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- <button type="button" class="btn btn-outline-danger" id="sos_button">Large button</button> -->
+
+      <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav me-auto mb-2">
+            
+            <li class="nav-item">
+              <a class="nav-link active text-secondary" href="../HomeLandingAbout/homepage.html"><span>Home</span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-secondary" href="../Guides/guides_categories.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Guides & Resources</span></a>
+                  <ul class="dropdown-menu"> 
+                      <li><a class="dropdown-item" href="../Guides/guide_care.html">Care</a></li>
+                      <li><a class="dropdown-item" href="../Guides/guide_rights.html">Rights</a></li>
+                      <li><a class="dropdown-item" href="../Guides/guide_navigation.html">Navigation</a></li>
+                  </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-secondary" href="../HealthIsWealth/health_is_wealth.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Health is Wealth</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../HealthIsWealth/Mental_Health/breathing.html">Breathing Exercise</a></li>
+                <li><a class="dropdown-item" href="../HealthIsWealth/Mental_Health/journalling.html">Journalling</a></li>
+                <li><a class="dropdown-item" href="../HealthIsWealth/Mental_Health/mental_guides.html">Mental Wellness Articles</a></li>
+                <li><a class="dropdown-item" href="../HealthIsWealth/Physical_Health/physical_health_places.html">Physical Healthcare</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-secondary" href="../Social/social_plus.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Social+</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../Social/Forum/forum.html">Forum</a></li>
+                <li><a class="dropdown-item" href="../Social/Activities/activities.html">Activity Page</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active text-secondary" href="../Registration&Profiling/edit_profiling.html"><span>Profile & Settings</span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active text-primary fs-underline" href="about.html"><span><u>Log Out</u></span></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                  <button type="button" class="btn w-100 fs-3" id="sos_button">SEND SOS</button>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+    
+  </div>
+</nav>
   
 
   <!-- Guide Starts Here -->
   <div class="container">
-    <div class="row m-3">
-      <div class="input-group md-form form-sm form-2 pl-0">
-        <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
-              aria-hidden="true"></i></span>
+    <div>
+      <h1 class="text-center display-1 my-5">Guides: Rights</h1>
+      <div class="row">
+        <div class="col" style="margin-top: 100px; font-size: 20px;">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, suscipit reiciendis veniam labore voluptate quaerat, a, eveniet facere harum sapiente sunt quis totam rem. Expedita atque doloremque minima animi libero!
+        </div>
+        <div class="col">
+          <lottie-player
+          class="mx-auto"
+          src="https://assets4.lottiefiles.com/packages/lf20_okxbrixm.json"
+          background="transparent"
+          speed="1"
+          style="width: 400px; height: 400px"
+          loop
+          autoplay
+          ></lottie-player>   
         </div>
       </div>
+  
     </div>
+    
+    <hr>
 
 
     <div class="row mt-4 mx-auto g-3 row-cols-sm-2">
