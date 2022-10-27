@@ -31,10 +31,6 @@
     rel="stylesheet"
     />
 
-    <!-- db loading -->
-    <script src="../../scripts/physicalhealthplaces.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     
 
@@ -44,6 +40,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!-- Vue.js 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 
     <style>
@@ -64,7 +63,7 @@
 
 </head>
 
-<body onload="triggerBtnClick()" id="root">
+<body onload="triggerBtnClick()" >
 
 
 <!-- Navbar -->
@@ -139,13 +138,13 @@
 
   <!-- Guide Starts Here -->
   <div class="container" id="root">
-    <p v-model="facilities">{{facilities}}</p>
     <div class="row my-5">
         <div class="col fw-bold my-auto text-center" style="font-size: 60px; color:#9a616d;">
             Physical Healthcare Facilities
         </div>
     </div>
 
+    {{ facilities }}
     <div class="row m-3">
       <label for="Search" class="form-label">Search for symptoms or keywords related to what you're experiencing:</label>
       <div class="input-group md-form form-sm form-2 pl-0">
@@ -187,7 +186,7 @@
 
       <div class="col-xl-4 col-sm-12">
         <div class="card">
-          <img src="../../img/general_practitioner.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+          <img style="height: 280px" src="../../img/general_practitioner.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">General Practitioners</h5>
             <p class="card-text">General practitioners are doctors who provide nonsurgical medical care. General practitioners evaluate patients through exams and tests and diagnose conditions such as diseases or injuries.</p>
@@ -357,9 +356,6 @@
   </div>
 
 
-  <p v-model="test">
-    {{test}}
-  </p>
 
 
 <!-- Footer -->
@@ -411,8 +407,14 @@
 </div>
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+
+<!-- LINK AXIOS -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<!-- LINK VUEJS -->
 <script type="module" src="../../scripts/physical_health_places.js"></script>
 
 </body>
