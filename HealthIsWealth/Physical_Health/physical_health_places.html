@@ -139,13 +139,15 @@
   <!-- Guide Starts Here -->
   <div class="container" id="root">
     <p v-model="facilities">{{facilities}}</p>
+    <p v-model="postal">{{postal}}</p>
+
     <div class="row my-5">
         <div class="col fw-bold my-auto text-center" style="font-size: 60px; color:#9a616d;">
             Physical Healthcare Facilities
         </div>
     </div>
 
-    {{ facilities }}
+
     <div class="row m-3">
       <label for="Search" class="form-label">Search for symptoms or keywords related to what you're experiencing:</label>
       <div class="input-group md-form form-sm form-2 pl-0">
@@ -164,7 +166,7 @@
           <div class="card-body">
             <h5 class="card-title">Polyclinics</h5>
             <p class="card-text">Polyclinics are healthcare centres that provide primary care such as medical treatment, preventive healthcare, and health education, at a subsidised cost</p>
-            <button onclick="fillTitle(this.id)" type="button" id="polyclinics" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button v-on:click="" onclick="fillTitle(this.id)" type="button" id="polyclinics" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -191,7 +193,7 @@
           <div class="card-body">
             <h5 class="card-title">General Practitioners</h5>
             <p class="card-text">General practitioners are doctors who provide nonsurgical medical care. General practitioners evaluate patients through exams and tests and diagnose conditions such as diseases or injuries.</p>
-            <button onclick="fillTitle(this.id)" type="button" id="polyclinics" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button onclick="fillTitle(this.id)" type="button" id="general practitioners" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -254,7 +256,7 @@
       
         <!-- Modal Header -->
         <div class="modal-header" style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
-          <h1 class="modal-title mx-auto" style="color: white"></h1>
+          <h1 id="modalHeader" class="modal-title mx-auto" style="color: white"></h1>
         </div>
         
         <!-- Modal body -->
