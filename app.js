@@ -136,7 +136,7 @@ app.get('/Guides/guide_care.html',(req,res)=>{
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("domesticaid");
-    const result = dbo.collection("guides").find().toArray();
+    const result = dbo.collection("guides2").find().toArray();
     result.then(data => {
       //global threads = data;
       res.sendFile('/Guides/guide_care.html', { root: __dirname });
