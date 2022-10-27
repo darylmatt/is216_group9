@@ -5,13 +5,13 @@ const root = Vue.createApp({
     // Data Properties
     data() {
         return { 
-            threads: "",
+            activities: "",
         }
     },
 
     created(){
-        axios.get("http://localhost:3000/Social/Forum/forum.html").then( response => { 
-            this.threads = JSON.parse(response.headers.threads);
+        axios.get("http://localhost:3000/Social/Activities/activities_landing.html").then( response => { 
+            this.activities = JSON.parse(response.headers.activities);
         }
          );
     }, 

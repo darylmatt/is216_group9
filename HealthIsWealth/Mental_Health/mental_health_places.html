@@ -57,11 +57,11 @@
 <nav class="navbar" aria-label="navbar">
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="../../HomeLandingAbout/homepage.html">
+    <a class="navbar-brand" href="../HomeLandingAbout/homepage.html">
       <img src="../../img/logo.png" alt="" id="logo">
     </a>
 
-    
+      
       
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,21 +78,21 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-secondary" href="../../Guides/guides.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Guides & Resources</span></a>
+              <a class="nav-link dropdown-toggle text-secondary" href="../../Guides/guides_categories.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Guides & Resources</span></a>
                   <ul class="dropdown-menu"> 
-                      <li><a class="dropdown-item" href="../../Guides/guide_care.html">Guides</a></li>
+                      <li><a class="dropdown-item" href="../../Guides/guide_care.html">Care</a></li>
                       <li><a class="dropdown-item" href="../../Guides/guide_rights.html">Rights</a></li>
                       <li><a class="dropdown-item" href="../../Guides/guide_navigation.html">Navigation</a></li>
                   </ul>
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-secondary" href="../../Health is Wealth/health_is_wealth.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Health is Wealth</span></a>
+              <a class="nav-link dropdown-toggle text-secondary" href="../../HealthIsWealth/health_is_wealth.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Health is Wealth</span></a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../../Health is Wealth/Mental Health/breathing.html">Breathing Exercise</a></li>
-                <li><a class="dropdown-item" href="../../Health is Wealth/Mental Health/journalling.html">Journalling & Inspiration</a></li>
-                <li><a class="dropdown-item" href="../../Health is Wealth/Mental Health/mental_guides.html">Mental Wellness Articles</a></li>
-                <li><a class="dropdown-item" href="../../Health is Wealth/Physical Health/categories.html">Physical Healthcare</a></li>
+                <li><a class="dropdown-item" href="../../HealthIsWealth/Mental_Health/breathing.html">Breathing Exercise</a></li>
+                <li><a class="dropdown-item" href="../../HealthIsWealth/Mental_Health/journalling.html">Journalling</a></li>
+                <li><a class="dropdown-item" href="../../HealthIsWealth/Mental_Health/mental_guides.html">Mental Wellness Articles</a></li>
+                <li><a class="dropdown-item" href="../../HealthIsWealth/Physical_Health/physical_health_places.html">Physical Healthcare</a></li>
               </ul>
             </li>
 
@@ -105,11 +105,11 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active text-secondary" href="#"><span>Profile & Settings</span></a>
+              <a class="nav-link active text-secondary" href="../../Registration&Profiling/edit_profiling.html"><span>Profile & Settings</span></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active text-primary fs-underline" href="#"><span><u>Log Out</u></span></a>
+              <a class="nav-link active text-primary fs-underline" href="../../HomeLandingAbout/about.html"><span><u>Log Out</u></span></a>
             </li>
 
             <li class="nav-item">
@@ -123,73 +123,6 @@
     
   </div>
 </nav>
-
-  <!-- Guide Starts Here -->
-  <div class="container">
-    
-    <div class="row my-5">
-        <div class="col fw-bold my-auto text-center" style="font-size: 60px; color:#9a616d;">
-            Mental Healthcare Categories
-        </div>
-    </div>
-
-    <div class="row m-3">
-      <label for="Search" class="form-label">Search for symptoms or keywords related to what you're experiencing:</label>
-      <div class="input-group md-form form-sm form-2 pl-0">
-        <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
-              aria-hidden="true"></i></span>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3">
-      <div class="col-xl-4 col-sm-12">
-        <div class="card" id="1">
-          <img src="../../img/psychologist.jpg" style='height: 300px 'class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Psychologists</h5>
-            <p class="card-text">A Psychologist evaluate patients and gathers their history before diagnosing issues that need attention through the use of tests to develop a treatment plan to ensure the mental health.</p>
-            <button onclick="fillTitle(this.id)" id="psychologists" type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-xl-4 col-sm-12">
-        <div class="card h-100" id="2">
-          <img src="../../img/counsellor.jpg" style='height: 300px' class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Counsellors</h5>
-            <p class="card-text">Counsellors work in confidential settings with individuals who are experiencing personal difficulties, to help them overcome their problems and to make appropriate changes to their lives.</p>           
-            <button onclick="fillTitle(this.id)"  id="counsellors"  type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="col-xl-4 col-sm-12">
-        <div class="card" id="3">
-          <img src="../../img/socialworker.jpg" style='height: 300px' class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Social Workers</h5>
-            <p class="card-text">Social Workers assist clients who have issues caused by neglect, abuse, domestic violence and mental health issues. They may also diagnose and treat mental, behavioral, and emotional issues.</p>          
-            <button onclick="fillTitle(this.id)"  id="social workers"  type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
 
  <!-- The Modal -->
  <div class="modal" id="myModal">

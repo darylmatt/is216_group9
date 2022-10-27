@@ -36,15 +36,13 @@
 <body>
 
 
-  <!-- Navbar -->
+<!-- Navbar -->
 <nav class="navbar" aria-label="navbar">
   <div class="container-fluid">
 
     <a class="navbar-brand" href="../../HomeLandingAbout/homepage.html">
       <img src="../../img/logo.png" alt="" id="logo">
     </a>
-
-     
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -60,21 +58,21 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-secondary" href="../../Guides/guides.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Guides & Resources</span></a>
+              <a class="nav-link dropdown-toggle text-secondary" href="../../Guides/guides_categories.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Guides & Resources</span></a>
                   <ul class="dropdown-menu"> 
-                      <li><a class="dropdown-item" href="../../Guides/guide_care.html">Guides</a></li>
+                      <li><a class="dropdown-item" href="../../Guides/guide_care.html">Care</a></li>
                       <li><a class="dropdown-item" href="../../Guides/guide_rights.html">Rights</a></li>
                       <li><a class="dropdown-item" href="../../Guides/guide_navigation.html">Navigation</a></li>
                   </ul>
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-secondary" href="../../Health is Wealth/health_is_wealth.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Health is Wealth</span></a>
+              <a class="nav-link dropdown-toggle text-secondary" href="../../HealthIsWealth/health_is_wealth.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Health is Wealth</span></a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../../Health is Wealth/Mental Health/breathing.html">Breathing Exercise</a></li>
-                <li><a class="dropdown-item" href="../../Health is Wealth/Mental Health/journalling.html">Journalling & Inspiration</a></li>
-                <li><a class="dropdown-item" href="../../Health is Wealth/Mental Health/mental_guides.html">Mental Wellness Articles</a></li>
-                <li><a class="dropdown-item" href="../../Health is Wealth/Physical Health/categories.html">Physical Healthcare</a></li>
+                <li><a class="dropdown-item" href="../../HealthIsWealth/Mental_Health/breathing.html">Breathing Exercise</a></li>
+                <li><a class="dropdown-item" href="../../HealthIsWealth/Mental_Health/journalling.html">Journalling</a></li>
+                <li><a class="dropdown-item" href="../../HealthIsWealth/Mental_Health/mental_guides.html">Mental Wellness Articles</a></li>
+                <li><a class="dropdown-item" href="../../HealthIsWealth/Physical_Health/physical_health_places.html">Physical Healthcare</a></li>
               </ul>
             </li>
 
@@ -87,11 +85,11 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active text-secondary" href="#"><span>Profile & Settings</span></a>
+              <a class="nav-link active text-secondary" href="../../Registration&Profiling/edit_profiling.html"><span>Profile & Settings</span></a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active text-primary fs-underline" href="#"><span><u>Log Out</u></span></a>
+              <a class="nav-link active text-primary fs-underline" href="../../HomeLandingAbout/about.html"><span><u>Log Out</u></span></a>
             </li>
 
             <li class="nav-item">
@@ -340,7 +338,9 @@
         <div class="col-lg-8 col-sm-12">
 
             <div id="root" class="container p-3" style=" width: 97%; margin: auto; border-radius: 10px; background-color: #F0FFFF ;">
-              <p v-model="test"> {{test}} </p>
+              
+          
+           
               <div class="input-group mb-3">
 
                 <div class="row">
@@ -442,16 +442,18 @@
 <br><br>
 
             
-              <div class="card mb-3">
+              
+
+              <div v-for="thread of threads" class="card mb-3">
                 <div class="card-header d-flex justify-content-between">
                   <img src="../../img/Blank_woman_placeholder.svg.png" class="img-thumbnail" alt="..." style="width: 50px; height: 50px;">
-                  &nbsp; User 1 
-                  <span style="margin-left: auto;">13 Oct 2022</span>
+                  &nbsp; {{thread.author}}
+                  <span style="margin-left: auto;">{{thread.publish_date}}</span>
 
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Looking for companions to go out to lucky plaza</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio iusto delectus vitae voluptatum autem et modi aut dolorum natus eum dignissimos, facilis quaerat provident? Eligendi, architecto facilis. Asperiores, molestiae?</p>
+                  <h5 class="card-title">{{thread.title}}</h5>
+                  <p class="card-text">{{thread.text}}</p>
                   <div class="row">
                     <div class="col d-flex float-start my-2 justify-content-center">
                       <a href="#" style='background-color: pink;'class="btn btn-primary mx-1">Read More</a>
@@ -464,160 +466,16 @@
                         20
                       </button>
                       <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-thumbs-up"></i> 5
+                        <i class="fa-regular fa-thumbs-up"></i> {{thread.likes}}
                       </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-solid fa-thumbs-down"></i> 0
-                      </button>
+                     
                     </div>
                   </div> 
                   
                 </div>
               </div>
 
-              <div class="card mb-3">
-                <div class="card-header d-flex justify-content-between">
-                  <img src="../../img/Blank_woman_placeholder.svg.png" class="img-thumbnail" alt="..." style="width: 50px; height: 50px;">
-                  &nbsp; User 1 
-                  <span style="margin-left: auto;">13 Oct 2022</span>
-
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Looking for companions to go out to lucky plaza</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio iusto delectus vitae voluptatum autem et modi aut dolorum natus eum dignissimos, facilis quaerat provident? Eligendi, architecto facilis. Asperiores, molestiae?</p>
-                  <div class="row">
-                    <div class="col d-flex float-start my-2 justify-content-center">
-                      <a href="#" style='background-color: pink;'class="btn btn-primary mx-1">Read More</a>
-                      <button type="button" class="btn btn-outline-secondary mx-1"> + Quick Reply </button>
-                    </div>
-
-                    <div class="col d-flex float-end my-2 justify-content-center">
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-comments"></i>
-                        20
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-thumbs-up"></i> 5
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-solid fa-thumbs-down"></i> 0
-                      </button>
-                    </div>
-                  </div> 
-                  
-                </div>
-              </div>
-
-
-
-              <div class="card mb-3">
-                
-                <div class="card-header d-flex justify-content-between">
-                  <img src="../../img/Blank_woman_placeholder.svg.png" class="img-thumbnail" alt="..." style="width: 50px; height: 50px;">
-                  &nbsp; User 1 
-                  <span style="margin-left: auto;">13 Oct 2022</span>
-
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Looking for companions to go out to lucky plaza</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio iusto delectus vitae voluptatum autem et modi aut dolorum natus eum dignissimos, facilis quaerat provident? Eligendi, architecto facilis. Asperiores, molestiae?</p>
-                  <div class="row">
-                    <div class="col d-flex float-start my-2 justify-content-center">
-                      <a href="#" style='background-color: pink;'class="btn btn-primary mx-1">Read More</a>
-                      <button type="button" class="btn btn-outline-secondary mx-1"> + Quick Reply </button>
-                    </div>
-
-                    <div class="col d-flex float-end my-2 justify-content-center">
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-comments"></i>
-                        20
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-thumbs-up"></i> 5
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-solid fa-thumbs-down"></i> 0
-                      </button>
-                    </div>
-                  </div> 
-                  
-                </div>
-              </div>
-
-
-
-              <div class="card mb-3">
-                
-                <div class="card-header d-flex justify-content-between">
-                  <img src="../../img/Blank_woman_placeholder.svg.png" class="img-thumbnail" alt="..." style="width: 50px; height: 50px;">
-                  &nbsp; User 1 
-                  <span style="margin-left: auto;">13 Oct 2022</span>
-
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Looking for companions to go out to lucky plaza</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio iusto delectus vitae voluptatum autem et modi aut dolorum natus eum dignissimos, facilis quaerat provident? Eligendi, architecto facilis. Asperiores, molestiae?</p>
-
-                  <div class="row">
-                    <div class="col d-flex float-start my-2 justify-content-center">
-                      <a href="#" style='background-color: pink;'class="btn btn-primary mx-1">Read More</a>
-                      <button type="button" class="btn btn-outline-secondary mx-1"> + Quick Reply </button>
-                    </div>
-
-                    <div class="col d-flex float-end my-2 justify-content-center">
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-comments"></i>
-                        20
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-thumbs-up"></i> 5
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-solid fa-thumbs-down"></i> 0
-                      </button>
-                    </div>
-                  </div> 
-                
-                </div>
-
-              </div>
-
-              <div class="card mb-3">
-                
-                <div class="card-header d-flex justify-content-between">
-                  <img src="../../img/Blank_woman_placeholder.svg.png" class="img-thumbnail" alt="..." style="width: 50px; height: 50px;">
-                  &nbsp; User 1 
-                  <span style="margin-left: auto;">13 Oct 2022</span>
-                </div>
-
-                <div class="card-body">
-
-                  <h5 class="card-title">Looking for companions to go out to lucky plaza</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio iusto delectus vitae voluptatum autem et modi aut dolorum natus eum dignissimos, facilis quaerat provident? Eligendi, architecto facilis. Asperiores, molestiae?</p>
-                  
-
-                  <div class="row">
-                    <div class="col d-flex float-start my-2 justify-content-center">
-                      <a href="#" style='background-color: pink;'class="btn btn-primary mx-1">Read More</a>
-                      <button type="button" class="btn btn-outline-secondary mx-1"> + Quick Reply </button>
-                    </div>
-
-                    <div class="col d-flex float-end my-2 justify-content-center">
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-comments"></i>
-                        20
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-thumbs-up"></i> 5
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-solid fa-thumbs-down"></i> 0
-                      </button>
-                    </div>
-                  </div> 
-
-                </div>
-              </div>
+              
 
 
               

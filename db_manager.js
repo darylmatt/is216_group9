@@ -7,6 +7,7 @@ MongoClient.connect(url, function(err, db) {
   var dbo = db.db("domesticaid");
 
   //loading thread
+  /*
   const thread = {
     id: "2",
     title: "Need advise on remitting money",
@@ -16,24 +17,24 @@ MongoClient.connect(url, function(err, db) {
     likes: "2",
     author: "Alethea"
   }
-  
+  */
 
   // loading facility
-  /*
+  
   const facility = {
-    id: "3",
-    name: "SINGHEALTH POLYCLINICS - TAMPINES",
-    category: "polyclinics",
+    id: "4",
+    name: "MINISTRY OF HEALTH CHANGI GENERAL HOSPITAL",
+    category: "hospitals",
     sub_category: "",
     type: "Government",
-    postal: "529203",
-    address: "1 Tampines Street 41 ",
-    hours: "Mon - Fri : 7:30 - 11:00am, 1:30 - 4:00pm",
+    postal: "529889",
+    address: "2 Simei Street 3",
+    hours: "Opened 24 hours",
     description: "Test description",
-    website: "http://www.singhealth.com.sg",
-    phone: "6643 6969"
+    website: "http://www.skh.com.sg/",
+    phone: "6930 5000"
   }
-  */
+  
  
   // loading user
   /*
@@ -71,7 +72,7 @@ MongoClient.connect(url, function(err, db) {
   
   // inserting data into collection
   
-  dbo.collection('threads').insertOne(thread, function(err, res){
+  dbo.collection('facilities').insertOne(facility, function(err, res){
     if (err) throw err;
     console.log("1 document inserted");
     db.close();
