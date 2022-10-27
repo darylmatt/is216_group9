@@ -135,10 +135,23 @@ app.get('/Guides/guides.html',(req,res)=>{
   res.sendFile('/Guides/guides.html', { root: __dirname });
 })
 
-// GUIDE GENERIC, BY CATEGORY
-app.get('/Guides/guide_category.html',(req,res)=>{
+// GUIDE CARE
+app.get('/Guides/guide_care.html',(req,res)=>{
   console.log('index requested');
-  res.sendFile('/Guides/guide_category.html', { root: __dirname });
+
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("domesticaid");
+    const result = dbo.collection("guides").find().toArray();
+    result.then(data => {
+      //global threads = data;
+      res.sendFile('/Guides/guide_care.html', { root: __dirname });
+      console.log(data);
+      res.set('guides', JSON.stringify(data) );
+    })
+    
+  });
+
 })
 
 // SOCIAL+ 
@@ -162,9 +175,6 @@ app.get('/Social/Forum/forum.html',(req,res)=>{
     })
     
   });
-
-
-  
  
 })
 
