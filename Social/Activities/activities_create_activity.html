@@ -23,21 +23,34 @@
     <!-- Vue JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+    <style>
+        #display-image {
+            width: 400px;
+            height: 225px;
+            border: 1px solid black;
+            background-position: center;
+            background-size: cover;
+        }
+    </style>
+
+
+
 
 </head>
 
 <!-- Navbar -->
 <nav class="navbar" aria-label="navbar">
     <div class="container-fluid">
-  
-      <a class="navbar-brand" href="../../HomeLandingAbout/homepage.html">
-        <img src="../../img/logo.jpg" alt="" id="logo">
-      </a>
-  
-      
-        
-  
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+
+        <a class="navbar-brand" href="../../HomeLandingAbout/homepage.html">
+            <img src="../../img/logo.jpg" alt="" id="logo">
+        </a>
+
+
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+            aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -185,14 +198,14 @@
                         </div>
                     </div>
 
-        
+
 
                     <div class="row">
 
                         <div class="col">
                             <label for="pax" class="form-label">Number of pax (including yourself)</label>
                             <input type="number" class="form-control" id="pax" placeholder="" v-model="numPax">
-                       
+
                         </div>
 
                         <div class="col">
@@ -221,8 +234,9 @@
                     <div class="row">
                         <div class="col">
                             <div class="mb-3">
-                                <label for="desc" class="form-label">Upload an image</label>
-                                <input type="file">
+                                <p>Upload an image</p>
+                                <!-- <label for="desc" class="form-label"></label> -->
+                                <div id="display-image"></div>
                             </div>
                         </div>
                     </div>
@@ -365,6 +379,14 @@
         crossorigin="anonymous"></script>
 
     <script src="activities_add_activity.js"></script>
+
+    <!-- <script>
+        const fileSelector = document.getElementById('file-selector');
+        fileSelector.addEventListener('change', (event) => {
+            const fileList = event.target.files;
+            console.log(fileList);
+        });
+    </script> -->
 
 
 
