@@ -30,6 +30,9 @@
     <!-- Vue.js 3 CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 </head>
 <body>
 
@@ -109,9 +112,7 @@
   <!-- Guide Starts Here -->
   <div class="container" id="root">
 
-    {{guides}}
-
-    <div class="row m-3">
+    <!-- <div class="row m-3">
       <div class="input-group md-form form-sm form-2 pl-0">
         <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
@@ -119,7 +120,31 @@
               aria-hidden="true"></i></span>
         </div>
       </div>
+    </div> -->
+
+
+    <div>
+      <h1 class="text-center display-1">Guides: Caregiving</h1>
+      <div class="row">
+        <div class="col" style="margin-top: 100px; font-size: 20px;">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, suscipit reiciendis veniam labore voluptate quaerat, a, eveniet facere harum sapiente sunt quis totam rem. Expedita atque doloremque minima animi libero!
+        </div>
+        <div class="col">
+          <lottie-player
+          class="mx-auto"
+          src="https://assets5.lottiefiles.com/packages/lf20_JqnGN4woT2.json"
+          background="transparent"
+          speed="1"
+          style="width: 400px; height: 400px"
+          loop
+          autoplay
+          ></lottie-player>   
+        </div>
+      </div>
+  
     </div>
+    
+    <hr>
 
 
     <div class="row mt-4 mx-auto g-3 row-cols-sm-2">

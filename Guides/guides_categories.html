@@ -31,7 +31,7 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 </head>
-<body>
+<body onload="typeWriter()">
 
 
 <!-- Navbar -->
@@ -109,7 +109,7 @@
   <!-- Guide Starts Here -->
   <div class="container-fluid mt-4 text-center">
   
-        <h1 style="font-size: 46px;">Guides</h1>
+        <h1 class="display-1" style="color: black;">Welcome to DomesticAID's <span id="guides_span" style="text-decoration: underline; color: black;">Guides!</span></h1>
       
   </div>
 
@@ -117,9 +117,24 @@
     <div class="row">
       <div class="col-8 my-auto p-4">
         <h1>About</h1> <br>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, consectetur eum consequuntur temporibus molestias similique vitae culpa cum dignissimos quo odit alias adipisci excepturi enim facilis accusantium neque fugiat obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, inventore assumenda</p>
+        <p id="demo" style="font-size:20px"></p>
 
       </div>
+
+      <script>
+        var i = 0;
+        var txt = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, consectetur eum consequuntur temporibus molestias similique vitae culpa cum dignissimos quo odit alias adipisci excepturi enim facilis accusantium neque fugiat obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, inventore assumenda.';
+        var speed = 150;
+        
+        function typeWriter() {
+          console.log("test");
+          if (i < txt.length) {
+            document.getElementById("demo").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+        </script>
 
       <div class="col text-center">
           <lottie-player
@@ -173,7 +188,7 @@
       
 
 
-        <h1 class="my-5">Recomended Guides</h1>
+        <h1 class="my-5">Recommended Guides</h1>
 
         <div id="carouselExampleInterval" class="carousel slide my-2" data-bs-ride="carousel">
     
