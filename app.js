@@ -87,24 +87,18 @@ app.get('/HealthIsWealth/Physical_Health/categories.html',(req,res)=>{
 app.get('/HealthIsWealth/Physical_Health/physical_health_places.html',(req,res)=>{
   console.log('index requested');
 
-  var facilities = [];
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-   
     var dbo = db.db("domesticaid");
     const result = dbo.collection("facilities").find().toArray();
     result.then(data => {
-      //console.log(data);
       //global threads = data;
-      res.sendFile('/HealthIsWealth//Physical_Health/physical_health_places.html', { root: __dirname });
-      data = [data]
-      res.set( 'facilities', data);
+      res.sendFile('/HealthIsWealth/Physical_Health/physical_health_places.html', { root: __dirname });
+      console.log(JSON.stringify(data));
+      res.set('facilities', JSON.stringify(data) );
     })
-
+    
   });
-
-  
-  //res.set({ facilities });
 
 })
 
