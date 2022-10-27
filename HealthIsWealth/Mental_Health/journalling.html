@@ -105,25 +105,25 @@
 
 <div class="container">
 
-  <h1 class="display-2 my-3" id="curr_date"></h1>
+  <h1 class="display-2 my-3">Journal down your thoughts...</h1>
   
   <div class="row mt-5">
 
-    <label for="exampleFormControlTextarea1" class="form-label">Journal down your thoughts...</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+    <label for="exampleFormControlTextarea1" class="form-label" id="curr_date"></label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" placeholder="Write about your day or what you're feeling..."></textarea>
   
   </div>
 
   <div class="row my-3">
 
     <div class="col-4">
-      Journal Category:
+      Journal Mood:
       <select name="journal_category" id="" width="30%">
-        <option value="Reflective">Reflective</option>
-        <option value="Gratitude">Gratitude</option>
-        <option value="Daily">Daily</option>
-        <option value="Self-Love">Self-Love</option>
-        <option value="Reliever">Reliever</option>
+        <option value="Happy">Happy</option>
+        <option value="Grateful">Grateful</option>
+        <option value="Sad">Sad</option>
+        <option value="Frustrated">Frustrated</option>
+        <option value="Helpless">Helpless</option>
       </select>
     </div>
 
@@ -146,11 +146,28 @@
     
     Filter By Category:
     <select name="prev_journal_category" id="">
-      <option value="Reflective">Reflective</option>
-      <option value="Gratitude">Gratitude</option>
-      <option value="Daily">Daily</option>
-      <option value="Self-Love">Self-Love</option>
-      <option value="Reliever">Reliever</option>
+      <option value="None">None</option>
+      <option value="Happy">Happy</option>
+      <option value="Grateful">Grateful</option>
+      <option value="Sad">Sad</option>
+      <option value="Frustrated">Frustrated</option>
+      <option value="Helpless">Helpless</option>
+    </select>
+
+    Filter By Month:
+    <select name="prev_journal_category" id="">
+      <option value="January">January</option>
+      <option value="February">February</option>
+      <option value="March">March</option>
+      <option value="April">April</option>
+      <option value="May">May</option>
+      <option value="June">June</option>
+      <option value="July">July</option>
+      <option value="August">August</option>
+      <option value="September">September</option>
+      <option value="October">October</option>
+      <option value="November">November</option>
+      <option value="December">December</option>
     </select>
 
     <button class="btn btn-primary">Filter</button>
@@ -193,6 +210,7 @@
 
 
 </div>
+
 
 
   <!-- Footer -->

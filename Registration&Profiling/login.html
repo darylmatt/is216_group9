@@ -138,9 +138,10 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"
 <script>
   var i = 0;
   var txt = 'Here for you.';
-  var speed = 150   ;
+  var speed = 150;
   
   function typeWriter() {
+    console.log("test");
     if (i < txt.length) {
       document.getElementById("demo").innerHTML += txt.charAt(i);
       i++;
