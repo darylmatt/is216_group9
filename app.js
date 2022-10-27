@@ -86,8 +86,23 @@ app.get('/HealthIsWealth/Physical_Health/categories.html',(req,res)=>{
 // PHYSICAL HEALTH - PLACES
 app.get('/HealthIsWealth/Physical_Health/physical_health_places.html',(req,res)=>{
   console.log('index requested');
-  res.sendFile('/HealthIsWealth//Physical_Health/physical_health_places.html', { root: __dirname });
+
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("domesticaid");
+    const result = dbo.collection("facilities").find().toArray();
+    result.then(data => {
+      //global threads = data;
+      res.sendFile('/HealthIsWealth/Physical_Health/physical_health_places.html', {root: __dirname});
+      res.set('facilities', JSON.stringify(data));
+    })
+  });
+  // console.log('hi');
+  // console.log(threads);
+  // res.sendFile('/HealthIsWealth//Physical_Health/physical_health_places.html', { root: __dirname });
 })
+
+  
 
 // MENTAL HEALTH - PLACES
 app.get('/HealthIsWealth/Physical_Health/mental_health_places.html',(req,res)=>{
@@ -104,6 +119,9 @@ app.get('/HealthIsWealth/Physical_Health/mental_health_places.html',(req,res)=>{
   });
   res.sendFile('/HealthIsWealth//Physical_Health/mental_health_places.html', { root: __dirname });
 })
+
+
+
 
 // GUIDE LANDING
 app.get('/Guides/guides.html',(req,res)=>{
