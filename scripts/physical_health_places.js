@@ -6,9 +6,9 @@ const root = Vue.createApp({
     data() {
         return { 
             facilities: "",
-            testing: "hi",
 
-            postal : [],
+            selected : '',
+            subCategories : [],
 
 
         }
@@ -21,7 +21,7 @@ const root = Vue.createApp({
             var facilities = this.facilities
 
             for (let index = 0; index < facilities.length; index++) {
-                this.postal.push(facilities[index].postal)
+                this.subCategories.push(facilities[index].sub_category)
                 console.log(facilities[index])
                 
             }
@@ -37,7 +37,7 @@ const root = Vue.createApp({
 
         // YOUR CODE GOES HERE IF YOU NEED ANY
 
-        
+        setSelection()
         
 
     }
