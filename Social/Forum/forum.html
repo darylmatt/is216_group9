@@ -340,7 +340,9 @@
         <div class="col-lg-8 col-sm-12">
 
             <div id="root" class="container p-3" style=" width: 97%; margin: auto; border-radius: 10px; background-color: #F0FFFF ;">
-              <p v-model="test"> {{test}} </p>
+              
+          
+           
               <div class="input-group mb-3">
 
                 <div class="row">
@@ -442,16 +444,18 @@
 <br><br>
 
             
-              <div class="card mb-3">
+              
+
+              <div v-for="thread of threads" class="card mb-3">
                 <div class="card-header d-flex justify-content-between">
                   <img src="../../img/Blank_woman_placeholder.svg.png" class="img-thumbnail" alt="..." style="width: 50px; height: 50px;">
-                  &nbsp; User 1 
-                  <span style="margin-left: auto;">13 Oct 2022</span>
+                  &nbsp; {{thread.author}}
+                  <span style="margin-left: auto;">{{thread.publish_date}}</span>
 
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">Looking for companions to go out to lucky plaza</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio iusto delectus vitae voluptatum autem et modi aut dolorum natus eum dignissimos, facilis quaerat provident? Eligendi, architecto facilis. Asperiores, molestiae?</p>
+                  <h5 class="card-title">{{thread.title}}</h5>
+                  <p class="card-text">{{thread.text}}</p>
                   <div class="row">
                     <div class="col d-flex float-start my-2 justify-content-center">
                       <a href="#" style='background-color: pink;'class="btn btn-primary mx-1">Read More</a>
@@ -464,160 +468,16 @@
                         20
                       </button>
                       <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-thumbs-up"></i> 5
+                        <i class="fa-regular fa-thumbs-up"></i> {{thread.likes}}
                       </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-solid fa-thumbs-down"></i> 0
-                      </button>
+                     
                     </div>
                   </div> 
                   
                 </div>
               </div>
 
-              <div class="card mb-3">
-                <div class="card-header d-flex justify-content-between">
-                  <img src="../../img/Blank_woman_placeholder.svg.png" class="img-thumbnail" alt="..." style="width: 50px; height: 50px;">
-                  &nbsp; User 1 
-                  <span style="margin-left: auto;">13 Oct 2022</span>
-
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Looking for companions to go out to lucky plaza</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio iusto delectus vitae voluptatum autem et modi aut dolorum natus eum dignissimos, facilis quaerat provident? Eligendi, architecto facilis. Asperiores, molestiae?</p>
-                  <div class="row">
-                    <div class="col d-flex float-start my-2 justify-content-center">
-                      <a href="#" style='background-color: pink;'class="btn btn-primary mx-1">Read More</a>
-                      <button type="button" class="btn btn-outline-secondary mx-1"> + Quick Reply </button>
-                    </div>
-
-                    <div class="col d-flex float-end my-2 justify-content-center">
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-comments"></i>
-                        20
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-thumbs-up"></i> 5
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-solid fa-thumbs-down"></i> 0
-                      </button>
-                    </div>
-                  </div> 
-                  
-                </div>
-              </div>
-
-
-
-              <div class="card mb-3">
-                
-                <div class="card-header d-flex justify-content-between">
-                  <img src="../../img/Blank_woman_placeholder.svg.png" class="img-thumbnail" alt="..." style="width: 50px; height: 50px;">
-                  &nbsp; User 1 
-                  <span style="margin-left: auto;">13 Oct 2022</span>
-
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Looking for companions to go out to lucky plaza</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio iusto delectus vitae voluptatum autem et modi aut dolorum natus eum dignissimos, facilis quaerat provident? Eligendi, architecto facilis. Asperiores, molestiae?</p>
-                  <div class="row">
-                    <div class="col d-flex float-start my-2 justify-content-center">
-                      <a href="#" style='background-color: pink;'class="btn btn-primary mx-1">Read More</a>
-                      <button type="button" class="btn btn-outline-secondary mx-1"> + Quick Reply </button>
-                    </div>
-
-                    <div class="col d-flex float-end my-2 justify-content-center">
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-comments"></i>
-                        20
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-thumbs-up"></i> 5
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-solid fa-thumbs-down"></i> 0
-                      </button>
-                    </div>
-                  </div> 
-                  
-                </div>
-              </div>
-
-
-
-              <div class="card mb-3">
-                
-                <div class="card-header d-flex justify-content-between">
-                  <img src="../../img/Blank_woman_placeholder.svg.png" class="img-thumbnail" alt="..." style="width: 50px; height: 50px;">
-                  &nbsp; User 1 
-                  <span style="margin-left: auto;">13 Oct 2022</span>
-
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Looking for companions to go out to lucky plaza</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio iusto delectus vitae voluptatum autem et modi aut dolorum natus eum dignissimos, facilis quaerat provident? Eligendi, architecto facilis. Asperiores, molestiae?</p>
-
-                  <div class="row">
-                    <div class="col d-flex float-start my-2 justify-content-center">
-                      <a href="#" style='background-color: pink;'class="btn btn-primary mx-1">Read More</a>
-                      <button type="button" class="btn btn-outline-secondary mx-1"> + Quick Reply </button>
-                    </div>
-
-                    <div class="col d-flex float-end my-2 justify-content-center">
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-comments"></i>
-                        20
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-thumbs-up"></i> 5
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-solid fa-thumbs-down"></i> 0
-                      </button>
-                    </div>
-                  </div> 
-                
-                </div>
-
-              </div>
-
-              <div class="card mb-3">
-                
-                <div class="card-header d-flex justify-content-between">
-                  <img src="../../img/Blank_woman_placeholder.svg.png" class="img-thumbnail" alt="..." style="width: 50px; height: 50px;">
-                  &nbsp; User 1 
-                  <span style="margin-left: auto;">13 Oct 2022</span>
-                </div>
-
-                <div class="card-body">
-
-                  <h5 class="card-title">Looking for companions to go out to lucky plaza</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio iusto delectus vitae voluptatum autem et modi aut dolorum natus eum dignissimos, facilis quaerat provident? Eligendi, architecto facilis. Asperiores, molestiae?</p>
-                  
-
-                  <div class="row">
-                    <div class="col d-flex float-start my-2 justify-content-center">
-                      <a href="#" style='background-color: pink;'class="btn btn-primary mx-1">Read More</a>
-                      <button type="button" class="btn btn-outline-secondary mx-1"> + Quick Reply </button>
-                    </div>
-
-                    <div class="col d-flex float-end my-2 justify-content-center">
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-comments"></i>
-                        20
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-regular fa-thumbs-up"></i> 5
-                      </button>
-                      <button type="button" class="btn btn-outline-info mx-1">
-                        <i class="fa-solid fa-thumbs-down"></i> 0
-                      </button>
-                    </div>
-                  </div> 
-
-                </div>
-              </div>
+              
 
 
               
