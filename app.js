@@ -86,7 +86,24 @@ app.get('/HealthIsWealth/Physical_Health/categories.html',(req,res)=>{
 // PHYSICAL HEALTH - PLACES
 app.get('/HealthIsWealth/Physical_Health/physical_health_places.html',(req,res)=>{
   console.log('index requested');
-  res.sendFile('/HealthIsWealth//Physical_Health/physical_health_places.html', { root: __dirname });
+  var facilities = [];
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+   
+    var dbo = db.db("domesticaid");
+    const result = dbo.collection("facilities").find().toArray();
+    result.then(data => {
+      //console.log(data);
+      //global threads = data;
+      res.sendFile('/HealthIsWealth//Physical_Health/physical_health_places.html', { root: __dirname });
+      data = [data]
+      res.set( 'facilities', data);
+    })
+
+  });
+
+  
+  //res.set({ facilities });
 })
 
 // MENTAL HEALTH - PLACES
@@ -133,12 +150,13 @@ app.get('/Social/Forum/forum.html',(req,res)=>{
     const result = dbo.collection("threads").find().toArray();
     result.then(data => {
       //global threads = data;
+      res.sendFile('/Social/Forum/forum.html', { root: __dirname });
+      res.set('threads', JSON.stringify(data) );
     })
+    
   });
-  console.log('hi');
-  console.log(threads);
-  res.sendFile('/Social/Forum/forum.html', { root: __dirname });
-  res.set({ username: 'Flavio' });
+
+
   
  
 })
