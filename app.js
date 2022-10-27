@@ -139,9 +139,11 @@ app.get('/Guides/guide_care.html',(req,res)=>{
     const result = dbo.collection("guides2").find().toArray();
     result.then(data => {
       //global threads = data;
-      res.sendFile('/Guides/guide_care.html', { root: __dirname });
       console.log(data);
+      res.sendFile('/Guides/guide_care.html', { root: __dirname });
       res.set('guides', JSON.stringify(data) );
+
+      
     })
     
   });
