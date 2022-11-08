@@ -38,5 +38,5 @@ function sos_alert() {
     // console.log(day, month, year, hours, minutes, seconds)
 
     var time_string = `${hours}:${minutes}:${seconds} on ${day} ${months_arr[month]} ${year}`
-    alert("Your SOS message has been received and forwarded to the Singapore Police Force at " + time_string + `. \n\n Your emergency address : ${temp_holding_loc}. \n\n Please try to remain calm and be away from your assailant as much as possible. The authorities will be right with you shortly.`)
+    alert("Your SOS message has been received and forwarded to the Singapore Police Force at " + time_string + `. \n\n Your emergency address : ${temp_holding_loc}. \n\nPlease try to remain calm and be away from your assailant as much as possible. The authorities will be right with you shortly.`)
 }
