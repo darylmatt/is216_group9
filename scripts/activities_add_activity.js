@@ -110,8 +110,3 @@ root.mount("#root")
 //     reader.readAsDataURL(this.files[0]);
 // });
 
-function fillTitle(id){
-    var modalTitle = document.getElementById('modalHeader')
-    var text = id.toUpperCase()
-    modalTitle.innerText = text;
-}
