@@ -1,3 +1,5 @@
+// const { default: axios } = require("axios");
+
 var sos_button = document.getElementById("sos_button");
 sos_button.addEventListener("click", sos_alert);
 
@@ -36,6 +38,16 @@ function sos_alert() {
     }
 
     // console.log(day, month, year, hours, minutes, seconds)
+
+    // var tele_api = "https://api.telegram.org/bot5532657135:AAEUOVOZBPtnZI5cZUG1OvbrDqKSGhBBtCs/getUpdates"
+
+    // axios.get(tele_api)
+    // .then(response => {
+    //     console.log(response.data);
+    // })
+    // .catch(error => {
+    //     console.log(error);
+    // })
 
     var time_string = `${hours}:${minutes}:${seconds} on ${day} ${months_arr[month]} ${year}`
     alert("Your SOS message has been received and forwarded to the Singapore Police Force at " + time_string + `. \n\n Your emergency address : ${temp_holding_loc}. \n\nPlease try to remain calm and be away from your assailant as much as possible. The authorities will be right with you shortly.`)
