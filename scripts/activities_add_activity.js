@@ -21,6 +21,7 @@ const root = Vue.createApp({
 
             img_link: '',
 
+            
 
         }
 
@@ -28,6 +29,7 @@ const root = Vue.createApp({
     },
 
     methods: {
+
         validate_and_add() {
             //Validate the field
             this.show = false
@@ -108,4 +110,3 @@ root.mount("#root")
 //     });
 //     reader.readAsDataURL(this.files[0]);
 // });
-

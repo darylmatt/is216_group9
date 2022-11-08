@@ -5,28 +5,36 @@ const root = Vue.createApp({
     // Data Properties
     data() {
         return { 
-            facilities: "",
 
-            selected : '',
+            // ALL facilities arrray of objects
+            facilities: [],
+            
             subCategories : [],
 
+            selectedArray : [],
 
+            name : '',
+            location : '',
+            postal : '',
+            contact : '',
+            opening_hours : '',
+            
         }
     },
 
     created(){
         axios.get("http://localhost:3000/HealthIsWealth/Physical_Health/physical_health_places.html")
         .then( response => { 
+
+            // fetch data
             this.facilities = JSON.parse(response.headers.facilities);
             var facilities = this.facilities
 
+            // create subCategories array
             for (let index = 0; index < facilities.length; index++) {
                 this.subCategories.push(facilities[index].sub_category)
-                console.log(facilities[index])
-                
+                // console.log(facilities[index])
             }
-
-
             
         }
          );
@@ -35,13 +43,48 @@ const root = Vue.createApp({
     // Methods
     methods: {
 
-        // YOUR CODE GOES HERE IF YOU NEED ANY
+        fetchSelectedArray(category){
 
-        setSelection()
-        
+            this.selectedArray = []
+            // create array of filtered category
+            var facilitiesArray = this.facilities
+
+            for (let index = 0; index < facilitiesArray.length; index++) {
+         
+                if (facilitiesArray[index].sub_category == category){
+                    this.selectedArray.push(facilitiesArray[index])
+                }
+            }
+
+            var tableBodyDiv = document.getElementById('tableBody')
+            var tableStr = '';
+            console.log(tableBodyDiv)
+
+
+            for(var facility of this.selectedArray) {
+                var name = facility.facility_name
+                var location = facility.address
+                var postal = facility.postal
+                var contact = facility.phone
+                var hours = facility.hours
+
+                console.log(name)
+                tableStr += `<tr>
+                    <td>${name}</td>
+                    <td>${location}</td>
+                    <td>${postal}</td>
+                    <td>${contact}</td>
+                    <td>${hours}</td>
+                </tr>`      
+            }
+
+            tableBodyDiv.innerHTML = tableStr;
+
+
+    
+        } 
 
     }
-    // Other stuff
 })
 
 root.mount("#root")
@@ -53,3 +96,4 @@ function fillTitle(id){
     var text = id.toUpperCase()
     modalTitle.innerText = text;
 }
+
