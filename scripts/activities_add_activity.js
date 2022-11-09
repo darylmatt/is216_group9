@@ -21,6 +21,7 @@ const root = Vue.createApp({
 
             img_link: '',
 
+            
 
         }
 
