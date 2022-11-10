@@ -1,3 +1,4 @@
+
 const root = Vue.createApp({
 
     // Data Properties
@@ -36,6 +37,13 @@ const root = Vue.createApp({
 
     // Methods
     methods: {
+        setSearchValue(){
+
+            console.log('hello')
+            // var value = document.getElementById('addr')
+            // value.setAttribute('value', name)
+        
+        },
 
         fetchSelectedArray(category){
 
@@ -69,7 +77,7 @@ const root = Vue.createApp({
                     <td>${postal}</td>
                     <td>${contact}</td>
                     <td>
-                        <button value="${name}" onclick ="setSearchValue()" type="button" class="btn btn-sm text-light" style='background-color:#9a616d;'>Get Directions</button>
+                        <button value="${name}" class="btn btn-sm text-light" style='background-color:#9a616d;'>Get Directions</button>
                     </td>
                 </tr>`      
 
@@ -78,8 +86,7 @@ const root = Vue.createApp({
 
             tableBodyDiv.innerHTML  = tableStr;   
         },
-
-
+       
         // setSearchValue(name){
 
         //     console.log('hello')
@@ -95,13 +102,7 @@ const root = Vue.createApp({
 root.mount("#root")
 
 
-function setSearchValue(){
 
-    console.log('hello')
-    // var value = document.getElementById('addr')
-    // value.setAttribute('value', name)
-
-}
 
 
 function fillTitle(id){
@@ -109,4 +110,5 @@ function fillTitle(id){
     var text = id.toUpperCase()
     modalTitle.innerText = text;
 }
+
 
