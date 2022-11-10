@@ -181,7 +181,61 @@ app.get('/Social/social_plus.html',(req,res)=>{
 //SOCIAL+ FORUM
 app.get('/Social/Forum/forum.html',(req,res)=>{
   console.log('index requested');
+  console.log('forum')
 
+  // TRANSLATION TESTING
+  const {Translate} = require('@google-cloud/translate').v2;
+  require('dotenv').config();
+
+  const CREDENTIALS = JSON.parse(process.env.CREDENTIALS);
+  console.log(CREDENTIALS);
+
+  const translate = new Translate({
+    credentials: CREDENTIALS,
+    projectId: CREDENTIALS.project_id
+});
+
+const detectLanguage = async (text) => {
+
+    try {
+        let response = await translate.detect(text);
+        return response[0].language;
+    } catch (error) {
+        console.log(`Error at detectLanguage --> ${error}`);
+        return 0;
+    }
+}
+
+// detectLanguage('Oggi è lunedì')
+//     .then((res) => {
+//         console.log(res);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
+
+const translateText = async (text, targetLanguage) => {
+
+    try {
+        let [response] = await translate.translate(text, targetLanguage);
+        return response;
+    } catch (error) {
+        console.log(`Error at translateText --> ${error}`);
+        return 0;
+    }
+};
+
+translateText('Translation testing', 'fil')
+     .then((res) => {
+         console.log(res);
+     })
+     .catch((err) => {
+         console.log(err);
+     });
+  
+    /**
+ * TODO(developer): Uncomment the following line before running the sample.
+ */
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("domesticaid");
@@ -190,6 +244,8 @@ app.get('/Social/Forum/forum.html',(req,res)=>{
       //global threads = data;
       res.sendFile('/Social/Forum/forum.html', { root: __dirname });
       res.set('threads', JSON.stringify(data) );
+
+  
     })
     
   });
@@ -199,7 +255,6 @@ app.get('/Social/Forum/forum.html',(req,res)=>{
 //SOCIAL+ ACTIVITIES
 app.get('/Social/Activities/activities_landing.html',(req,res)=>{
   console.log('index requested');
-  
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("domesticaid");
