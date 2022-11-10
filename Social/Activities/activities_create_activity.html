@@ -27,12 +27,24 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 
+
     <!-- For Maps -->
     <script src="../../scripts/maps.js"></script>
 
 
+    <!-- Do NOT Remove for -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
 
     <style>
+          #map {
+          height: 400px;  /* The height is 400 pixels */
+          width: 100%;  /* The width is the width of the web page */
+      }
         #display-image {
             width: 400px;
             height: 225px;
@@ -175,15 +187,13 @@
                         <div class="col">
                             <div>
                                 <label for="location" class="form-label">Location</label>
+                                <button type='button' id="location" class="btn btn-dark" data-toggle="modal" data-target="#myModal" v-on:click="setSearchValue()" onclick="triggerBtnClick()">
+                                    Get Location
+                                </button>
                                 <div>
-
-                                    <!-- <button type="button" id="polyclinics" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-                                        Select Location
-                                    </button> -->
-                                    <button type='button' id="location" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-                                        Select Location
-                                    </button>
-                                    <button type="button" class="btn">Warning</button>
+                                    <input type="text" class="form-control" id="newlocation"
+                                    placeholder="Enter the event address" v-model="newLocation">
+                                
                                 </div>
 
     
@@ -271,100 +281,84 @@
 
 
 
-    <!-- Vertically centered scrollable modal -->
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" id="myModal">
-        <div class="modal-content">
-                  
-            <!-- Modal body -->
-            <div class="modal-body">
-    
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Location</th>
-                    <th>Postal Code</th>
-                    <th>Contact</th>
-                    <th>Operating Hours</th>
-                  </tr>
-                </thead>
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header" style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+          <h1 id="modalHeader" class="modal-title mx-auto" style="color: white"></h1>
+        </div>
         
-                <tbody id="tableBody">
-                  <tr>
-                    <td>Name 1</td>
-                    <td>Location 1</td>
-                    <td>Postal 1</td>
-                    <td>Contact 1</td>
-                    <td>Operating Hours 1</td>
-                  </tr>
-    
-                </tbody>
-     
-              </table>
-    
+        <!-- Modal body -->
+        <div class="modal-body">
+
               
-              
-              <div id="directions">
-                <h3>Directions</h3>
-    
-                <!--The div element for the map -->
-                <div id="map"></div>
-                <script>
-                    // Initialize and add the map
-                    function initMap() {
-                        // default: The location of user
-                        var lat = parseFloat(document.getElementById("lat").value);
-                        var lng = parseFloat(document.getElementById("lng").value);
-                        var loc = {lat: lat, lng: lng};
-                    
-                        var map = new google.maps.Map(
-                            // play with the zoom value to zoom in or out
-                            document.getElementById('map'), {zoom: 14, center: loc});
-                      
-                        var marker = new google.maps.Marker({position: loc, map: map});
-                    }
-                </script>
-                
-                <!--Load the API from the specified URL
-                * The async attribute allows the browser to render the page while the API loads
-                * The key parameter will contain your own API key 
-                * The callback parameter executes the initMap() function
-                -->
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEBeYTGw-Q-PuSz5yF5q2bL5O70yOjOWA
-                &callback=initMap"
-                async defer></script>
-            
-                <div class="jumbotron" >          
-                  <form>
-                      <div class="form-group mt-5">
-                          <!-- fetch user's postal and set in value -->
-                          <input type="text" class="form-control" name="addr" id="addr" placeholder="Enter Postal Code Here..." value="11 Jalan Rindu">
-    
-                          <br>
-    
-                          <button id="getAddress" type="button" onclick="getLoc('addr')" class="btn btn-primary">Get Full Address</button>
-                          <button id="getPostal" type="button" onclick="getLoc('postcode')" class="btn btn-primary">Get Postal Code</button>
           
+          <div id="directions">
+            <h3>Directions</h3>
+
+            <!--The div element for the map -->
+            <div id="map"></div>
+            <script>
+                // Initialize and add the map
+                function initMap() {
+                    // default: The location of user
+                    var lat = parseFloat(document.getElementById("lat").value);
+                    var lng = parseFloat(document.getElementById("lng").value);
+                    var loc = {lat: lat, lng: lng};
                 
-                          <!-- the following set the lat, lng values to put a marker on the map-->
-                          <input type="hidden" id="lat" name="lat"/>
-                          <input type="hidden" id="lng" name="lng"/>
-    
-                      </div>
-                      <p id="display" class="lead text-center mt-4"></p>   
-                  </form>
-                </div>
-              </div>
+                    var map = new google.maps.Map(
+                        // play with the zoom value to zoom in or out
+                        document.getElementById('map'), {zoom: 14, center: loc});
+                  
+                    var marker = new google.maps.Marker({position: loc, map: map});
+                }
+            </script>
             
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
+            <!--Load the API from the specified URL
+            * The async attribute allows the browser to render the page while the API loads
+            * The key parameter will contain your own API key 
+            * The callback parameter executes the initMap() function
+            -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEBeYTGw-Q-PuSz5yF5q2bL5O70yOjOWA
+            &callback=initMap"
+            async defer></script>
+        
+            <div class="jumbotron" >          
+              <form>
+                  <div class="form-group mt-5">
+                      <!-- fetch user's postal and set in value -->
+                      <input type="text" class="form-control" name="addr" id="addr" placeholder="Enter Postal Code Here..." >
+
+                      <br>
+
+                      <button id="getAddress" type="button" onclick="getLoc('addr')" class="btn btn-primary">Get Full Address</button>
+                      <!-- <button id="getPostal" type="button" onclick="getLoc('postcode')" class="btn btn-primary">Get Postal Code</button> -->
+      
             
+                      <!-- the following set the lat, lng values to put a marker on the map-->
+                      <input type="hidden" id="lat" name="lat"/>
+                      <input type="hidden" id="lng" name="lng"/>
+
+                  </div>
+                  <p id="display" class="lead text-center mt-4"></p>   
+              </form>
             </div>
           </div>
-
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+        </div>
+      </div>
     </div>
+  
+  </div>
+
 
 
 
@@ -424,7 +418,7 @@
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
 
 <!-- LINK AXIOS -->
@@ -434,7 +428,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 
-    <script src="/scripts/activities_add_activity.js"></script>
+    <script src="../../scripts/activities_add_activity.js"></script>
 
     <!-- <script>
         const fileSelector = document.getElementById('file-selector');
