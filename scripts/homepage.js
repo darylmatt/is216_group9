@@ -1,5 +1,3 @@
-console.log("I'm in looping.js")
-
 const root = Vue.createApp({
 
     // Data Properties
@@ -9,7 +7,7 @@ const root = Vue.createApp({
             name: "Mariam",
             welcome_msg: "How can we help you today?",
             edit_profile: "EDIT PROFILE",
-            upcoming_activities: "Upcoming activities:",
+            upcoming_activities: "Upcoming Activities:",
             guide_and_resources: "Guides & Resources"
 
         }
