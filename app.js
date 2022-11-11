@@ -18,9 +18,73 @@ app.get('/',(req,res)=>{
     res.sendFile('HomeLandingAbout/homepage.html', { root: __dirname });
 })
 
+
+// HOMEPAGE
 app.get('/HomeLandingAbout/homepage.html',(req,res)=>{
-  console.log('index requested');
-  res.sendFile('/HomeLandingAbout/homepage.html', { root: __dirname });
+  console.log('translating')
+  // TRANSLATION TESTING
+  var translated = ''
+  const {Translate} = require('@google-cloud/translate').v2;
+  require('dotenv').config();
+
+  const CREDENTIALS = JSON.parse(process.env.CREDENTIALS);
+  console.log(CREDENTIALS);
+
+  const translate = new Translate({
+    credentials: CREDENTIALS,
+    projectId: CREDENTIALS.project_id
+});
+
+const detectLanguage = async (text) => {
+
+    try {
+        let response = await translate.detect(text);
+        return response[0].language;
+    } catch (error) {
+        console.log(`Error at detectLanguage --> ${error}`);
+        return 0;
+    }
+}
+
+// detectLanguage('Oggi è lunedì')
+//     .then((res) => {
+//         console.log(res);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
+
+const translateText = async (text, targetLanguage) => {
+
+    try {
+        let [response] = await translate.translate(text, targetLanguage);
+        return response;
+        translated = response;
+    } catch (error) {
+        console.log(`Error at translateText --> ${error}`);
+        return 0;
+    }
+};
+
+translateText("Hello ~ How can we help you today? ~ EDIT PROFILE ~ Upcoming activities ~ Social+ ~ Connect with fellow domestic helpers ~ POST A THREAD ~ Social+'s Forums allow you to post questions and respond to threads by domestic helpers like you who are facing similar issues as you. Connect with them here. ~ Do an activity with a friend ~ Social+ allows you to participate in activities with other domestic helpers with similar interests as you. Join an activity today and make new friends! ~ FIND ACTIVITY ~ Guides ~ I am lost about how to carry out my responsibilities ~ Find out more about what you need to do as a helper, soft skills and how to navigate Singapore and its places. ~ EXPLORE GUIDES ~ I want to know more about my rights ~ Guides and resources are available to help you cope with what any questions you may have about your rights. ~ LET'S BEGIN ~ I need help assimilating into Singapore ~ FIND NOW ~ Wellness ~ Take a breather ~ Feeling anxious or stressed out? Breathing exercises are known to calm people down and make them feel better. Try our breathing exercises today. ~ START BREATHING ~ Words of Wisdoms ~ Sometimes, a few golden words of advice would be plenty. Take a look at some of our mental wellness articles for encouragement and advice. ~ BEGIN READING ~ Journal your thoughts ~ Writing down your thoughts and emotions is a good way of understanding yourself better and how you're feeling. Start Journalling to have a peace of mind. ~ LET'S BEGIN",  'id')
+     .then((translate) => {
+         translated = translate;  
+         console.log('index requested');
+         res.sendFile('/HomeLandingAbout/homepage.html', { root: __dirname });
+         console.log(translated)
+         res.set('translation', translated);
+
+     })
+     .catch((err) => {
+         console.log(err);
+     });
+
+    /*
+    console.log('index requested');
+    res.sendFile('/HomeLandingAbout/homepage.html', { root: __dirname });
+    console.log(translated)
+    res.set('translation', translated);
+    */  
 })
 
 //EDIT PROFILLING
@@ -225,7 +289,7 @@ const translateText = async (text, targetLanguage) => {
     }
 };
 
-translateText('Translation testing', 'fil')
+translateText("Hello ~ How can we help you today? ~ EDIT PROFILE ~ Upcoming activites", 'fil')
      .then((res) => {
          console.log(res);
      })
@@ -253,10 +317,8 @@ translateText('Translation testing', 'fil')
 })
 
 //SOCIAL+ ACTIVITIES
-
 app.get('/Social/Activities/activities_landing.html',(req,res)=>{
   console.log('index requested');
-
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("domesticaid");
@@ -264,12 +326,10 @@ app.get('/Social/Activities/activities_landing.html',(req,res)=>{
     result.then(data => {
       //global threads = data;
       res.sendFile('/Social/Activities/activities_landing.html', { root: __dirname });
-      console.log(JSON.stringify(data));
       res.set('activities', JSON.stringify(data) );
     })
     
   });
-
 })
 
 
