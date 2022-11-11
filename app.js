@@ -59,26 +59,32 @@ const translateText = async (text, targetLanguage) => {
     try {
         let [response] = await translate.translate(text, targetLanguage);
         return response;
+        translated = response;
     } catch (error) {
         console.log(`Error at translateText --> ${error}`);
         return 0;
     }
 };
 
-translateText("Hello ~ How can we help you today? ~ EDIT PROFILE ~ Upcoming activites", 'fil')
+translateText("Hello ~ How can we help you today? ~ EDIT PROFILE ~ Upcoming activities ~ Social+ ~ Guides ~ Wellness",  'id')
      .then((translate) => {
          translated = translate;
-         console.log(translated);
-         
+         console.log('index requested');
+         res.sendFile('/HomeLandingAbout/homepage.html', { root: __dirname });
+         console.log(translated)
+         res.set('translation', translated);
+
      })
      .catch((err) => {
          console.log(err);
      });
 
-  console.log('index requested');
-  res.sendFile('/HomeLandingAbout/homepage.html', { root: __dirname });
-  console.log(translated)
-  res.set('translation', translated);
+    /*
+    console.log('index requested');
+    res.sendFile('/HomeLandingAbout/homepage.html', { root: __dirname });
+    console.log(translated)
+    res.set('translation', translated);
+    */  
 })
 
 //EDIT PROFILLING
