@@ -66,7 +66,7 @@ const translateText = async (text, targetLanguage) => {
     }
 };
 
-translateText("Hello ~ How can we help you today? ~ EDIT PROFILE ~ Upcoming activities ~ Social+ ~ Guides ~ Wellness",  'id')
+translateText("Hello ~ How can we help you today? ~ EDIT PROFILE ~ Upcoming activities ~ Social+ ~ Connect with fellow domestic helpers ~ POST A THREAD ~ Do an activity with a friend ~ Guides ~ Wellness",  'id')
      .then((translate) => {
          translated = translate;
          console.log('index requested');
