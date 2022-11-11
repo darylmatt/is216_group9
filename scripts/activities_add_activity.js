@@ -1,3 +1,7 @@
+function triggerBtnClick(){
+    document.getElementById('getAddress').click()
+}
+
 const root = Vue.createApp({
 
     data() {
@@ -29,6 +33,16 @@ const root = Vue.createApp({
     },
 
     methods: {
+        
+        setSearchValue(){   
+
+            var value = document.getElementById('addr')
+
+            value.setAttribute('value', this.newLocation)
+
+            console.log(value.value)
+
+        },
 
         validate_and_add() {
             //Validate the field
@@ -95,6 +109,8 @@ const root = Vue.createApp({
 
         }
 
+
+
     }
 
 })
@@ -110,3 +126,4 @@ root.mount("#root")
 //     });
 //     reader.readAsDataURL(this.files[0]);
 // });
+

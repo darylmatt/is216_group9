@@ -1,4 +1,3 @@
-console.log("I'm in looping.js")
 
 const root = Vue.createApp({
 
@@ -13,11 +12,7 @@ const root = Vue.createApp({
 
             selectedArray : [],
 
-            name : '',
-            location : '',
-            postal : '',
-            contact : '',
-            opening_hours : '',
+            selectedLocation : '',
             
         }
     },
@@ -42,6 +37,13 @@ const root = Vue.createApp({
 
     // Methods
     methods: {
+        setSearchValue(){
+
+            console.log('hello')
+            // var value = document.getElementById('addr')
+            // value.setAttribute('value', name)
+        
+        },
 
         fetchSelectedArray(category){
 
@@ -59,30 +61,40 @@ const root = Vue.createApp({
             var tableBodyDiv = document.getElementById('tableBody')
             var tableStr = '';
             console.log(tableBodyDiv)
-
+  
 
             for(var facility of this.selectedArray) {
+                
                 var name = facility.facility_name
                 var location = facility.address
                 var postal = facility.postal
                 var contact = facility.phone
                 var hours = facility.hours
 
-                console.log(name)
                 tableStr += `<tr>
                     <td>${name}</td>
                     <td>${location}</td>
                     <td>${postal}</td>
                     <td>${contact}</td>
-                    <td>${hours}</td>
+                    <td>
+                        <button value="${name}" class="btn btn-sm text-light" style='background-color:#9a616d;'>Get Directions</button>
+                    </td>
                 </tr>`      
+
+         
             }
 
-            tableBodyDiv.innerHTML = tableStr;
+            tableBodyDiv.innerHTML  = tableStr;   
+        },
+       
+        // setSearchValue(name){
 
+        //     console.log('hello')
+        //     var value = document.getElementById('addr')
+        //     value.setAttribute('value', name)
 
-    
-        } 
+        // }
+
 
     }
 })
@@ -91,9 +103,12 @@ root.mount("#root")
 
 
 
+
+
 function fillTitle(id){
     var modalTitle = document.getElementById('modalHeader')
     var text = id.toUpperCase()
     modalTitle.innerText = text;
 }
+
 
