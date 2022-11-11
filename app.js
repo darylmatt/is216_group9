@@ -18,9 +18,73 @@ app.get('/',(req,res)=>{
     res.sendFile('HomeLandingAbout/homepage.html', { root: __dirname });
 })
 
+
+// HOMEPAGE
 app.get('/HomeLandingAbout/homepage.html',(req,res)=>{
-  console.log('index requested');
-  res.sendFile('/HomeLandingAbout/homepage.html', { root: __dirname });
+  console.log('translating')
+  // TRANSLATION TESTING
+  var translated = ''
+  const {Translate} = require('@google-cloud/translate').v2;
+  require('dotenv').config();
+
+  const CREDENTIALS = JSON.parse(process.env.CREDENTIALS);
+  console.log(CREDENTIALS);
+
+  const translate = new Translate({
+    credentials: CREDENTIALS,
+    projectId: CREDENTIALS.project_id
+});
+
+const detectLanguage = async (text) => {
+
+    try {
+        let response = await translate.detect(text);
+        return response[0].language;
+    } catch (error) {
+        console.log(`Error at detectLanguage --> ${error}`);
+        return 0;
+    }
+}
+
+// detectLanguage('Oggi è lunedì')
+//     .then((res) => {
+//         console.log(res);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
+
+const translateText = async (text, targetLanguage) => {
+
+    try {
+        let [response] = await translate.translate(text, targetLanguage);
+        return response;
+        translated = response;
+    } catch (error) {
+        console.log(`Error at translateText --> ${error}`);
+        return 0;
+    }
+};
+
+translateText("Hello ~ How can we help you today? ~ EDIT PROFILE ~ Upcoming activities ~ Social+ ~ Connect with fellow domestic helpers ~ POST A THREAD ~ Do an activity with a friend ~ Guides ~ Wellness",  'id')
+     .then((translate) => {
+         translated = translate;
+         console.log('index requested');
+         res.sendFile('/HomeLandingAbout/homepage.html', { root: __dirname });
+         console.log(translated)
+         res.set('translation', translated);
+
+     })
+     .catch((err) => {
+         console.log(err);
+     });
+
+    /*
+    console.log('index requested');
+    res.sendFile('/HomeLandingAbout/homepage.html', { root: __dirname });
+    console.log(translated)
+    res.set('translation', translated);
+    */  
 })
 
 //EDIT PROFILLING
@@ -225,7 +289,7 @@ const translateText = async (text, targetLanguage) => {
     }
 };
 
-translateText('Translation testing', 'fil')
+translateText("Hello ~ How can we help you today? ~ EDIT PROFILE ~ Upcoming activites", 'fil')
      .then((res) => {
          console.log(res);
      })
