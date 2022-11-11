@@ -18,8 +18,6 @@ app.get('/',(req,res)=>{
     res.sendFile('HomeLandingAbout/homepage.html', { root: __dirname });
 })
 
-
-// HOMEPAGE
 app.get('/HomeLandingAbout/homepage.html',(req,res)=>{
   console.log('translating')
   // TRANSLATION TESTING
@@ -66,9 +64,9 @@ const translateText = async (text, targetLanguage) => {
     }
 };
 
-translateText("Hello ~ How can we help you today? ~ EDIT PROFILE ~ Upcoming activities ~ Social+ ~ Connect with fellow domestic helpers ~ POST A THREAD ~ Social+'s Forums allow you to post questions and respond to threads by domestic helpers like you who are facing similar issues as you. Connect with them here. ~ Do an activity with a friend ~ Social+ allows you to participate in activities with other domestic helpers with similar interests as you. Join an activity today and make new friends! ~ FIND ACTIVITY ~ Guides ~ I am lost about how to carry out my responsibilities ~ Find out more about what you need to do as a helper, soft skills and how to navigate Singapore and its places. ~ EXPLORE GUIDES ~ I want to know more about my rights ~ Guides and resources are available to help you cope with what any questions you may have about your rights. ~ LET'S BEGIN ~ I need help assimilating into Singapore ~ FIND NOW ~ Wellness ~ Take a breather ~ Feeling anxious or stressed out? Breathing exercises are known to calm people down and make them feel better. Try our breathing exercises today. ~ START BREATHING ~ Words of Wisdoms ~ Sometimes, a few golden words of advice would be plenty. Take a look at some of our mental wellness articles for encouragement and advice. ~ BEGIN READING ~ Journal your thoughts ~ Writing down your thoughts and emotions is a good way of understanding yourself better and how you're feeling. Start Journalling to have a peace of mind. ~ LET'S BEGIN",  'id')
+translateText("Hello ~ How can we help you today? ~ EDIT PROFILE ~ Upcoming activities ~ Social+ ~ Connect with fellow domestic helpers ~ POST A THREAD ~ Do an activity with a friend ~ Guides ~ Wellness",  'id')
      .then((translate) => {
-         translated = translate;  
+         translated = translate;
          console.log('index requested');
          res.sendFile('/HomeLandingAbout/homepage.html', { root: __dirname });
          console.log(translated)
@@ -289,7 +287,7 @@ const translateText = async (text, targetLanguage) => {
     }
 };
 
-translateText("Hello ~ How can we help you today? ~ EDIT PROFILE ~ Upcoming activites", 'fil')
+translateText('Translation testing', 'fil')
      .then((res) => {
          console.log(res);
      })
@@ -317,8 +315,10 @@ translateText("Hello ~ How can we help you today? ~ EDIT PROFILE ~ Upcoming acti
 })
 
 //SOCIAL+ ACTIVITIES
+
 app.get('/Social/Activities/activities_landing.html',(req,res)=>{
   console.log('index requested');
+
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("domesticaid");
@@ -326,10 +326,12 @@ app.get('/Social/Activities/activities_landing.html',(req,res)=>{
     result.then(data => {
       //global threads = data;
       res.sendFile('/Social/Activities/activities_landing.html', { root: __dirname });
+      console.log(JSON.stringify(data));
       res.set('activities', JSON.stringify(data) );
     })
     
   });
+
 })
 
 
