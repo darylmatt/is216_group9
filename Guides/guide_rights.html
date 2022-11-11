@@ -33,6 +33,11 @@
     <!-- lottie -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
 
@@ -135,33 +140,28 @@
     
     <hr>
 
-
-    <div class="row mt-4 mx-auto g-3 row-cols-sm-2" id="guideCards">
-
+   
+    <div class="row mt-4 mx-auto g-3 row-cols-sm-2">
       <div class="col">
-        <div class="card" id="1">
-          <!-- guide image here -->
+        <div class="card">
           <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
-            <!-- guide title here -->
-            <h5 class="card-title">Guide 1</h5>
-            <!-- guide description here -->
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <h5 class="card-title">{{filteredGuides[0].guide_title}}</h5>
+            <p class="card-text">{{filteredGuides[0].guide_card_description}}</p>
+            <button v-on:click="fillContent(2)" id="{{filteredGuides[0].guide_id}}" type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
         </div>
       </div>
 
-
       <div class="col">
-        <div class="card" id="2">
+        <div class="card">
           <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
-            <h5 class="card-title">Guide 2</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <h5 class="card-title">{{filteredGuides[1].guide_title}}</h5>
+            <p class="card-text">{{filteredGuides[1].guide_card_description}}</p>
+            <button v-on:click="fillContent(3)" id="{{filteredGuides[1].guide_id}}" type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -171,14 +171,15 @@
 
     </div>
 
-    <div class="row mt-4 g-3 mx-auto row-cols-sm-2">
+    <div class="row mt-4 g-3 mx-auto row-cols-sm-2" id="guideCards1">
+      
       <div class="col">
-        <div class="card" id="4">
+        <div class="card">
           <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
-            <h5 class="card-title">Guide 4</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <h5 class="card-title">{{filteredGuides[2].guide_title}}</h5>
+            <p class="card-text">{{filteredGuides[2].guide_card_description}}</p>
+            <button v-on:click="fillContent(4)" id="{{filteredGuides[2].guide_id}}" type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -186,12 +187,12 @@
       </div>
 
       <div class="col">
-        <div class="card" id="3">
+        <div class="card">
           <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
-            <h5 class="card-title">Guide 3</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <h5 class="card-title">{{filteredGuides[3].guide_title}}</h5>
+            <p class="card-text">{{filteredGuides[3].guide_card_description}}</p>
+            <button v-on:click="fillContent(5)" id="{{filteredGuides[3].guide_id}}" type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -201,24 +202,19 @@
     </div>
   </div>
 
-  <!-- The Modal -->
   <div class="modal" id="myModal">
-    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
       <div class="modal-content">
       
         <!-- Modal Header -->
         <div class="modal-header" style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
-          <h1 class="modal-title mx-auto" style="color: white">Guide 1</h1>
+          <h1 id="modalHeader" class="modal-title mx-auto" style="color: white"></h1>
         </div>
         
         <!-- Modal body -->
-        <div class="modal-body">
-          <h3>Guide Opener</h3>
-          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="modal-body p-5" id="modalContent">
+          
+        </div>
         
         <!-- Modal footer -->
         <div class="modal-footer">
@@ -228,8 +224,6 @@
         </div>
       </div>
     </div>
-  
-  </div>
 
 <!-- Footer -->
 <div class="container">

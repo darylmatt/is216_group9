@@ -8,9 +8,9 @@ const root = Vue.createApp({
             guides: [],
 
             filteredGuides : [],
-            
-         
-            
+
+
+                      
         }
     },
 
@@ -23,7 +23,7 @@ const root = Vue.createApp({
 
             var guides = this.guides
 
-            // create subCategories array
+            // create filteredGuides array
             for (let index = 0; index < guides.length; index++) {
                 if(guides[index].guide_category == 'Rights'){
                     this.filteredGuides.push(guides[index])
@@ -38,7 +38,21 @@ const root = Vue.createApp({
     // Methods
     methods: {
 
+        fillContent(id){
+            
+            var modalContent = document.getElementById('modalContent')
+            var modalHeader = document.getElementById('modalHeader')
 
+            console.log(modalContent)
+            for (let index = 0; index < this.filteredGuides.length; index++) {
+         
+                if(this.filteredGuides[index].guide_id == id){
+                    console.log(this.filteredGuides[index].guide_content)
+                    modalContent.innerHTML =  "<h3>" + this.filteredGuides[index].guide_content + "</h3>"
+                    modalHeader.innerText = this.filteredGuides[index].guide_title
+                }
+            }
+        }
 
 
 
@@ -46,6 +60,7 @@ const root = Vue.createApp({
 })
 
 root.mount("#root")
+
 
 
 

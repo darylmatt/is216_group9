@@ -253,8 +253,10 @@ translateText('Translation testing', 'fil')
 })
 
 //SOCIAL+ ACTIVITIES
+
 app.get('/Social/Activities/activities_landing.html',(req,res)=>{
   console.log('index requested');
+
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("domesticaid");
@@ -262,10 +264,12 @@ app.get('/Social/Activities/activities_landing.html',(req,res)=>{
     result.then(data => {
       //global threads = data;
       res.sendFile('/Social/Activities/activities_landing.html', { root: __dirname });
+      console.log(JSON.stringify(data));
       res.set('activities', JSON.stringify(data) );
     })
     
   });
+
 })
 
 
