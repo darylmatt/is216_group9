@@ -37,13 +37,7 @@ const root = Vue.createApp({
 
     // Methods
     methods: {
-        setSearchValue(){
 
-            console.log('hello')
-            // var value = document.getElementById('addr')
-            // value.setAttribute('value', name)
-        
-        },
 
         fetchSelectedArray(category){
 
@@ -58,18 +52,18 @@ const root = Vue.createApp({
                 }
             }
 
+            
             var tableBodyDiv = document.getElementById('tableBody')
             var tableStr = '';
-            console.log(tableBodyDiv)
+          
   
 
-            for(var facility of this.selectedArray) {
+            for(let index=0; index < this.selectedArray.length ; index++) {
                 
-                var name = facility.facility_name
-                var location = facility.address
-                var postal = facility.postal
-                var contact = facility.phone
-                var hours = facility.hours
+                var name = this.selectedArray[index].facility_name
+                var location = this.selectedArray[index].address
+                var postal = this.selectedArray[index].postal
+                var contact = this.selectedArray[index].phone
 
                 tableStr += `<tr>
                     <td>${name}</td>
@@ -77,7 +71,7 @@ const root = Vue.createApp({
                     <td>${postal}</td>
                     <td>${contact}</td>
                     <td>
-                        <button value="${name}" class="btn btn-sm text-light" style='background-color:#9a616d;'>Get Directions</button>
+                        <button id="${name}" onclick='findLocation(this.id)' class="btn btn-sm text-light" style='background-color:#9a616d;'>Get Directions</button>
                     </td>
                 </tr>`      
 
@@ -86,29 +80,28 @@ const root = Vue.createApp({
 
             tableBodyDiv.innerHTML  = tableStr;   
         },
-       
-        // setSearchValue(name){
 
+        // test(){
         //     console.log('hello')
-        //     var value = document.getElementById('addr')
-        //     value.setAttribute('value', name)
-
         // }
+       
+
 
 
     }
 })
 
+
 root.mount("#root")
 
 
 
-
-
 function fillTitle(id){
+
     var modalTitle = document.getElementById('modalHeader')
     var text = id.toUpperCase()
     modalTitle.innerText = text;
+
 }
 
 
