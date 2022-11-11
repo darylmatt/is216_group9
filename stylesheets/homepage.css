@@ -102,9 +102,8 @@
 
 .button {
     border-radius: 4px;
-    /* background-color: #f4511e; */
+    background-color: white;
     border: none;
-    /* color: #FFFFFF; */
     text-align: center;
     font-size: 40px;
     padding: 20px;
@@ -119,6 +118,7 @@
     display: inline-block;
     position: relative;
     transition: 0.5s;
+    color: black;
   }
   
   .button span:after {
@@ -135,6 +135,6 @@
   }
   
   .button:hover span:after {
-    opacity: 1;
+    opacity: 1;                      
     right: 0;
   }
