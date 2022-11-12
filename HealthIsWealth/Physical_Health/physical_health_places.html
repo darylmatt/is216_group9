@@ -148,16 +148,6 @@
         </div>
     </div>
 
-    <div class="row m-3">
-      <label for="Search" class="form-label">Search for symptoms or keywords related to what you're experiencing:</label>
-      <div class="input-group md-form form-sm form-2 pl-0">
-        <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search Keywords..." aria-label="Search">
-        <div class="input-group-append">
-          <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
-        </div>
-      </div>
-    </div>
-
 
     <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3">
       <div class="col-xl-4 col-sm-12">
@@ -167,7 +157,7 @@
             <h5 class="card-title">Polyclinics</h5>
             <p class="card-text">Polyclinics are healthcare centres that provide primary care such as medical treatment, preventive healthcare, and health education, at a subsidised cost</p>
             <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('polyclinics')" type="button" id="polyclinics" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
+              Find Locations
             </button>
           </div>
         </div>
@@ -181,7 +171,7 @@
             <h5 class="card-title">Hospitals</h5>
             <p class="card-text">Hospitals provides affordable specialist care for patients, where you can go to when you are facing any medical conditions that cannot be treated normally at general clinics. </p>           
             <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('hospitals')" type="button" id="hospitals" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
+              Find Locations
             </button>
           </div>
         </div>
@@ -194,7 +184,7 @@
             <h5 class="card-title">General Practitioners</h5>
             <p class="card-text">General practitioners are doctors who provide nonsurgical medical care. General practitioners evaluate patients through exams and tests and diagnose conditions such as diseases or injuries.</p>
             <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('gp')" type="button" id="general practitioners" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
+              Find Locations
             </button>
           </div>
         </div>
@@ -214,7 +204,7 @@
             <h5 class="card-title">Dental</h5>
             <p class="card-text">A Dentist is responsible for performing oral surgery and routine cleanings on patients. They repair and remove teeth, diagnose conditions and tell patients about how to best care for their teeth and gums. </p>            
             <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('dental')" type="button" id="dentists" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
+              Find Locations
             </button>
           </div>
         </div>
@@ -227,7 +217,7 @@
             <h5 class="card-title">Dermatologists</h5>
             <p class="card-text">A dermatologist specializes in conditions that affect the skin, hair, and nails. Whether it's rashes or wrinkles, no one understands your skin, hair, and nails better than a board-certified dermatologist. </p>            
             <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('derma')" type="button" id="dermatologists" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
+              Find Locations
             </button>
           </div>
         </div>
@@ -240,7 +230,7 @@
             <h5 class="card-title">Pharmacies</h5>
             <p class="card-text">Places like Watsons, Unity or Guardian. If you know what medicine to get for your symptoms such as paracetemol, visit these places to get it over the counter </p>
             <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('pharmacy')" id="pharmacies" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
+              Find Locations
             </button>
           </div>
         </div>

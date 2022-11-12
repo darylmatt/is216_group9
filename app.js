@@ -233,6 +233,25 @@ app.get('/Guides/guide_rights.html',(req,res)=>{
 
 })
 
+// GUIDE RIGHTS
+app.get('/Guides/guide_navigation.html',(req,res)=>{
+  console.log('index requested');
+
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("domesticaid");
+    const result = dbo.collection("guides2").find().toArray();
+    result.then(data => {
+      //global threads = data;
+      res.sendFile('/Guides/guide_navigation.html', { root: __dirname });
+      console.log(JSON.stringify(data));
+      res.set('guides', JSON.stringify(data) );
+    })
+    
+  });
+
+})
+
 
 
 

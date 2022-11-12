@@ -1,29 +1,70 @@
-console.log("I'm in looping.js")
-
 const root = Vue.createApp({
 
     // Data Properties
     data() {
         return { 
-            guides: "",
+
+            // ALL facilities arrray of objects
+            guides: [],
+
+            filteredGuides : [],
+            
+         
+            
         }
     },
 
     created(){
-        axios.get("http://localhost:3000/Guides/guide_care.html").then( response => { 
+        axios.get("http://localhost:3000/Guides/guide_care.html")
+        .then( response => { 
+
+            // fetch data
             this.guides = JSON.parse(response.headers.guides);
+
+            var guides = this.guides
+
+            // create subCategories array
+            for (let index = 0; index < guides.length; index++) {
+                if(guides[index].guide_category == 'care'){
+                    this.filteredGuides.push(guides[index])
+                }
+    
+            }
+            
         }
-         );
+        );
     }, 
+
     // Methods
     methods: {
 
-        // YOUR CODE GOES HERE IF YOU NEED ANY
-        
-        
+
+
+        setContent(guideId){
+
+            var contentTitle = document.getElementById('modalTitle')
+            var contentDiv = document.getElementById('modalContent')
+            
+
+            for(let index = 0; index < this.filteredGuides.length; index++){
+                if(this.filteredGuides[index].guide_id == guideId){
+
+                    var content = this.filteredGuides[index].guide_content.split('xyzxyz').join('\n\n')
+                    contentDiv.innerText = content
+
+                    var title = this.filteredGuides[index].guide_title
+                    console.log(title)
+                    contentTitle.innerText = title
+
+                }
+            }
+        }
+
 
     }
-    // Other stuff
 })
 
 root.mount("#root")
+
+
+

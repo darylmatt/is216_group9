@@ -137,14 +137,14 @@
 
   <!-- Guide Starts Here -->
   <div class="container">
-    <p>{{facilities}}</p>
+    <!-- <p>{{facilities}}</p>
     <p>{{subCategories}}</p>
-    <p>{{selectedArray}}</p>
+    <p>{{selectedArray}}</p> -->
 
 
     <div class="row my-5">
         <div class="col fw-bold my-auto text-center" style="font-size: 60px; color:#9a616d;">
-            Physical Healthcare Facilities
+            Mental Healthcare Facilities
         </div>
     </div>
 
@@ -157,7 +157,7 @@
             <h5 class="card-title">Psychiatrist</h5>
             <p class="card-text">Polyclinics are healthcare centres that provide primary care such as medical treatment, preventive healthcare, and health education, at a subsidised cost</p>
             <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('psychiatric')" type="button" id="psychiatrist" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
+              Find Locations
             </button>
           </div>
         </div>
@@ -170,8 +170,8 @@
           <div class="card-body">
             <h5 class="card-title">Counsellor</h5>
             <p class="card-text">Hospitals provides affordable specialist care for patients, where you can go to when you are facing any medical conditions that cannot be treated normally at general clinics. </p>           
-            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('counsellor')" type="button" id="counsellors" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('counselling')" type="button" id="counsellors" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+              Find Locations
             </button>
           </div>
         </div>
@@ -190,7 +190,7 @@
             <h5 class="card-title">Social Work</h5>
             <p class="card-text">General practitioners are doctors who provide nonsurgical medical care. General practitioners evaluate patients through exams and tests and diagnose conditions such as diseases or injuries.</p>
             <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('social')" type="button" id="social work" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
+              Find Locations
             </button>
           </div>
         </div>
@@ -203,7 +203,7 @@
             <h5 class="card-title">Mental Hospitals</h5>
             <p class="card-text">A Dentist is responsible for performing oral surgery and routine cleanings on patients. They repair and remove teeth, diagnose conditions and tell patients about how to best care for their teeth and gums. </p>            
             <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('imh')" type="button" id="mental hospitals" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
+              Find Locations
             </button>
           </div>
         </div>

@@ -1,141 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Care</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caregiving</title>
 
-  <link rel="stylesheet" href="../stylesheets/guides.css">
+    <link rel="stylesheet" href="../stylesheets/guides.css">
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-  <!-- MDB -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+    rel="stylesheet"
+    />
 
-  <!-- Vue.js 3 CDN -->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-  <!-- lottie -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- LINK VUEJS -->
+    <script type="module" src="../scripts/guides_care.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
+<body id="root">
 
-<body>
 
+<!-- Navbar -->
+<nav class="navbar" aria-label="navbar">
+  <div class="container-fluid">
 
-  <!-- Navbar -->
-  <nav class="navbar" aria-label="navbar">
-    <div class="container-fluid">
+    <a class="navbar-brand" href="../HomeLandingAbout/homepage.html">
+      <img src="../img/logo4.png" alt="" id="logo">
+      
+    </a>
 
-      <a class="navbar-brand" href="../HomeLandingAbout/homepage.html">
-        <img src="../img/logo4.png" alt="" id="logo">
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
-        aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
       </button>
 
       <!-- <button type="button" class="btn btn-outline-danger" id="sos_button">Large button</button> -->
 
       <div class="collapse navbar-collapse" id="navbar">
-        <ul class="navbar-nav me-auto mb-2">
+          <ul class="navbar-nav me-auto mb-2">
+            
+            <li class="nav-item">
+              <a class="nav-link active text-secondary" href="../HomeLandingAbout/homepage.html"><span>Home</span></a>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link active text-secondary" href="../HomeLandingAbout/homepage.html"><span>Home</span></a>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-secondary" href="../Guides/guides_categories.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Guides & Resources</span></a>
+                  <ul class="dropdown-menu"> 
+                      <li><a class="dropdown-item" href="../Guides/guide_care.html">Care</a></li>
+                      <li><a class="dropdown-item" href="../Guides/guide_rights.html">Rights</a></li>
+                      <li><a class="dropdown-item" href="../Guides/guide_navigation.html">Navigation</a></li>
+                  </ul>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-secondary" href="../Guides/guides_categories.html"
-              data-bs-toggle="dropdown" aria-expanded="false"><span>Guides & Resources</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../Guides/guide_care.html">Care</a></li>
-              <li><a class="dropdown-item" href="../Guides/guide_rights.html">Rights</a></li>
-              <li><a class="dropdown-item" href="../Guides/guide_navigation.html">Navigation</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-secondary" href="../HealthIsWealth/health_is_wealth.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Health is Wealth</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../HealthIsWealth/Mental_Health/breathing.html">Breathing Exercise</a></li>
+                <li><a class="dropdown-item" href="../HealthIsWealth/Mental_Health/journalling.html">Journalling</a></li>
+                <li><a class="dropdown-item" href="../HealthIsWealth/Mental_Health/mental_guides.html">Mental Wellness Articles</a></li>
+                <li><a class="dropdown-item" href="../HealthIsWealth/Physical_Health/physical_health_places.html">Physical Healthcare</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-secondary" href="../HealthIsWealth/health_is_wealth.html"
-              data-bs-toggle="dropdown" aria-expanded="false"><span>Health is Wealth</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../HealthIsWealth/Mental_Health/breathing.html">Breathing Exercise</a>
-              </li>
-              <li><a class="dropdown-item" href="../HealthIsWealth/Mental_Health/journalling.html">Journalling</a></li>
-              <li><a class="dropdown-item" href="../HealthIsWealth/Mental_Health/mental_guides.html">Mental Wellness
-                  Articles</a></li>
-              <li><a class="dropdown-item" href="../HealthIsWealth/Physical_Health/physical_health_places.html">Physical
-                  Healthcare</a></li>
-            </ul>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-secondary" href="../Social/social_plus.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Social+</span></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../Social/Forum/forum.html">Forum</a></li>
+                <li><a class="dropdown-item" href="../Social/Activities/activities_landing.html">Activity Page</a></li>
+              </ul>
+            </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-secondary" href="../Social/social_plus.html"
-              data-bs-toggle="dropdown" aria-expanded="false"><span>Social+</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="../Social/Forum/forum.html">Forum</a></li>
-              <li><a class="dropdown-item" href="../Social/Activities/activities_landing.html">Activity Page</a></li>
-            </ul>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link active text-secondary" href="../Registration&Profiling/edit_profiling.html"><span>Profile & Settings</span></a>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link active text-secondary" href="../Registration&Profiling/edit_profiling.html"><span>Profile
-                & Settings</span></a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link active text-primary fs-underline" href="../HomeLandingAbout/about.html"><span><u>Log Out</u></span></a>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link active text-primary fs-underline" href="../HomeLandingAbout/about.html"><span><u>Log
-                  Out</u></span></a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                  <button type="button" class="btn w-100 fs-3" id="sos_button">SEND SOS</button>
+              </a>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-              <button type="button" class="btn w-100 fs-3" id="sos_button">SEND SOS</button>
-            </a>
-          </li>
-
-        </ul>
-      </div>
-
-    </div>
-  </nav>
-
+          </ul>
+        </div>
+    
+  </div>
+</nav>
+  
 
   <!-- Guide Starts Here -->
+  <div class="container"> 
 
+    <!-- <h1>{{filteredGuides}}</h1> -->
 
-    <!-- <div class="row m-3">
-      <div class="input-group md-form form-sm form-2 pl-0">
-        <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
-              aria-hidden="true"></i></span>
-        </div>
-      </div>
-    </div> -->
-
-    <div class="container-fluid">
-      <div class="row" style="background-color:rgb(255, 237, 237)">
-        <div class="col m-auto">
-          <h1 style="font-size:70px; padding-left: 20px;" class="mx-3">Guides - Caregiving</h1>
-        </div>
-        <div class="col m-auto">
-          <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_JqnGN4woT2.json" background="transparent"
-            class="mx-auto" speed="1" style="width: 300px; height: 500px" hover loop autoplay></lottie-player>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- <div>
+    <div>
       <h1 class="text-center display-1 my-5">Guides: Caregiving</h1>
       <div class="row">
         <div class="col" style="margin-top: 100px; font-size: 20px;">
@@ -144,7 +129,7 @@
         <div class="col">
           <lottie-player
           class="mx-auto"
-          src="https://assets5.lottiefiles.com/packages/lf20_JqnGN4woT2.json"
+          src="https://assets4.lottiefiles.com/packages/lf20_okxbrixm.json"
           background="transparent"
           speed="1"
           style="width: 400px; height: 400px"
@@ -153,18 +138,24 @@
           ></lottie-player>   
         </div>
       </div>
-    </div> -->
-    <div class="container" id="root">
+  
+    </div>
+    
+    <hr>
 
-    <div class="row mt-4 mx-auto g-3 row-cols-sm-2">
+
+    <div class="row mt-4 mx-auto g-3 row-cols-sm-2" id="guideCards">
+
       <div class="col">
-        <div class="card" id="1">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top"
-            alt="Fissure in Sandstone" />
+        <div class="card h-100">
+          <!-- guide image here -->
+          <img src="../img/infantcare.webp" class="card-img-top"/>
           <div class="card-body">
-            <h5 class="card-title">Guide 1</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <!-- guide title here -->
+            <h5 class="card-title">{{filteredGuides[0].guide_title}}</h5>
+            <!-- guide description here -->
+            <p class="card-text">{{filteredGuides[0].guide_card_description}}</p>
+            <button type="button" v-on:click="setContent(5)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -173,14 +164,14 @@
 
 
       <div class="col">
-        <div class="card" id="2">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top"
-            alt="Fissure in Sandstone" />
+        <div class="card h-100">
+          <img src="../img/eldercare.webp" style="height:535px;"  class="card-img-top"/>
           <div class="card-body">
-            <h5 class="card-title">Guide 2</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+              <!-- guide title here -->
+              <h5 class="card-title">{{filteredGuides[1].guide_title}}</h5>
+              <!-- guide description here -->
+              <p class="card-text">{{filteredGuides[1].guide_card_description}}</p>
+            <button type="button" v-on:click="setContent(6)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -192,14 +183,14 @@
 
     <div class="row mt-4 g-3 mx-auto row-cols-sm-2">
       <div class="col">
-        <div class="card" id="4">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top"
-            alt="Fissure in Sandstone" />
+        <div class="card h-100">
+          <img src="../img/petcare.webp" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
-            <h5 class="card-title">Guide 4</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+               <!-- guide title here -->
+               <h5 class="card-title">{{filteredGuides[2].guide_title}}</h5>
+               <!-- guide description here -->
+               <p class="card-text">{{filteredGuides[2].guide_card_description}}</p>
+            <button type="button" v-on:click="setContent(7)" class="btn btn-dark mt-4" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -207,14 +198,14 @@
       </div>
 
       <div class="col">
-        <div class="card" id="3">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top"
-            alt="Fissure in Sandstone" />
+        <div class="card h-100">
+          <img src="../img/cooking.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
-            <h5 class="card-title">Guide 3</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+             <!-- guide title here -->
+             <h5 class="card-title">{{filteredGuides[3].guide_title}}</h5>
+             <!-- guide description here -->
+             <p class="card-text">{{filteredGuides[3].guide_card_description}}</p>
+            <button type="button" v-on:click="setContent(8)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -228,72 +219,48 @@
   <div class="modal" id="myModal">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <div class="modal-content">
-
+      
         <!-- Modal Header -->
-        <div class="modal-header"
-          style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
-          <h1 class="modal-title mx-auto" style="color: white">Guide 1</h1>
+        <div class="modal-header" style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+          <h1 class="modal-title mx-auto" style="color: white" id="modalTitle"></h1>
         </div>
-
+        
         <!-- Modal body -->
-        <div class="modal-body">
-          <h3>Guide Opener</h3>
-          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="modal-body" id="modalContent">
 
-          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-          </div>
-
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
         </div>
       </div>
     </div>
-
+  
   </div>
 
-  <!-- Footer -->
-    <div id="footer">
-      <footer-template></footer-template>
-    </div>
-
+  <div id="footer">
+    <footer-template></footer-template>
+  </div>
+  <script src="../scripts/nav_foot.js"></script>  
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-    crossorigin="anonymous"></script>
-  <script src="../scripts/nav_foot.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="../scripts/guides_care.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   <script src="../scripts/sos.js"></script>
+    
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script> -->
 
+  <!-- LINK AXIOS -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script> -->
-  </body>
-
+</body>
 </html>
+
+
+
+
