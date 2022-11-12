@@ -39,7 +39,7 @@ const root = Vue.createApp({
     methods: {
 
         setContent(guideId){
-
+            var contentTitle = document.getElementById('modalTitle')
             var contentDiv = document.getElementById('modalContent')
             
 
@@ -47,8 +47,11 @@ const root = Vue.createApp({
                 if(this.filteredGuides[index].guide_id == guideId){
                     // contentDiv.innerHTML = this.filteredGuides[index].guide_content
 
-                    var content = this.filteredGuides[index].guide_content.split('\n\n').join('\n\n\n')
+                    var content = this.filteredGuides[index].guide_content.split('\n\n').join('\n\n\n\n')
                     contentDiv.innerText = content
+
+                    var title = this.filteredGuides[index].guide_title
+                    contentTitle.innerText = title
 
                 }
             }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -171,7 +171,7 @@
       <h1 class="text-center display-1 my-5">Guides: Rights</h1>
       <div class="row">
         <div class="col" style="margin-top: 100px; font-size: 20px;">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, suscipit reiciendis veniam labore voluptate quaerat, a, eveniet facere harum sapiente sunt quis totam rem. Expedita atque doloremque minima animi libero!
+          There are many employment laws regarding the employment of foreign domestic workers like yourself. All of this can be quite confusing to understand, so we hope to equip you with the knowledge of the laws and the rights that protect you.
         </div>
         <div class="col">
           <lottie-player
@@ -194,9 +194,9 @@
     <div class="row mt-4 mx-auto g-3 row-cols-sm-2" id="guideCards">
 
       <div class="col">
-        <div class="card">
-          <!-- guide image here -->
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top"/>
+        <div class="card h-60">
+          <!-- guide image 6ere -->
+          <img src="../img/restday.jpg" style="height:550px;" class="card-img-top"/>
           <div class="card-body">
             <!-- guide title here -->
             <h5 class="card-title">{{filteredGuides[0].guide_title}}</h5>
@@ -211,8 +211,8 @@
 
 
       <div class="col">
-        <div class="card">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+        <div class="card h-60">
+          <img src="../img/salary.webp" style="height:550px;" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
               <!-- guide title here -->
               <h5 class="card-title">{{filteredGuides[1].guide_title}}</h5>
@@ -231,7 +231,7 @@
     <div class="row mt-4 g-3 mx-auto row-cols-sm-2">
       <div class="col">
         <div class="card h-100">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+          <img src="../img/travel.webp" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
                <!-- guide title here -->
                <h5 class="card-title">{{filteredGuides[2].guide_title}}</h5>
@@ -245,14 +245,14 @@
       </div>
 
       <div class="col">
-        <div class="card">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+        <div class="card h-100">
+          <img src="../img/dispute.webp" style="height:400px;" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
              <!-- guide title here -->
              <h5 class="card-title">{{filteredGuides[3].guide_title}}</h5>
              <!-- guide description here -->
              <p class="card-text">{{filteredGuides[3].guide_card_description}}</p>
-            <button type="button" v-on:click="setContent(4)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button  style='margin-top: 20px;' type="button" v-on:click="setContent(4)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
