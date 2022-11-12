@@ -19,28 +19,20 @@
     border-radius: 20px;
 }
 
-/* .nav-link{
-    color: gray;
-} */
 
 #logo{
     width: 30%;
 }
 
-#container_div{
-margin: 0;
-}
 
 #header-text{
     font-size: 60px;
     font-weight: normal;
 }
 
-#guide_button, #social_button{
-    color: white;
-    background-color: black;
-    text-align: center;
-    border-radius: 20px;
+#header-subtext{
+    font-size: 30px;
+    font-weight: normal;
 }
 
 #guide-card-1, #mental-card-2{
@@ -75,7 +67,22 @@ margin: 0;
     position: absolute;
     bottom: 10%;
     right: 10%;
+    font-size: 13px;
+    border-radius: 20px;
+    border: 2px solid lightgray;
+    color: black;
+    display: block;
+    background: transparent;
+    transition: .2s ease-in-out 0s;
 }
+
+.guide-card .btn:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+    background: black;
+    color: white;
+}
+
 
 .mental-card{
     position: relative;
@@ -88,10 +95,9 @@ margin: 0;
     font-size: 13px;
     border-radius: 20px;
     /* padding: 15px; */
-    border: 2px solid black;
+    border: 2px solid lightgray;
     color: black;
     display: block;
-    margin: 50px auto;
     background: transparent;
     transition: .2s ease-in-out 0s;
 }
@@ -110,45 +116,63 @@ margin: 0;
 .social-card .btn{
     position: absolute;
     bottom: 10%;
-    right: 10%
+    right: 10%;
+    font-size: 13px;
+    border-radius: 20px;
+    border: 2px solid lightgray;
+    color: black;
+    display: block;
+    background: transparent;
+    transition: .2s ease-in-out 0s;
 }
 
 
+.social-card .btn:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+    background: black;
+    color: white;
+}
+
+
+
+
+/* For the headers to be clickable */
 .button {
-    border-radius: 4px;
-    background-color: white;
-    border: none;
-    text-align: center;
-    font-size: 40px;
-    padding: 20px;
-    width: 20%;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-  }
-  
-  .button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-    color: black;
-  }
-  
-  .button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .button:hover span {
-    padding-right: 25px;
-  }
-  
-  .button:hover span:after {
-    opacity: 1;                      
-    right: 0;
-  }
+border-radius: 4px;
+background-color: white;
+border: none;
+text-align: center;
+font-size: 40px;
+padding: 20px;
+width: 20%;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+
+.button span {
+cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 0.5s;
+color: black;
+}
+
+.button span:after {
+content: '\00bb';
+position: absolute;
+opacity: 0;
+top: 0;
+right: -20px;
+transition: 0.5s;
+}
+
+.button:hover span {
+padding-right: 25px;
+}
+
+.button:hover span:after {
+opacity: 1;                      
+right: 0;
+}
