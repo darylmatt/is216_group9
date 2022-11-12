@@ -19,20 +19,19 @@
     border-radius: 20px;
 }
 
-/* .nav-link{
-    color: gray;
-} */
 
 #logo{
     width: 30%;
 }
 
-#container_div{
-margin: 0;
-}
 
 #header-text{
     font-size: 60px;
+    font-weight: normal;
+}
+
+#header-subtext{
+    font-size: 30px;
     font-weight: normal;
 }
 
