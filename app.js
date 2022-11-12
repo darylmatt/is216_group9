@@ -114,6 +114,21 @@ app.get('/Registration&Profiling/login.html',(req,res)=>{
   var input_password = req.query.password
   console.log(input_email)
   console.log(input_password)
+
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("domesticaid");
+    const result = dbo.collection("accounts").find({email:input_email});
+    result.then(data => {
+      //global threads = data;
+      console.log(data);
+      db.close()
+
+      
+    })
+    
+  })
+
   res.sendFile('/Registration&Profiling/login.html', { root: __dirname });
 })
 
@@ -171,7 +186,9 @@ app.get('/HealthIsWealth/Physical_Health/physical_health_places.html',(req,res)=
       //global threads = data;
       res.sendFile('/HealthIsWealth/Physical_Health/physical_health_places.html', { root: __dirname });
       console.log(JSON.stringify(data));
+      db.close();
       res.set('facilities', JSON.stringify(data) );
+
     })
     
   });
@@ -216,8 +233,10 @@ app.get('/Guides/guide_care.html',(req,res)=>{
     result.then(data => {
       //global threads = data;
       console.log(data);
+      db.close()
       res.sendFile('/Guides/guide_care.html', { root: __dirname });
       res.set('guides', JSON.stringify(data) );
+      
 
       
     })
@@ -239,6 +258,7 @@ app.get('/Guides/guide_rights.html',(req,res)=>{
       res.sendFile('/Guides/guide_rights.html', { root: __dirname });
       console.log(JSON.stringify(data));
       res.set('guides', JSON.stringify(data) );
+      db.close()
     })
     
   });
@@ -258,6 +278,7 @@ app.get('/Guides/guide_navigation.html',(req,res)=>{
       res.sendFile('/Guides/guide_navigation.html', { root: __dirname });
       console.log(JSON.stringify(data));
       res.set('guides', JSON.stringify(data) );
+      db.close()
     })
     
   });
@@ -339,6 +360,7 @@ translateText("Hello ~ How can we help you today? ~ EDIT PROFILE ~ Upcoming acti
       //global threads = data;
       res.sendFile('/Social/Forum/forum.html', { root: __dirname });
       res.set('threads', JSON.stringify(data) );
+      db.close()
 
   
     })
@@ -358,6 +380,7 @@ app.get('/Social/Activities/activities_landing.html',(req,res)=>{
       //global threads = data;
       res.sendFile('/Social/Activities/activities_landing.html', { root: __dirname });
       res.set('activities', JSON.stringify(data) );
+      db.close()
     })
     
   });
