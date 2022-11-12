@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../../stylesheets/guides.css">
     <script src="../../scripts/maps.js"></script>
     <script src="../../scripts/modal.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -28,13 +30,20 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
     rel="stylesheet"
     />
-
-    <!-- Vue.js 3 CDN -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  
+    <!-- Do NOT Remove -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- LINK VUEJS -->
+    <script type="module" src="../../scripts/mental_health_places.js"></script>
+
+
     <style>
       /* Set the size of the div element that contains the map */
       #map {
@@ -48,20 +57,22 @@
           padding: 0;
       }
     </style>
+
    
 
 </head>
-<body onload="triggerBtnClick()">
+
+<body onload="triggerBtnClick()" id="root">
 
 
 <!-- Navbar -->
 <nav class="navbar" aria-label="navbar">
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="../HomeLandingAbout/homepage.html">
+    <a class="navbar-brand" href="../../HomeLandingAbout/homepage.html">
       <img src="../../img/logo4.png" alt="" id="logo">
     </a>
-    
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
@@ -110,11 +121,11 @@
               <a class="nav-link active text-primary fs-underline" href="../../HomeLandingAbout/about.html"><span><u>Log Out</u></span></a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">
                   <button type="button" class="btn w-100 fs-3" id="sos_button">SEND SOS</button>
               </a>
-            </li>
+            </li> -->
 
           </ul>
         </div>
@@ -122,123 +133,235 @@
   </div>
 </nav>
 
- <!-- The Modal -->
- <div class="modal" id="myModal">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg">
-    <div class="modal-content">
-    
-      <!-- Modal Header -->
-      <div class="modal-header" style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
-        <h1 class="modal-title mx-auto" style="color: white"></h1>
+
+
+  <!-- Guide Starts Here -->
+  <div class="container">
+    <p>{{facilities}}</p>
+    <p>{{subCategories}}</p>
+    <p>{{selectedArray}}</p>
+
+
+    <div class="row my-5">
+        <div class="col fw-bold my-auto text-center" style="font-size: 60px; color:#9a616d;">
+            Physical Healthcare Facilities
+        </div>
+    </div>
+
+    <div class="row m-3">
+      <label for="Search" class="form-label">Search for symptoms or keywords related to what you're experiencing:</label>
+      <div class="input-group md-form form-sm form-2 pl-0">
+        <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search Keywords..." aria-label="Search">
+        <div class="input-group-append">
+          <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
+        </div>
       </div>
-      
-      <!-- Modal body -->
-      <div class="modal-body">
+    </div>
 
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Location</th>
-              <th>Postal Code</th>
-              <th>Contact</th>
-              <th>Operating Hours</th>
-            </tr>
-          </thead>
-  
-          <tbody>
-            <tr>
-              <td>Name 1</td>
-              <td>Location 1</td>
-              <td>Postal 1</td>
-              <td>Contact 1</td>
-              <td>Operating Hours 1</td>
-            </tr>
 
-            <tr>
-              <td>Name 2</td>
-              <td>Location 2</td>
-              <td>Postal 2</td>
-              <td>Contact 2</td>
-              <td>Operating Hours 2</td>
-            </tr> 
-          </tbody>
-
-        </table>
-
-        
-        
-        <div id="directions">
-          <h3>Directions</h3>
-
-          <!--The div element for the map -->
-          <div id="map"></div>
-          <script>
-              // Initialize and add the map
-              function initMap() {
-                  // default: The location of user
-                  var lat = parseFloat(document.getElementById("lat").value);
-                  var lng = parseFloat(document.getElementById("lng").value);
-                  var loc = {lat: lat, lng: lng};
-              
-                  var map = new google.maps.Map(
-                      // play with the zoom value to zoom in or out
-                      document.getElementById('map'), {zoom: 14, center: loc});
-                
-                  var marker = new google.maps.Marker({position: loc, map: map});
-              }
-          </script>
-          
-          <!--Load the API from the specified URL
-          * The async attribute allows the browser to render the page while the API loads
-          * The key parameter will contain your own API key 
-          * The callback parameter executes the initMap() function
-          -->
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEBeYTGw-Q-PuSz5yF5q2bL5O70yOjOWA
-          &callback=initMap"
-          async defer></script>
-      
-          <div class="jumbotron" >          
-            <form>
-                <div class="form-group mt-5">
-                    <!-- fetch user's postal and set in value -->
-                    <input type="text" class="form-control" name="addr" id="addr" placeholder="Enter Postal Code Here..." value="11 Jalan Rindu">
-
-                    <br>
-
-                    <button id="getAddress" type="button" onclick="getLoc('addr')" class="btn btn-primary">Get Full Address</button>
-                    <button id="getPostal" type="button" onclick="getLoc('postcode')" class="btn btn-primary">Get Postal Code</button>
-    
-          
-                    <!-- the following set the lat, lng values to put a marker on the map-->
-                    <input type="hidden" id="lat" name="lat"/>
-                    <input type="hidden" id="lng" name="lng"/>
-
-                </div>
-                <p id="display" class="lead text-center mt-4"></p>   
-            </form>
+    <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3">
+      <div class="col-xl-4 col-sm-12">
+        <div class="facility-card">
+          <img src="../../img/clinic.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+          <div class="card-body">
+            <h5 class="card-title">Polyclinics</h5>
+            <p class="card-text">Polyclinics are healthcare centres that provide primary care such as medical treatment, preventive healthcare, and health education, at a subsidised cost</p>
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('polyclinics')" type="button" id="polyclinics" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+              Read More
+            </button>
           </div>
         </div>
-      
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
       </div>
-      
+
+
+      <div class="col-xl-4 col-sm-12">
+        <div class="facility-card">
+          <img src="../../img/hospital.png" class="card-img-top" alt="Fissure in Sandstone"/>
+          <div class="card-body">
+            <h5 class="card-title">Hospitals</h5>
+            <p class="card-text">Hospitals provides affordable specialist care for patients, where you can go to when you are facing any medical conditions that cannot be treated normally at general clinics. </p>           
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('hospitals')" type="button" id="hospitals" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+              Read More
+            </button>
+          </div>
+        </div>
       </div>
+
+      <div class="col-xl-4 col-sm-12">
+        <div class="facility-card">
+          <img style="height: 280px" src="../../img/general_practitioner.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+          <div class="card-body">
+            <h5 class="card-title">General Practitioners</h5>
+            <p class="card-text">General practitioners are doctors who provide nonsurgical medical care. General practitioners evaluate patients through exams and tests and diagnose conditions such as diseases or injuries.</p>
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('gp')" type="button" id="general practitioners" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+              Read More
+            </button>
+          </div>
+        </div>
+      </div>
+
+
+
+      
+    </div>
+
+    <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3 justify-content-center">
+
+      <div class="col-xl-4 col-sm-12">
+        <div class="facility-card">
+          <img src="../../img/dentalhealthcare.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+          <div class="card-body">
+            <h5 class="card-title">Dental</h5>
+            <p class="card-text">A Dentist is responsible for performing oral surgery and routine cleanings on patients. They repair and remove teeth, diagnose conditions and tell patients about how to best care for their teeth and gums. </p>            
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('dental')" type="button" id="dentists" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+              Read More
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-sm-12">
+        <div class="facility-card">
+          <img src="../../img/derma.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+          <div class="card-body">
+            <h5 class="card-title">Dermatologists</h5>
+            <p class="card-text">A dermatologist specializes in conditions that affect the skin, hair, and nails. Whether it's rashes or wrinkles, no one understands your skin, hair, and nails better than a board-certified dermatologist. </p>            
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('derma')" type="button" id="dermatologists" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+              Read More
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-4 col-sm-12">
+        <div class="facility-card">
+          <img src="../../img/pharmacy.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+          <div class="card-body">
+            <h5 class="card-title">Pharmacies</h5>
+            <p class="card-text">Places like Watsons, Unity or Guardian. If you know what medicine to get for your symptoms such as paracetemol, visit these places to get it over the counter </p>
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('pharmacy')" id="pharmacies" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+              Read More
+            </button>
+          </div>
+        </div>
+      </div>
+    
     </div>
   </div>
 
-</div>
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header" style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+          <h1 id="modalHeader" class="modal-title mx-auto" style="color: white"></h1>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
 
-<div id="footer">
-  <footer-template></footer-template>
-</div>
-<script src="../scripts/nav_foot.js"></script>  
+          <table class="table">
+            <thead class="text-center">
+              <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Postal</th>
+                <th>Contact</th>
+                <th>Directions</th>
+              </tr>
+            </thead>
+    
+            <tbody id="tableBody">
+              
+
+            </tbody>
+ 
+          </table>
+
+          
+          
+          <div id="directions">
+            <h3>Directions</h3>
+
+            <!--The div element for the map -->
+            <div id="map"></div>
+            <script>
+                // Initialize and add the map
+                function initMap() {
+                    // default: The location of user
+                    var lat = parseFloat(document.getElementById("lat").value);
+                    var lng = parseFloat(document.getElementById("lng").value);
+                    var loc = {lat: lat, lng: lng};
+                
+                    var map = new google.maps.Map(
+                        // play with the zoom value to zoom in or out
+                        document.getElementById('map'), {zoom: 14, center: loc});
+                  
+                    var marker = new google.maps.Marker({position: loc, map: map});
+                }
+            </script>
+            
+            <!--Load the API from the specified URL
+            * The async attribute allows the browser to render the page while the API loads
+            * The key parameter will contain your own API key 
+            * The callback parameter executes the initMap() function
+            -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEBeYTGw-Q-PuSz5yF5q2bL5O70yOjOWA
+            &callback=initMap"
+            async defer></script>
+        
+            <div class="jumbotron" >          
+              <form>
+                  <div class="form-group mt-5">
+                      <!-- fetch user's postal and set in value -->
+                      <input type="text" class="form-control" name="addr" id="addr" placeholder="Enter Postal Code Here..." value="11 Jalan Rindu">
+
+                      <br>
+
+                      <button id="getAddress" type="button" class="btn text-white" onclick="getLoc('addr')" style='background-color:#9a616d;'>Get Full Address</button>
+                      <!-- <button id="getPostal" type="button" onclick="getLoc('postcode')" class="btn btn-primary">Get Postal Code</button> -->
+      
+            
+                      <!-- the following set the lat, lng values to put a marker on the map-->
+                      <input type="hidden" id="lat" name="lat"/>
+                      <input type="hidden" id="lng" name="lng"/>
+
+                  </div>
+                  <p id="display" class="lead text-center mt-4"></p>   
+              </form>
+            </div>
+          </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+
+
+
+  <div id="footer">
+    <footer-template></footer-template>
+  </div>
+  <script src="../scripts/nav_foot.js"></script>  
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
+  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-<script src="../../scripts/sos.js"></script>
+
+
+<!-- LINK AXIOS -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
 
 </body>
 </html>
