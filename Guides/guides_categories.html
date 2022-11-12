@@ -109,48 +109,64 @@
 </nav>
 
   <!-- Guide Starts Here -->
-  <div class="container mt-4">
+  <div class="container-fluid mt-4 text-center">
   
-    <h1 class="display-1 text-center">Explore DomesticAID's Guides!</h1>
+        <h1 class="display-1" style="color: black;">Welcome to DomesticAID's <span id="guides_span" style="text-decoration: underline; color: black;">Guides!</span></h1>
+      
+  </div>
 
+  <div class="container my-2">
+    <div class="row">
+      <div class="col-8 my-auto p-4">
+        <h1>About</h1> <br>
+        <p id="demo" style="font-size:20px"></p>
 
-    <h1 class="mt-5">About</h1> <br>
-    <p id="demo" class="mb-5" style="font-size:20px"></p>
+      </div>
 
+      <script>
+        var i = 0;
+        var txt = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, consectetur eum consequuntur temporibus molestias similique vitae culpa cum dignissimos quo odit alias adipisci excepturi enim facilis accusantium neque fugiat obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, inventore assumenda.';
+        var speed = 90;
+        
+        function typeWriter() {
+          console.log("test");
+          if (i < txt.length) {
+            document.getElementById("demo").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+        </script>
 
-  <script>
-    var i = 0;
-    var txt = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, consectetur eum consequuntur temporibus molestias similique vitae culpa cum dignissimos quo odit alias adipisci excepturi enim facilis accusantium neque fugiat obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, inventore assumenda.';
-    var speed = 90;
-    
-    function typeWriter() {
-      console.log("test");
-      if (i < txt.length) {
-        document.getElementById("demo").innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-      }
-    }
-    </script>
- 
+      <div class="col text-center">
+          <lottie-player
+          src="https://assets2.lottiefiles.com/packages/lf20_XIx1qBubPA.json"
+          background="transparent"
+          speed="1"
+          style="width: 400px; height: 400px"
+          loop
+          autoplay
+          ></lottie-player>      
+      </div>
+    </div>  
   </div>
     
   
   <div class="container">
 
         <div class="row justify-content-center">
-          <div class="col-xl-3 m-4">
-              <div class="card h-100 p-5" id="guidecard1" style="width: 18rem;">
+          <div class="col-xl-3 my-2">
+              <div class="card h-100 w-100 p-5" id="guidecard1">
                   <div class="card-body">
-                    <h5 class="card-title">Caregiving</h5>
+                    <h5 class="card-title">Guides</h5>
                     <p class="card-text">Find out about how to provide care for the elderly and children.</p>
                     <a href="guide_care.html" class="btn" id="guide_button">Read More</a>
                   </div>
                 </div>
           </div>
   
-          <div class="col-xl-3 m-4">
-              <div class="card h-100 p-5" id="guidecard2" style="width: 18rem;">
+          <div class="col-xl-3 my-2">
+              <div class="card h-100 w-100 p-5" id="guidecard2">
                   <div class="card-body">
                     <h5 class="card-title">Rights & Laws</h5>
                     <p class="card-text">Find out about your rights as a migrant worker and the laws that protect you.</p>
@@ -159,8 +175,8 @@
                 </div>
           </div>
   
-          <div class="col-xl-3 m-4">
-              <div class="card h-100 p-5" id="guidecard3" style="width: 18rem;">
+          <div class="col-xl-3 my-2">
+              <div class="card h-100 w-100 p-5" id="guidecard3">
                   <div class="card-body">
                     <h5 class="card-title">Navigation</h5>
                     <p class="card-text">Find your way around Singapore and explore new places!</p>
@@ -201,14 +217,7 @@
                       </div>
     
                       <div class="col-4">
-                        <lottie-player 
-                        src="https://assets5.lottiefiles.com/private_files/lf30_A6ckDx.json"
-                        background="transparent" 
-                        class="mx-auto" 
-                        speed="1" 
-                        style="width: auto;"
-                        loop 
-                        autoplay></lottie-player>
+                          <img src="../img/train.svg" alt="" style="width: 93%;">
                       </div>
                     
                     </div>
@@ -239,14 +248,7 @@
                       </div>
     
                       <div class="col-4">
-                        <lottie-player 
-                        src="https://assets2.lottiefiles.com/packages/lf20_fxo90szg.json"
-                        background="transparent" 
-                        class="mx-auto" 
-                        speed="1" 
-                        style="width: auto;"
-                        loop 
-                        autoplay></lottie-player>
+                          <img src="../img/friends.svg" alt="" style="width: 93%;">
                       </div>
                     
                     </div>
@@ -275,14 +277,7 @@
                               </div>  
                           </div>
                           <div class="col-4">
-                            <lottie-player 
-                            src="https://assets5.lottiefiles.com/packages/lf20_mrc7imzl.json"
-                            background="transparent" 
-                            class="mx-auto" 
-                            speed="1" 
-                            style="width: auto;"
-                            loop 
-                            autoplay></lottie-player>
+                              <img src="../img/money.svg" alt="" style="width: 93%;">
                           </div>
                           
                       </div>
