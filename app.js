@@ -20,7 +20,7 @@ app.get('/',(req,res)=>{
 
 app.get('/HomeLandingAbout/about.html',(req,res)=>{
   console.log('index requested');
-  res.sendFile('HomeLandingAbout/about.html', { root: __dirname });
+  res.sendFile('/HomeLandingAbout/about.html', { root: __dirname });
 })
 
 
@@ -168,6 +168,12 @@ app.get('/HealthIsWealth/Mental_Health/mental_health_landing.html',(req,res)=>{
   res.sendFile('/HealthIsWealth//Mental_Health/mental_health_landing.html', { root: __dirname });
 })
 
+// MENTAL HEALTH - GUIDES
+app.get('/HealthIsWealth/Mental_Health/mental_guides.html',(req,res)=>{
+  console.log('index requested');
+  res.sendFile('/HealthIsWealth//Mental_Health/mental_guides.html', { root: __dirname });
+})
+
 // PHYSICAL HEALTH - CATEGORIES
 app.get('/HealthIsWealth/Physical_Health/categories.html',(req,res)=>{
   console.log('index requested');
@@ -217,9 +223,9 @@ app.get('/HealthIsWealth/Mental_Health/mental_health_places.html',(req,res)=>{
 
 
 // GUIDE LANDING
-app.get('/Guides/guides.html',(req,res)=>{
+app.get('/Guides/guides_categories.html',(req,res)=>{
   console.log('index requested');
-  res.sendFile('/Guides/guides.html', { root: __dirname });
+  res.sendFile('/Guides/guides_categories.html', { root: __dirname });
 })
 
 // GUIDE CARE
