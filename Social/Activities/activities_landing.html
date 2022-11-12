@@ -25,7 +25,9 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
 
 </head>
 
@@ -38,13 +40,22 @@
 
 <body id="root">
 
+
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-lightbg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
 
             <a class="navbar-brand" href="/HomeLandingAbout/homepage.html">
                 <img src="/img/logo.png" height="80" alt="DomesticAID Logo" />
             </a>
+
+            <div>
+                <a href="/Registration&Profiling/login.html" class="btn btn-danger btn-rounded btn-lg mx-3" style="font-size:larger" role="button">
+                    SOS
+                </a>
+            </div>
+            
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
                 aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,35 +69,44 @@
                     <li class="nav-item dropdown mx-3">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-mdb-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-friends"></i>
                             Social +
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
                             <li>
                                 <a class="dropdown-item" href="/Social/Forum/forum.html">Forum</a>
                             </li>
+
                             <li>
                                 <a class="dropdown-item"
                                     href="/Social/Activities/activities_landing.html">Activities</a>
                             </li>
+
                         </ul>
                     </li>
 
                     <!-- Icon dropdown -->
 
                     <li class="nav-item mx-3">
-                        <a class="nav-link" href="/Guides/guides_categories.html">Guides</a>
+                        <a class="nav-link" href="/Guides/guides_categories.html">
+                            <i class="fas fa-folder-open"></i>
+                            Guides</a>
                     </li>
 
                     <li class="nav-item mx-3">
-                        <a class="nav-link" href="/HealthIsWealth/health_is_wealth.html">Wellness</a>
+                        <a class="nav-link" href="/HealthIsWealth/health_is_wealth.html">
+                            <i class="fas fa-seedling"></i>
+                            Wellness
+                        </a>
                     </li>
 
-                    <li class="nav-item mx-3">
+                    <!-- <li class="nav-item mx-3">
                         <a href="/Registration&Profiling/login.html" class="btn btn-danger btn-rounded btn-lg"
                             role="button">
                             SOS
                         </a>
-                    </li>
+                    </li> -->
 
                     <!-- Icon dropdown -->
 
@@ -105,14 +125,9 @@
                             </li>
                             <li>
                                 <a class="dropdown-item mx-3" href="/HomeLandingAbout/about.html">Logout</a>
-                            </li> 
+                            </li>
                         </ul>
-                      </li>
-
-
-
-
-
+                    </li>
 
                     <!-- Icon dropdown -->
 
@@ -914,15 +929,15 @@
 
             </div>
 
-        <div id="footer">
-            <footer-template></footer-template>
-          </div>
-          <script src="../scripts/nav_foot.js"></script>  
+            <div id="footer">
+                <footer-template></footer-template>
+            </div>
+            <script src="../scripts/nav_foot.js"></script>
 
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-        <script src="../../scripts/activities_add_activity.js"></script>
-        <script src="../../scripts/activities.js"></script>
+            <script src="../../scripts/activities_add_activity.js"></script>
+            <script src="../../scripts/activities.js"></script>
 
 
 
