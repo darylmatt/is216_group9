@@ -169,7 +169,7 @@ app.get('/HealthIsWealth/Physical_Health/physical_health_places.html',(req,res)=
   
 
 // MENTAL HEALTH - PLACES
-app.get('/HealthIsWealth/Physical_Health/mental_health_places.html',(req,res)=>{
+app.get('/HealthIsWealth/Mental_Health/mental_health_places.html',(req,res)=>{
   console.log('index requested');
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
@@ -181,7 +181,7 @@ app.get('/HealthIsWealth/Physical_Health/mental_health_places.html',(req,res)=>{
       db.close();
     });
   });
-  res.sendFile('/HealthIsWealth//Physical_Health/mental_health_places.html', { root: __dirname });
+  res.sendFile('/HealthIsWealth/Mental_Health/mental_health_places.html', { root: __dirname });
 })
 
 
