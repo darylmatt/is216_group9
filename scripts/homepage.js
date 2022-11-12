@@ -38,7 +38,14 @@ const root = Vue.createApp({
             journal_btn: "JOURNAL NOW",
             words_of_wisdom: "Words Of Wisdom",
             words_of_wisdom_desc: "We just need some golden advice at times. Explore our mental wellness articles for encouragement and advice.",
-            words_of_wisdom_btn: "BEGIN READING"
+            words_of_wisdom_btn: "BEGIN READING",
+
+            show_sos_dialog: false,
+
+            // fas fa-window-close fa-xl
+
+            show_translate_option: false
+
 
         }
     },
@@ -101,6 +108,29 @@ const root = Vue.createApp({
         
 
         })
+    },
+
+    translate_dialog(){
+        // Check if its an open or close command
+        if (this.show_translate_option){
+            this.show_translate_option = false
+        }
+        else{
+            this.show_translate_option = true
+        }
+
+     
+
+    },
+
+    sos_dialog(){
+        if (this.show_sos_dialog){
+            this.show_sos_dialog = false
+        }
+       else{
+            this.show_sos_dialog = true
+        }
+       
     }
 
     }
