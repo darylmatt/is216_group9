@@ -19,13 +19,13 @@ const root = Vue.createApp({
             guides: "Guides",
             guides_navigate_title: "Carrying Out Your Responsibilities",
             guides_navigate_desc: "Find out more about what you need to do as a helper and other soft skills you might need",
-            guides_navigate_btn: "EXPLORE GUIDES",
+            guides_navigate_btn: "READ GUIDES",
             guides_rights_title: "My Rights As A Domestic Helper",
             guides_rights_desc: "Know more about your rights to help you with any questions you have and to protect yourself",
             guides_rights_btn: "LET'S BEGIN",
             guides_resources_title: "Assimilating Into Singapore",
             guides_resources_desc: "Unfamiliar with your new surroundings? Explore our resources for navigating Singapore!",
-            guides_resources_btn: "FIND NOW",
+            guides_resources_btn: "EXPLORE NOW",
             wellness: "Wellness",
             breather_title: "Take a Breather",
             breather_desc: "Feeling anxious or stressed out? Breathing exercises are known to calm people down and make them feel better.",
@@ -44,7 +44,9 @@ const root = Vue.createApp({
 
             // fas fa-window-close fa-xl
 
-            show_translate_option: false
+            show_translate_option: false,
+
+            show_sos_confirmation:false
 
 
         }
@@ -103,7 +105,10 @@ const root = Vue.createApp({
             this.journal_btn= translations[30],
             this.health_title= translations[31],
             this.health_desc= translations[32],
-            this.health_btn = translations[33]
+            this.health_btn = translations[33],
+
+            document.getElementById("indo").style.backgroundColor="rgb(255, 255, 234)"
+            document.getElementById("en").style.backgroundColor="white"
             
         
 
@@ -121,18 +126,7 @@ const root = Vue.createApp({
 
      
 
-    },
-
-    sos_dialog(){
-        if (this.show_sos_dialog){
-            this.show_sos_dialog = false
-        }
-       else{
-            this.show_sos_dialog = true
-        }
-       
     }
-
     }
     // Other stuff
 })

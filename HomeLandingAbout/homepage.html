@@ -89,7 +89,8 @@
 <body id="root">
 
   <!-- SOS and translate button -->
-  <button type="button" v-on:click="translate_dialog()" id="translate_btn" class="btn btn-floating btn-outline-secondary bg-white">
+  <button type="button" v-on:click="translate_dialog()" id="translate_btn"
+    class="btn btn-floating btn-outline-secondary bg-white">
     <i v-show="!show_translate_option" class="fas fa-language fa-xl"></i>
     <i v-show="show_translate_option" class="fas fa-window-close fa-xl"></i>
   </button>
@@ -99,31 +100,31 @@
       <h5 class="card-title">Select preferred language</h5>
 
       <div>
-        <button type="button" onClick="window.location.reload();" class="btn btn-floating">
-          <i class="flag-singapore flag"></i>
+        <button type="button" id="en" onClick="window.location.reload();" class="btn w-100" style="background-color:rgb(255, 255, 234)">
+          <i class="flag-singapore flag float-start"></i>
+          English
         </button>
-        English
       </div>
 
       <div>
-        <button type="button" class="btn w-100" v-on:click="translate()">
+        <button type="button" id="indo" class="btn w-100" v-on:click="translate()">
           <i class="flag-indonesia flag float-start"></i>
-          <span class="float-end">Bahasa Indonesia</span> 
+          Bahasa Indonesia
         </button>
       </div>
 
       <div>
-        <button type="button" class="btn btn-floating">
-          <i class="flag-myanmar flag"></i>
+        <button type="button" class="btn w-100">
+          <i class="flag-myanmar flag float-start"></i>
+          Burmese
         </button>
-        Burmese
       </div>
 
       <div>
-        <button type="button" class="btn btn-floating">
-          <i class="flag-philippines flag"></i>
+        <button type="button" class="btn w-100">
+          <i class="flag-philippines flag float-start"></i>
+          Tagalog
         </button>
-        Tagalog
       </div>
 
     </div>
@@ -131,34 +132,66 @@
 
   </div>
 
-
+  <!-- 
   <button type="button" id="sos_btn" v-on:click="sos_dialog()" class="btn btn-floating sos_btn btn-danger fw-bolder"
     data-bs-toggle="modal" data-bs-target="#sosModal">
     <h5 v-show="!show_sos_dialog" class="m-auto">SOS</h5>
     <i v-show="show_sos_dialog" class="fas fa-window-close fa-xl"></i>
+  </button> -->
+
+  <button type="button" id="sos_btn" class="btn btn-floating sos_btn btn-danger fw-bolder" data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop">
+    <h5 v-show="!show_sos_dialog" class="m-auto">SOS</h5>
   </button>
 
-  <div class="card" id="sos_dialog" v-show="show_sos_dialog">
-    <div class="card-body">
-      <h5 class="card-title text-danger">Contact SOS services?</h5>
-      <div>
-        <button type="button" class="btn btn-lg btn-rounded btn-danger mx-2">
-          YES
-        </button>
-        <button type="button" v-on:click="sos_dialog" class="btn btn-rounded btn-outline-secondary">
-          Cancel
-        </button>
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-danger" id="staticBackdropLabel">Request for SOS</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text-warning">⚠️BEFORE YOU PROCEED:⚠️</p>
+          <ul>
+            <li>
+              <div>
+                Choosing "Confirm" will send an immediate help alert to the <mark>Singapore Police</mark>.
+              </div>
+            </li>
+            <li>
+              <div>
+                All information shared with us remains <span style="text-decoration: underline;">confidential</span>.
+              </div>
+            </li>
+          </ul>
+          <hr>
+          <div class="text-danger text-center">
+            Please do not abuse this function.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary " data-bs-dismiss="modal">Cancel</button>
+          <button type="button" v-on:click="sos_confirm()" class="btn btn-primary btn-danger float-end"
+            data-bs-dismiss="modal">Confirm</button>
+        </div>
       </div>
-
-
-
-
-
-
     </div>
+  </div>
+
+
+
+
 
 
   </div>
+  </div>
+  </div>
+
+
+
+
 
 
 
@@ -288,18 +321,18 @@
     </div>
   </nav>
 
-    <div class="container-fluid mx-auto mb-5 text-center">
-      <div class="row bg-light">
-        <!-- style="background-color: rgb(246, 235, 247);" -->
-        <div class="col-2 col-lg-1"></div>
-        <div class="col-xl-4 col-lg-3 col-12" style="margin-top: 15%; text-align: center;">
-          <h1 id="header-text">{{hello}} <span id="user_name">{{name}}</span>!</h1>
-          <h1 id="header-subtext">{{welcome_msg}}</h1>
+    <div class="container-fluid mb-5" id="container_div">
+      <div class="row" style="background-color: rgb(246, 235, 247);">
+
+        <div class="col-lg-3" style="margin-top: 10%;">
+          <h1 id="header-text" style="margin-top:160px; margin-left: 50px;">{{hello}} <span id="user_name">{{name}}</span>!</h1>
+          <!-- <h1 id="header-text">{{welcome_msg}}</h1> -->
         </div>
-        <div class="col-lg-2 col-0"></div>
-        <div class="col-xl-4 col-lg-5 col-12 my-5 text-center">
+  
+        <div class="col-lg-9 my-5 text-center">
           <div class="row">
-            <div class="col m-2 rounded-5" style="background-color: pink;">
+            <div class="col-2"></div>
+            <div class="col-3 m-2 rounded-5" style="background-color: pink;">
               <lottie-player
               src="https://assets8.lottiefiles.com/packages/lf20_l9xeroxk.json"
               background="transparent"
@@ -309,7 +342,7 @@
               autoplay
               ></lottie-player>
             </div>
-            <div class="col m-2 rounded-5" style="background-color: rgb(127, 240, 229);">
+            <div class="col-3 m-2 rounded-5" style="background-color: rgb(127, 240, 229);">
               <lottie-player
               src="https://assets8.lottiefiles.com/packages/lf20_iwwltgly.json"
               background="transparent"
@@ -319,7 +352,7 @@
               autoplay
               ></lottie-player>
             </div>
-            <div class="col m-2 rounded-5" style="background-color:lightcoral;">
+            <div class="col-3 m-2 rounded-5" style="background-color:lightcoral;">
               <lottie-player
               src="https://assets3.lottiefiles.com/private_files/lf30_czsywxpt.json"
               background="transparent"
@@ -329,10 +362,12 @@
               autoplay
               ></lottie-player>
             </div>
+            <div class="col"></div>
           </div>
     
           <div class="row">
-            <div class="col m-2 rounded-5" style="background-color: lightgreen;">
+            <div class="col-2"></div>
+            <div class="col-3 m-2 rounded-5" style="background-color: lightgreen;">
               <lottie-player
               src="https://assets2.lottiefiles.com/packages/lf20_fjv8qxqn.json"
               background="transparent"
@@ -342,7 +377,7 @@
               autoplay
               ></lottie-player>
             </div>
-            <div class="col m-2 rounded-5" style="background-color:lightgoldenrodyellow;">
+            <div class="col-3 m-2 rounded-5" style="background-color:lightgoldenrodyellow;">
               <lottie-player
               src="https://assets1.lottiefiles.com/packages/lf20_q81jggtb.json"
               background="transparent"
@@ -352,7 +387,7 @@
               autoplay
               ></lottie-player>
             </div>
-            <div class="col m-2 rounded-5" style="background-color: rgb(191, 248, 248);">
+            <div class="col-3 m-2 rounded-5" style="background-color: rgb(191, 248, 248);">
               <lottie-player
               src="https://assets2.lottiefiles.com/packages/lf20_je019gjz.json"
               background="transparent"
@@ -362,10 +397,12 @@
               autoplay
               ></lottie-player>
             </div>
+            <div class="col"></div>
           </div>
 
           <div class="row">
-            <div class="col m-2 rounded-5" style="background-color: lightsalmon;">
+            <div class="col-2"></div>
+            <div class="col-3 m-2 rounded-5" style="background-color: lightsalmon;">
               <lottie-player
               src="https://assets1.lottiefiles.com/packages/lf20_9ycwmgb9.json"
               background="transparent"
@@ -375,7 +412,7 @@
               autoplay
               ></lottie-player>
             </div>
-            <div class="col m-2 rounded-5" style="background-color:lightseagreen;">
+            <div class="col-3 m-2 rounded-5" style="background-color:lightseagreen;">
               <lottie-player
               src="https://assets7.lottiefiles.com/private_files/lf30_m46YDW.json"
               background="transparent"
@@ -385,7 +422,7 @@
               autoplay
               ></lottie-player>
             </div>
-            <div class="col m-2 rounded-5" style="background-color: lightcyan;">
+            <div class="col-3 m-2 rounded-5" style="background-color: lightcyan;">
               <lottie-player
               src="https://assets7.lottiefiles.com/packages/lf20_hebegwpc.json"
               background="transparent"
@@ -395,9 +432,10 @@
               autoplay
               ></lottie-player>
             </div>
+            <div class="col"></div>
           </div>    
         </div>   
-        <div class="col-2 col-lg-1"></div>
+
       </div>
     </div>
 
@@ -807,7 +845,7 @@
     </h1>
 
 
-<div class="row">
+    <div class="row">
 
       <div class="col-lg-6 my-2">
         <div class="card h-100 p-5 social-card" id="social-card-1">
