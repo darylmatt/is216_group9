@@ -59,29 +59,23 @@
     box-shadow: 0 18px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#mental-image:hover{
-    width: 150%;
-}
-
-
-
-.mental-card .btn{
-    background-color: black;
-    text-align: center;
+#mental_button{
+    font-size: 13px;
     border-radius: 20px;
     border: 2px solid black;
-    display: block;
+    color: black;
+    width: 30%;
     margin: auto;
+    display: block;
     background: transparent;
     transition: .2s ease-in-out 0s;
 }
 
-.mental-card .btn:hover{
+
+#mental_button:hover{
     cursor: pointer;
     transform: scale(1.25);
     background: black;
-    /* color: white; */
-    font-size: 15px;
+    color: white;
 }
-
 
