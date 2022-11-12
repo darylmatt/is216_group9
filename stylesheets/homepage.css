@@ -36,13 +36,6 @@ margin: 0;
     font-weight: normal;
 }
 
-#guide_button, #social_button{
-    color: white;
-    background-color: black;
-    text-align: center;
-    border-radius: 20px;
-}
-
 #guide-card-1, #mental-card-2{
     background-image: linear-gradient(to right, #e1f4f7 , #f6ebf7);
 }
@@ -77,11 +70,18 @@ margin: 0;
     right: 10%;
     font-size: 13px;
     border-radius: 20px;
-    border: 2px solid lightgray;
+    border: 2px solid black;
     color: black;
     display: block;
     background: transparent;
     transition: .2s ease-in-out 0s;
+}
+
+.guide-card .btn:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+    background: black;
+    color: white;
 }
 
 .mental-card{
@@ -95,7 +95,7 @@ margin: 0;
     font-size: 13px;
     border-radius: 20px;
     /* padding: 15px; */
-    border: 2px solid lightgray;
+    border: 2px solid black;
     color: black;
     display: block;
     margin: 50px auto;
@@ -120,7 +120,7 @@ margin: 0;
     right: 10%;
     font-size: 13px;
     border-radius: 20px;
-    border: 2px solid lightgray;
+    border: 2px solid black;
     color: black;
     display: block;
     background: transparent;
