@@ -101,13 +101,19 @@ app.get('/Registration&Profiling/edit_profiling.html',(req,res)=>{
 //LOGIN REG
 app.get('/Registration&Profiling/login_reg.html',(req,res)=>{
   console.log('index requested');
+
   res.sendFile('/Registration&Profiling/login_reg.html', { root: __dirname });
+
   
 })
 
 //LOGIN
 app.get('/Registration&Profiling/login.html',(req,res)=>{
   console.log('index requested');
+  var input_email = req.query.email
+  var input_password = req.query.password
+  console.log(input_email)
+  console.log(input_password)
   res.sendFile('/Registration&Profiling/login.html', { root: __dirname });
 })
 
