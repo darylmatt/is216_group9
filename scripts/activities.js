@@ -5,7 +5,7 @@ const root = Vue.createApp({
     // Data Properties
     data() {
         return { 
-            activities: "",
+            activities: [],
         }
     },
 

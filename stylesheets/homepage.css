@@ -75,6 +75,13 @@ margin: 0;
     position: absolute;
     bottom: 10%;
     right: 10%;
+    font-size: 13px;
+    border-radius: 20px;
+    border: 2px solid lightgray;
+    color: black;
+    display: block;
+    background: transparent;
+    transition: .2s ease-in-out 0s;
 }
 
 .mental-card{
@@ -88,7 +95,7 @@ margin: 0;
     font-size: 13px;
     border-radius: 20px;
     /* padding: 15px; */
-    border: 2px solid black;
+    border: 2px solid lightgray;
     color: black;
     display: block;
     margin: 50px auto;
@@ -110,7 +117,22 @@ margin: 0;
 .social-card .btn{
     position: absolute;
     bottom: 10%;
-    right: 10%
+    right: 10%;
+    font-size: 13px;
+    border-radius: 20px;
+    border: 2px solid lightgray;
+    color: black;
+    display: block;
+    background: transparent;
+    transition: .2s ease-in-out 0s;
+}
+
+
+.social-card .btn:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+    background: black;
+    color: white;
 }
 
 
