@@ -40,6 +40,9 @@
     <!-- Vue.js 3 CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+    <!-- LINK VUEJS -->
+    <script type="module" src="../../scripts/physical_health_places.js"></script>
+
 
     <style>
       /* Set the size of the div element that contains the map */
@@ -134,9 +137,9 @@
 
   <!-- Guide Starts Here -->
   <div class="container" id="root">
-    <p>{{facilities}}</p>
-    <p>{{subCategories}}</p>p
-    <p>{{selectedArray}}</p>
+    <!-- <p>{{facilities}}</p>
+    <p>{{subCategories}}</p>
+    <p>{{selectedArray}}</p> -->
 
 
     <div class="row my-5">
@@ -271,6 +274,7 @@
             </thead>
     
             <tbody id="tableBody">
+              
 
             </tbody>
  
@@ -357,8 +361,7 @@
 <!-- LINK AXIOS -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-<!-- LINK VUEJS -->
-<script type="module" src="../../scripts/physical_health_places.js"></script>
+
 
 </body>
 </html>
