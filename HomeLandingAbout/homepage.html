@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-<<<<<<< Updated upstream
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,33 +22,6 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
   <!-- Vue.js 3 CDN -->
-=======
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-
-    <link rel="stylesheet" href="../stylesheets/homepage.css">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!-- Font Awesome -->
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    rel="stylesheet"
-    />
-      <!-- MDB -->
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
-
-      <!-- MDB -->
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
-
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-      <!-- Vue.js 3 CDN -->
->>>>>>> Stashed changes
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
   <!-- lottie -->
@@ -119,7 +91,6 @@
 
  
 <!-- Navbar -->
-<<<<<<< Updated upstream
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
@@ -220,129 +191,6 @@
                           <p class="card-text">Some quick example text to build on the card title and make up the bulk
                             of the card's content.</p>
                         </div>
-=======
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-
-      <a class="navbar-brand" href="/HomeLandingAbout/homepage.html">
-          <img src="/img/logo.png" height="80" alt="DomesticAID Logo" />
-      </a>
-
-      <div>
-          <a href="/Registration&Profiling/login.html" class="btn btn-danger btn-rounded btn-lg mx-3" style="font-size:larger" role="button">
-              SOS
-          </a>
-      </div>
-      
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="mainNav">
-
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-              <li class="nav-item dropdown mx-3">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                      data-mdb-toggle="dropdown" aria-expanded="false">
-                      <i class="fas fa-user-friends"></i>
-                      Social +
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                      <li>
-                          <a class="dropdown-item" href="/Social/Forum/forum.html">Forum</a>
-                      </li>
-
-                      <li>
-                          <a class="dropdown-item"
-                              href="/Social/Activities/activities_landing.html">Activities</a>
-                      </li>
-
-                  </ul>
-              </li>
-
-              <!-- Icon dropdown -->
-
-              <li class="nav-item mx-3">
-                  <a class="nav-link" href="/Guides/guides_categories.html">
-                      <i class="fas fa-folder-open"></i>
-                      Guides</a>
-              </li>
-
-              <li class="nav-item mx-3">
-                  <a class="nav-link" href="/HealthIsWealth/health_is_wealth.html">
-                      <i class="fas fa-seedling"></i>
-                      Wellness
-                  </a>
-              </li>
-
-              <!-- <li class="nav-item mx-3">
-                  <a href="/Registration&Profiling/login.html" class="btn btn-danger btn-rounded btn-lg"
-                      role="button">
-                      SOS
-                  </a>
-              </li> -->
-
-              <!-- Icon dropdown -->
-
-              <li class="nav-item dropdown">
-
-                  <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
-                      id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                      <img src="/img/jx.jpg" class="rounded-circle" height="22" alt="Portrait of a Woman"
-                          loading="lazy" />
-                  </a>
-
-                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenu">
-                      <li>
-                          <a class="dropdown-item mx-3" href="/Registration&Profiling/edit_profiling.html">My
-                              profile</a>
-                      </li>
-                      <li>
-                          <a class="dropdown-item mx-3" href="/HomeLandingAbout/about.html">Logout</a>
-                      </li>
-                  </ul>
-              </li>
-
-              <!-- Icon dropdown -->
-
-          </ul>
-      </div>
-  </div>
-</nav>
-
-<div class="container" id="container_div">
-
-  <div class="row">
-    <div class="col-lg-7" style="margin-top: 10%;">
-      <h1 id="header-text">{{hello}} <span id="user_name">{{name}}</span>,</h1>
-      <h1 id="header-text">{{welcome_msg}}</h1>
-      <!-- Button trigger modal -->
-   
-      <!-- Modal -->
-      <div class="modal fade" id="upcoming_activities" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">{{upcoming_activities}}</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              
-              <!-- Carousel of activities -->
-              <div id="upcoming_activities_carousel" class="carousel slide" data-bs-ride="carousel">
-
-                <div class="carousel-inner">
-
-                  <div class="carousel-item active" data-bs-interval="5000">
-                    <div class="card m-3 mx-auto" style="width: 18rem;">
-                      <img src="../img/mike.jpg" class="card-img-top my-2 h-100" alt="...">
-                      <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
->>>>>>> Stashed changes
                       </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="5000">
