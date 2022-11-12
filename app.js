@@ -274,7 +274,7 @@ app.get('/Guides/guide_rights.html',(req,res)=>{
 
 })
 
-// GUIDE RIGHTS
+// GUIDE NAVIGATION
 app.get('/Guides/guide_navigation.html',(req,res)=>{
   console.log('index requested');
 
