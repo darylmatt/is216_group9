@@ -3,6 +3,10 @@
 
 }
 
+span{
+    color: gray;
+}
+
 #sos_button{
     margin-left: auto;
     /* display: flex; */
@@ -62,11 +66,12 @@
 }
 
 #guideCarousel{
-    background-image: linear-gradient(to right, #f1dfea , #e7f6f9);
+    background-image: linear-gradient(to right, #f4d9c1 , #e1f4f7);
 
 }
 
-#psychiatrist, #counsellors, #social_work, #mental_hospitals{
+.facility-card .btn{
+
     font-size: 13px;
     border-radius: 20px;
     border: 2px solid black;
