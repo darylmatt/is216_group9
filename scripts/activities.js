@@ -5,13 +5,14 @@ const root = Vue.createApp({
     // Data Properties
     data() {
         return { 
-            activities: "",
+            activities: [],
         }
     },
 
     created(){
         axios.get("http://localhost:3000/Social/Activities/activities_landing.html").then( response => { 
             this.activities = JSON.parse(response.headers.activities);
+
         }
          );
     }, 
