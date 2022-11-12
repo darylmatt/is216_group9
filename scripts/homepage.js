@@ -31,13 +31,13 @@ const root = Vue.createApp({
             breather_desc: "Feeling anxious or stressed out? Breathing exercises are known to calm people down and make them feel better.",
             breather_btn: "START BREATHING",
             health_title: "Be Physically Well",
-            health_desc: "We get that finding healtcare institution like a clinic or hospital is difficult, and even more so if you don't know where to look. Fret not, we have you covered",
+            health_desc: "Finding healthcare institutions like clinics or hospitals can be difficult if you don't know where to look. Fret not, we have you covered",
             health_btn: "SEARCH NOW",
-            journal_title: "Journal your thoughts",
+            journal_title: "Journal Your Thoughts",
             journal_desc: "Writing down your thoughts and emotions is a good way of understanding yourself better and how you're feeling. Start Journalling to have a peace of mind.",
-            journal_btn: "S",
-            words_of_wisdom: "Word of Wisdoms",
-            words_of_wisdom_desc: "Sometimes, a few golden words of advice would be plenty. Take a look at some of our mental wellness articles for encouragement and advice.",
+            journal_btn: "JOURNAL NOW",
+            words_of_wisdom: "Words Of Wisdom",
+            words_of_wisdom_desc: "We just need some golden advice at times. Explore our mental wellness articles for encouragement and advice.",
             words_of_wisdom_btn: "BEGIN READING"
 
         }
