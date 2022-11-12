@@ -15,7 +15,7 @@ const root = Vue.createApp({
     },
 
     created(){
-        axios.get("http://localhost:3000/Guides/guide_rights.html")
+        axios.get("http://localhost:3000/Guides/guide_navigation.html")
         .then( response => { 
 
             // fetch data
@@ -25,7 +25,7 @@ const root = Vue.createApp({
 
             // create subCategories array
             for (let index = 0; index < guides.length; index++) {
-                if(guides[index].guide_category == 'Rights'){
+                if(guides[index].guide_category == 'navigation'){
                     this.filteredGuides.push(guides[index])
                 }
     
@@ -38,21 +38,7 @@ const root = Vue.createApp({
     // Methods
     methods: {
 
-        setContent(guideId){
 
-            var contentDiv = document.getElementById('modalContent')
-            
-
-            for(let index = 0; index < this.filteredGuides.length; index++){
-                if(this.filteredGuides[index].guide_id == guideId){
-                    // contentDiv.innerHTML = this.filteredGuides[index].guide_content
-
-                    var content = this.filteredGuides[index].guide_content.split('\n\n').join('\n\n\n')
-                    contentDiv.innerText = content
-
-                }
-            }
-        }
 
 
 
