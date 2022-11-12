@@ -44,7 +44,9 @@ const root = Vue.createApp({
 
             // fas fa-window-close fa-xl
 
-            show_translate_option: false
+            show_translate_option: false,
+
+            show_sos_confirmation:false
 
 
         }
@@ -103,7 +105,10 @@ const root = Vue.createApp({
             this.journal_btn= translations[30],
             this.health_title= translations[31],
             this.health_desc= translations[32],
-            this.health_btn = translations[33]
+            this.health_btn = translations[33],
+
+            document.getElementById("indo").style.backgroundColor="rgb(255, 255, 234)"
+            document.getElementById("en").style.backgroundColor="white"
             
         
 
@@ -121,18 +126,7 @@ const root = Vue.createApp({
 
      
 
-    },
-
-    sos_dialog(){
-        if (this.show_sos_dialog){
-            this.show_sos_dialog = false
-        }
-       else{
-            this.show_sos_dialog = true
-        }
-       
     }
-
     }
     // Other stuff
 })
