@@ -18,11 +18,11 @@
 
 #header-text{
     font-size: 50px;
-    font-weight: 20;
+    font-weight: 30;
 }
 
 #header-text-subheader{
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 20;
 }
 
@@ -64,34 +64,24 @@
 }
 
 
-.mental-card{
-    position: relative;
-}
 
 .mental-card .btn{
-    position: absolute;
-    bottom: 2%;
-    left: 5%;
-    color: white;
     background-color: black;
     text-align: center;
     border-radius: 20px;
+    border: 2px solid black;
+    display: block;
+    margin: auto;
+    background: transparent;
+    transition: .2s ease-in-out 0s;
+}
+
+.mental-card .btn:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+    background: black;
+    /* color: white; */
+    font-size: 15px;
 }
 
 
-#steps .step{
-    font-size: 50px;
-    font-weight: 30;
-    text-align: center;
-    /* margin: 100% 0%; */
-}
-
-#steps{
-    margin-top: 10%;
-    margin-bottom: 10%;
-}
-
-.breathing-btn{
-    width: 100%;
-    /* margin-right: 20%; */
-}
