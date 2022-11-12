@@ -97,3 +97,20 @@ span{
     background: black;
     color: white;
 }
+
+#guide_button2{
+    font-size: 13px;
+    border-radius: 20px;
+    border: 2px solid black;
+    color: black;
+    display: block;
+    background: transparent;
+    transition: .2s ease-in-out 0s;
+}
+
+#guide_button2:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+    background: black;
+    color: white;
+}
