@@ -35,72 +35,120 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar" aria-label="navbar">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="../../HomeLandingAbout/homepage.html">
-      <img src="../../img/logo4.png" alt="" id="logo">
-    </a>
+      <a class="navbar-brand" href="/HomeLandingAbout/homepage.html">
+          <img src="/img/logo.png" style="height: 140px;" alt="DomesticAID Logo" />
+      </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" style="color:black;" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" ></span>
       </button>
 
-      <!-- <button type="button" class="btn btn-outline-danger" id="sos_button">Large button</button> -->
+      <div class="collapse navbar-collapse" id="mainNav">
 
-      <div class="collapse navbar-collapse" id="navbar">
-          <ul class="navbar-nav me-auto mb-2">
-            
-            <li class="nav-item">
-              <a class="nav-link active text-secondary" href="../../HomeLandingAbout/homepage.html"><span>Home</span></a>
-            </li>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-secondary" href="../../Guides/guides_categories.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Guides & Resources</span></a>
-                  <ul class="dropdown-menu"> 
-                      <li><a class="dropdown-item" href="../../Guides/guide_care.html">Care</a></li>
-                      <li><a class="dropdown-item" href="../../Guides/guide_rights.html">Rights</a></li>
-                      <li><a class="dropdown-item" href="../../Guides/guide_navigation.html">Navigation</a></li>
+              <li class="nav-item dropdown mx-3">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-user-friends"></i>
+                      Social+
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                      <li>
+                          <a class="dropdown-item" href="/Social/Forum/forum.html">Forum</a>
+                      </li>
+
+                      <li>
+                          <a class="dropdown-item"
+                              href="/Social/Activities/activities_landing.html">Activities</a>
+                      </li>
+
                   </ul>
-            </li>
+              </li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-secondary" href="../../HealthIsWealth/health_is_wealth.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Health is Wealth</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../../HealthIsWealth/Mental_Health/breathing.html">Breathing Exercise</a></li>
-                <li><a class="dropdown-item" href="../../HealthIsWealth/Mental_Health/journalling.html">Journalling</a></li>
-                <li><a class="dropdown-item" href="../../HealthIsWealth/Mental_Health/mental_guides.html">Mental Wellness Articles</a></li>
-                <li><a class="dropdown-item" href="../../HealthIsWealth/Physical_Health/physical_health_places.html">Physical Healthcare</a></li>
-              </ul>
-            </li>
+              <!-- Icon dropdown -->
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle text-secondary" href="../../Social/social_plus.html" data-bs-toggle="dropdown" aria-expanded="false"><span>Social+</span></a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="../../Social/Forum/forum.html">Forum</a></li>
-                <li><a class="dropdown-item" href="../../Social/Activities/activities_landing.html">Activity Page</a></li>
-              </ul>
-            </li>
+              <li class="nav-item dropdown mx-3">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-folder-open"></i>
+                      Guides
+                  </a>
 
-            <li class="nav-item">
-              <a class="nav-link active text-secondary" href="../../Registration&Profiling/edit_profiling.html"><span>Profile & Settings</span></a>
-            </li>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-            <li class="nav-item">
-              <a class="nav-link active text-primary fs-underline" href="../../HomeLandingAbout/about.html"><span><u>Log Out</u></span></a>
-            </li>
+                      <li>
+                          <a class="dropdown-item" href="/Guides/guide_care.html">Caregiving</a>
+                      </li>
 
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
-                  <button type="button" class="btn w-100 fs-3" id="sos_button">SEND SOS</button>
-              </a>
-            </li>
+                      <li>
+                          <a class="dropdown-item" href="/Guides/guide_navigation.html">Navigating
+                              Singapore</a>
+                      </li>
+
+                      <li>
+                          <a class="dropdown-item" href="/Guides/guide_rights.html">Know your rights!</a>
+                      </li>
+
+                  </ul>
+
+
+              </li>
+
+              <li class="nav-item dropdown mx-3">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-seedling"></i>
+                      Wellness
+                  </a>
+
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                      <li>
+                          <a class="dropdown-item" href="/HealthIsWealth/Mental_Health/mental_health_landing.html">Mental Health</a>
+                      </li>
+
+                      <li>
+                          <a class="dropdown-item" href="/HealthIsWealth/Physical_Health/physical_health_places.html">Physical Health</a>
+                      </li>
+
+                  </ul>
+
+
+              </li>
+
+              <!-- Icon dropdown -->
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                      id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                      <img src="/img/jx.jpg" class="rounded-circle" height="22" alt="Portrait of a Woman"
+                          loading="lazy" />
+                  </a>
+
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenu">
+                      <li>
+                          <a class="dropdown-item mx-3" href="/Registration&Profiling/edit_profiling.html">My
+                              profile</a>
+                      </li>
+                      <li>
+                          <a class="dropdown-item mx-3" href="/HomeLandingAbout/about.html">Logout</a>
+                      </li>
+                  </ul>
+              </li>
+
+              <!-- Icon dropdown -->
 
           </ul>
-        </div>
-    
+      </div>
   </div>
 </nav>
+
   
   <!-- Guide Starts Here -->
   <div class="container" id="root">
