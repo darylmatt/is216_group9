@@ -62,7 +62,7 @@
 
 </head>
 
-<body onload="triggerBtnClick()" >
+<body onload="triggerBtnClick()" id="root">
 
 
 <!-- Navbar -->
@@ -136,7 +136,7 @@
 
 
   <!-- Guide Starts Here -->
-  <div class="container" id="root">
+  <div class="container">
     <!-- <p>{{facilities}}</p>
     <p>{{subCategories}}</p>
     <p>{{selectedArray}}</p> -->
@@ -161,12 +161,12 @@
 
     <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3">
       <div class="col-xl-4 col-sm-12">
-        <div class="card">
+        <div class="facility-card">
           <img src="../../img/clinic.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Polyclinics</h5>
             <p class="card-text">Polyclinics are healthcare centres that provide primary care such as medical treatment, preventive healthcare, and health education, at a subsidised cost</p>
-            <button onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('polyclinics')" type="button" id="polyclinics" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('polyclinics')" type="button" id="polyclinics" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -175,12 +175,12 @@
 
 
       <div class="col-xl-4 col-sm-12">
-        <div class="card">
+        <div class="facility-card">
           <img src="../../img/hospital.png" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Hospitals</h5>
             <p class="card-text">Hospitals provides affordable specialist care for patients, where you can go to when you are facing any medical conditions that cannot be treated normally at general clinics. </p>           
-            <button onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('hospitals')" type="button" id="hospitals" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('hospitals')" type="button" id="hospitals" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -188,12 +188,12 @@
       </div>
 
       <div class="col-xl-4 col-sm-12">
-        <div class="card">
+        <div class="facility-card">
           <img style="height: 280px" src="../../img/general_practitioner.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">General Practitioners</h5>
             <p class="card-text">General practitioners are doctors who provide nonsurgical medical care. General practitioners evaluate patients through exams and tests and diagnose conditions such as diseases or injuries.</p>
-            <button onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('gp')" type="button" id="general practitioners" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('gp')" type="button" id="general practitioners" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -208,12 +208,12 @@
     <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3 justify-content-center">
 
       <div class="col-xl-4 col-sm-12">
-        <div class="card">
+        <div class="facility-card">
           <img src="../../img/dentalhealthcare.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Dental</h5>
             <p class="card-text">A Dentist is responsible for performing oral surgery and routine cleanings on patients. They repair and remove teeth, diagnose conditions and tell patients about how to best care for their teeth and gums. </p>            
-            <button onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('dental')" type="button" id="dentists" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('dental')" type="button" id="dentists" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -221,12 +221,12 @@
       </div>
 
       <div class="col-xl-4 col-sm-12">
-        <div class="card">
+        <div class="facility-card">
           <img src="../../img/derma.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Dermatologists</h5>
             <p class="card-text">A dermatologist specializes in conditions that affect the skin, hair, and nails. Whether it's rashes or wrinkles, no one understands your skin, hair, and nails better than a board-certified dermatologist. </p>            
-            <button onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('derma')" type="button" id="dermatologists" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('derma')" type="button" id="dermatologists" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -234,12 +234,12 @@
       </div>
 
       <div class="col-xl-4 col-sm-12">
-        <div class="card">
+        <div class="facility-card">
           <img src="../../img/pharmacy.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
             <h5 class="card-title">Pharmacies</h5>
             <p class="card-text">Places like Watsons, Unity or Guardian. If you know what medicine to get for your symptoms such as paracetemol, visit these places to get it over the counter </p>
-            <button onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('pharmacy')" id="pharmacies" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('pharmacy')" id="pharmacies" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -320,7 +320,7 @@
 
                       <br>
 
-                      <button id="getAddress" type="button" onclick="getLoc('addr')" class="btn btn-primary">Get Full Address</button>
+                      <button id="getAddress" type="button" class="btn text-white" onclick="getLoc('addr')" style='background-color:#9a616d;'>Get Full Address</button>
                       <!-- <button id="getPostal" type="button" onclick="getLoc('postcode')" class="btn btn-primary">Get Postal Code</button> -->
       
             
