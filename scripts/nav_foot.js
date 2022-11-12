@@ -88,6 +88,89 @@ footer.component("footer-template", {
 })
 footer.mount("#footer");
 
+const mainNav = Vue.createApp({})
+mainNav.component("nav-template", {
+  props : ["homepage_link", "logo_img", "forum_link", "activity_link", "guides_link", "wellness_link",  ],
+  template : 
+  `
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <img src="/img/logo.png" height="80" alt="DomesticAID Logo" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+              aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                          data-mdb-toggle="dropdown" aria-expanded="false">
+                          Social +
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li>
+                              <a class="dropdown-item" href="/Social/Forum/forum.html">Forum</a>
+                          </li>
+                          <li>
+                              <a class="dropdown-item" href="/Social/Activities/activities_landing.html">Activities</a>
+                          </li>
+                      </ul>
+                  </li>
+
+                  <!-- Icon dropdown -->
+
+                  <li class="nav-item mx-3">
+                      <a class="nav-link" href="/Guides/guide_navigation.html">Guides</a>
+                  </li>
+
+                  <li class="nav-item mx-3">
+                      <a class="nav-link" href="/HealthIsWealth/health_is_wealth.html">Wellness</a>
+                  </li>
+
+                  <li class="nav-item mx-3">
+                    <button class="btn btn-danger btn-rounded btn-lg" id="sos_button">SOS</button>
+                  </li>
+
+                  <!-- Icon dropdown -->
+
+                  <li class="nav-item dropdown">
+                      <a
+                        class="nav-link dropdown-toggle d-flex align-items-center"
+                        href="#"
+                        id="navbarDropdownMenuLink"
+                        role="button"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <img
+                          src="/img/jx.jpg"
+                          class="rounded-circle"
+                          height="22"
+                          alt="Portrait of a Woman"
+                          loading="lazy"
+                        />
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                        <li>
+                          <a class="dropdown-item" href="/Registration&Profiling/edit_profiling.html">My profile</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="/HomeLandingAbout/about.html">Logout</a>
+                        </li>
+                      </ul>
+                    </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  `
+})
+
 
 // Navbar
 
