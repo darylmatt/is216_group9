@@ -17,7 +17,7 @@ const root = Vue.createApp({
             activity_desc: "Participate in activities with other domestic helpers with similar interests as you. Join today and make new friends!",
             activity_btn: "FIND ACTIVITY",
             guides: "Guides",
-            guides_navigate_title: "Carrying out your responsibilities",
+            guides_navigate_title: "Carrying out your Responsibilities",
             guides_navigate_desc: "Find out more about what you need to do as a helper and other soft skills you might need",
             guides_navigate_btn: "EXPLORE GUIDES",
             guides_rights_title: "My Rights As A Domestic Helper",
