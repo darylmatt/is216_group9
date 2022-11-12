@@ -35,7 +35,7 @@
       padding: 20px;
     } */
 
-    .roundedFixedBtn {
+    /* .roundedFixedBtn {
       height: 60px;
       line-height: 80px;
       width: 60px;
@@ -46,25 +46,41 @@
       color: white;
       text-align: center;
       cursor: pointer;
-    }
+    } */
 
-    .translate_btn {
+    #translate_btn {
       position: fixed;
       bottom: 110px;
       right: 30px;
       /* padding: 20px; */
-      height:70px;
-      width:70px;
+      height: 70px;
+      width: 70px;
       z-index: 1;
     }
-    .sos_btn{
+
+    .sos_btn {
       position: fixed;
       bottom: 30px;
       right: 30px;
       /* padding: 20px; */
-      height:70px;
-      width:70px;
+      height: 70px;
+      width: 70px;
       z-index: 1;
+    }
+
+    #translate_option {
+      bottom: 200px;
+      right: 30px;
+      position: fixed;
+      z-index: 2;
+    }
+
+    #sos_dialog {
+      bottom: 200px;
+      right: 30px;
+      position: fixed;
+      z-index: 2;
+
     }
   </style>
 
@@ -72,14 +88,80 @@
 
 <body id="root">
 
-  <button type="button" v-on:click="translate()" class="btn btn-floating sos_btn"
+  <!-- SOS and translate button -->
+  <button type="button" v-on:click="translate_dialog()" id="translate_btn" class="btn btn-floating"
     style="background-image: linear-gradient(to right, #c7ecfc , #fcc6f5);">
-    <i class="fas fa-language fa-xl"></i>
+    <i v-show="!show_translate_option" class="fas fa-language fa-xl"></i>
+    <i v-show="show_translate_option" class="fas fa-window-close fa-xl"></i>
   </button>
 
-  <button type="button" class="btn btn-floating translate_btn btn-danger fw-bolder">
-  SOS
-</button>
+  <div class="card" id="translate_option" v-show="show_translate_option">
+    <div class="card-body">
+      <h5 class="card-title">Select preferred language</h5>
+
+      <div>
+        <button type="button" onClick="window.location.reload();" class="btn btn-floating">
+          <i class="flag-singapore flag"></i>
+        </button>
+        English
+      </div>
+
+      <div v-on:click="translate()">
+        <button type="button" class="btn btn-floating">
+          <i class="flag-indonesia flag"></i>
+        </button>
+        Bahasa Indonesia
+      </div>
+
+      <div>
+        <button type="button" class="btn btn-floating">
+          <i class="flag-myanmar flag"></i>
+        </button>
+        Burmese
+      </div>
+
+      <div>
+        <button type="button" class="btn btn-floating">
+          <i class="flag-philippines flag"></i>
+        </button>
+        Tagalog
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <button type="button" id="sos_btn" v-on:click="sos_dialog()" class="btn btn-floating sos_btn btn-danger fw-bolder"
+    data-bs-toggle="modal" data-bs-target="#sosModal">
+    <h5 v-show="!show_sos_dialog" class="m-auto">SOS</h5>
+    <i v-show="show_sos_dialog" class="fas fa-window-close fa-xl"></i>
+  </button>
+
+  <div class="card" id="sos_dialog" v-show="show_sos_dialog">
+    <div class="card-body">
+      <h5 class="card-title text-danger">Contact SOS services?</h5>
+      <div>
+        <button type="button" class="btn btn-lg btn-rounded btn-danger mx-2">
+          YES
+        </button>
+        <button type="button" v-on:click="sos_dialog" class="btn btn-rounded btn-outline-secondary">
+          Cancel
+        </button>
+      </div>
+
+
+
+
+
+
+    </div>
+
+
+  </div>
+
+
 
   <!-- <a class="fixedButton"  v-on:click="translate()">
     <div class="roundedFixedBtn">
@@ -87,76 +169,120 @@
     </div>
  </a> -->
 
-  <button type="button" v-on:click="translate()" class="btn btn-dark position-fixed bottom-0 start-0">TRANSLATE</button>
+  <!-- <button type="button" v-on:click="translate()" class="btn btn-dark position-fixed bottom-0 start-0">TRANSLATE</button> -->
 
- 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="../img/logo.png" height="80" alt="DomesticAID Logo" />
+
+      <a class="navbar-brand" href="/HomeLandingAbout/homepage.html">
+        <img src="/img/logo.png" height="80" alt="DomesticAID Logo" />
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+
+      <!-- <div>
+            <a href="/Registration&Profiling/login.html" class="btn btn-danger btn-rounded btn-lg mx-3"
+                style="font-size:larger" role="button">
+                SOS
+            </a>
+        </div> -->
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+
+
+      <div class="collapse navbar-collapse" id="mainNav">
 
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-          <li class="nav-item mx-3">
-            <a class="nav-link active" aria-current="page" href="#">About DomesticAID</a>
-          </li>
-
-          <li class="nav-item mx-3">
-            <a class="nav-link" href="#">Our Team</a>
-          </li>
-
-          <li class="nav-item mx-3">
-            <a class="nav-link" href="#">Donate</a>
-          </li>
-
-          <li class="nav-item mx-3">
-            <a class="nav-link" href="#">Join Us</a>
-          </li>
-
-          <li class="nav-item mx-3">
-            <a href="../Registration&Profiling/login.html" class="btn btn-outline-dark btn-rounded" role="button">
-              Register/ Login
-            </a>
-          </li>
-
-
-          <!-- Icon dropdown -->
           <li class="nav-item dropdown mx-3">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
-              aria-expanded="false">
-              <i class="flag-singapore flag m-0"></i>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-mdb-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user-friends"></i>
+              Social +
             </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
               <li>
-                <a class="dropdown-item" href="#"><i class="flag-singapore flag"></i>English
-                  <i class="fa fa-check text-success ms-2"></i></a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
+                <a class="dropdown-item" href="/Social/Forum/forum.html">Forum</a>
               </li>
 
               <li>
-                <a class="dropdown-item mx-3" href="#"><i class="flag-philippines flag"></i>Tagalog</a>
-              </li>
-
-              <li>
-                <a class="dropdown-item mx-3" href="#"><i class="flag-indonesia flag"></i>Bahasa
-                  Indonesia</a>
-              </li>
-
-              <li>
-                <a class="dropdown-item mx-3" href="#"><i class="flag-myanmar flag"></i>Burmese</a>
+                <a class="dropdown-item" href="/Social/Activities/activities_landing.html">Activities</a>
               </li>
 
             </ul>
+          </li>
+
+          <!-- Icon dropdown -->
+
+          <li class="nav-item dropdown mx-3">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-mdb-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-folder-open"></i>
+              Guides</a>
+
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+              <li>
+                <a class="dropdown-item" href="/Social/Forum/forum.html">Know your rights!</a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="/Social/Activities/activities_landing.html">Navigating in
+                  SG</a>
+              </li>
+
+              <li>
+                <a class="dropdown-item" href="/Social/Activities/activities_landing.html">Caregiving</a>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="/HealthIsWealth/health_is_wealth.html">
+              <i class="fas fa-seedling"></i>
+              Wellness
+            </a>
+          </li>
+
+          <!-- <li class="nav-item mx-3">
+                    <a href="/Registration&Profiling/login.html" class="btn btn-danger btn-rounded btn-lg"
+                        role="button">
+                        SOS
+                    </a>
+                </li> -->
+
+          <!-- Icon dropdown -->
+
+          <li class="nav-item dropdown">
+
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink"
+              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+              <img src="/img/jx.jpg" class="rounded-circle" height="22" alt="Portrait of a Woman" loading="lazy" />
+            </a>
+
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenu">
+              <li>
+                <a class="dropdown-item mx-3" href="/Registration&Profiling/edit_profiling.html">My
+                  profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item mx-3" href="/HomeLandingAbout/about.html">Logout</a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Icon dropdown -->
+
+        </ul>
       </div>
+
+
     </div>
   </nav>
 
@@ -667,56 +793,46 @@
 
     <div class="row">
 
-    <div class="col-lg-6 my-2">
-      <div class="card h-100 p-5 social-card" id="social-card-1">
-        <div class="row">
-          <div class="col-7 order-2">
-            <div class="card-body">
-              <h3 class="card-title fw-bold">Forum</h3>
-              <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-              <p class="card-text">Post questions and respond to threads by domestic helpers like you who are facing similar issues. Connect with them here.</p>
-              <a href="../Social/Forum/forum.html" class="btn" id="social_button">Post a Thread</a>
-            </div>
-          </div>
-          <div class="col-5 order-1">
-            <lottie-player
-            src="https://assets9.lottiefiles.com/packages/lf20_x4402ny7.json"
-            background="transparent"
-            speed="1"
-            style="width: auto"
-            loop
-            autoplay
-            ></lottie-player>      
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6 my-2">
-      <div class="card h-100 p-5 social-card" id="social-card-2">
-        <div class="card-body">
+      <div class="col-lg-6 my-2">
+        <div class="card h-100 p-5 social-card" id="social-card-1">
           <div class="row">
             <div class="col-7 order-2">
-              <h3 class="card-title fw-bold">Activities</h3>
-              <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-              <p class="card-text">Participate in activities with other domestic helpers with similar interests as you. Join an activity today and make new friends!</p>
-              <a href="../Social/Activities/activities_landing.html" class="btn" id="social_button">Find Activity</a>
+              <div class="card-body">
+                <h3 class="card-title fw-bold">Forum</h3>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                <p class="card-text">Post questions and respond to threads by domestic helpers like you who are facing
+                  similar issues. Connect with them here.</p>
+                <a href="../Social/Forum/forum.html" class="btn" id="social_button">Post a Thread</a>
+              </div>
             </div>
             <div class="col-5 order-1">
-              <lottie-player
-              src="https://assets9.lottiefiles.com/packages/lf20_GcNGbf.json"
-              background="transparent"
-              speed="1"
-              style="width: 90%;"
-              loop
-              autoplay
-              ></lottie-player>      
+              <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_x4402ny7.json" background="transparent"
+                speed="1" style="width: auto" loop autoplay></lottie-player>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 my-2">
+        <div class="card h-100 p-5 social-card" id="social-card-2">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-7 order-2">
+                <h3 class="card-title fw-bold">Activities</h3>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                <p class="card-text">Participate in activities with other domestic helpers with similar interests as
+                  you. Join an activity today and make new friends!</p>
+                <a href="../Social/Activities/activities_landing.html" class="btn" id="social_button">Find Activity</a>
+              </div>
+              <div class="col-5 order-1">
+                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_GcNGbf.json" background="transparent"
+                  speed="1" style="width: 90%;" loop autoplay></lottie-player>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-</div>
 
 
     <h1 class="sub-header" id="sub-header2" style=" text-shadow: 2px 2px 5px lightgrey;">
@@ -899,7 +1015,7 @@
       integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
       crossorigin="anonymous"></script>
     <script src="../scripts/nav_foot.js"></script>
-    <script src="../scripts/homepage.js"></script>
+    <script src="/scripts/homepage.js"></script>
     <script src="../scripts/sos.js"></script>
 
 </body>
