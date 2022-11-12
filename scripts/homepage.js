@@ -177,5 +177,50 @@ root.component("translate-template", {
     </div>
     `
 })
+root.component("sos-template", {
+    template:
+    `
+    <button type="button" id="sos_btn" class="btn btn-floating sos_btn btn-danger fw-bolder" data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop">
+    <h5 v-show="!show_sos_dialog" class="m-auto">SOS</h5>
+    </button>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5 text-danger" id="staticBackdropLabel">Request for SOS</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <p class="text-warning">⚠️BEFORE YOU PROCEED:⚠️</p>
+            <ul>
+                <li>
+                <div>
+                    Choosing "Confirm" will send an immediate help alert to the <mark>Singapore Police</mark>.
+                </div>
+                </li>
+                <li>
+                <div>
+                    All information shared with us remains <span style="text-decoration: underline;">confidential</span>.
+                </div>
+                </li>
+            </ul>
+            <hr>
+            <div class="text-danger text-center">
+                Please do not abuse this function.
+            </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary " data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary btn-danger float-end"
+                data-bs-dismiss="modal">Confirm</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    `
+})
 
 root.mount("#root")

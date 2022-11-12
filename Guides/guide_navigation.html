@@ -38,78 +38,120 @@
 
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-          <img src="../img/logo.png" height="80" alt="DomesticAID Logo" />
+
+      <a class="navbar-brand" href="/HomeLandingAbout/homepage.html">
+          <img src="/img/logo.png" style="height: 140px;" alt="DomesticAID Logo" />
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+
+      <button class="navbar-toggler" style="color:black;" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" ></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+      <div class="collapse navbar-collapse" id="mainNav">
 
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-              <li class="nav-item mx-3">
-                  <a class="nav-link active" aria-current="page" href="#">About DomesticAID</a>
-              </li>
-
-              <li class="nav-item mx-3">
-                  <a class="nav-link" href="#">Our Team</a>
-              </li>
-
-              <li class="nav-item mx-3">
-                  <a class="nav-link" href="#">Donate</a>
-              </li>
-
-              <li class="nav-item mx-3">
-                  <a class="nav-link" href="#">Join Us</a>
-              </li>
-
-              <li class="nav-item mx-3">
-                  <a href="../Registration&Profiling/login.html" class="btn btn-outline-dark btn-rounded"
-                      role="button">
-                      Register/ Login
+              <li class="nav-item dropdown mx-3">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-user-friends"></i>
+                      Social+
                   </a>
-              </li>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
+                      <li>
+                          <a class="dropdown-item" href="/Social/Forum/forum.html">Forum</a>
+                      </li>
+
+                      <li>
+                          <a class="dropdown-item"
+                              href="/Social/Activities/activities_landing.html">Activities</a>
+                      </li>
+
+                  </ul>
+              </li>
 
               <!-- Icon dropdown -->
+
               <li class="nav-item dropdown mx-3">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                       data-mdb-toggle="dropdown" aria-expanded="false">
-                      <i class="flag-singapore flag m-0"></i>
+                      <i class="fas fa-folder-open"></i>
+                      Guides
                   </a>
-                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
                       <li>
-                          <a class="dropdown-item" href="#"><i class="flag-singapore flag"></i>English
-                              <i class="fa fa-check text-success ms-2"></i></a>
-                      </li>
-                      <li>
-                          <hr class="dropdown-divider" />
+                          <a class="dropdown-item" href="/Guides/guide_care.html">Caregiving</a>
                       </li>
 
                       <li>
-                          <a class="dropdown-item mx-3" href="#"><i class="flag-philippines flag"></i>Tagalog</a>
+                          <a class="dropdown-item" href="/Guides/guide_navigation.html">Navigating
+                              Singapore</a>
                       </li>
 
                       <li>
-                          <a class="dropdown-item mx-3" href="#"><i class="flag-indonesia flag"></i>Bahasa
-                              Indonesia</a>
+                          <a class="dropdown-item" href="/Guides/guide_rights.html">Know your rights!</a>
                       </li>
 
-                      <li>
-                          <a class="dropdown-item mx-3" href="#"><i class="flag-myanmar flag"></i>Burmese</a>
-                      </li>
+                  </ul>
 
-                
+
               </li>
-              </ul>
-              
+
+              <li class="nav-item dropdown mx-3">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-seedling"></i>
+                      Wellness
+                  </a>
+
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                      <li>
+                          <a class="dropdown-item" href="/HealthIsWealth/Mental_Health/mental_health_landing.html">Mental Health</a>
+                      </li>
+
+                      <li>
+                          <a class="dropdown-item" href="/HealthIsWealth/Physical_Health/physical_health_places.html">Physical Health</a>
+                      </li>
+
+                  </ul>
+
+
+              </li>
+
+              <!-- Icon dropdown -->
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                      id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                      <img src="/img/jx.jpg" class="rounded-circle" height="22" alt="Portrait of a Woman"
+                          loading="lazy" />
+                  </a>
+
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenu">
+                      <li>
+                          <a class="dropdown-item mx-3" href="/Registration&Profiling/edit_profiling.html">My
+                              profile</a>
+                      </li>
+                      <li>
+                          <a class="dropdown-item mx-3" href="/HomeLandingAbout/about.html">Logout</a>
+                      </li>
+                  </ul>
+              </li>
+
+              <!-- Icon dropdown -->
+
+          </ul>
       </div>
   </div>
 </nav>
+
 <!-- <nav class="navbar" aria-label="navbar">
   <div class="container-fluid">
 

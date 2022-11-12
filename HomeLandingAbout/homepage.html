@@ -124,671 +124,607 @@
     <i v-show="show_sos_dialog" class="fas fa-window-close fa-xl"></i>
   </button> -->
 
-  <button type="button" id="sos_btn" class="btn btn-floating sos_btn btn-danger fw-bolder" data-bs-toggle="modal"
-    data-bs-target="#staticBackdrop">
-    <h5 v-show="!show_sos_dialog" class="m-auto">SOS</h5>
-  </button>
-
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5 text-danger" id="staticBackdropLabel">Request for SOS</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p class="text-warning">⚠️BEFORE YOU PROCEED:⚠️</p>
-          <ul>
-            <li>
-              <div>
-                Choosing "Confirm" will send an immediate help alert to the <mark>Singapore Police</mark>.
-              </div>
-            </li>
-            <li>
-              <div>
-                All information shared with us remains <span style="text-decoration: underline;">confidential</span>.
-              </div>
-            </li>
-          </ul>
-          <hr>
-          <div class="text-danger text-center">
-            Please do not abuse this function.
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-secondary " data-bs-dismiss="modal">Cancel</button>
-          <button type="button" v-on:click="sos_confirm()" class="btn btn-primary btn-danger float-end"
-            data-bs-dismiss="modal">Confirm</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <sos-template></sos-template>
 
   <!-- [END] SOS and translate button -->
-
-
-
-
-
-
-  </div>
-  </div>
-  </div>
-
-
-
-
-
-
-
-  <!-- <a class="fixedButton"  v-on:click="translate()">
-    <div class="roundedFixedBtn">
-      <i class="fa fa-language"></i>
-    </div>
- </a> -->
-
-  <!-- <button type="button" v-on:click="translate()" class="btn btn-dark position-fixed bottom-0 start-0">TRANSLATE</button> -->
-
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-  
-        <a class="navbar-brand" href="/HomeLandingAbout/homepage.html">
-            <img src="/img/logo.png" style="height: 100px;" alt="DomesticAID Logo" />
-        </a>
-  
-  
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse" id="mainNav">
-  
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-  
-                <li class="nav-item dropdown mx-3">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-mdb-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user-friends"></i>
-                        Social+
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-  
-                        <li>
-                            <a class="dropdown-item" href="/Social/Forum/forum.html">Forum</a>
-                        </li>
-  
-                        <li>
-                            <a class="dropdown-item"
-                                href="/Social/Activities/activities_landing.html">Activities</a>
-                        </li>
-  
-                    </ul>
-                </li>
-  
-                <!-- Icon dropdown -->
-  
-                <li class="nav-item dropdown mx-3">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-mdb-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-folder-open"></i>
-                        Guides
-                    </a>
-  
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-  
-                        <li>
-                            <a class="dropdown-item" href="/Guides/guide_care.html">Caregiving</a>
-                        </li>
-  
-                        <li>
-                            <a class="dropdown-item" href="/Guides/guide_navigation.html">Navigating
-                                Singapore</a>
-                        </li>
-  
-                        <li>
-                            <a class="dropdown-item" href="/Guides/guide_rights.html">Know your rights!</a>
-                        </li>
-  
-                    </ul>
-  
-  
-                </li>
-  
-                <li class="nav-item dropdown mx-3">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-mdb-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-seedling"></i>
-                        Wellness
-                    </a>
-  
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-  
-                        <li>
-                            <a class="dropdown-item" href="/HealthIsWealth/Mental_Health/mental_health_landing.html">Mental Health</a>
-                        </li>
-  
-                        <li>
-                            <a class="dropdown-item" href="/HealthIsWealth/Physical_Health/physical_health_places.html">Physical Health</a>
-                        </li>
-  
-                    </ul>
-  
-  
-                </li>
-  
-                <!-- Icon dropdown -->
-  
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
-                        id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                        <img src="/img/jx.jpg" class="rounded-circle" height="22" alt="Portrait of a Woman"
-                            loading="lazy" />
-                    </a>
-  
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenu">
-                        <li>
-                            <a class="dropdown-item mx-3" href="/Registration&Profiling/edit_profiling.html">My
-                                profile</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item mx-3" href="/HomeLandingAbout/about.html">Logout</a>
-                        </li>
-                    </ul>
-                </li>
-  
-                <!-- Icon dropdown -->
-  
-            </ul>
-        </div>
-    </div>
-  </nav>
  
 
-    <div class="container-fluid mx-auto mb-5 text-center">
-      <div class="row bg-light">
-        <!-- style="background-color: rgb(246, 235, 247);" -->
-        <div class="col-2 col-lg-1"></div>
-        <div class="col-xl-4 col-lg-3 col-12" style="margin-top: 15%; text-align: center;">
-          <h1 id="header-text">{{hello}} <span id="user_name">{{name}}</span>!</h1>
-          <h1 id="header-subtext">{{welcome_msg}}</h1>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+
+      <a class="navbar-brand" href="/HomeLandingAbout/homepage.html">
+          <img src="/img/logo.png" style="height: 100px;" alt="DomesticAID Logo" />
+      </a>
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+              <li class="nav-item dropdown mx-3">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-user-friends"></i>
+                      Social+
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                      <li>
+                          <a class="dropdown-item" href="/Social/Forum/forum.html">Forum</a>
+                      </li>
+
+                      <li>
+                          <a class="dropdown-item"
+                              href="/Social/Activities/activities_landing.html">Activities</a>
+                      </li>
+
+                  </ul>
+              </li>
+
+              <!-- Icon dropdown -->
+
+              <li class="nav-item dropdown mx-3">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-folder-open"></i>
+                      Guides
+                  </a>
+
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                      <li>
+                          <a class="dropdown-item" href="/Guides/guide_care.html">Caregiving</a>
+                      </li>
+
+                      <li>
+                          <a class="dropdown-item" href="/Guides/guide_navigation.html">Navigating
+                              Singapore</a>
+                      </li>
+
+                      <li>
+                          <a class="dropdown-item" href="/Guides/guide_rights.html">Know your rights!</a>
+                      </li>
+
+                  </ul>
+
+
+              </li>
+
+              <li class="nav-item dropdown mx-3">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-seedling"></i>
+                      Wellness
+                  </a>
+
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                      <li>
+                          <a class="dropdown-item" href="/HealthIsWealth/Mental_Health/mental_health_landing.html">Mental Health</a>
+                      </li>
+
+                      <li>
+                          <a class="dropdown-item" href="/HealthIsWealth/Physical_Health/physical_health_places.html">Physical Health</a>
+                      </li>
+
+                  </ul>
+
+
+              </li>
+
+              <!-- Icon dropdown -->
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                      id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                      <img src="/img/jx.jpg" class="rounded-circle" height="22" alt="Portrait of a Woman"
+                          loading="lazy" />
+                  </a>
+
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenu">
+                      <li>
+                          <a class="dropdown-item mx-3" href="/Registration&Profiling/edit_profiling.html">My
+                              profile</a>
+                      </li>
+                      <li>
+                          <a class="dropdown-item mx-3" href="/HomeLandingAbout/about.html">Logout</a>
+                      </li>
+                  </ul>
+              </li>
+
+              <!-- Icon dropdown -->
+
+          </ul>
+      </div>
+  </div>
+</nav>
+
+<!-- Header Banner -->
+<div class="container-fluid mx-auto mb-5 text-center">
+    <div class="row bg-light">
+      <!-- style="background-color: rgb(246, 235, 247);" -->
+      <div class="col-2 col-lg-1"></div>
+      <div class="col-xl-4 col-lg-3 col-12" style="margin-top: 15%; text-align: center;">
+        <h1 id="header-text">{{hello}} <span id="user_name">{{name}}</span>!</h1>
+        <h1 id="header-subtext">{{welcome_msg}}</h1>
+      </div>
+
+      <div class="col-lg-2 col-0"></div>
+      <div class="col-xl-4 col-lg-5 col-12 my-5 text-center">
+        <div class="row">
+          <div class="col m-2 rounded-5" style="background-color: pink;">
+            <lottie-player
+            src="https://assets8.lottiefiles.com/packages/lf20_l9xeroxk.json"
+            background="transparent"
+            speed="1"
+            style="height: 100%;"
+            loop
+            autoplay
+            ></lottie-player>
+          </div>
+          <div class="col m-2 rounded-5" style="background-color: rgb(127, 240, 229);">
+            <lottie-player
+            src="https://assets8.lottiefiles.com/packages/lf20_iwwltgly.json"
+            background="transparent"
+            speed="1"
+            style="height: 100%;"
+            loop
+            autoplay
+            ></lottie-player>
+          </div>
+          <div class="col m-2 rounded-5" style="background-color:lightcoral;">
+            <lottie-player
+            src="https://assets3.lottiefiles.com/private_files/lf30_czsywxpt.json"
+            background="transparent"
+            speed="1"
+            style="height: 100%;"
+            loop
+            autoplay
+            ></lottie-player>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col m-2 rounded-5" style="background-color: lightgreen;">
+            <lottie-player
+            src="https://assets2.lottiefiles.com/packages/lf20_fjv8qxqn.json"
+            background="transparent"
+            speed="1"
+            style="height: 100%;"
+            loop
+            autoplay
+            ></lottie-player>
+          </div>
+          <div class="col m-2 rounded-5" style="background-color:lightgoldenrodyellow;">
+            <lottie-player
+            src="https://assets1.lottiefiles.com/packages/lf20_q81jggtb.json"
+            background="transparent"
+            speed="1"
+            style="height: 100%;"
+            loop
+            autoplay
+            ></lottie-player>
+          </div>
+          <div class="col m-2 rounded-5" style="background-color: rgb(191, 248, 248);">
+            <lottie-player
+            src="https://assets2.lottiefiles.com/packages/lf20_je019gjz.json"
+            background="transparent"
+            speed="1"
+            style="height: 100%;"
+            loop
+            autoplay
+            ></lottie-player>
+          </div>
         </div>
 
-        <div class="col-lg-2 col-0"></div>
-        <div class="col-xl-4 col-lg-5 col-12 my-5 text-center">
-          <div class="row">
-            <div class="col m-2 rounded-5" style="background-color: pink;">
-              <lottie-player
-              src="https://assets8.lottiefiles.com/packages/lf20_l9xeroxk.json"
-              background="transparent"
-              speed="1"
-              style="height: 100%;"
-              loop
-              autoplay
-              ></lottie-player>
-            </div>
-            <div class="col m-2 rounded-5" style="background-color: rgb(127, 240, 229);">
-              <lottie-player
-              src="https://assets8.lottiefiles.com/packages/lf20_iwwltgly.json"
-              background="transparent"
-              speed="1"
-              style="height: 100%;"
-              loop
-              autoplay
-              ></lottie-player>
-            </div>
-            <div class="col m-2 rounded-5" style="background-color:lightcoral;">
-              <lottie-player
-              src="https://assets3.lottiefiles.com/private_files/lf30_czsywxpt.json"
-              background="transparent"
-              speed="1"
-              style="height: 100%;"
-              loop
-              autoplay
-              ></lottie-player>
-            </div>
+        <div class="row">
+          <div class="col m-2 rounded-5" style="background-color: lightsalmon;">
+            <lottie-player
+            src="https://assets1.lottiefiles.com/packages/lf20_9ycwmgb9.json"
+            background="transparent"
+            speed="1"
+            style="height: 100%;"
+            loop
+            autoplay
+            ></lottie-player>
           </div>
-    
-          <div class="row">
-            <div class="col m-2 rounded-5" style="background-color: lightgreen;">
-              <lottie-player
-              src="https://assets2.lottiefiles.com/packages/lf20_fjv8qxqn.json"
-              background="transparent"
-              speed="1"
-              style="height: 100%;"
-              loop
-              autoplay
-              ></lottie-player>
-            </div>
-            <div class="col m-2 rounded-5" style="background-color:lightgoldenrodyellow;">
-              <lottie-player
-              src="https://assets1.lottiefiles.com/packages/lf20_q81jggtb.json"
-              background="transparent"
-              speed="1"
-              style="height: 100%;"
-              loop
-              autoplay
-              ></lottie-player>
-            </div>
-            <div class="col m-2 rounded-5" style="background-color: rgb(191, 248, 248);">
-              <lottie-player
-              src="https://assets2.lottiefiles.com/packages/lf20_je019gjz.json"
-              background="transparent"
-              speed="1"
-              style="height: 100%;"
-              loop
-              autoplay
-              ></lottie-player>
+          <div class="col m-2 rounded-5" style="background-color:lightseagreen;">
+            <lottie-player
+            src="https://assets7.lottiefiles.com/private_files/lf30_m46YDW.json"
+            background="transparent"
+            speed="1"
+            style="height: 100%;"
+            loop
+            autoplay
+            ></lottie-player>
+          </div>
+          <div class="col m-2 rounded-5" style="background-color: lightcyan;">
+            <lottie-player
+            src="https://assets7.lottiefiles.com/packages/lf20_hebegwpc.json"
+            background="transparent"
+            speed="1"
+            style="height: 100%;"
+            loop
+            autoplay
+            ></lottie-player>
+          </div>
+        </div>    
+      </div>   
+
+  </div>
+</div>
+
+<!-- Upcoming Activities  -->
+<div class="container">
+  <h1 style=" text-shadow: 2px 2px 5px lightgrey; color:black;">{{upcoming_activities}}</h1>
+  <br><br>
+  <!-- CAROUSEL FOR XL SCREEN -->
+  <div id="carouselExampleIndicators" class="d-none d-xl-block carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-inner py-3">
+
+      <div class="carousel-item active">
+        <div class="row d-flex justify-content-center">
+
+          <div class="card mx-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
             </div>
           </div>
 
-          <div class="row">
-            <div class="col m-2 rounded-5" style="background-color: lightsalmon;">
-              <lottie-player
-              src="https://assets1.lottiefiles.com/packages/lf20_9ycwmgb9.json"
-              background="transparent"
-              speed="1"
-              style="height: 100%;"
-              loop
-              autoplay
-              ></lottie-player>
+          <div class="card mx-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
             </div>
-            <div class="col m-2 rounded-5" style="background-color:lightseagreen;">
-              <lottie-player
-              src="https://assets7.lottiefiles.com/private_files/lf30_m46YDW.json"
-              background="transparent"
-              speed="1"
-              style="height: 100%;"
-              loop
-              autoplay
-              ></lottie-player>
+          </div>
+
+          <div class="card mx-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
             </div>
-            <div class="col m-2 rounded-5" style="background-color: lightcyan;">
-              <lottie-player
-              src="https://assets7.lottiefiles.com/packages/lf20_hebegwpc.json"
-              background="transparent"
-              speed="1"
-              style="height: 100%;"
-              loop
-              autoplay
-              ></lottie-player>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row d-flex justify-content-center">
+
+          <div class="card mx-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
             </div>
-          </div>    
-        </div>   
+          </div>
+
+          <div class="card mx-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+
+          <div class="card mx-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
     </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev" style="color: black;">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next" style="color: black;">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
   </div>
 
+  <!-- CAROUSEL FOR LG SCREEN -->
+  <div id="carouselExampleIndicators1" class="d-xl-none d-lg-block d-md-none d-sm-none carousel slide"
+    data-bs-ride="carousel">
 
-  <div class="container">
-    <h1 style=" text-shadow: 2px 2px 5px lightgrey; color:black;">{{upcoming_activities}}</h1>
-    <br><br>
-    <!-- CAROUSEL FOR XL SCREEN -->
-    <div id="carouselExampleIndicators" class="d-none d-xl-block carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner py-3">
 
-      <div class="carousel-inner py-3">
+      <div class="carousel-item active">
+        <div class="row d-flex justify-content-center">
 
-        <div class="carousel-item active">
-          <div class="row d-flex justify-content-center">
-
-            <div class="card mx-3" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
+          <div class="card mx-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
             </div>
-
-            <div class="card mx-3" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-            <div class="card mx-3" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
           </div>
-        </div>
 
-        <div class="carousel-item">
-          <div class="row d-flex justify-content-center">
-
-            <div class="card mx-3" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
+          <div class="card mx-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
             </div>
-
-            <div class="card mx-3" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-            <div class="card mx-3" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
           </div>
-        </div>
 
+        </div>
       </div>
 
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev" style="color: black;">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next" style="color: black;">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+      <div class="carousel-item">
+        <div class="row d-flex justify-content-center">
+
+          <div class="card mx-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+
+          <div class="card mx-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
     </div>
 
-    <!-- CAROUSEL FOR LG SCREEN -->
-    <div id="carouselExampleIndicators1" class="d-xl-none d-lg-block d-md-none d-sm-none carousel slide"
-      data-bs-ride="carousel">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1"
+      data-bs-slide="prev" style="color: black;">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1"
+      data-bs-slide="next" style="color: black;">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
 
-      <div class="carousel-inner py-3">
-
-        <div class="carousel-item active">
-          <div class="row d-flex justify-content-center">
-
-            <div class="card mx-3" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-            <div class="card mx-3" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="row d-flex justify-content-center">
-
-            <div class="card mx-3" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-            <div class="card mx-3" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators1"
-        data-bs-slide="prev" style="color: black;">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators1"
-        data-bs-slide="next" style="color: black;">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-
-    </div>
-
-    <!-- CAROUSEL FOR MD SCREEN -->
-    <div id="carouselExampleIndicators2" class="d-xl-none d-lg-none d-md-block d-sm-none carousel slide"
-      data-bs-ride="carousel">
-
-      <div class="carousel-inner py-3">
-
-        <div class="carousel-item active">
-          <div class="row d-flex justify-content-center">
-
-            <div class="card mx-3" style="width: 15rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-            <div class="card mx-3" style="width: 15rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="row d-flex justify-content-center">
-
-            <div class="card mx-3" style="width: 15rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-            <div class="card mx-3" style="width: 15rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2"
-        data-bs-slide="prev" style="color: black;">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2"
-        data-bs-slide="next" style="color: black;">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-
-    </div>
-
-    <!-- CAROUSEL FOR SM SCREEN -->
-    <div id="carouselExampleIndicators3" class="d-xl-none d-lg-none d-md-none d-sm-block carousel slide"
-      data-bs-ride="carousel">
-
-      <div class="carousel-inner py-3">
-
-        <div class="carousel-item active">
-          <div class="row d-flex justify-content-center">
-
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="row d-flex justify-content-center">
-
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="row d-flex justify-content-center">
-
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="row d-flex justify-content-center">
-
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="row d-flex justify-content-center">
-
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <div class="row d-flex justify-content-center">
-
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Activity name</h5>
-                <h7> Sample Date </h7>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <button type="button" class="btn btn-outline-info">DETAILS</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3"
-        data-bs-slide="prev" style="color: black;">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3"
-        data-bs-slide="next" style="color: black;">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-
-    </div>
   </div>
+
+  <!-- CAROUSEL FOR MD SCREEN -->
+  <div id="carouselExampleIndicators2" class="d-xl-none d-lg-none d-md-block d-sm-none carousel slide"
+    data-bs-ride="carousel">
+
+    <div class="carousel-inner py-3">
+
+      <div class="carousel-item active">
+        <div class="row d-flex justify-content-center">
+
+          <div class="card mx-3" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+
+          <div class="card mx-3" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row d-flex justify-content-center">
+
+          <div class="card mx-3" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+
+          <div class="card mx-3" style="width: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2"
+      data-bs-slide="prev" style="color: black;">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2"
+      data-bs-slide="next" style="color: black;">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+  </div>
+
+  <!-- CAROUSEL FOR SM SCREEN -->
+  <div id="carouselExampleIndicators3" class="d-xl-none d-lg-none d-md-none d-sm-block carousel slide"
+    data-bs-ride="carousel">
+
+    <div class="carousel-inner py-3">
+
+      <div class="carousel-item active">
+        <div class="row d-flex justify-content-center">
+
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row d-flex justify-content-center">
+
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row d-flex justify-content-center">
+
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row d-flex justify-content-center">
+
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row d-flex justify-content-center">
+
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="row d-flex justify-content-center">
+
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Activity name</h5>
+              <h7> Sample Date </h7>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's content.</p>
+              <button type="button" class="btn btn-outline-info">DETAILS</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3"
+      data-bs-slide="prev" style="color: black;">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators3"
+      data-bs-slide="next" style="color: black;">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+  </div>
+</div>
 
   <div class="container">
     <!-- Social +  -->
     <h1 class="sub-header" id="sub-header1" style=" text-shadow: 2px 2px 5px lightgrey;">
       <button class="button"><a href="../Social/social_plus.html"><span>Social+</span></a></button>
     </h1>
-
-
     <div class="row">
 
       <div class="col-lg-6 my-2">
@@ -950,7 +886,7 @@
                     <h3 class="card-title fw-bold">{{journal_title}}</h3>
                     <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                     <p class="card-text">{{journal_desc}}</p>
-                    <a href="../HealthIsWealth/Mental_Health/mental_guides.html" class="btn"
+                    <a href="../HealthIsWealth/Mental_Health/journalling.html" class="btn"
                       id="mental_button">{{journal_btn}}</a>
                   </div>
                   <div class="col-4">
