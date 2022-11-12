@@ -30,6 +30,9 @@
     <!-- Vue.js 3 CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 </head>
 <body>
 
@@ -106,7 +109,7 @@
 </nav>
 
 <div class="container text-center" id="container_div">
-    <p id="header-text">Taking care of your health is the first step.</p>
+    <p id="header-text">Taking Care of Yourself Is The First Step.</p>
     <p id="header-text-subheader">Which aspect would you like to seek?</p>
 </div>
 
@@ -118,7 +121,14 @@
             <div class="card p-5 health-card" id="mental-card" style="height:100%">
                 <div class="card-body text-center">
                   <p class="card-text">
-                    <img src="../img/human-head-svgrepo-com.svg" alt="" style="width: 50%;">
+                    <lottie-player
+                    src="https://assets4.lottiefiles.com/packages/lf20_UepHvaXIU4.json"
+                    background="transparent"
+                    speed="1"
+                    style="height: 100%"
+                    loop
+                    autoplay
+                    ></lottie-player>
                   </p>
                   <h5 class="card-title mt-5">Mental Health</h5>
                   <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
@@ -131,7 +141,14 @@
             <div class="card p-5 health-card" id="physical-card" style="height:100%">
                 <div class="card-body text-center">
                     <p class="card-text">
-                        <img src="../img/gym-weight-svgrepo-com.svg" alt="" style="width: 50%;">
+                      <lottie-player
+                      src="https://assets7.lottiefiles.com/packages/lf20_D1Sg5x3JNk.json"
+                      background="transparent"
+                      speed="1"
+                      style="height: 100%;"
+                      loop
+                      autoplay
+                      ></lottie-player>
                     </p>
                   <h5 class="card-title mt-5">Physical Health</h5>
                   <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
@@ -152,7 +169,7 @@
 
 
 <script src="../scripts/nav_foot.js"></script>  
-<script src="../scripts/health_wealth.js"></script>
+<!-- <script src="../scripts/health_wealth.js"></script> -->
 <script src="../../scripts/sos.js"></script>
 
 <!-- Option 1: Bootstrap Bundle with Popper -->

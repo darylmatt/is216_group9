@@ -15,7 +15,6 @@
     width: 30%;
 }
 
-
 #header-text{
     font-size: 50px;
     font-weight: 20;
@@ -40,43 +39,32 @@
 
 
 #mental-card{
-    background-image: linear-gradient(to right, #e1f4f7 , #f6ebf7);
+    background-image: linear-gradient(to right, #e1f4f7 , #def7e5);
 }
 
 #physical-card{
-    background-image: linear-gradient(to right, #e1f7df , #ecebfa);
+    background-image: linear-gradient(to right, #fbecf4 , #ebf7fa);
 }
 
-.health-card{
-    position: relative;
-}
 
 .health-card .btn{
-    position: absolute;
-    bottom: 2%;
-    left: 40%;
+    font-size: 12px;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 40%;
+    color: black;
+    display: block;
+    margin: auto;
+    background: transparent;
+    transition: .2s ease-in-out 0s;
+}
+
+.health-card .btn:hover{
+    cursor: pointer;
+    transform: scale(1.25);
+    background: black;
     color: white;
-    background-color: black;
-    text-align: center;
-    border-radius: 20px;
-}
-
-
-#steps .step{
-    font-size: 50px;
-    font-weight: 30;
-    text-align: center;
-    /* margin: 100% 0%; */
-}
-
-#steps{
-    margin-top: 10%;
-    margin-bottom: 10%;
-}
-
-.breathing-btn{
-    width: 100%;
-    /* margin-right: 20%; */
 }
 
 .card:hover{
