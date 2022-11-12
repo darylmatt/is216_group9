@@ -17,15 +17,18 @@
     rel="stylesheet"
     />
     <!-- Google Fonts -->
-    <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    rel="stylesheet"
-    />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
     <!-- MDB -->
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
-    rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"></script>
+  
+  
 
     <!-- Vue.js 3 CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -152,26 +155,25 @@
   </div>
 </nav>
 
-
   <!-- Guide Starts Here -->
   <div class="container-fluid mt-4 text-center">
   
-        <h1 class="display-1" style="color: black;">Welcome to DomesticAID's <span id="guides_span" style="text-decoration: underline; color: black;">Guides!</span></h1>
+        <h1 class="display-1">Explore DomesticAID's Guides</h1>
       
   </div>
 
   <div class="container my-2">
     <div class="row">
       <div class="col-8 my-auto p-4">
-        <h1>About</h1> <br>
+        <h1>About Our Guides</h1> <br>
         <p id="demo" style="font-size:20px"></p>
 
       </div>
 
       <script>
         var i = 0;
-        var txt = 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, consectetur eum consequuntur temporibus molestias similique vitae culpa cum dignissimos quo odit alias adipisci excepturi enim facilis accusantium neque fugiat obcaecati! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, inventore assumenda.';
-        var speed = 90;
+        var txt = "Hi! I'm Dom, your tour guide for this page. Welcome to DomesticAID's guides! Here, you will find a few things: First, 3 different categories of guides which are namely 'Caregiving', 'Rights & Laws' and 'Navigation'. Check out the cards below to find out more about what each category of guides represent and click 'Read More' to explore the different guides of that category! We also have recommended guides for you below so that you can quickly start reading. Enjoy exploring! ";
+        var speed = 70;
         
         function typeWriter() {
           console.log("test");
@@ -200,31 +202,31 @@
   <div class="container">
 
         <div class="row justify-content-center">
-          <div class="col-xl-3 my-2">
-              <div class="card h-100 w-100 p-5" id="guidecard1">
+          <div class="col-xl-3 my-2 mx-5">
+              <div class="card h-100 p-5" id="guidecard1" style="width: 22rem;">
                   <div class="card-body">
-                    <h5 class="card-title">Guides</h5>
-                    <p class="card-text">Find out about how to provide care for the elderly and children.</p>
+                    <h3 class="card-title fw-bold">Caregiving</h3>
+                    <p class="card-text mb-5 mt-3">Find out about how to provide care for the elderly and children.</p>
                     <a href="guide_care.html" class="btn" id="guide_button">Read More</a>
                   </div>
                 </div>
           </div>
   
-          <div class="col-xl-3 my-2">
-              <div class="card h-100 w-100 p-5" id="guidecard2">
+          <div class="col-xl-3 my-2 mx-5">
+              <div class="card h-100 p-5" id="guidecard2" style="width: 22rem;">
                   <div class="card-body">
-                    <h5 class="card-title">Rights & Laws</h5>
-                    <p class="card-text">Find out about your rights as a migrant worker and the laws that protect you.</p>
+                    <h3 class="card-title fw-bold">Rights & Laws</h3>
+                    <p class="card-text mb-5 mt-3">Find out about your rights as a migrant worker and the laws that protect you.</p>
                     <a href="guide_rights.html" class="btn" id="guide_button">Read More</a>
                   </div>
                 </div>
           </div>
   
-          <div class="col-xl-3 my-2">
-              <div class="card h-100 w-100 p-5" id="guidecard3">
+          <div class="col-xl-3 my-2 mx-5">
+              <div class="card h-100 p-5" id="guidecard3" style="width: 22rem;">
                   <div class="card-body">
-                    <h5 class="card-title">Navigation</h5>
-                    <p class="card-text">Find your way around Singapore and explore new places!</p>
+                    <h3 class="card-title fw-bold">Navigation</h3>
+                    <p class="card-text mb-5 mt-3">Find your way around Singapore and explore new places!</p>
                     <a href="guide_navigation.html" class="btn" id="guide_button">Read More</a>
                   </div>
                 </div>
@@ -243,7 +245,7 @@
             <div class="carousel-item active" data-bs-interval="3000">
               <!-- <img src="..." class="d-block w-100" alt="..."> -->
               <div class="row justify-content-center">
-                <div class="card h-100 p-5" id="guideCarousel">
+                <div class="card h-100 p-5" id="guidecard3">
                   <div class="card-body">
     
                     <div class="row">
@@ -274,7 +276,7 @@
             <div class="carousel-item" data-bs-interval="3000">
               <!-- <img src="..." class="d-block w-100" alt="..."> -->
               <div class="row justify-content-center">
-                <div class="card h-100 p-5" id="guideCarousel">
+                <div class="card h-100 p-5" id="guidecard1">
                   <div class="card-body">
     
                     <div class="row">
@@ -305,7 +307,7 @@
             <div class="carousel-item" data-bs-interval="3000">
               <!-- <img src="..." class="d-block w-100" alt="..."> -->
               <div class="row justify-content-center">
-                <div class="card h-100 p-5" id="guideCarousel">
+                <div class="card h-100 p-5" id="guidecard2">
                   <div class="card-body">
     
                       <div class="row">
