@@ -71,7 +71,7 @@ const root = Vue.createApp({
                     <td>${postal}</td>
                     <td>${contact}</td>
                     <td>
-                        <button id="${name}" onclick='findLocation(this.id)' class='btn-sm text-light' style='background-color:#9a616d;'>Get Directions</button>
+                        <button id="${name}" onclick='findLocation(this.id)' class='btn-sm text-light' style='background-color:#9a616d;'>Show on Map</button>
                     </td>
                 </tr>`      
 
