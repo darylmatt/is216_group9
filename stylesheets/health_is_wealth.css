@@ -47,20 +47,19 @@
 }
 
 
-.health-card .btn{
-    font-size: 12px;
-    padding: 15px;
+#mental_button{
+    font-size: 13px;
+    border-radius: 20px;
     border: 2px solid black;
-    border-radius: 30px;
-    width: 40%;
+    width: 30%;
+    margin: auto;
     color: black;
     display: block;
-    margin: auto;
     background: transparent;
     transition: .2s ease-in-out 0s;
 }
 
-.health-card .btn:hover{
+#mental_button:hover{
     cursor: pointer;
     transform: scale(1.25);
     background: black;
