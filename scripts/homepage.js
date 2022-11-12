@@ -30,17 +30,16 @@ const root = Vue.createApp({
             breather_title: "Take a breather",
             breather_desc: "Feeling anxious or stressed out? Breathing exercises are known to calm people down and make them feel better. Try our breathing exercises today.",
             breather_btn: "START BREATHING",
-            words_of_wisdoms: "Word of Wisdoms",
-            words_of_wisdoms_desc: "Sometimes, a few golden words of advice would be plenty. Take a look at some of our mental wellness articles for encouragement and advice.",
-            words_of_wisdoms_btn: "BEGIN READING",
-            journal_title: "Journal your thoughts",
-            journal_desc: "Writing down your thoughts and emotions is a good way of understanding yourself better and how you're feeling. Start Journalling to have a peace of mind.",
-            journal_btn: "LET'S BEGIN",
             health_title: "Make sure you're physically healthy",
             health_desc: "We get that finding healtcare institution like a clinic or hospital is difficult, and even more so if you don't know where to look. Fret not, we have you covered",
             health_btn: "SEARCH NOW",
+            journal_title: "Journal your thoughts",
+            journal_desc: "Writing down your thoughts and emotions is a good way of understanding yourself better and how you're feeling. Start Journalling to have a peace of mind.",
+            journal_btn: "LET'S BEGIN",
+            words_of_wisdom: "Word of Wisdoms",
+            words_of_wisdom_desc: "Sometimes, a few golden words of advice would be plenty. Take a look at some of our mental wellness articles for encouragement and advice.",
+            words_of_wisdom_btn: "BEGIN READING"
 
-            
         }
     },
 
@@ -88,15 +87,16 @@ const root = Vue.createApp({
             this.wellness= translations[21],
             this.breather_title= translations[22],
             this.breather_desc= translations[23],
-            this.words_of_wisdoms= translations[24],
-            this.words_of_wisdoms_desc= translations[25],
-            this.words_of_wisdoms_btn= translations[26],
-            this.journal_title= translations[27],
-            this.journal_desc= translations[28],
-            this.journal_btn= translations[29],
-            this.health_title= translations[30],
-            this.health_desc= translations[31],
-            this.health_btn = translations[32]
+            this.breather_btn = translations[24],
+            this.words_of_wisdom= translations[25],
+            this.words_of_wisdom_desc= translations[26],
+            this.words_of_wisdom_btn= translations[27],
+            this.journal_title= translations[28],
+            this.journal_desc= translations[29],
+            this.journal_btn= translations[30],
+            this.health_title= translations[31],
+            this.health_desc= translations[32],
+            this.health_btn = translations[33]
             
         
 
