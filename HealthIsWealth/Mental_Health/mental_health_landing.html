@@ -17,16 +17,22 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     rel="stylesheet"
     />
+
     <!-- Google Fonts -->
-    <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    rel="stylesheet"
-    />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
     <!-- MDB -->
     <link
     href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
     rel="stylesheet"
     />
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
 </head>
 <body>
 
@@ -34,7 +40,7 @@
 <nav class="navbar" aria-label="navbar">
   <div class="container-fluid">
 
-    <a class="navbar-brand" href="../HomeLandingAbout/homepage.html">
+    <a class="navbar-brand" href="../../HomeLandingAbout/homepage.html">
       <img src="../../img/logo4.png" alt="" id="logo">
     </a>
 
@@ -99,8 +105,8 @@
 </nav>
 
 <div class="container" id="container_div">
-    <p id="header-text">Let's take charge of our mental health.</p>
-    <p id="header-text-subheader">Select one of the options below</p>
+    <h1 id="header-text">Let's Take Charge Of Our Mental Health.</h1>
+    <p id="header-text-subheader">Select one of the options below:</p>
 </div>
 
 <div class="container">
@@ -111,9 +117,16 @@
             <div class="card p-5 mental-card" id="mental-card-1" style="height:100%">
                 <div class="card-body text-center">
                   <p class="card-text text-center">
-                    <img src="../../img/butterfly_heart.svg" alt="" style="width: 50%;">
+                    <lottie-player
+                    src="https://assets6.lottiefiles.com/packages/lf20_xzIOCI.json"
+                    background="transparent"
+                    speed="1"
+                    style="height: 40vh;"
+                    loop
+                    autoplay
+                    ></lottie-player>
                   </p>
-                  <h5 class="card-title mt-5">Let's Breathe</h5>
+                  <h3 class="card-title mt-3 fw-bold">Let's Breathe</h3>
                   <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                   <p class="card-text">Breathing exercises to help calm yourself down and have a clearer mind</p>
                   <a href="breathing.html" class="btn mt-5" id="mental_button">Let's Go</a>
@@ -124,12 +137,18 @@
             <div class="card p-5 mental-card" id="mental-card-2" style="height:100%">
                 <div class="card-body text-center">
                     <p class="card-text">
-                        <img src="../../img/pencil-writing-tool.svg" alt="" style="width: 50%;">
+                      <lottie-player
+                      src="https://assets2.lottiefiles.com/packages/lf20_bnxoocv2.json"
+                      speed="1"
+                      style="height: 40vh;"
+                      loop
+                      autoplay
+                      ></lottie-player>
                     </p>
-                  <h5 class="card-title mt-5">Journal Away...</h5>
+                  <h3 class="card-title mt-3 fw-bold">Journal Away...</h3>
                   <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                  <p class="card-text mb-5">Organise your thoughts by journalling out your thoughts and gain more insights into how you're feeling.</p>
-                  <a href="journalling.html" class="btn mt-5" id="mental_button">Start Journalling</a>
+                  <p class="card-text mb-5">Organise your thoughts and be more in tune with yourself.See how you've grown</p>
+                  <a href="journalling.html" class="btn mt-5" id="mental_button">Start Writing</a>
                 </div>
             </div>
         </div>
@@ -142,12 +161,19 @@
           <div class="card p-5 mental-card" id="mental-card-3" style="height:100%">
               <div class="card-body text-center">
                   <p class="card-text">
-                      <img src="../../img/rose2.svg" alt="" style="width: 50%;">
+                    <lottie-player
+                    src="https://assets9.lottiefiles.com/packages/lf20_0c8439m5.json"
+                    background="transparent"
+                    speed="1"
+                    style="height: 40vh;"
+                    loop
+                    autoplay
+                    ></lottie-player>
                   </p>
-                <h5 class="card-title mt-5">Do Some Reading</h5>
+                <h3 class="card-title mt-3 fw-bold">Do Some Reading</h3>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Look at some of our curated guides about mental health. Perhaps there may be something here which speaks to you on a personal level</p>
-                <a href="mental_guides.html" class="btn mt-5" id="mental_button">Explore Guides</a>
+                <p class="card-tex mb-5">Explore our curated guides. There may be something here which speaks to you</p>
+                <a href="mental_guides.html" class="btn mt-5" id="mental_button">Begin</a>
               </div>
           </div>
 
@@ -158,11 +184,18 @@
           <div class="card p-5 mental-card" id="mental-card-4" style="height:100%">
               <div class="card-body text-center">
                   <p class="card-text">
-                      <img src="../../img/caregiving-icon.svg" alt="" style="width: 50%;">
+                    <lottie-player
+                    src="https://assets7.lottiefiles.com/packages/lf20_qiqxn1vp.json"
+                    background="transparent"
+                    speed="1"
+                    style="height: 40vh;"
+                    loop
+                    autoplay
+                    ></lottie-player>
                   </p>
-                <h5 class="card-title mt-5">Seek Professional Help</h5>
+                <h3 class="card-title mt-3 fw-bold">Seek Professional Help</h3>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Sometimes, we just can't do it alone. Sometimes, a professional is needed. Find a trusted professional near you.</p>
+                <p class="card-text mb-5">Sometimes, we just can't do it alone. Find a trusted professional near you.</p>
                 <a href="../../HealthIsWealth/Mental_Health/mental_health_places.html" class="btn mt-5" id="mental_button">Find places</a>
               </div>
           </div>
@@ -177,15 +210,14 @@
 
 
 
-<div id="footer">
-  <footer-template></footer-template>
-</div>
-<script src="../scripts/nav_foot.js"></script>  
+  <div id="footer">
+    <footer-template></footer-template>
+  </div>
+  <script src="../../scripts/nav_foot.js"></script>  
+  <!-- <script src="../../scripts/mental_health.js"></script> -->
+  <script src="../../scripts/sos.js"></script>
 
-<script src="../../scripts/mental_health.js"></script>
-<script src="../../scripts/sos.js"></script>
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>

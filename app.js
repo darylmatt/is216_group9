@@ -18,6 +18,11 @@ app.get('/',(req,res)=>{
     res.sendFile('HomeLandingAbout/homepage.html', { root: __dirname });
 })
 
+app.get('/HomeLandingAbout/about.html',(req,res)=>{
+  console.log('index requested');
+  res.sendFile('HomeLandingAbout/about.html', { root: __dirname });
+})
+
 
 // HOMEPAGE
 app.get('/HomeLandingAbout/homepage.html',(req,res)=>{
@@ -97,6 +102,7 @@ app.get('/Registration&Profiling/edit_profiling.html',(req,res)=>{
 app.get('/Registration&Profiling/login_reg.html',(req,res)=>{
   console.log('index requested');
   res.sendFile('/Registration&Profiling/login_reg.html', { root: __dirname });
+  
 })
 
 //LOGIN

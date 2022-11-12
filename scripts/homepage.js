@@ -10,22 +10,22 @@ const root = Vue.createApp({
             upcoming_activities: "Upcoming Activities:",
             guide_and_resources: "Guides & Resources",
             social_plus: "Social+",
-            forum_title: "Connect with fellow domestic helpers",
-            forum_desc: "Social+'s Forums allow you to post questions and respond to threads by domestic helpers like you who are facing similar issues as you. Connect with them here.",
+            forum_title: "Forum",
+            forum_desc: "Post and respond to threads by other domestic helpers facing similar issues as you. Connect with them here.",
             forum_btn: "POST A THREAD",
-            activity_title: "Do an activity with a friend",
-            activity_desc: "Social+ allows you to participate in activities with other domestic helpers with similar interests as you. Join an activity today and make new friends!",
+            activity_title: "Activity",
+            activity_desc: "Participate in activities with other domestic helpers with similar interests as you. Join today and make new friends!",
             activity_btn: "FIND ACTIVITY",
             guides: "Guides",
-            guides_navigate_title: "I am lost about how to carry out my responsibilities",
-            guides_navigate_desc: "Find out more about what you need to do as a helper, soft skills and how to navigate Singapore and its places.",
-            guides_navigate_btn: "EXPLORE GUIDES",
+            guides_navigate_title: "Carrying Out Your Responsibilities",
+            guides_navigate_desc: "Find out more about what you need to do as a helper and other soft skills you might need",
+            guides_navigate_btn: "READ GUIDES",
             guides_rights_title: "My Rights As A Domestic Helper",
-            guides_rights_desc: "Know more about your rights to help you with any questions you have",
+            guides_rights_desc: "Know more about your rights to help you with any questions you have and to protect yourself",
             guides_rights_btn: "LET'S BEGIN",
             guides_resources_title: "Assimilating Into Singapore",
             guides_resources_desc: "Unfamiliar with your new surroundings? Explore our resources for navigating Singapore!",
-            guides_resources_btn: "FIND NOW",
+            guides_resources_btn: "EXPLORE NOW",
             wellness: "Wellness",
             breather_title: "Take a Breather",
             breather_desc: "Feeling anxious or stressed out? Breathing exercises are known to calm people down and make them feel better.",
@@ -38,7 +38,16 @@ const root = Vue.createApp({
             journal_btn: "JOURNAL NOW",
             words_of_wisdom: "Words Of Wisdom",
             words_of_wisdom_desc: "We just need some golden advice at times. Explore our mental wellness articles for encouragement and advice.",
-            words_of_wisdom_btn: "BEGIN READING"
+            words_of_wisdom_btn: "BEGIN READING",
+
+            show_sos_dialog: false,
+
+            // fas fa-window-close fa-xl
+
+            show_translate_option: false,
+
+            show_sos_confirmation:false
+
 
         }
     },
@@ -96,13 +105,28 @@ const root = Vue.createApp({
             this.journal_btn= translations[30],
             this.health_title= translations[31],
             this.health_desc= translations[32],
-            this.health_btn = translations[33]
+            this.health_btn = translations[33],
+
+            document.getElementById("indo").style.backgroundColor="rgb(255, 255, 234)"
+            document.getElementById("en").style.backgroundColor="white"
             
         
 
         })
-    }
+    },
 
+    translate_dialog(){
+        // Check if its an open or close command
+        if (this.show_translate_option){
+            this.show_translate_option = false
+        }
+        else{
+            this.show_translate_option = true
+        }
+
+     
+
+    }
     }
     // Other stuff
 })

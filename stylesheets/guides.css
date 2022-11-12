@@ -70,22 +70,20 @@ span{
 
 }
 
-
-
 .facility-card .btn{
 
     font-size: 13px;
     border-radius: 20px;
-    /* padding: 15px; */
     border: 2px solid black;
     color: black;
     display: block;
-    margin: 50px auto;
+    margin: auto;
     background: transparent;
     transition: .2s ease-in-out 0s;
 }
 
-.facility-card .btn:hover{
+
+#psychiatrist:hover, #counsellors:hover, #social_work:hover, #mental_hospitals:hover{
     cursor: pointer;
     transform: scale(1.25);
     background: black;
