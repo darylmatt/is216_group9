@@ -5,7 +5,7 @@ const root = Vue.createApp({
         return { 
             hello: "Hello",
             name: "Mariam",
-            welcome_msg: "What would you like to do today?",
+            welcome_msg: "How can we help you today?",
             edit_profile: "EDIT PROFILE",
             upcoming_activities: "Upcoming Activities:",
             guide_and_resources: "Guides & Resources",
