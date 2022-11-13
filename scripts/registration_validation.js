@@ -119,7 +119,7 @@ function registrationValidation() {
         document.getElementById("error_msg").innerHTML = error_text
     }
     else{
-        window.location.href="/HomeLandingAbout/homepage.html"
+        window.location.href="/Registration&Profiling/edit_profiling.html"
     }
 
 }
