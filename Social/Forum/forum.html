@@ -454,29 +454,18 @@
                         </div>
 
                         <div class="mb-3">
-                          <label for="exampleInputEmail1" class="form-label">Thread title</label>
+                          <label for="exampleInputEmail1" class="form-label text-left">Thread title</label>
                           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         </div>
 
-                        <div class="dropdown">
-                          <button
-                            class="btn btn-primary dropdown-toggle"
-                            type="button"
-                            id="dropdownMenuButton"
-                            data-mdb-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            CATEGORY
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="#">General</a></li>
-                            <li><a class="dropdown-item" href="#">Social</a></li>
-                            <li><a class="dropdown-item" href="#">Help request</a></li>
-                            <li><a class="dropdown-item" href="#">Discussion</a></li>
-                            <li><a class="dropdown-item" href="#">Enquiry</a></li>
-
-                          </ul>
-                        </div>
+                        <label for="exampleInputEmail1" class="form-label my-3">Category</label>
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>General</option>
+                          <option value="1">Social</option>
+                          <option value="2">Help request</option>
+                          <option value="3">Discussion</option>
+                          <option value="4">Enquiry</option>
+                        </select>
 
                         <!-- Message input -->
                         <div class="mb-3">
