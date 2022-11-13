@@ -174,11 +174,11 @@
     <div>
       <h1 class="text-center display-1" >Guides: Navigation</h1>
       <div class="row">
-        <div class="col-2"></div>
-        <div class="col-4" style="margin-top: 100px; font-size: 20px;">
+        <div class="col-lg-2 col-0"></div>
+        <div class="col-lg-4 col-12" style="margin-top: 100px; font-size: 20px;">
           Singapore is a small island city with a world-class transportation system. Learn how to navigate Singapore through the many different modes of travel!
         </div>
-        <div class="col-4">
+        <div class="col-lg-4 col-12">
           <lottie-player
           class="mx-auto"
           src="https://assets4.lottiefiles.com/packages/lf20_r1GRgc.json"
@@ -189,7 +189,7 @@
           autoplay
           ></lottie-player>   
         </div>
-        <div class="col-2"></div>
+        <div class="col-lg-2 col-0"></div>
       </div>
     </div>
   </div>
@@ -199,12 +199,12 @@
   <div class="container">
     <h1 class="text-center mt-5">Explore Our Guides:</h1>
     <hr>
-    <div class="row mt-4 mx-auto g-3 row-cols-sm-2" id="guideCards">
+    <div class="row mt-4 mx-auto g-3" id="guideCards">
 
-      <div class="col">
+      <div class="col-md-6 col-12">
         <div class="card h-100">
           <!-- guide image here -->
-          <img src="../img/ezlink.webp" class="card-img-top"/>
+          <img src="../img/ezlink.webp" class="card-img-top" style="height: 50vh;"/>
           <div class="card-body">
             <!-- guide title here -->
             <h3 class="card-title fw-bold">{{filteredGuides[0].guide_title}}</h3>
@@ -218,10 +218,10 @@
       </div>
 
 
-      <div class="col">
+      <div class="col-md-6 col-12">
         <div class="card h-100">
           <!-- guide image here -->
-          <img src="../img/bus.webp" class="card-img-top"/>
+          <img src="../img/bus.webp" class="card-img-top" style="height: 50vh;"/>
           <div class="card-body">
             <!-- guide title here -->
             <h3 class="card-title fw-bold">{{filteredGuides[1].guide_title}}</h3>
@@ -237,35 +237,38 @@
 
     </div>
 
-    <div class="row mt-4 mx-auto g-3 row-cols-sm-2" id="guideCards">
-      <div class="card h-100">
-        <!-- guide image here -->
-        <img src="../img/ridehailing.jpg" class="card-img-top"/>
-        <div class="card-body">
-          <!-- guide title here -->
-          <h3 class="card-title fw-bold">{{filteredGuides[2].guide_title}}</h3>
-          <!-- guide description here -->
-          <p class="card-text">{{filteredGuides[2].guide_card_description}}</p>
-          <button id="guide_button2" type="button" v-on:click="setContent(11)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-            Read More
-          </button>
+    <div class="row mt-4 mx-auto g-3" id="guideCards">
+      <div class="col-md-6 col-12">
+        <div class="card h-100">
+          <!-- guide image here -->
+          <img src="../img/ridehailing.jpg" class="card-img-top" style="height: 50vh;"/>
+          <div class="card-body">
+            <!-- guide title here -->
+            <h3 class="card-title fw-bold">{{filteredGuides[2].guide_title}}</h3>
+            <!-- guide description here -->
+            <p class="card-text">{{filteredGuides[2].guide_card_description}}</p>
+            <button id="guide_button2" type="button" v-on:click="setContent(11)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+              Read More
+            </button>
+          </div>
+        </div>  
+      </div>
+      
+      <div class="col-md-6 col-12">
+        <div class="card h-100">
+          <!-- guide image here -->
+          <img src="../img/mrt.webp" class="card-img-top" style="height: 50vh;"/>
+          <div class="card-body">
+            <!-- guide title here -->
+            <h3 class="card-title fw-bold">{{filteredGuides[3].guide_title}}</h3>
+            <!-- guide description here -->
+            <p class="card-text">{{filteredGuides[3].guide_card_description}}</p>
+            <button id="guide_button2" type="button" v-on:click="setContent(12)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+              Read More
+            </button>
+          </div>
         </div>
       </div>
-    
-
-    <div class="card h-100">
-      <!-- guide image here -->
-      <img src="../img/mrt.webp" class="card-img-top"/>
-      <div class="card-body">
-        <!-- guide title here -->
-        <h3 class="card-title fw-bold">{{filteredGuides[3].guide_title}}</h3>
-        <!-- guide description here -->
-        <p class="card-text">{{filteredGuides[3].guide_card_description}}</p>
-        <button id="guide_button2" type="button" v-on:click="setContent(12)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-          Read More
-        </button>
-      </div>
-    </div>
   </div>
 </div>
 

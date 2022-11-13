@@ -38,7 +38,7 @@ const root = Vue.createApp({
             journal_title: "Journal Your Thoughts",
             journal_desc: "Writing down your thoughts and emotions is a good way of understanding yourself better and how you're feeling. Start Journalling to have a peace of mind.",
             journal_btn: "JOURNAL NOW",
-            bingo: "Relax And Feel Better",
+            bingo: "Bingo Bongo, Stress Be Gonezo",
             bingo_desc: "Try your hands at DomesticAID's Bingo game! Each activity is meant to have you do something so you feel better!",
             bingo_btn: "PLAY NOW",
             navbar_caregiving: "Caregiving",
