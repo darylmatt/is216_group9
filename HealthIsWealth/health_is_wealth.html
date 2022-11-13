@@ -40,7 +40,7 @@
 
 
 </head>
-<body>
+<body onload="typeWriter()">
 
 
 <!-- Navbar -->
@@ -159,10 +159,52 @@
 </nav>
 
 
-<div class="container text-center" id="container_div">
+<!-- <div class="container text-center" id="container_div">
     <p id="header-text" style="font-size: 90px; font-weight:400;">Self-Care Is The First Step.</p>
     <p id="header-text-subheader">Which aspect would you like to seek?</p>
-</div>
+</div> -->
+
+<div class="container-fluid mt-4 text-center">
+  
+        <h1 class="display-1">Self-Care Is The First Step.</h1>
+      
+  </div>
+
+  <div class="container my-2 mx-auto text-center">
+    <div class="row">
+      <div class="col-12 col-lg-8 my-auto p-4">
+        <h2>About Wellness</h2> <br>
+        <p id="demo" style="font-size:20px"></p>
+
+      </div>
+
+      <script>
+        var i = 0;
+        var txt = "Hi there, I'm RK, your friendly relaxed jellyfish and I'm your tour guide for this page! Your health is important, and that's why we have things for you to improve your mental and physical health! Journal, breathe or relax with our mental wellness features, or find healthcare institutions near you if you need some help! Take care of yourself, it's good for you :)";
+        var speed = 40;
+        
+        function typeWriter() {
+          console.log("test");
+          if (i < txt.length) {
+            document.getElementById("demo").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+        </script>
+
+      <div class="col-12 col-lg-4 text-center">
+          <lottie-player
+          src="https://assets10.lottiefiles.com/temp/lf20_LTtOeb.json"
+          background="transparent"
+          speed="1"
+          style="width: auto"
+          loop
+          autoplay
+          ></lottie-player>      
+      </div>
+    </div>  
+  </div>
 
 <div class="container">
 
