@@ -4,7 +4,7 @@ function uploadImage() {
         document.getElementById("error_msg").innerText = "Select a file before uploading!"
     }
     else{
-        document.getElementById("profile_picture").src = "../img/profile.jpeg"
+        document.getElementById("profile_picture").src = "../img/jx.jpg"
         document.getElementById("error_msg").innerText = ""
     }
 }
