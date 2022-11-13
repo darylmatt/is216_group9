@@ -85,6 +85,7 @@ const root = Vue.createApp({
                 if (tYear <= nYear) {
                     if (tMonth <= nMonth) {
                         if (tDay <= nDay) {
+                            document.getElementById("success_outer").hidden = false
                         }
                         else {
                             this.show = true
