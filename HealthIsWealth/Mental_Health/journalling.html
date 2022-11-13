@@ -157,32 +157,36 @@
 
   <h1 class="display-2 my-3">Journal down your thoughts...</h1>
   <!-- {{entries}} -->
-  <div class="row mt-5">
+  <form action="" method="post">
+    <div class="row mt-5">
+    
 
-    <label for="exampleFormControlTextarea1" class="form-label" id="curr_date"></label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" placeholder="Write about your day or what you're feeling..."></textarea>
-  
-  </div>
-
-  <div class="row my-3">
-
-    <div class="col-4">
-      Journal Mood:
-      <select name="journal_category" id="" width="30%">
-        <option value="Happy">Happy</option>
-        <option value="Grateful">Grateful</option>
-        <option value="Sad">Sad</option>
-        <option value="Frustrated">Frustrated</option>
-        <option value="Helpless">Helpless</option>
-      </select>
+      <label for="exampleFormControlTextarea1" class="form-label" id="curr_date"></label>
+    
+        <textarea name="entry" class="form-control" id="exampleFormControlTextarea1" rows="10" placeholder="Write about your day or what you're feeling..."></textarea>
+    
     </div>
 
-    <div class="col-8">
-      <a href=""><button class="btn btn-lg btn-info my-3 float-end">Note it!</button></a> 
-    </div>
-  
-  </div>
+    <div class="row my-3">
 
+      <div class="col-4">
+        Journal Mood:
+        <select name="category" id="cat" width="30%">
+          <option value="Happy">Happy</option>
+          <option value="Grateful">Grateful</option>
+          <option value="Sad">Sad</option>
+          <option value="Frustrated">Frustrated</option>
+          <option value="Helpless">Helpless</option>
+        </select>
+      </div>
+
+      <div class="col-8">
+        <submit class="btn btn-lg btn-info my-3 float-end">Note it!</submit>
+      </div>
+    
+    </div>
+
+  </form>
 </div>
 
 
