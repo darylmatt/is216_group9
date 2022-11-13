@@ -14,6 +14,10 @@ const root = Vue.createApp({
 
             selectedLocation : '',
             
+            show_popup:false,
+
+            selected_options:[]
+            
         }
     },
 
@@ -80,6 +84,20 @@ const root = Vue.createApp({
 
             tableBodyDiv.innerHTML  = tableStr;   
         },
+
+        check_quiz(){
+            if (this.show_popup == true){
+                this.show_popup = false
+            }
+            else{
+                this.show_popup = true
+            }
+        },
+
+        generate_sug(){
+           
+        }
+
 
    
 
