@@ -23,9 +23,6 @@ const root = Vue.createApp({
 
           // fetch data
           this.entries = JSON.parse(response.headers.journal);
-
-
-
           
       }
       );
