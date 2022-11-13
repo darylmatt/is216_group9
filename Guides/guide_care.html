@@ -53,9 +53,10 @@
           <img src="/img/logo.png" style="height: 140px;" alt="DomesticAID Logo" />
       </a>
 
-      <button class="navbar-toggler" style="color:black;" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
           aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon" ></span>
+          <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="mainNav">
@@ -66,17 +67,17 @@
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                       data-mdb-toggle="dropdown" aria-expanded="false">
                       <i class="fas fa-user-friends"></i>
-                      Social+
+                      {{social_plus}}
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                       <li>
-                          <a class="dropdown-item" href="/Social/Forum/forum.html">Forum</a>
+                          <a class="dropdown-item" href="/Social/Forum/forum.html">{{forum_title}}</a>
                       </li>
 
                       <li>
                           <a class="dropdown-item"
-                              href="/Social/Activities/activities_landing.html">Activities</a>
+                              href="/Social/Activities/activities_landing.html">{{activity_title}}</a>
                       </li>
 
                   </ul>
@@ -88,22 +89,21 @@
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                       data-mdb-toggle="dropdown" aria-expanded="false">
                       <i class="fas fa-folder-open"></i>
-                      Guides
+                      {{guides}}
                   </a>
 
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                       <li>
-                          <a class="dropdown-item" href="/Guides/guide_care.html">Caregiving</a>
+                          <a class="dropdown-item" href="/Guides/guide_care.html">{{navbar_caregiving}}</a>
                       </li>
 
                       <li>
-                          <a class="dropdown-item" href="/Guides/guide_navigation.html">Navigating
-                              Singapore</a>
+                          <a class="dropdown-item" href="/Guides/guide_navigation.html">{{navbar_navigating}}</a>
                       </li>
 
                       <li>
-                          <a class="dropdown-item" href="/Guides/guide_rights.html">Know your rights!</a>
+                          <a class="dropdown-item" href="/Guides/guide_rights.html">{{navbar_rights}}</a>
                       </li>
 
                   </ul>
@@ -115,17 +115,17 @@
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                       data-mdb-toggle="dropdown" aria-expanded="false">
                       <i class="fas fa-seedling"></i>
-                      Wellness
+                      {{wellness}}
                   </a>
 
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                       <li>
-                          <a class="dropdown-item" href="/HealthIsWealth/Mental_Health/mental_health_landing.html">Mental Health</a>
+                          <a class="dropdown-item" href="/HealthIsWealth/Mental_Health/mental_health_landing.html">{{navbar_mental_health}}</a>
                       </li>
 
                       <li>
-                          <a class="dropdown-item" href="/HealthIsWealth/Physical_Health/physical_health_places.html">Physical Health</a>
+                          <a class="dropdown-item" href="/HealthIsWealth/Physical_Health/physical_health_places.html">{{navbar_physical_health}}</a>
                       </li>
 
                   </ul>
@@ -142,13 +142,13 @@
                           loading="lazy" />
                   </a>
 
-                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenu">
+                  <ul class="dropdown-menu dropdown-menu-md-end dropdown-menu-start " aria-labelledby="navbarDropdownMenu">
                       <li>
-                          <a class="dropdown-item mx-3" href="/Registration&Profiling/edit_profiling.html">My
+                          <a class="dropdown-item" href="/Registration&Profiling/edit_profiling.html">My
                               profile</a>
                       </li>
                       <li>
-                          <a class="dropdown-item mx-3" href="/HomeLandingAbout/about.html">Logout</a>
+                          <a class="dropdown-item" href="/HomeLandingAbout/about.html">Logout</a>
                       </li>
                   </ul>
               </li>
@@ -172,11 +172,11 @@
     <div>
       <h1 class="text-center display-1">Guides: Caregiving</h1>
       <div class="row">
-        <div class="col-2"></div>
-        <div class="col-4" style="margin-top: 100px; font-size: 20px;">
+        <div class="col-lg-2 col-0"></div>
+        <div class="col-lg-4 col-12" style="margin-top: 100px; font-size: 20px;">
           Being in the position of responsibility when it comes to administering care is a daunting, but also, very real task you will likely have to face as a domestic helper. We hope the these curated guides will help you get a firm footing as you start your journey as a caretaker!
         </div>
-        <div class="col-4">
+        <div class="col-lg-4 col-12">
           <lottie-player
           class="mx-auto"
           src="https://assets4.lottiefiles.com/packages/lf20_okxbrixm.json"
@@ -187,7 +187,7 @@
           autoplay
           ></lottie-player>   
         </div>
-        <div class="col-2"></div>
+        <div class="col-lg-2 col-0"></div>
       </div>
   
     </div>
@@ -197,12 +197,12 @@
   <div class="container"> 
     <h1 class="text-center mt-5">Explore Our Guides:</h1>
     <hr>
-    <div class="row mt-4 mx-auto g-3 row-cols-sm-2" id="guideCards">
+    <div class="row mt-4 mx-auto g-3" id="guideCards">
 
-      <div class="col">
+      <div class="col-md-6 col-12">
         <div class="card h-100">
           <!-- guide image here -->
-          <img src="../img/infantcare.webp" class="card-img-top"/>
+          <img src="../img/infantcare.webp" class="card-img-top" style="height: 50vh;"/>
           <div class="card-body">
             <!-- guide title here -->
             <h3 class="card-title fw-bold">{{filteredGuides[0].guide_title}}</h3>
@@ -216,9 +216,9 @@
       </div>
 
 
-      <div class="col">
+      <div class="col-md-6 col-12">
         <div class="card h-100">
-          <img src="../img/eldercare.avif" style="height:480px;"  class="card-img-top"/>
+          <img src="../img/eldercare.avif" style="height:50vh;"  class="card-img-top"/>
           <div class="card-body">
               <!-- guide title here -->
               <h3 class="card-title fw-bold">{{filteredGuides[1].guide_title}}</h3>
@@ -234,10 +234,10 @@
 
     </div>
 
-    <div class="row mt-4 g-3 mx-auto row-cols-sm-2">
-      <div class="col">
+    <div class="row mt-4 g-3 mx-auto">
+      <div class="col-md-6 col-12">
         <div class="card h-100">
-          <img src="../img/petcare.webp" style="height:450px;" class="card-img-top"/>
+          <img src="../img/petcare.webp" style="height:50vh;" class="card-img-top"/>
           <div class="card-body">
                <!-- guide title here -->
                <h3 class="card-title fw-bold">{{filteredGuides[2].guide_title}}</h3>
@@ -250,9 +250,9 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="col-md-6 col-12">
         <div class="card h-100">
-          <img src="../img/cooking.jpg" style="height:450px;" class="card-img-top" />
+          <img src="../img/cooking.jpg" style="height:50vh;" class="card-img-top" />
           <div class="card-body">
              <!-- guide title here -->
              <h3 class="card-title fw-bold">{{filteredGuides[3].guide_title}}</h3>

@@ -8,13 +8,12 @@
   <title>Document</title>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
   <!-- MDB -->
-  <!-- <link
-href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
-rel="stylesheet"
-/> -->
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+  rel="stylesheet"
+  />
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -47,7 +46,7 @@ rel="stylesheet"
   <!-- Section: Design Block -->
   <div style="background-image: linear-gradient(to right, #e8e7fd , #faf9eb);">
     <div class="text-center">
-      <a href="/HomeLandingAbout/about.html" class="text-center;">
+      <a href="/HomeLandingAbout/about.html">
         <img src="/img/logo.png" style="height: 200px;" alt="DomesticAID Logo" />
       </a>
     </div>
@@ -58,19 +57,21 @@ rel="stylesheet"
         <div class="col"></div>
 
         <!-- Registration box -->
-        <div class="col-lg-5  mb-lg-0">
+        <div class="col-md-8 col-10  mb-lg-0">
           <div class="card" style="background-color: white">
             <div class="card-body py-5 px-md-5 shadow ">
               <h2 class="mb-3 text-center">Get started with <br><span class="fw-bold">DomesticAID</span></h2>
               <p class="text-center">Your first step to awesome</p>
               <form action="../Registration&Profiling/profiling.html">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
-                <div class="row">
+
+                <div class="text-danger" id="error_msg">
+
                 </div>
                 <!-- Email input -->
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <label for="input_email" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="input_email" aria-describedby="emailHelp">
                 </div>
 
                 <!-- <div class="form-outline mb-4">
@@ -85,8 +86,8 @@ rel="stylesheet"
             </div> -->
 
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <label for="input_password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="input_password">
                 </div>
 
                 <!-- <div class="form-outline mb-4">
@@ -95,8 +96,8 @@ rel="stylesheet"
             </div> -->
 
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Confirm password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <label for="cfm_password" class="form-label">Confirm password</label>
+                  <input type="password" class="form-control" id="cfm_password">
                 </div>
 
                 <!-- Checkbox -->
@@ -121,11 +122,9 @@ rel="stylesheet"
             </button> -->
 
                 <div class="mt-5 text-center">
-                  <a href="/HomeLandingAbout/homepage.html">
                     <button class="btn btn-rounded btn-outline-secondary p-3 " style="border-radius:60px" type="button"
+                    onclick="registrationValidation()"
                     >Create an account</button>
-                  </a>
-                 
                 </div>
 
                 <!-- <a href="/HomeLandingAbout/homepage.html" class="btn btn-rounded btn-outline-secondary p-3" tabindex="-1" role="button" aria-disabled="true">Create account</a> -->
@@ -223,31 +222,11 @@ rel="stylesheet"
 
   <!-- Section: Design Block -->
 
-
-
-
-
+  <script src="../scripts/registration_validation.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
 
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-  <div id="footer">
-    <footer-template></footer-template>
-  </div>
-  <script src="../../scripts/nav_foot.js"></script>  
-  <script>
-    // var i = 0;
-    // var txt = 'Here for you.';
-    // var speed = 150;
-
-    // function typeWriter() {
-    //   if (i < txt.length) {
-    //     document.getElementById("demo").innerHTML += txt.charAt(i);
-    //     i++;
-    //     setTimeout(typeWriter, speed);
-    //   }
-    // }
-  </script>
 </body>
 
 </html>

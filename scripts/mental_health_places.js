@@ -3,67 +3,71 @@ const root = Vue.createApp({
 
     // Data Properties
     data() {
-        return { 
+        return {
 
             // ALL facilities arrray of objects
             facilities: [],
-            
-            subCategories : [],
 
-            selectedArray : [],
+            subCategories: [],
 
-            selectedLocation : '',
-            
-            show_popup:false,
+            selectedArray: [],
 
-            selected_options:[]
-            
+            selectedLocation: '',
+
+            show_popup: false,
+
+            selected_options: [],
+
+            select_option:"",
+
+            recommend:''
+
         }
     },
 
-    created(){
+    created() {
         axios.get("http://localhost:3000/HealthIsWealth/Physical_Health/physical_health_places.html")
-        .then( response => { 
+            .then(response => {
 
-            // fetch data
-            this.facilities = JSON.parse(response.headers.facilities);
-            var facilities = this.facilities
+                // fetch data
+                this.facilities = JSON.parse(response.headers.facilities);
+                var facilities = this.facilities
 
-            // create subCategories array
-            for (let index = 0; index < facilities.length; index++) {
-                this.subCategories.push(facilities[index].sub_category)
-                // console.log(facilities[index])
+                // create subCategories array
+                for (let index = 0; index < facilities.length; index++) {
+                    this.subCategories.push(facilities[index].sub_category)
+                    // console.log(facilities[index])
+                }
+
             }
-            
-        }
-         );
-    }, 
+            );
+    },
 
     // Methods
     methods: {
 
 
-        fetchSelectedArray(category){
+        fetchSelectedArray(category) {
 
             this.selectedArray = []
             // create array of filtered category
             var facilitiesArray = this.facilities
 
             for (let index = 0; index < facilitiesArray.length; index++) {
-         
-                if (facilitiesArray[index].sub_category == category){
+
+                if (facilitiesArray[index].sub_category == category) {
                     this.selectedArray.push(facilitiesArray[index])
                 }
             }
 
-            
+
             var tableBodyDiv = document.getElementById('tableBody')
             var tableStr = '';
-          
-  
 
-            for(let index=0; index < this.selectedArray.length ; index++) {
-                
+
+
+            for (let index = 0; index < this.selectedArray.length; index++) {
+
                 var name = this.selectedArray[index].facility_name
                 var location = this.selectedArray[index].address
                 var postal = this.selectedArray[index].postal
@@ -77,29 +81,59 @@ const root = Vue.createApp({
                     <td>
                         <button id="${name}" onclick='findLocation(this.id)' class='btn-sm text-light' style='background-color:#9a616d;'>Show on Map</button>
                     </td>
-                </tr>`      
+                </tr>`
 
-         
+
             }
 
-            tableBodyDiv.innerHTML  = tableStr;   
+            tableBodyDiv.innerHTML = tableStr;
         },
 
-        check_quiz(){
-            if (this.show_popup == true){
+        check_quiz() {
+            if (this.show_popup == true) {
                 this.show_popup = false
             }
-            else{
+            else {
                 this.show_popup = true
+
             }
         },
 
-        generate_sug(){
+        start_quiz() {
+            // Second page - choose current emotion
+            this.select_option = ''
+            this.recommend = ''
+            document.getElementById("firstPage").hidden = true
+            document.getElementById("second_page").hidden = false
+
+        },
+
+        generate_result(){
+            document.getElementById("second_page").hidden = true
+            
+            if (this.select_option == "socialW"){
+                this.recommend = "Social Worker"
+            }
+            else if(this.select_option == "counsel"){
+                this.recommend = "Counsellor"
+            }
+            else{
+                this.recommend = "Psychiatrist"
+            }
+
            
+
+            document.getElementById("third_page").hidden = false
+
+
+        },
+
+        restart(){
+            document.getElementById("firstPage").hidden = false
+            document.getElementById("second_page").hidden = true
+            document.getElementById("third_page").hidden = true
         }
 
-
-   
 
 
 
@@ -111,7 +145,7 @@ root.mount("#root")
 
 
 
-function fillTitle(id){
+function fillTitle(id) {
 
     var modalTitle = document.getElementById('modalHeader')
     var text = id.toUpperCase()
