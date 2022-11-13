@@ -18,6 +18,12 @@
     <!-- MDB -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
     <!-- Vue JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
@@ -175,7 +181,7 @@
         <!-- Have a category that carousels the cards sorted by category -->
 
 
-
+        {{selectedActivities}}
 
 
 
@@ -204,7 +210,7 @@
         </span>
 
     </div> -->
-
+    
         <div class="container mt-5">
 
             <!-- Search bar  -->
@@ -212,57 +218,119 @@
             <input class="form-control p-3 mb-3" type="search" style="height:40px;" placeholder="Find an activity here"
                 aria-label="Search">
 
+
+
             <!-- Display all activities -->
-            <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+            <div class="row mt-4 mx-auto g-3 row-cols-sm-2" id="guideCards">
 
-                <div v-for="activity of activities" class="card">
-
-                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                        <img v-bind:src="activity.activity_img" class="img-fluid" style="height: 200px;">
-                        <a href="#!">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                        </a>
-                    </div>
+                <div class="col" v-for="activity of activities">
+                  <div class="card h-100">
+                    <!-- guide image here -->
+                    <img v-bind:src="activity.activity_img" style="height:500px;" class="card-img-top"/>
                     <div class="card-body">
+                      <!-- guide title here -->
+                      <h3 class="card-title fw-bold">{{activity.activity_name}}</h3>
+                      <!-- guide description here -->
+                      <p class="card-text">Location: {{activity.activity_location}}</p>
+                      <p class="card-text">Date: {{activity.activity_date}}</p>
+                      <p class="card-text">Participants: {{activity.activity_pax}} /10</p>
 
-                        <h5 class="card-title">{{activity.activity_name}}</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <div id="details location_details">Location: {{activity.activity_location}}</div>
-                        <div id="details date_details">Date: {{activity.activity_date}}</div>
-                        <div id="details date_details">Participants: {{activity.activity_participants}}</div>
-                        <br>
-                        <a href="#!" class="btn btn-primary">More details</a>
-                        <a href="#!" class="btn btn-primary">Join Event</a>
+
+                      <button type="button" v-on:click="setContent(activity.activity_id)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+                        Read More
+                      </button>
+                      <button type="button" v-on:click="sendId(activity.activity_id)" style="margin-left:20px; background-color:#9a616d;" class="btn text-white" data-mdb-toggle="modal" data-mdb-target="#staticBackdrop">
+                        Join Event
+                      </button>
                     </div>
+                  </div>
                 </div>
+          
+          
+     
+          
+          
+              </div>
 
 
-            </div>
+
+
+           
         </div>
     </div>
     </div>
 
+     <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header" style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+          <h1 class="modal-title mx-auto" style="color: white" id="modalTitle"></h1>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="text-center">
+            <img src="" id="activityImg"  style="height: 480px; width: 95%;">
+          </div>
+          <br>
+          <b>Activity Description:</b>
+          <div id="modalContent">
+
+          </div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+
+  <div class="modal fade"
+    id="staticBackdrop"
+    data-mdb-backdrop="static"
+    data-mdb-keyboard="false"
+    tabindex="-1"
+    aria-labelledby="staticBackdropLabel"
+    aria-hidden="true"
+    >
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Activity Confirmation</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Confirm Participation?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn" data-mdb-dismiss="modal">Cancel</button>
+            <button type="button" class="btn text-white" style="background-color:#9a616d ;"  data-mdb-dismiss="modal" v-on:click="addPax()">Confirm</button>
+        </div>
+        </div>
+    </div>
+</div>
+
     <div id="footer">
-        <footer-template></footer-template>
+    <!-- <footer-template></footer-template> -->
     </div>
 
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="../scripts/nav_foot.js"></script>
-    <script src="../../scripts/sos.js"></script>
-    <script src="../../scripts/activities_add_activity.js"></script>
-    <script src="../../scripts/activities.js"></script>
+    <!-- <script src="../scripts/nav_foot.js"></script> -->
+    <!-- <script src="../../scripts/sos.js"></script> -->
+ <script src="../../scripts/activities.js"></script> 
+    <!--<script src="../../scripts/activities_add_activity.js"></script> -->
+   
     <div id="footer">
-        <footer-template></footer-template>
+        <!-- <footer-template></footer-template> -->
     </div>
-    <script src="../scripts/nav_foot.js"></script>
-
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-    <!-- <script src="../../scripts/activities_add_activity.js"></script> -->
-    <script src="../../scripts/activities.js"></script>
-
-
-
 
 </body>
