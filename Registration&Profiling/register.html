@@ -109,7 +109,7 @@ rel="stylesheet"
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="sendAlertsetCheck">
                     <label class="form-check-label" for="sendAlertsetCheck">
-                      Send me updates!
+                      Send me email updates!
                     </label>
                     <div class="text-secondary"><small>We promise to only send important alerts, no spam.</small></div>
                   </div>
@@ -121,9 +121,14 @@ rel="stylesheet"
             </button> -->
 
                 <div class="mt-5 text-center">
-                  <button class="btn btn-rounded btn-outline-secondary p-3 " style="border-radius:60px" type="button"
-                    disabled>Create an account</button>
+                  <a href="/HomeLandingAbout/homepage.html">
+                    <button class="btn btn-rounded btn-outline-secondary p-3 " style="border-radius:60px" type="button"
+                    >Create an account</button>
+                  </a>
+                 
                 </div>
+
+                <!-- <a href="/HomeLandingAbout/homepage.html" class="btn btn-rounded btn-outline-secondary p-3" tabindex="-1" role="button" aria-disabled="true">Create account</a> -->
 
                 <div class="m-auto text-center mt-3">
                   Already have an account? <a href="/Registration&Profiling/login.html">Log in</a>
@@ -222,23 +227,26 @@ rel="stylesheet"
 
 
 
-
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
 
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
+  <div id="footer">
+    <footer-template></footer-template>
+  </div>
+  <script src="../../scripts/nav_foot.js"></script>  
   <script>
-    var i = 0;
-    var txt = 'Here for you.';
-    var speed = 150;
+    // var i = 0;
+    // var txt = 'Here for you.';
+    // var speed = 150;
 
-    function typeWriter() {
-      if (i < txt.length) {
-        document.getElementById("demo").innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-      }
-    }
+    // function typeWriter() {
+    //   if (i < txt.length) {
+    //     document.getElementById("demo").innerHTML += txt.charAt(i);
+    //     i++;
+    //     setTimeout(typeWriter, speed);
+    //   }
+    // }
   </script>
 </body>
 
