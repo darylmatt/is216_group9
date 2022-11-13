@@ -17,10 +17,8 @@
     rel="stylesheet"
     />
     <!-- Google Fonts -->
-    <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    rel="stylesheet"
-    />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
 
@@ -48,6 +46,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
 </head>
@@ -171,35 +174,40 @@
  
   
 
-  <!-- Guide Starts Here -->
-  <div class="container"> 
+  <!-- Banner -->
+  <div class="container-fluid p-5" style="background-color: rgb(255, 246, 253);"> 
 <!-- 
     <h1>{{filteredGuides}}</h1> -->
 
     <div>
-      <h1 class="text-center display-1 my-5">Guides: Rights</h1>
+      <h1 class="text-center display-1">Guides: Rights</h1>
       <div class="row">
-        <div class="col" style="margin-top: 100px; font-size: 20px;">
+        <div class="col-2"></div>
+        <div class="col-4" style="margin-top: 100px; font-size: 20px;">
           There are many employment laws regarding the employment of foreign domestic workers like yourself. All of this can be quite confusing to understand, so we hope to equip you with the knowledge of the laws and the rights that protect you.
         </div>
-        <div class="col">
+        <div class="col-4">
           <lottie-player
           class="mx-auto"
-          src="https://assets4.lottiefiles.com/packages/lf20_okxbrixm.json"
+          src="https://assets6.lottiefiles.com/packages/lf20_nzoh1ccm.json"
           background="transparent"
           speed="1"
-          style="width: 400px; height: 400px"
+          style="width: 50vh"
           loop
           autoplay
           ></lottie-player>   
         </div>
+        <div class="col-2"></div>
       </div>
   
     </div>
-    
+  
+  </div>   
+  
+  <!-- Guide Starts Here -->
+  <div class="container"> 
+    <h1 class="text-center mt-5">Explore Our Guides:</h1>
     <hr>
-
-
     <div class="row mt-4 mx-auto g-3 row-cols-sm-2" id="guideCards">
 
       <div class="col">
@@ -208,10 +216,10 @@
           <img src="../img/restday.jpg" style="height:550px;" class="card-img-top"/>
           <div class="card-body">
             <!-- guide title here -->
-            <h5 class="card-title">{{filteredGuides[0].guide_title}}</h5>
+            <h3 class="card-title fw-bold">{{filteredGuides[0].guide_title}}</h3>
             <!-- guide description here -->
             <p class="card-text">{{filteredGuides[0].guide_card_description}}</p>
-            <button type="button" v-on:click="setContent(1)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button id="guide_button2" type="button" v-on:click="setContent(1)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -224,10 +232,10 @@
           <img src="../img/salary.webp" style="height:550px;" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
               <!-- guide title here -->
-              <h5 class="card-title">{{filteredGuides[1].guide_title}}</h5>
+              <h3 class="card-title fw-bold">{{filteredGuides[1].guide_title}}</h3>
               <!-- guide description here -->
               <p class="card-text">{{filteredGuides[1].guide_card_description}}</p>
-            <button type="button" v-on:click="setContent(2)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button id="guide_button2" type="button" v-on:click="setContent(2)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -243,10 +251,10 @@
           <img src="../img/travel.webp" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
                <!-- guide title here -->
-               <h5 class="card-title">{{filteredGuides[2].guide_title}}</h5>
+               <h3 class="card-title fw-bold">{{filteredGuides[2].guide_title}}</h3>
                <!-- guide description here -->
                <p class="card-text">{{filteredGuides[2].guide_card_description}}</p>
-            <button type="button" v-on:click="setContent(3)" class="btn btn-dark mt-4" data-toggle="modal" data-target="#myModal">
+            <button id="guide_button2" type="button" v-on:click="setContent(3)" class="btn btn-dark mt-4" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -258,10 +266,10 @@
           <img src="../img/dispute.webp" style="height:400px;" class="card-img-top" alt="Fissure in Sandstone"/>
           <div class="card-body">
              <!-- guide title here -->
-             <h5 class="card-title">{{filteredGuides[3].guide_title}}</h5>
+             <h3 class="card-title  fw-bold">{{filteredGuides[3].guide_title}}</h3>
              <!-- guide description here -->
              <p class="card-text">{{filteredGuides[3].guide_card_description}}</p>
-            <button  style='margin-top: 20px;' type="button" v-on:click="setContent(4)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button id="guide_button2" style='margin-top: 20px;' type="button" v-on:click="setContent(4)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>

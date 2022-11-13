@@ -181,10 +181,27 @@ app.get('/HealthIsWealth/Mental_Health/breathing.html',(req,res)=>{
 })
 
 // MENTAL HEALTH - JOURNALLING
+// app.get('/HealthIsWealth/Mental_Health/journalling.html',(req,res)=>{
+//   console.log('index requested');
+//   res.sendFile('/HealthIsWealth//Mental_Health/journalling.html', { root: __dirname });
+// })
+
 app.get('/HealthIsWealth/Mental_Health/journalling.html',(req,res)=>{
   console.log('index requested');
-  res.sendFile('/HealthIsWealth//Mental_Health/journalling.html', { root: __dirname });
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("domesticaid");
+    const result = dbo.collection("journal").find().toArray();
+    result.then(data => {
+      //global threads = data;
+      res.sendFile('/HealthIsWealth/Mental_Health/journalling.html', { root: __dirname });
+      console.log(JSON.stringify(data));
+      db.close();
+      res.set('journal', JSON.stringify(data) );
+    })   
+  });
 })
+
 
 // MENTAL HEALTH - LANDING
 app.get('/HealthIsWealth/Mental_Health/mental_health_landing.html',(req,res)=>{

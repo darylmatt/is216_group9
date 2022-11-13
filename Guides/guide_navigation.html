@@ -17,10 +17,8 @@
     rel="stylesheet"
     />
     <!-- Google Fonts -->
-    <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    rel="stylesheet"
-    />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
 
@@ -168,23 +166,7 @@
   </div>
 </nav>
 
-<!-- <nav class="navbar" aria-label="navbar">
-  <div class="container-fluid">
 
-    <a class="navbar-brand" href="../HomeLandingAbout/homepage.html">
-      <img src="../img/logo4.png" alt="" id="logo">
-    </a>
-
-      
-      
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <button type="button" class="btn btn-outline-danger" id="sos_button">Large button</button> -->
-
-      <!-- <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav me-auto mb-2">
             
             <li class="nav-item">
@@ -238,58 +220,48 @@
   </div>
 </nav>  -->
   
-
-  <!-- Guide Starts Here -->
-
-
-  <div class="container-fluid">
-    <div class="row" style="background-color:rgb(255, 237, 237)">
-      <div class="col m-auto">
-        <h1 style="font-size:70px; padding-left: 20px;" class="mx-3">Guides - Navigation</h1>
-      </div>
-      <div class="col m-auto">
-        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_JqnGN4woT2.json" background="transparent"
-          class="mx-auto" speed="1" style="width: 300px; height: 500px" hover loop autoplay></lottie-player>
-      </div>
-    </div>
-  </div>
-
-  
-  <div class="container">
+  <!-- Banner -->
+  <div class="container-fluid p-5" style="background-color:rgb(237, 255, 244)">
     <div>
-      <h1 class="text-center display-1 mt-5">Guides: Navigation</h1>
+      <h1 class="text-center display-1" >Guides: Navigation</h1>
       <div class="row">
-        <div class="col" style="margin-top: 100px; font-size: 20px;">
+        <div class="col-2"></div>
+        <div class="col-4" style="margin-top: 100px; font-size: 20px;">
           Singapore is a small island city with a world-class transportation system. Learn how to navigate Singapore through the many different modes of travel!
         </div>
-        <div class="col">
+        <div class="col-4">
           <lottie-player
           class="mx-auto"
           src="https://assets4.lottiefiles.com/packages/lf20_r1GRgc.json"
           background="transparent"
           speed="1"
-          style="width: 400px; height: 400px"
+          style="height: 50vh;"
           loop
           autoplay
           ></lottie-player>   
         </div>
+        <div class="col-2"></div>
       </div>
-  
     </div>
+  </div>
 
+  <!-- Guide Starts Here -->
 
+  <div class="container">
+    <h1 class="text-center mt-5">Explore Our Guides:</h1>
+    <hr>
     <div class="row mt-4 mx-auto g-3 row-cols-sm-2" id="guideCards">
 
       <div class="col">
         <div class="card h-100">
           <!-- guide image here -->
-          <img src="../img/infantcare.webp" class="card-img-top"/>
+          <img src="../img/ezlink.webp" class="card-img-top"/>
           <div class="card-body">
             <!-- guide title here -->
-            <h5 class="card-title">{{filteredGuides[0].guide_title}}</h5>
+            <h3 class="card-title fw-bold">{{filteredGuides[0].guide_title}}</h3>
             <!-- guide description here -->
             <p class="card-text">{{filteredGuides[0].guide_card_description}}</p>
-            <button type="button" v-on:click="setContent(9)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button id="guide_button2" type="button" v-on:click="setContent(9)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -300,13 +272,13 @@
       <div class="col">
         <div class="card h-100">
           <!-- guide image here -->
-          <img src="../img/infantcare.webp" class="card-img-top"/>
+          <img src="../img/bus.webp" class="card-img-top"/>
           <div class="card-body">
             <!-- guide title here -->
-            <h5 class="card-title">{{filteredGuides[1].guide_title}}</h5>
+            <h3 class="card-title fw-bold">{{filteredGuides[1].guide_title}}</h3>
             <!-- guide description here -->
             <p class="card-text">{{filteredGuides[1].guide_card_description}}</p>
-            <button type="button" v-on:click="setContent(10)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button id="guide_button2" type="button" v-on:click="setContent(10)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -319,13 +291,13 @@
     <div class="row mt-4 mx-auto g-3 row-cols-sm-2" id="guideCards">
       <div class="card h-100">
         <!-- guide image here -->
-        <img src="../img/infantcare.webp" class="card-img-top"/>
+        <img src="../img/ridehailing.jpg" class="card-img-top"/>
         <div class="card-body">
           <!-- guide title here -->
-          <h5 class="card-title">{{filteredGuides[2].guide_title}}</h5>
+          <h3 class="card-title fw-bold">{{filteredGuides[2].guide_title}}</h3>
           <!-- guide description here -->
           <p class="card-text">{{filteredGuides[2].guide_card_description}}</p>
-          <button type="button" v-on:click="setContent(11)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+          <button id="guide_button2" type="button" v-on:click="setContent(11)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
             Read More
           </button>
         </div>
@@ -334,13 +306,13 @@
 
     <div class="card h-100">
       <!-- guide image here -->
-      <img src="../img/infantcare.webp" class="card-img-top"/>
+      <img src="../img/mrt.webp" class="card-img-top"/>
       <div class="card-body">
         <!-- guide title here -->
-        <h5 class="card-title">{{filteredGuides[3].guide_title}}</h5>
+        <h3 class="card-title fw-bold">{{filteredGuides[3].guide_title}}</h3>
         <!-- guide description here -->
         <p class="card-text">{{filteredGuides[3].guide_card_description}}</p>
-        <button type="button" v-on:click="setContent(12)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+        <button id="guide_button2" type="button" v-on:click="setContent(12)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
           Read More
         </button>
       </div>
