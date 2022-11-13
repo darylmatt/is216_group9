@@ -16,11 +16,10 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     rel="stylesheet"
     />
+
     <!-- Google Fonts -->
-    <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    rel="stylesheet"
-    />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
 
@@ -171,20 +170,24 @@
     </div>
   </nav>
 
-<div style="position: relative;"> 
+<div style="position: relative;" id="breathing_body"> 
 
-  <div class="breather py-5" style="position: absolute; top: 20px;">
-
+  <div class="breather" style="position: absolute; ">
     <main>
         <div></div>
     </main>
     <section>
-        <h1 class="display-1">Focused Breathing</h1>
-        <p>Breathe in through the nose as the circle expands</p>
-        <p>Hold, and release through the mouth as it contracts.</p>
-        <p>Repeat as needed.</p> 
-        <label for="number">Adjust timing of breathing in seconds below</label>
-        <input type="number" id="number" value="12" min="1" style="color: grey;">
+        <h1 class="display-3">Focused Breathing</h1>
+        <span class="d-none d-lg-block mx-5">
+            <p>Breathe in through the nose as the circle expands</p>
+            <p>Hold, and release through the mouth as it contracts.</p>
+            <p>Repeat as needed.</p> 
+        </span>
+        <span class="d-lg-none d-block">
+            <p>Breathe in as the circle expands. Exhale through the mouth as it contracts. Repeat as needed.</p> 
+        </span>
+        <label for="number px-5">Adjust timing of breathing in seconds below</label>
+        <input class="mx-5" type="number" id="number" value="12" min="1" style="color: grey;">
     </section>
   </div>
   
@@ -202,7 +205,7 @@
     <div class="cloud"></div>
     <div class="cloud cloud-1"></div>
     <div class="sun-container sun-container-reflection">
-      <div class="sun"></div>
+      <!-- <div class="sun"></div> -->
     </div>
     <div class="light"></div>
     <div class="light light-1"></div>
@@ -237,13 +240,24 @@
 
 </div>
 
+<div class="container">
+    <hr class="my-5">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <p class="text-muted">Credit to Paulina Hetman for background: https://codepen.io/pehaa/pen/yLVeLNg</p>
+            <p class="text-muted">Credit to Shannon Crabill for breathing exercise: https://dev.to/scrabill/focused-breathing-a-css-animation-to-help-with-meditation-and-focused-breathing-exercises-dob</p>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
 
   
 
 <div id="footer">
   <footer-template></footer-template>
 </div>
-<script src="../scripts/nav_foot.js"></script>  
+<script src="../../scripts/nav_foot.js"></script>  
 
 <script src="../../scripts/mental_health_breathing.js"></script>
 <!-- <script src="script.js"></script> -->
