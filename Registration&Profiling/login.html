@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
 
     <link
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -50,16 +50,15 @@ rel="stylesheet"
             background="transparent"
             speed="1"
             style="width: 100%; height: 250px"
-            hover
             loop
             autoplay
           ></lottie-player>
           </div>
   
-          <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="col-lg-6 my-5">
               <div class="card" style="background-color: white">
-                <div class="card-body py-5 px-md-5 mt-5 shadow ">
-                <form action=""> 
+                <div class="card-body py-5 px-md-5 shadow ">
+                <form action="../scripts/login.php"> 
                   <!-- 2 column grid layout with text inputs for the first and last names -->
                   <div class="row">
                     
@@ -68,38 +67,39 @@ rel="stylesheet"
                   <span> Log in to your account </span>
                   <br>
                   <br>
+
+                  <div id="error_msg">
+
+                  </div>
             
                   <!-- Email input -->
                   <div class="form-outline mb-4">
-<<<<<<< Updated upstream
                     <input type="email" id="form3Example3" name="email" class="form-control" />
-=======
-                    <input type="email" id="form3Example3" name="email"  class="form-control" />
->>>>>>> Stashed changes
                     <label class="form-label" for="form3Example3">Email address</label>
                   </div>
   
                   <!-- Password input -->
                   <div class="form-outline mb-4">
-<<<<<<< Updated upstream
-                    <input type="password" id="form3Example4" name="password" class="form-control" />
-=======
                     <input type="password" id="form3Example4" name="password"  class="form-control" />
->>>>>>> Stashed changes
                     <label class="form-label" for="form3Example4">Password</label>
                   </div>
   
                   <!-- Checkbox -->
-                  <div class="form-check d-flex  mb-4">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                    <label class="form-check-label" for="form2Example33">
-                      Remember me
-                    </label>
+                  <div class="form-check d-flex justify-content-between">
+                    <div>
+                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                      <label class="form-check-label" for="form2Example33">
+                        Remember me
+                      </label>
+                    </div>
+                    <div>
+                      <a href="">Forgot password</a>
+                    </div>
                   </div>
+         
+                    
+
                   <div class="mb-4">
-                    <a>
-                    Forgot password
-                    </a> 
                     <br>
                   
                       No account? Register <a href="../Registration&Profiling/register.html">here</a>
@@ -107,7 +107,7 @@ rel="stylesheet"
                   </div>
   
                   <!-- Submit button -->
-                  <button type="submit" class="btn btn-dark btn-block mb-4"> 
+                  <button type="submit" class="btn btn-dark btn-block mb-4" onclick="validateLogin()"> 
                     Log In
                   </button>
   
@@ -161,5 +161,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"
     }
   }
   </script>
+
+  <script src="../scripts/login_validate.js"></script>
 </body>
 </html>
