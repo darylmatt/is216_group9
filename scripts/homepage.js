@@ -2,7 +2,7 @@ const root = Vue.createApp({
 
     // Data Properties
     data() {
-        return { 
+        return {
             hello: "Hello",
             name: "Mariam",
             postal: "730522",
@@ -48,7 +48,7 @@ const root = Vue.createApp({
             navbar_physical_health: "Physical Health",
             navbar_my_profile: "My profile",
             navbar_logout: "Logout",
-            sos_title: "Request emergency help",
+            sos_title: "SOS HELP",
             sos_attention: "ATTENTION",
             sos_disclaimer1: 'Choosing "Confirm" will send an immediate help alert to the Singapore Police.',
             sos_disclaimer2: "All information shared with us remains confidential.",
@@ -65,18 +65,18 @@ const root = Vue.createApp({
 
             show_translate_option: false,
 
-            show_sos_confirmation:false
+            show_sos_confirmation: false
 
 
         }
     },
 
-    created(){
-        
-    }, 
+    created() {
+
+    },
     // Methods
     methods: {
-        send_sos(){
+        send_sos() {
             console.log('sos triggered');
             let formData = new FormData();
             formData.append('param1', 'hi');
@@ -104,89 +104,89 @@ const root = Vue.createApp({
 
               */
         },
-        
+
         // YOUR CODE GOES HERE IF YOU NEED ANY
-        translate(){
-            axios.get("http://localhost:3000/HomeLandingAbout/homepage.html").then( response => { 
-        
-            translation = response.headers.translation;
-            console.log(translation);
-            translations = translation.split(' ~ ');
-            /*
-            this.hello = translations[0]
-            this.welcome_msg = translations[1]
-            this.edit_profile = translations[2]
-            this.upcoming_activities = translations[3]
-            */
+        translate() {
+            axios.get("http://localhost:3000/HomeLandingAbout/homepage.html").then(response => {
 
-            this.hello = translations[0],
-            this.welcome_msg = translations[1],
-            this.edit_profile = translations[2],
-            this.upcoming_activities = translations[3],
-            this.guide_and_resources = translations[4],
-            this.social_plus = translations[5],
-            this.forum_title = translations[6],
-            this.forum_desc = translations[7],
-            this.activity_title = translations[8],
-            this.activity_desc= translations[9],
-            this.activity_btn = translations[10],
-            this.guides= translations[11],
-            this.guides_navigate_title= translations[12],
-            this.guides_navigate_desc= translations[13],
-            this.guides_navigate_btn= translations[14],
-            this.guides_rights_title= translations[15],
-            this.guides_rights_desc= translations[16],
-            this.guides_rights_btn= translations[17],
-            this.guides_resources_title= translations[18],
-            this.guides_resources_desc= translations[19],
-            this.guides_resources_btn= translations[20],
-            this.wellness= translations[21],
-            this.breather_title= translations[22],
-            this.breather_desc= translations[23],
-            this.breather_btn = translations[24],
-            this.bingo= translations[25],
-            this.bingo_desc= translations[26],
-            this.bingo_btn= translations[27],
-            this.journal_title= translations[28],
-            this.journal_desc= translations[29],
-            this.journal_btn= translations[30],
-            this.health_title= translations[31],
-            this.health_desc= translations[32],
-            this.health_btn = translations[33],
-            this.navbar_caregiving = translations[34],
-            this.navbar_navigating = translations[35],
-            this.navbar_rights = translations[36], 
-            this.navbar_mental_health = translations[37], 
-            this.navbar_physical_health = translations[38],
-            this.sos_title = translations[39],
-            this.sos_attention = translations[40],
-            this.sos_disclaimer1 = translations[41],
-            this.sos_disclaimer2 = translations[42],
-            this.sos_abuse = translations[43],
-            this.sos_name = translations[44],
-            this.sos_location = translations[45],
-            this.sos_problem_desc = translations[46],
-            this.sos_cancel = translations[47],
-            this.sos_confirm = translations[48]
+                translation = response.headers.translation;
+                console.log(translation);
+                translations = translation.split(' ~ ');
+                /*
+                this.hello = translations[0]
+                this.welcome_msg = translations[1]
+                this.edit_profile = translations[2]
+                this.upcoming_activities = translations[3]
+                */
 
-            document.getElementById("indo").style.backgroundColor="rgb(255, 255, 234)"
-            document.getElementById("en").style.backgroundColor="white"
-            
-        
+                this.hello = translations[0],
+                    this.welcome_msg = translations[1],
+                    this.edit_profile = translations[2],
+                    this.upcoming_activities = translations[3],
+                    this.guide_and_resources = translations[4],
+                    this.social_plus = translations[5],
+                    this.forum_title = translations[6],
+                    this.forum_desc = translations[7],
+                    this.activity_title = translations[8],
+                    this.activity_desc = translations[9],
+                    this.activity_btn = translations[10],
+                    this.guides = translations[11],
+                    this.guides_navigate_title = translations[12],
+                    this.guides_navigate_desc = translations[13],
+                    this.guides_navigate_btn = translations[14],
+                    this.guides_rights_title = translations[15],
+                    this.guides_rights_desc = translations[16],
+                    this.guides_rights_btn = translations[17],
+                    this.guides_resources_title = translations[18],
+                    this.guides_resources_desc = translations[19],
+                    this.guides_resources_btn = translations[20],
+                    this.wellness = translations[21],
+                    this.breather_title = translations[22],
+                    this.breather_desc = translations[23],
+                    this.breather_btn = translations[24],
+                    this.bingo = translations[25],
+                    this.bingo_desc = translations[26],
+                    this.bingo_btn = translations[27],
+                    this.journal_title = translations[28],
+                    this.journal_desc = translations[29],
+                    this.journal_btn = translations[30],
+                    this.health_title = translations[31],
+                    this.health_desc = translations[32],
+                    this.health_btn = translations[33],
+                    this.navbar_caregiving = translations[34],
+                    this.navbar_navigating = translations[35],
+                    this.navbar_rights = translations[36],
+                    this.navbar_mental_health = translations[37],
+                    this.navbar_physical_health = translations[38],
+                    this.sos_title = translations[39],
+                    this.sos_attention = translations[40],
+                    this.sos_disclaimer1 = translations[41],
+                    this.sos_disclaimer2 = translations[42],
+                    this.sos_abuse = translations[43],
+                    this.sos_name = translations[44],
+                    this.sos_location = translations[45],
+                    this.sos_problem_desc = translations[46],
+                    this.sos_cancel = translations[47],
+                    this.sos_confirm = translations[48]
 
-        })
-    },
+                document.getElementById("indo").style.backgroundColor = "rgb(255, 255, 234)"
+                document.getElementById("en").style.backgroundColor = "white"
 
-    translate_dialog(){
-        // Check if its an open or close command
-        if (this.show_translate_option){
-            this.show_translate_option = false
+
+
+            })
+        },
+
+        translate_dialog() {
+            // Check if its an open or close command
+            if (this.show_translate_option) {
+                this.show_translate_option = false
+            }
+            else {
+                this.show_translate_option = true
+            }
+
         }
-        else{
-            this.show_translate_option = true
-        }
-
-    }
 
 
 
@@ -194,8 +194,8 @@ const root = Vue.createApp({
     // Other stuff
 })
 root.component("translate-template", {
-    template :
-    `
+    template:
+        `
     <button type="button" id="translate_btn"
     class="btn btn-floating btn-outline-secondary bg-white">
     <i v-show="!show_translate_option" class="fas fa-language fa-xl"></i>
@@ -242,7 +242,7 @@ root.component("translate-template", {
 })
 root.component("sos-template", {
     template:
-    `
+        `
     <button type="button" id="sos_btn" class="btn btn-floating sos_btn btn-danger fw-bolder" data-bs-toggle="modal"
     data-bs-target="#staticBackdrop">
     <h5 v-show="!show_sos_dialog" class="m-auto">SOS</h5>
@@ -253,11 +253,11 @@ root.component("sos-template", {
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            <h1 class="modal-title fs-5 text-danger" id="staticBackdropLabel"> {{$parent.sos_title}}</h1>
+            <h1 class="modal-title fs-2 text-danger" id="staticBackdropLabel"> {{$parent.sos_title}}</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <p class="text-warning fs-3 text-center">{{$parent.sos_attention}}</p>
+            <h5 class="text-warning">{{$parent.sos_attention}}</h5>
 
             <ul>
                 <li>
@@ -272,9 +272,7 @@ root.component("sos-template", {
                 </li>
             </ul>
             <hr>
-            <div class="text-danger text-center mb-5">
-                Please do not abuse this function.
-            </div>
+           
 
 
             <p class=" my-3">Your Name: {{$parent.name}}</p>
@@ -284,6 +282,10 @@ root.component("sos-template", {
   <textarea class="form-control" v-model="$parent.problem_desc" id="exampleFormControlTextarea1" rows="3"></textarea>
 </div>
             </div>
+
+            <div class="text-danger text-center mb-5 fw-bolder fs-5">
+            Please do not abuse this function.
+        </div>
         
             <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary " data-bs-dismiss="modal">{{$parent.sos_cancel}}</button>
