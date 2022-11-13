@@ -7,6 +7,7 @@ const express = require("express");
 const path = require("path");
 let app = express();
 var cors = require('cors');
+const { stringify } = require('querystring');
 app.use(cors());
 const port = 3000;
 
@@ -185,21 +186,88 @@ app.get('/HealthIsWealth/Mental_Health/breathing.html',(req,res)=>{
 //   console.log('index requested');
 //   res.sendFile('/HealthIsWealth//Mental_Health/journalling.html', { root: __dirname });
 // })
+function getDate() {
 
-app.get('/HealthIsWealth/Mental_Health/journalling.html',(req,res)=>{
-  console.log('index requested');
-  MongoClient.connect(url, function(err, db) {
+
+
+  months = {
+    1: "January",
+    2: "February",
+    3: "March",
+    4: "April", 
+    5: "May",
+    6: "June",
+    7: "July",
+    8: "August",
+    9: "September",
+    10: "October",
+    11: "November",
+    12: "December"
+  }
+
+  console.log("test");
+  var date = new Date();
+
+  out_date = date.getDate();
+  out_month = date.getMonth();
+  out_year = date.getFullYear();
+  
+  extracted_date = `${out_date} ${months[out_month]} ${out_year}`;
+  return extracted_date;
+}
+
+app.all('/HealthIsWealth/Mental_Health/journalling.html',(req,res)=>{
+
+  MongoClient.connect(url, function(err, db){
     if (err) throw err;
-    var dbo = db.db("domesticaid");
-    const result = dbo.collection("journal").find().toArray();
+    var dbo = db.db('domesticaid');
+    const result = dbo.collection('journal').find().toArray();
+    id_counter = result.length;
     result.then(data => {
-      //global threads = data;
-      res.sendFile('/HealthIsWealth/Mental_Health/journalling.html', { root: __dirname });
+      console.log(data)
+      res.sendFile('/HealthIsWealth/Mental_Health/journalling.html', {root: __dirname});
       console.log(JSON.stringify(data));
       db.close();
-      res.set('journal', JSON.stringify(data) );
-    })   
-  });
+      res.set('journal', JSON.stringify(data));
+    })
+  })
+
+  // category
+  if(req.query.category){
+  var category = req.query.category;
+  console.log(category);
+  }
+  // date
+  entry_date = getDate();
+  if(req.query.entry){
+    var entry = req.query.entry;
+    console.log(entry);
+  }
+  // if there's an entry, do below
+  if(entry){
+    MongoClient.connect(url, function(err, db) {
+      
+      if (err) throw err;
+      var dbo = db.db("domesticaid");
+      console.log('found database');
+      var result = dbo.collection("journal").find().toArray();
+      // var id_counter = result.length;
+      console.log(id_counter);
+      // id_counter += 1;
+      
+      const journals = dbo.collection("journal");
+      
+
+
+      new_journal_entry = { 'category': category, 'date':entry_date, 'entry': entry };
+    
+      journals.insertOne( new_journal_entry);
+      //res.sendFile('/HealthIsWealth/Mental_Health/journalling.html', { root: __dirname });
+
+      
+    })
+  };
+
 })
 
 
@@ -427,6 +495,7 @@ app.get('/Social/Activities/activities_landing.html',(req,res)=>{
     const result = dbo.collection("activities").find().toArray();
     result.then(data => {
       //global threads = data;
+      console.log(data);
       res.sendFile('/Social/Activities/activities_landing.html', { root: __dirname });
       res.set('activities', JSON.stringify(data) );
       db.close()
@@ -434,6 +503,13 @@ app.get('/Social/Activities/activities_landing.html',(req,res)=>{
     
   });
 })
+
+// SOCIAL+ CREATE ACTIVITIES
+app.get('/Social/Activities/activities_create_activity.html',(req,res)=>{
+  console.log('index requested');
+  res.sendFile('/Social/Activities/activities_create_activity.html', { root: __dirname });
+})
+
 
 
 app.listen(port, () => {

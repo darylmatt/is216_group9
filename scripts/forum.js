@@ -27,6 +27,15 @@ const root = Vue.createApp({
                     document.getElementById('modalTitle').innerText = this.threads[index].thread_title
                     document.getElementById('threadContent').innerText = this.threads[index].thread_content
                     document.getElementById('threadInfo').innerText = 'Thread Author: ' + this.threads[index].author_name
+                    var comments = this.threads[index].comment_array;
+                    console.log(comments);
+                    for(let index=0; index < comments.length; index++){
+                        var comment_array = comments[index].split('@');
+                        console.log(comment_array);
+
+                        // document.getElementById('commenter').innerText = name;
+
+                    }
 
 
 

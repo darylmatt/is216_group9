@@ -72,133 +72,118 @@
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
+  <div class="container-fluid">
 
       <a class="navbar-brand" href="/HomeLandingAbout/homepage.html">
-        <img src="/img/logo.png" style="height: 140px;" alt="DomesticAID Logo" />
+          <img src="/img/logo.png" style="height: 140px;" alt="DomesticAID Logo" />
       </a>
 
-      <button class="navbar-toggler" style="color:black;" type="button" data-bs-toggle="collapse"
-        data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="mainNav">
 
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-          <li class="nav-item dropdown mx-3">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-mdb-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-user-friends"></i>
-              Social+
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li class="nav-item dropdown mx-3">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-user-friends"></i>
+                      {{social_plus}}
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-              <li>
-                <a class="dropdown-item" href="/Social/Forum/forum.html">Forum</a>
+                      <li>
+                          <a class="dropdown-item" href="/Social/Forum/forum.html">{{forum_title}}</a>
+                      </li>
+
+                      <li>
+                          <a class="dropdown-item"
+                              href="/Social/Activities/activities_landing.html">{{activity_title}}</a>
+                      </li>
+
+                  </ul>
               </li>
 
-              <li>
-                <a class="dropdown-item" href="/Social/Activities/activities_landing.html">Activities</a>
+              <!-- Icon dropdown -->
+
+              <li class="nav-item dropdown mx-3">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-folder-open"></i>
+                      {{guides}}
+                  </a>
+
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                      <li>
+                          <a class="dropdown-item" href="/Guides/guide_care.html">{{navbar_caregiving}}</a>
+                      </li>
+
+                      <li>
+                          <a class="dropdown-item" href="/Guides/guide_navigation.html">{{navbar_navigating}}</a>
+                      </li>
+
+                      <li>
+                          <a class="dropdown-item" href="/Guides/guide_rights.html">{{navbar_rights}}</a>
+                      </li>
+
+                  </ul>
+
+
               </li>
 
-            </ul>
-          </li>
+              <li class="nav-item dropdown mx-3">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                      data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-seedling"></i>
+                      {{wellness}}
+                  </a>
 
-          <!-- Icon dropdown -->
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-          <li class="nav-item dropdown mx-3">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-mdb-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-folder-open"></i>
-              Guides
-            </a>
+                      <li>
+                          <a class="dropdown-item" href="/HealthIsWealth/Mental_Health/mental_health_landing.html">{{navbar_mental_health}}</a>
+                      </li>
 
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li>
+                          <a class="dropdown-item" href="/HealthIsWealth/Physical_Health/physical_health_places.html">{{navbar_physical_health}}</a>
+                      </li>
 
-              <li>
-                <a class="dropdown-item" href="/Guides/guide_care.html">Caregiving</a>
+                  </ul>
+
+
               </li>
 
-              <li>
-                <a class="dropdown-item" href="/Guides/guide_navigation.html">Navigating
-                  Singapore</a>
+              <!-- Icon dropdown -->
+
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
+                      id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                      <img src="/img/jx.jpg" class="rounded-circle" height="22" alt="Portrait of a Woman"
+                          loading="lazy" />
+                  </a>
+
+                  <ul class="dropdown-menu dropdown-menu-md-end dropdown-menu-start " aria-labelledby="navbarDropdownMenu">
+                      <li>
+                          <a class="dropdown-item" href="/Registration&Profiling/edit_profiling.html">My
+                              profile</a>
+                      </li>
+                      <li>
+                          <a class="dropdown-item" href="/HomeLandingAbout/about.html">Logout</a>
+                      </li>
+                  </ul>
               </li>
 
-              <li>
-                <a class="dropdown-item" href="/Guides/guide_rights.html">Know your rights!</a>
-              </li>
+              <!-- Icon dropdown -->
 
-            </ul>
-
-
-          </li>
-
-          <li class="nav-item dropdown mx-3">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-mdb-toggle="dropdown" aria-expanded="false">
-              <i class="fas fa-seedling"></i>
-              Wellness
-            </a>
-
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-              <li>
-                <a class="dropdown-item" href="/HealthIsWealth/Mental_Health/mental_health_landing.html">Mental
-                  Health</a>
-              </li>
-
-              <li>
-                <a class="dropdown-item" href="/HealthIsWealth/Physical_Health/physical_health_places.html">Physical
-                  Health</a>
-              </li>
-
-            </ul>
-
-
-          </li>
-
-          <!-- Icon dropdown -->
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink"
-              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-              <img src="/img/jx.jpg" class="rounded-circle" height="22" alt="Portrait of a Woman" loading="lazy" />
-            </a>
-
-            <!-- End -->
-
-            <ul class="dropdown-menu dropdown-menu-md-end dropdown-menu-sm-start" aria-labelledby="navbarDropdownMenu">
-              <li>
-                <a class="dropdown-item mx-3" href="/Registration&Profiling/edit_profiling.html">My
-                  profile</a>
-              </li>
-              <li>
-                <a class="dropdown-item mx-3" href="/HomeLandingAbout/about.html">Logout</a>
-              </li>
-            </ul>
-
-            <!-- Start -->
-            <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownMenu">
-              <li>
-                <a class="dropdown-item mx-3" href="/Registration&Profiling/edit_profiling.html">My
-                  profile</a>
-              </li>
-              <li>
-                <a class="dropdown-item mx-3" href="/HomeLandingAbout/about.html">Logout</a>
-              </li>
-            </ul>
-          </li>
-
-
-
-          <!-- Icon dropdown -->
-
-        </ul>
+          </ul>
       </div>
-    </div>
-  </nav>
+  </div>
+</nav>
 
 
 
@@ -261,9 +246,11 @@
                         <div class="col">
                             <div>
                                 <label for="location" class="form-label">Location</label>
-                                <button type='button' id="location" class="btn btn-dark" data-toggle="modal" data-target="#myModal" v-on:click="setSearchValue()" onclick="triggerBtnClick()">
-                                    Get Location
-                                </button>
+                                <div class="d-inline" style="margin-left:10px; margin-bottom: 30px;">
+                                    <button type='button' id="location" class="btn btn-dark"data-toggle="modal" data-target="#myModal" v-on:click="setSearchValue()" onclick="triggerBtnClick()">
+                                        Get Location
+                                    </button>
+                                </div>
                                 <div>
                                     <input type="text" class="form-control" id="newlocation"
                                     placeholder="Enter the event address" v-model="newLocation">
@@ -355,7 +342,7 @@
 
 
 
-  <!-- The Modal -->
+  <!-- The Map Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog modal-dialog-scrollable modal-xl">
       <div class="modal-content">
@@ -371,7 +358,7 @@
               
           
           <div id="directions">
-            <h3>Directions</h3>
+            <h3>Map Location</h3>
 
             <!--The div element for the map -->
             <div id="map"></div>
@@ -404,7 +391,7 @@
               <form>
                   <div class="form-group mt-5">
                       <!-- fetch user's postal and set in value -->
-                      <input type="text" class="form-control" name="addr" id="addr" placeholder="Enter Postal Code Here..." >
+                      <input type="text" class="form-control" name="addr" id="addr" placeholder="Enter Postal Code Here..." value="{{newLocation}">
 
                       <br>
 

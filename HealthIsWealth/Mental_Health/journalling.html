@@ -31,7 +31,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
@@ -143,22 +143,22 @@
 
           <ul class="dropdown-menu dropdown-menu-md-end dropdown-menu-sm-start" aria-labelledby="navbarDropdownMenu">
             <li>
-              <a class="dropdown-item mx-3" href="/Registration&Profiling/edit_profiling.html">My
+              <a class="dropdown-item" href="/Registration&Profiling/edit_profiling.html">My
                 profile</a>
             </li>
             <li>
-              <a class="dropdown-item mx-3" href="/HomeLandingAbout/about.html">Logout</a>
+              <a class="dropdown-item" href="/HomeLandingAbout/about.html">Logout</a>
             </li>
           </ul>
 
           <!-- Start -->
           <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownMenu">
             <li>
-              <a class="dropdown-item mx-3" href="/Registration&Profiling/edit_profiling.html">My
+              <a class="dropdown-item" href="/Registration&Profiling/edit_profiling.html">My
                 profile</a>
             </li>
             <li>
-              <a class="dropdown-item mx-3" href="/HomeLandingAbout/about.html">Logout</a>
+              <a class="dropdown-item" href="/HomeLandingAbout/about.html">Logout</a>
             </li>
           </ul>
         </li>
@@ -178,7 +178,7 @@
 
   <h1 class="display-2 my-3">Journal down your thoughts...</h1>
   <!-- {{entries}} -->
-  <form action="" method="post">
+  <form action="">
     <div class="row mt-5">
     
 
@@ -202,7 +202,7 @@
       </div>
 
       <div class="col-8">
-        <submit class="btn btn-lg btn-info my-3 float-end">Note it!</submit>
+        <button type='submit' class="btn btn-lg btn-info my-3 float-end">Note it!</button>
       </div>
     
     </div>
@@ -247,7 +247,7 @@
       <option value="December">December</option>
     </select>
 
-    <button v-on:click="populateFilteredEntries()" class="btn btn-primary">Filter</button>
+    <button v-on:click="populateFilteredEntries()" class="btn btn-primary mx-2">Filter</button>
     <button v-on:click="showAll()" class="btn btn-primary" id="showallbtn">Show All</button>
   </div>
   
@@ -257,7 +257,7 @@
   <table class="table table-striped table-info ">
     <thead>
       <tr>
-        <th scope="col">Entry #</th>
+        
         <th scope="col">Date</th>
         <th scope="col">Category</th>
         <th scope="col">Entry</th>
@@ -265,7 +265,6 @@
     </thead>
     <tbody>
       <tr v-for="entry of filteredEntries">
-        <td>{{entry.entry_no}}</td>
         <td>{{entry.date}}</td>
         <td>{{entry.category}}</td>
         <td>{{entry.entry}}</td>
