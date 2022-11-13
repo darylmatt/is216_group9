@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social +</title>
 
-    <!-- Icon -->
-    <link rel="icon" href="../../img/logo.png" type="image/gif" sizes="50x50">
-
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -22,7 +19,10 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
 
     <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
+
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
@@ -33,8 +33,6 @@
 
     <!-- For Maps -->
     <script src="../../scripts/maps.js"></script>
-
-    
 
 
     <!-- Do NOT Remove for -->
@@ -53,9 +51,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
-
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-
 
 
 
@@ -81,11 +76,13 @@
         }
 
         #success_outer {
-           position:fixed;
+            position: fixed;
             text-align: center;
             left: 0;
             right: 0;
             z-index: 2;
+            bottom:0;
+            top:0;
         }
     </style>
 
@@ -98,172 +95,129 @@
 </head>
 
 <!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="/HomeLandingAbout/homepage.html">
+            <img src="/img/logo.png" style="height: 140px;" alt="DomesticAID Logo" />
+        </a>
 
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                <li class="nav-item dropdown mx-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-mdb-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user-friends"></i>
+                        {{social_plus}}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <li>
+                            <a class="dropdown-item" href="/Social/Forum/forum.html">{{forum_title}}</a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item"
+                                href="/Social/Activities/activities_landing.html">{{activity_title}}</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <!-- Icon dropdown -->
+
+                <li class="nav-item dropdown mx-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-mdb-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-folder-open"></i>
+                        {{guides}}
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <li>
+                            <a class="dropdown-item" href="/Guides/guide_care.html">{{navbar_caregiving}}</a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="/Guides/guide_navigation.html">{{navbar_navigating}}</a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="/Guides/guide_rights.html">{{navbar_rights}}</a>
+                        </li>
+
+                    </ul>
 
 
+                </li>
+
+                <li class="nav-item dropdown mx-3">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-mdb-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-seedling"></i>
+                        {{wellness}}
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <li>
+                            <a class="dropdown-item"
+                                href="/HealthIsWealth/Mental_Health/mental_health_landing.html">{{navbar_mental_health}}</a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item"
+                                href="/HealthIsWealth/Physical_Health/physical_health_places.html">{{navbar_physical_health}}</a>
+                        </li>
+
+                    </ul>
 
 
+                </li>
 
-<body id="root">
+                <!-- Icon dropdown -->
 
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink"
+                        role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <img src="/img/jx.jpg" class="rounded-circle" height="22" alt="Portrait of a Woman"
+                            loading="lazy" />
+                    </a>
 
-            <a class="navbar-brand" href="/HomeLandingAbout/homepage.html">
-                <img src="/img/logo.png" style="height: 140px;" alt="DomesticAID Logo" />
-            </a>
+                    <ul class="dropdown-menu dropdown-menu-md-end dropdown-menu-start "
+                        aria-labelledby="navbarDropdownMenu">
+                        <li>
+                            <a class="dropdown-item" href="/Registration&Profiling/edit_profiling.html">My
+                                profile</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/HomeLandingAbout/about.html">Logout</a>
+                        </li>
+                    </ul>
+                </li>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <!-- Icon dropdown -->
 
-            <div class="collapse navbar-collapse" id="mainNav">
-
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                    <li class="nav-item dropdown mx-3">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-mdb-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user-friends"></i>
-                            Social+
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                            <li>
-                                <a class="dropdown-item" href="/Social/Forum/forum.html">Forum</a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item"
-                                    href="/Social/Activities/activities_landing.html">Activities</a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <!-- Icon dropdown -->
-
-                    <li class="nav-item dropdown mx-3">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-mdb-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-folder-open"></i>
-                            Guides
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                            <li>
-                                <a class="dropdown-item" href="/Guides/guide_care.html">Caregiving</a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="/Guides/guide_navigation.html">Navigating
-                                    Singapore</a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item" href="/Guides/guide_rights.html">Know your rights!</a>
-                            </li>
-
-                        </ul>
-
-
-                    </li>
-
-                    <li class="nav-item dropdown mx-3">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-mdb-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-seedling"></i>
-                            Wellness
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                            <li>
-                                <a class="dropdown-item"
-                                    href="/HealthIsWealth/Mental_Health/mental_health_landing.html">Mental
-                                    Health</a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item"
-                                    href="/HealthIsWealth/Physical_Health/physical_health_places.html">Physical
-                                    Health</a>
-                            </li>
-
-                        </ul>
-
-
-                    </li>
-
-                    <!-- Icon dropdown -->
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#"
-                            id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                            <img src="/img/jx.jpg" class="rounded-circle" height="22" alt="Portrait of a Woman"
-                                loading="lazy" />
-                        </a>
-
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenu">
-                            <li>
-                                <a class="dropdown-item" href="/Registration&Profiling/edit_profiling.html">My
-                                    profile</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="/HomeLandingAbout/about.html">Logout</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-- Icon dropdown -->
-
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div id="success_outer" hidden>
-        <div id="successful_add">
-            <div class="card">
-                <div class="card-header text-bg-success text-center">
-                    Success
-                </div>
-                <div class="card-body text-start">
-                    <h5 class="card-title">Your activity request for <span class="fw-bolder">{{newEventName}}</span> has been sent!</h5>
-                    <p class="card-text">
-                        Please find event details:
-                        <br>
-                        <br>
-                        Event Name: {{newEventName}}
-                        <br>
-                        Date of event: {{newDate}}
-                        <br>
-                        Number of pax: {{numPax}}
-                        <br>
-                        Event Category: {{newCat}}
-                        <br>
-                        Location: {{newLocation}}
-                        <br>
-                        Event Description: {{eventDesc}}
-                        <br>
-                        <br>
-                        <span class="text-primary">
-                            We'll contact you via email regarding your request status!
-                        </span>
-                    </p>
-                    <div class="text-center">
-                        <a href="/Social/Activities/activities_landing.html" class="btn btn-warning">Back to activity
-                            page</a>
-                    </div>
-                    
-                </div>
-            </div>
+            </ul>
         </div>
     </div>
+</nav>
 
+
+
+
+
+
+<body>
 
     <div class="container">
 
@@ -295,7 +249,51 @@
     <!-- Form fields -->
     <form>
 
-        <div class="container">
+
+
+        <div class="container" id="root">
+
+            <div id="success_outer" hidden>
+                <div id="successful_add">
+                    <div class="card">
+                        <div class="card-header text-bg-success text-center">
+                            Success
+                        </div>
+                        <div class="card-body text-start">
+                            <h5 class="card-title">Your activity request for <span
+                                    class="fw-bolder">{{newEventName}}</span> has
+                                been sent!</h5>
+                            <p class="card-text">
+                                Please find event details:
+                                <br>
+                                <br>
+                                Event Name: {{newEventName}}
+                                <br>
+                                Date of event: {{newDate}}
+                                <br>
+                                Number of pax: {{numPax}}
+                                <br>
+                                Event Category: {{newCat}}
+                                <br>
+                                Location: {{newLocation}}
+                                <br>
+                                Event Description: {{eventDesc}}
+                                <br>
+                                <br>
+                                <span class="text-primary">
+                                    We'll contact you via email regarding your request status!
+                                </span>
+                            </p>
+                            <div class="text-center">
+                                <a href="/Social/Activities/activities_landing.html" class="btn btn-warning">Back to
+                                    activity
+                                    page</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="card p-3 m-2" id="form_card">
                 <div class="card-body">
@@ -504,7 +502,7 @@
     <div id="footer">
         <footer-template></footer-template>
     </div>
-    <script src="../../scripts/nav_foot.js"></script>
+    <script src="../scripts/nav_foot.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"

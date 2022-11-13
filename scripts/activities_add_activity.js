@@ -23,7 +23,7 @@ const root = Vue.createApp({
 
             show: false,
 
-            img_link: '',
+            img_link: ''
 
             
 
@@ -86,6 +86,7 @@ const root = Vue.createApp({
                     if (tMonth <= nMonth) {
                         if (tDay <= nDay) {
                             document.getElementById("success_outer").hidden = false
+                            return
                         }
                         else {
                             this.show = true
