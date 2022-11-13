@@ -257,7 +257,7 @@ root.component("sos-template", {
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <p class="text-warning ">{{$parent.sos_attention}}</p>
+            <p class="text-warning fs-3 text-center">{{$parent.sos_attention}}</p>
 
             <ul>
                 <li>
@@ -277,10 +277,10 @@ root.component("sos-template", {
             </div>
 
 
-            <p class="text-warning my-3">Your Name: {{$parent.name}}</p>
-            <p class="text-warning ">Your location: {{$parent.postal}}</p>
+            <p class=" my-3">Your Name: {{$parent.name}}</p>
+            <p class=" ">Your location: {{$parent.postal}}</p>
             <div class="mb-3">
-            <p class="text-warning">Problem description</p>
+            <p class="">Problem description</p>
   <textarea class="form-control" v-model="$parent.problem_desc" id="exampleFormControlTextarea1" rows="3"></textarea>
 </div>
             </div>
