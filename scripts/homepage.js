@@ -57,7 +57,21 @@ const root = Vue.createApp({
     }, 
     // Methods
     methods: {
-
+        send_sos(){
+            console.log('sos triggered');
+            axios.post("http://127.0.0.1:5000/?name=Mariam&postal=730522&problem_desc=help me", {
+                firstName: 'Fred',
+                lastName: 'Flintstone'
+                    
+              })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+        },
+        
         // YOUR CODE GOES HERE IF YOU NEED ANY
         translate(){
             axios.get("http://localhost:3000/HomeLandingAbout/homepage.html").then( response => { 
@@ -124,9 +138,10 @@ const root = Vue.createApp({
             this.show_translate_option = true
         }
 
-     
-
     }
+
+
+
     }
     // Other stuff
 })
@@ -214,7 +229,7 @@ root.component("sos-template", {
             </div>
             <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary " data-bs-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary btn-danger float-end"
+            <button type="button" @click="$parent.send_sos" class="btn btn-primary btn-danger float-end"
                 data-bs-dismiss="modal">Confirm</button>
             </div>
         </div>
