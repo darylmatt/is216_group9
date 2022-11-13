@@ -45,6 +45,7 @@
 
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 
   <style>
@@ -80,7 +81,6 @@
       position: fixed;
       z-index: 2;
     }
-
   </style>
 
 
@@ -89,91 +89,97 @@
 
 <body onload="triggerBtnClick()" id="root">
 
+
+
   <!-- Suggestion form -->
-  <button type="button" v-on:click="check_quiz()" id="translate_btn"
-    class="btn btn-floating btn-black">
+  <button type="button" v-on:click="check_quiz()" id="translate_btn" class="btn btn-floating btn-black">
     <i v-show="!show_popup" class="fas fa-search fa-lg"></i>
     <!-- <i v-show="!show_translate_option" class="fas fa-language fa-xl"></i> -->
     <i v-show="show_popup" class="fas fa-window-close fa-xl"></i>
   </button>
 
-  <div class="card" id="quizPop" v-show="show_popup" style="background-image: url(/img/finalpls.jpeg); width:80%" >
-    <div class="card-body shadow">
-      <h2 class="card-title text-center"><b>Unsure of what help you need?</b></h2>
-      <h5>We'll generate the best suggestion to fit your needs.</h5>
-      <div>
-        <form id="display_results" class="fw-bolder">
-          <!-- Psych -->
-          <div class="form-check mt-3 ">
-            <input class="form-check-input" type="checkbox" value="" id="psych_1" >
-            <label class="form-check-label" for="flexCheckChecked">
-              Unable to control your emotions
-            </label>
-          </div>
-  
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="psych_2" v-model="selected_options">
-            <label class="form-check-label" for="flexCheckChecked">
-              Excessive worry or anxiety
-            </label>
-          </div>
-  
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="psych_3">
-            <label class="form-check-label" for="flexCheckChecked">
-              Unexplained physical illness - stomach pain, headaches and vague aches
-            </label>
-          </div>
-  
-           <!-- Counsellors -->
-  
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="counsel_1">
-            <label class="form-check-label" for="flexCheckChecked">
-              Need a listening ear
-            </label>
-          </div>
-  
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="counsel_2">
-            <label class="form-check-label" for="flexCheckChecked">
-              Increase your self-awareness - discover reasons for your behavior
-            </label>
-          </div>
-  
-            <!-- Social workers -->
-  
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="socialW_1">
-            <label class="form-check-label" for="flexCheckChecked">
-                Require assistance on financial and legal matters
-            </label>
-          </div>
-  
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="socialW_2">
-            <label class="form-check-label" for="flexCheckChecked">
-                Struggle with integrating with Singapore's way of life 
-            </label>
-          </div>
-  
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="socialW_3">
-            <label class="form-check-label" for="flexCheckChecked">
-                I don't know also...quite lost and I need to seek advise for many things!!
-            </label>
-          </div>
-  
-            <!--  Generate button-->
-          <div class="text-center">
-            <button type="button" class="btn btn-outline-dark btn-lg text-center" v-on:click="generate_sug()">Generate</button>
-          </div>
-      
-        </form>
+  <div class="card" id="quizPop" v-show="show_popup" style="background-image: url(/img/soothing.jpeg); width: 40%;">
+    <div class="card-body shadow" id="display_page">
+
+      <div id="firstPage">
+        <h4 class="card-title text-center fw-bold"><b>Unsure of what help you need?</b></h4>
+        <p>We'll generate the best suggestion to fit your needs.</p>
+
+        <!-- First page -->
+        <div class="float-end">
+          <button type="button" class="btn btn-outline-success btn-lg text-center" @click="start_quiz()">Start</button>
+        </div>
+      </div>
+
+      <!-- Second page -->
+      <div id="second_page" hidden>
+
+        <!-- {{select_option}} -->
+
+        <h4 class="card-title text-center fw-bold"><b>Select the option that best describes yourself now.</b></h4>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="psych" id="psych" value="psych" v-model="select_option">
+          <label class="form-check-label" for="psych">
+            I suspect I have depression, anxiety (or other mental disorders)
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="socialW" id="socialW" value="socialW"
+            v-model="select_option">
+          <label class="form-check-label" for="socialW">
+            I need help with financial, social and/or legal matters
+          </label>
+        </div>
+
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="counsel" id="counsel" value="counsel"
+            v-model="select_option">
+          <label class="form-check-label" for="counsel">
+            I haven't been feeling like myself these days. I'm not sure what is going on with me...
+          </label>
+        </div>
+
+        <div class="float-end">
+          <button :disabled="select_option == ''" type="button" class="btn btn-outline-success btn-lg text-center"
+            @click="generate_result()">Next</button>
+        </div>
+      </div>
+
+      <!-- Results -->
+
+      <div id="third_page" hidden>
+        <h3>We recommend you to seek help from a <span class="text-danger" style="text-decoration:underline">{{this.recommend}}</span></h3>
+        <br>
+        <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_iombyzfq.json" background="transparent"
+          speed="1" class="m-auto" loop autoplay style="height:80px;">
+        </lottie-player>
+        <div class="float-end">
+          Do again!
+          <button type="button" v-on:click="restart()" class="btn btn-floating btn-outline-dark">
+            <i class="fa fa-refresh"></i>
+            <!-- <i v-show="!show_translate_option" class="fas fa-language fa-xl"></i> -->
+          </button>
+
+        </div>
+
 
       </div>
-    
+
+
+
     </div>
+  </div>
+
+
+  <!--  Generate button-->
+
+  </form>
+
+  </div>
+
+  </div>
 
 
   </div>
@@ -295,7 +301,7 @@
     </div>
   </nav>
 
-  
+
 
 
 
