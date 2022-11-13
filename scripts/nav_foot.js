@@ -4,9 +4,9 @@ const footer = Vue.createApp({
 footer.component("footer-template", {
     template : 
     `
-    <div class="container">
+    <div class="container-fluid px-5">
 
-      <hr style="margin-top: 90px;">
+      <hr style="margin-top: 150px;">
 
       <footer class="py-5">
         <div class="row">

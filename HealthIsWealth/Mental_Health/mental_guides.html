@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Health Guides</title>
+    <title>Mental Health Bingo</title>
 
     <link rel="stylesheet" href="../../stylesheets/mental_health.css">
     
@@ -32,7 +32,7 @@
 
     
 </head>
-<body onload="typeWriter()" onload="initialiseBoard()">
+<body onload="typeWriter();initialiseBoard()" id="root">
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
@@ -163,8 +163,8 @@
   
         <script>
           var i = 0;
-          var txt = "Hi! I'm Izumi, your guide for this page. Welcome to the Mental Wellness Bingo Page! In this page, your aim is to try and get as many bingo rows as possible, be it horizontally, vertically or diagonally! Every row you complete gives you 1 point, so try to clear as many as activities and clear as many rows as possible!";
-          var speed = 70;
+          var txt = "Hi! I'm Izumi, your guide for this page. Welcome to the Mental Wellness Bingo Page! In this page, your aim is to try and get as many bingo rows as possible, be it horizontally, vertically or diagonally! Every row you complete gives you 1 point, so try to clear as many activities and as many rows as possible!";
+          var speed = 30;
           
           function typeWriter() {
             console.log("test");
@@ -192,73 +192,88 @@
   </div>
 
   <div class="container">
-    <h3 class="text-center">Your Bingo Board</h3>
+    <h1 class="text-center">Your Bingo Board</h1>
+    <h5 class="text-center mt-5">Bingos: <span id="num_bingos">0</span></h5>
     <br><br>
 
     <div class="row">
       <div class="col"></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box1" style="background-color: rgb(250, 227, 245);">
-        <img src="../../img/bingo/sun.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Go out in the sun</span>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box0" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
       </div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box2" style="background-color: rgb(251, 207, 207);">
-        <img src="../../img/bingo/walking.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Take a walk</span>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box1" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
       </div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box3" style="background-color: rgb(252, 234, 220);">
-        <img src="../../img/bingo/meditation.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Meditate</span></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box4" style="background-color: lightgoldenrodyellow;">
-        <img src="../../img/bingo/dressup.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Dress Up</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box2" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box3" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
       <div class="col"></div>
     </div>
     <div class="row">
       <div class="col"></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box5" style="background-color: lightpink;">
-        <img src="../../img/bingo/breathing.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Take a breather</span></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box6" style="background-color: rgb(230, 231, 255);">
-        <img src="../../img/bingo/book.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Read a book</span></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center"  id="box7" style="background-color: rgb(163, 244, 240);">
-        <img src="../../img/bingo/self-esteem.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Self Affirmation</span></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box8" style="background-color: rgb(236, 243, 253);">
-        <img src="../../img/bingo/watching-a-movie.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>See a film</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box4" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box5" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center"  id="box6" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box7" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
       <div class="col"></div>
     </div>
     <div class="row">
       <div class="col"></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box9" style="background-color: lightcyan;">
-        <img src="../../img/bingo/video.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Watch a funny video</span></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box10" style="background-color: lightgreen;">
-        <img src="../../img/bingo/friends.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Meet friends</span></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box11" style="background-color: lightcoral;">
-        <img src="../../img/bingo/hot-pot.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Eat good food</span></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box12" style="background-color: lightseagreen;">
-        <img src="../../img/bingo/journal.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Journal</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box8" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box9" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box10" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box11" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
       <div class="col"></div>
     </div>
     <div class="row">
       <div class="col"></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box13" style="background-color: rgb(247, 200, 182);">
-        <img src="../../img/bingo/bathtub.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>A Relaxing Bath</span></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box14" style="background-color: rgb(255, 255, 227);">
-        <img src="../../img/bingo/video-call.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Call a friend</span></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box15" style="background-color: rgb(200, 220, 247);">
-        <img src="../../img/bingo/park.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Go to the park</span></div>
-      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box16" style="background-color: rgb(250, 228, 250);">
-        <img src="../../img/bingo/running.png" alt="" style="width: 50%; display: block; margin: auto;">
-        <span>Go for a run</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box12" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box13" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box14" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box15" onclick="checkItem(this)">
+        <img src="" alt="" style="width: 50%; display: block; margin: auto;">
+        <span></span>
+      </div>
       <div class="col"></div>
     </div>
 
