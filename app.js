@@ -27,9 +27,7 @@ app.get('/HomeLandingAbout/about.html',(req,res)=>{
 
 
 // HOMEPAGE
-app.all('/HomeLandingAbout/homepage.html',(req,res)=>{
-
-
+app.get('/HomeLandingAbout/homepage.html',(req,res)=>{
   res.header("Access-Control-Allow-Origin", "*");
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -66,10 +64,10 @@ const detectLanguage = async (text) => {
 //         console.log(err);
 //     });
 
-const translateText = async (text, lang) => {
+const translateText = async (text, targetLanguage) => {
 
     try {
-        let [response] = await translate.translate(text, lang);
+        let [response] = await translate.translate(text, targetLanguage);
         return response;
         translated = response;
     } catch (error) {

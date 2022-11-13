@@ -3,7 +3,6 @@ const root = Vue.createApp({
     // Data Properties
     data() {
         return { 
-            page_loaded: false,
             hello: "Hello",
             name: "Mariam",
             postal: "730522",
@@ -71,15 +70,13 @@ const root = Vue.createApp({
 
         }
     },
-    
 
     created(){
-        this.page_loaded = true;
+        
     }, 
     // Methods
     methods: {
         send_sos(){
-            
             console.log('sos triggered');
             let formData = new FormData();
             formData.append('param1', 'hi');
@@ -156,9 +153,6 @@ const root = Vue.createApp({
             this.health_title= translations[31],
             this.health_desc= translations[32],
             this.health_btn = translations[33],
-
-            
-
             this.navbar_caregiving = translations[34],
             this.navbar_navigating = translations[35],
             this.navbar_rights = translations[36], 
@@ -178,7 +172,7 @@ const root = Vue.createApp({
             document.getElementById("indo").style.backgroundColor="rgb(255, 255, 234)"
             document.getElementById("en").style.backgroundColor="white"
             
-            console.log(this.sos_confirm);
+        
 
         })
     },
@@ -212,7 +206,6 @@ root.component("translate-template", {
         <div class="card-body">
         <h5 class="card-title">Select preferred language</h5>
 
-        <form method="get">
         <div>
             <button type="button" id="en" onClick="window.location.reload();" class="btn w-100" style="background-color:rgb(255, 255, 234)">
             <i class="flag-singapore flag float-start"></i>
@@ -221,27 +214,25 @@ root.component("translate-template", {
         </div>
 
         <div>
-            <button type="button" name='lang' value='id' id="indo" class="btn w-100">
+            <button type="button" id="indo" class="btn w-100">
             <i class="flag-indonesia flag float-start"></i>
             Bahasa Indonesia
             </button>
         </div>
 
         <div>
-            <button type="button" name='lang' value='my' class="btn w-100">
+            <button type="button" class="btn w-100">
             <i class="flag-myanmar flag float-start"></i>
             Burmese
             </button>
         </div>
 
         <div>
-            <button type="button" name='lang' value='tl' class="btn w-100">
+            <button type="button" class="btn w-100">
             <i class="flag-philippines flag float-start"></i>
             Tagalog
             </button>
         </div>
-
-        </form>
 
         </div>
 
