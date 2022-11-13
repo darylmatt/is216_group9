@@ -17,20 +17,22 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     rel="stylesheet"
     />
+
     <!-- Google Fonts -->
-    <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    rel="stylesheet"
-    />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
 
-
     <!-- Vue.js 3 CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
     
 </head>
-<body>
+<body onload="typeWriter()">
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
@@ -147,150 +149,124 @@
   </div>
 </nav>
 
+  <div class="container text-center my-5">
+
+    <h1 class="display-1">Mental Wellness Bingo!</h1>
+
+    <div class="container my-2 mx-auto text-center">
+      <div class="row">
+        <div class="col-12 col-lg-8 my-auto p-4">
+          <!-- <h1>What to do</h1> <br> -->
+          <p id="demo" style="font-size:20px"></p>
   
-  <!-- Guide Starts Here -->
-  <div class="container" id="root">
-    <p v-model="facilities">{{facilities}}</p>
-    <div class="row my-5">
-        <div class="col fw-bold my-auto text-center" style="font-size: 60px; color:#9a616d;">
-            Mental Healthcare Guides
         </div>
+  
+        <script>
+          var i = 0;
+          var txt = "Hi! I'm Izumi, your guide for this page. Welcome to the Mental Wellness Bingo Page! In this page, your aim is to try and get as many bingo rows as possible, be it horizontally, vertically or diagonally! Every row you complete gives you 1 point, so try to clear as many as activities and clear as many rows as possible!";
+          var speed = 70;
+          
+          function typeWriter() {
+            console.log("test");
+            if (i < txt.length) {
+              document.getElementById("demo").innerHTML += txt.charAt(i);
+              i++;
+              setTimeout(typeWriter, speed);
+            }
+          }
+          </script>
+  
+        <div class="col-12 col-lg-4 text-center">
+            <lottie-player
+            src="https://assets8.lottiefiles.com/packages/lf20_ymogg1nq.json"
+            background="transparent"
+            speed="1"
+            style="width: auto"
+            loop
+            autoplay
+            ></lottie-player>      
+        </div>
+      </div>  
     </div>
-    
-    <div class="row m-3">
-      <label for="Search" class="form-label">Search for symptoms or keywords related to what you're experiencing:</label>
-      <div class="input-group md-form form-sm form-2 pl-0">
-        <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search Keywords..." aria-label="Search">
-        <div class="input-group-append">
-          <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3">
-      <div class="col-lg-4 col-sm-12">
-        <div class="card" id="1">
-          <img src="../../img/mentalhealth.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Guide 1</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-lg-4 col-sm-12">
-        <div class="card" id="2">
-          <img src="../../img/mentalhealth.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Guide 2</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="col-lg-4 col-sm-12">
-        <div class="card" id="3">
-          <img src="../../img/mentalhealth.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Guide 3</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-    <div class="row mt-4 g-3 row-cols-sm-1 row-cols-md-3">
-      <div class="col-lg-4 col-sm-12">
-        <div class="card" id="4">
-          <img src="../../img/mentalhealth.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Guide 4</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-sm-12">
-        <div class="card" id="5">
-          <img src="../../img/mentalhealth.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Guide 5</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-sm-12">
-        <div class="card" id="6">
-          <img src="../../img/mentalhealth.jpg  " class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Guide 6</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <hr>
   </div>
 
-  <!-- The Modal -->
-  <div class="modal" id="myModal">
-    <div class="modal-dialog modal-dialog-scrollable modal-lg">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header" style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
-          <h1 class="modal-title mx-auto" style="color: white">Guide 1</h1>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-          <h3>Guide Opener</h3>
-          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <div class="container">
+    <h3 class="text-center">Your Bingo Board</h3>
+    <br><br>
 
-          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-        
-        </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box1" style="background-color: rgb(250, 227, 245);">
+        <img src="../../img/bingo/sun.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Go out in the sun</span>
       </div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box2" style="background-color: rgb(251, 207, 207);">
+        <img src="../../img/bingo/walking.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Take a walk</span>
+      </div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box3" style="background-color: rgb(252, 234, 220);">
+        <img src="../../img/bingo/meditation.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Meditate</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box4" style="background-color: lightgoldenrodyellow;">
+        <img src="../../img/bingo/dressup.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Dress Up</span></div>
+      <div class="col"></div>
     </div>
-  
-  </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box5" style="background-color: lightpink;">
+        <img src="../../img/bingo/breathing.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Take a breather</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box6" style="background-color: rgb(230, 231, 255);">
+        <img src="../../img/bingo/book.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Read a book</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center"  id="box7" style="background-color: rgb(163, 244, 240);">
+        <img src="../../img/bingo/self-esteem.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Self Affirmation</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box8" style="background-color: rgb(236, 243, 253);">
+        <img src="../../img/bingo/watching-a-movie.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>See a film</span></div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box9" style="background-color: lightcyan;">
+        <img src="../../img/bingo/video.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Watch a funny video</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box10" style="background-color: lightgreen;">
+        <img src="../../img/bingo/friends.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Meet friends</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box11" style="background-color: lightcoral;">
+        <img src="../../img/bingo/hot-pot.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Eat good food</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box12" style="background-color: lightseagreen;">
+        <img src="../../img/bingo/journal.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Journal</span></div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box13" style="background-color: lightsalmon;">
+        <img src="../../img/bingo/bathtub.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>A Relaxing Bath</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box14" style="background-color: rgb(255, 255, 227);">
+        <img src="../../img/bingo/video-call.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Call a friend</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box15" style="background-color: rgb(200, 220, 247);">
+        <img src="../../img/bingo/park.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Go to the park</span></div>
+      <div class="col-2 m-2 pb-3 pt-4 rounded-5 text-center" id="box16" style="background-color: rgb(250, 228, 250);">
+        <img src="../../img/bingo/running.png" alt="" style="width: 50%; display: block; margin: auto;">
+        <span>Go for a run</span></div>
+      <div class="col"></div>
+    </div>
+
 
   <div id="footer">
     <footer-template></footer-template>
   </div>
-  <script src="../scripts/nav_foot.js"></script>  
+  <script src="../../scripts/nav_foot.js"></script>  
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
