@@ -23,7 +23,7 @@ const root = Vue.createApp({
 
             var guides = this.guides
 
-            // create subCategories array
+            // create filteredGuides array
             for (let index = 0; index < guides.length; index++) {
                 if(guides[index].guide_category == 'navigation'){
                     this.filteredGuides.push(guides[index])
@@ -51,7 +51,6 @@ const root = Vue.createApp({
                     contentDiv.innerText = content
 
                     var title = this.filteredGuides[index].guide_title
-                    console.log(title)
                     contentTitle.innerText = title
 
                 }

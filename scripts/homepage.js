@@ -5,6 +5,8 @@ const root = Vue.createApp({
         return { 
             hello: "Hello",
             name: "Mariam",
+            postal: "730522",
+            problem_desc: "",
             welcome_msg: "How can we help you today?",
             edit_profile: "EDIT PROFILE",
             upcoming_activities: "Upcoming Activities:",
@@ -39,8 +41,25 @@ const root = Vue.createApp({
             words_of_wisdom: "Words Of Wisdom",
             words_of_wisdom_desc: "We just need some golden advice at times. Explore our mental wellness articles for encouragement and advice.",
             words_of_wisdom_btn: "BEGIN READING",
-
+            navbar_caregiving: "Caregiving",
+            navbar_navigating: "Navigating Singapore",
+            navbar_rights: "Know your rights!",
+            navbar_mental_health: "Mental Health",
+            navbar_physical_health: "Physical Health",
+            navbar_my_profile: "My profile",
+            navbar_logout: "Logout",
+            sos_title: "Request emergency help",
+            sos_attention: "ATTENTION",
+            sos_disclaimer1: 'Choosing "Confirm" will send an immediate help alert to the Singapore Police.',
+            sos_disclaimer2: "All information shared with us remains confidential.",
+            sos_abuse: "Please do not abuse this function.",
+            sos_name: "Your Name",
+            sos_location: "730522",
+            sos_problem_desc: "",
+            sos_cancel: "Cancel",
+            sos_confirm: "Confirm",
             show_sos_dialog: false,
+
 
             // fas fa-window-close fa-xl
 
@@ -59,6 +78,18 @@ const root = Vue.createApp({
     methods: {
         send_sos(){
             console.log('sos triggered');
+            let formData = new FormData();
+            formData.append('param1', 'hi');
+            formData.append('param2', 'hello');
+
+            axios({
+                method: 'POST',
+                url: `http://127.0.0.1:5000/?name=${this.name}&postal=${this.postal}&problem_desc=${this.sos_problem_desc}`,
+                data: formData
+            }).then(response => {
+                console.log(response);
+            });
+            /*
             axios.post("http://127.0.0.1:5000/?name=Mariam&postal=730522&problem_desc=help me", {
                 firstName: 'Fred',
                 lastName: 'Flintstone'
@@ -70,6 +101,8 @@ const root = Vue.createApp({
               .catch(function (error) {
                 console.log(error);
               });
+
+              */
         },
         
         // YOUR CODE GOES HERE IF YOU NEED ANY
@@ -120,6 +153,21 @@ const root = Vue.createApp({
             this.health_title= translations[31],
             this.health_desc= translations[32],
             this.health_btn = translations[33],
+            this.navbar_caregiving = translations[34],
+            this.navbar_navigating = translations[35],
+            this.navbar_rights = translations[36], 
+            this.navbar_mental_health = translations[37], 
+            this.navbar_physical_health = translations[38],
+            this.sos_title = translations[39],
+            this.sos_attention = translations[40],
+            this.sos_disclaimer1 = translations[41],
+            this.sos_disclaimer2 = translations[42],
+            this.sos_abuse = translations[43],
+            this.sos_name = translations[44],
+            this.sos_location = translations[45],
+            this.sos_problem_desc = translations[46],
+            this.sos_cancel = translations[47],
+            this.sos_confirm = translations[48]
 
             document.getElementById("indo").style.backgroundColor="rgb(255, 255, 234)"
             document.getElementById("en").style.backgroundColor="white"
@@ -205,32 +253,42 @@ root.component("sos-template", {
         <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            <h1 class="modal-title fs-5 text-danger" id="staticBackdropLabel">Request for SOS</h1>
+            <h1 class="modal-title fs-5 text-danger" id="staticBackdropLabel"> {{$parent.sos_title}}</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <p class="text-warning">⚠️BEFORE YOU PROCEED:⚠️</p>
+            <p class="text-warning ">{{$parent.sos_attention}}</p>
+
             <ul>
                 <li>
                 <div>
-                    Choosing "Confirm" will send an immediate help alert to the <mark>Singapore Police</mark>.
+                    {{$parent.sos_disclaimer1}}
                 </div>
                 </li>
                 <li>
                 <div>
-                    All information shared with us remains <span style="text-decoration: underline;">confidential</span>.
+                    {{$parent.sos_disclaimer2}}
                 </div>
                 </li>
             </ul>
             <hr>
-            <div class="text-danger text-center">
+            <div class="text-danger text-center mb-5">
                 Please do not abuse this function.
             </div>
+
+
+            <p class="text-warning my-3">Your Name: {{$parent.name}}</p>
+            <p class="text-warning ">Your location: {{$parent.postal}}</p>
+            <div class="mb-3">
+            <p class="text-warning">Problem description</p>
+  <textarea class="form-control" v-model="$parent.problem_desc" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
             </div>
+        
             <div class="modal-footer">
-            <button type="button" class="btn btn-outline-secondary " data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-outline-secondary " data-bs-dismiss="modal">{{$parent.sos_cancel}}</button>
             <button type="button" @click="$parent.send_sos" class="btn btn-primary btn-danger float-end"
-                data-bs-dismiss="modal">Confirm</button>
+                data-bs-dismiss="modal">{{$parent.sos_confirm}}</button>
             </div>
         </div>
         </div>
