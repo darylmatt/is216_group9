@@ -1,7 +1,7 @@
 var user = 
     {
         email : "mariamnoelle@gmail.com",
-        password : "Mariamnoelle123!"
+        password : "Mnoelle123!"
     }
 
 function validateLogin(){
