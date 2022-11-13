@@ -30,6 +30,14 @@
     <!-- lottie -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
+    <!-- LINK VUEJS -->
+    <script type="module" src="../scripts/guides_navigation.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
@@ -237,7 +245,7 @@
   <div class="container-fluid">
     <div class="row" style="background-color:rgb(255, 237, 237)">
       <div class="col m-auto">
-        <h1 style="font-size:70px; padding-left: 20px;" class="mx-3">Guides - Caregiving</h1>
+        <h1 style="font-size:70px; padding-left: 20px;" class="mx-3">Guides - Navigation</h1>
       </div>
       <div class="col m-auto">
         <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_JqnGN4woT2.json" background="transparent"
@@ -252,7 +260,7 @@
       <h1 class="text-center display-1 mt-5">Guides: Navigation</h1>
       <div class="row">
         <div class="col" style="margin-top: 100px; font-size: 20px;">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, suscipit reiciendis veniam labore voluptate quaerat, a, eveniet facere harum sapiente sunt quis totam rem. Expedita atque doloremque minima animi libero!
+          Singapore is a small island city with a world-class transportation system. Learn how to navigate Singapore through the many different modes of travel!
         </div>
         <div class="col">
           <lottie-player
@@ -270,17 +278,18 @@
     </div>
 
 
-    <div class="row mt-4 mx-auto g-3 row-cols-sm-2">
+    <div class="row mt-4 mx-auto g-3 row-cols-sm-2" id="guideCards">
 
-      <h1>{{guides}}</h1>
-      <h1>{{filteredGuides}}</h1>
       <div class="col">
-        <div class="card" id="1">
-          <img src="../img/public transport.jpg" class="card-img-top" alt="Fissure in Sandstone"/>
+        <div class="card h-100">
+          <!-- guide image here -->
+          <img src="../img/infantcare.webp" class="card-img-top"/>
           <div class="card-body">
-            <h5 class="card-title">Getting Around Singapore</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <!-- guide title here -->
+            <h5 class="card-title">{{filteredGuides[0].guide_title}}</h5>
+            <!-- guide description here -->
+            <p class="card-text">{{filteredGuides[0].guide_card_description}}</p>
+            <button type="button" v-on:click="setContent(9)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -289,12 +298,15 @@
 
 
       <div class="col">
-        <div class="card" id="2">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+        <div class="card h-100">
+          <!-- guide image here -->
+          <img src="../img/infantcare.webp" class="card-img-top"/>
           <div class="card-body">
-            <h5 class="card-title">Guide 2</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <!-- guide title here -->
+            <h5 class="card-title">{{filteredGuides[1].guide_title}}</h5>
+            <!-- guide description here -->
+            <p class="card-text">{{filteredGuides[1].guide_card_description}}</p>
+            <button type="button" v-on:click="setContent(10)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -304,35 +316,38 @@
 
     </div>
 
-    <div class="row mt-4 g-3 mx-auto row-cols-sm-2">
-      <div class="col">
-        <div class="card" id="4">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Guide 4</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
+    <div class="row mt-4 mx-auto g-3 row-cols-sm-2" id="guideCards">
+      <div class="card h-100">
+        <!-- guide image here -->
+        <img src="../img/infantcare.webp" class="card-img-top"/>
+        <div class="card-body">
+          <!-- guide title here -->
+          <h5 class="card-title">{{filteredGuides[2].guide_title}}</h5>
+          <!-- guide description here -->
+          <p class="card-text">{{filteredGuides[2].guide_card_description}}</p>
+          <button type="button" v-on:click="setContent(11)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            Read More
+          </button>
         </div>
       </div>
+    
 
-      <div class="col">
-        <div class="card" id="3">
-          <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-          <div class="card-body">
-            <h5 class="card-title">Guide 3</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Read More
-            </button>
-          </div>
-        </div>
+    <div class="card h-100">
+      <!-- guide image here -->
+      <img src="../img/infantcare.webp" class="card-img-top"/>
+      <div class="card-body">
+        <!-- guide title here -->
+        <h5 class="card-title">{{filteredGuides[3].guide_title}}</h5>
+        <!-- guide description here -->
+        <p class="card-text">{{filteredGuides[3].guide_card_description}}</p>
+        <button type="button" v-on:click="setContent(12)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+          Read More
+        </button>
       </div>
-
     </div>
   </div>
+</div>
+
 
   <!-- The Modal -->
   <div class="modal" id="myModal">
@@ -341,17 +356,13 @@
       
         <!-- Modal Header -->
         <div class="modal-header" style="background-color: #9a616d; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
-          <h1 class="modal-title mx-auto" style="color: white">Guide 1</h1>
+          <h1 class="modal-title mx-auto" style="color: white" id="modalTitle"></h1>
         </div>
         
         <!-- Modal body -->
-        <div class="modal-body">
-          <h3>Guide Opener</h3>
-          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-          <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="modal-body" id="modalContent">
+          
+        </div>
         
         <!-- Modal footer -->
         <div class="modal-footer">

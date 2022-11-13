@@ -26,6 +26,9 @@ app.get('/HomeLandingAbout/about.html',(req,res)=>{
 
 // HOMEPAGE
 app.get('/HomeLandingAbout/homepage.html',(req,res)=>{
+  res.header("Access-Control-Allow-Origin", "*");
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   console.log('translating')
   // TRANSLATION TESTING
   var translated = ''
@@ -271,7 +274,7 @@ app.get('/Guides/guide_rights.html',(req,res)=>{
 
 })
 
-// GUIDE RIGHTS
+// GUIDE NAVIGATION
 app.get('/Guides/guide_navigation.html',(req,res)=>{
   console.log('index requested');
 
