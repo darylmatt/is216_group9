@@ -246,9 +246,11 @@
                         <div class="col">
                             <div>
                                 <label for="location" class="form-label">Location</label>
-                                <button type='button' id="location" class="btn btn-dark" data-toggle="modal" data-target="#myModal" v-on:click="setSearchValue()" onclick="triggerBtnClick()">
-                                    Get Location
-                                </button>
+                                <div class="d-inline" style="margin-left:10px; margin-bottom: 30px;">
+                                    <button type='button' id="location" class="btn btn-dark"data-toggle="modal" data-target="#myModal" v-on:click="setSearchValue()" onclick="triggerBtnClick()">
+                                        Get Location
+                                    </button>
+                                </div>
                                 <div>
                                     <input type="text" class="form-control" id="newlocation"
                                     placeholder="Enter the event address" v-model="newLocation">
@@ -340,7 +342,7 @@
 
 
 
-  <!-- The Modal -->
+  <!-- The Map Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog modal-dialog-scrollable modal-xl">
       <div class="modal-content">
@@ -356,7 +358,7 @@
               
           
           <div id="directions">
-            <h3>Directions</h3>
+            <h3>Map Location</h3>
 
             <!--The div element for the map -->
             <div id="map"></div>
@@ -389,7 +391,7 @@
               <form>
                   <div class="form-group mt-5">
                       <!-- fetch user's postal and set in value -->
-                      <input type="text" class="form-control" name="addr" id="addr" placeholder="Enter Postal Code Here..." >
+                      <input type="text" class="form-control" name="addr" id="addr" placeholder="Enter Postal Code Here..." value="{{newLocation}">
 
                       <br>
 
