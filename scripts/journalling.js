@@ -1,3 +1,105 @@
+const root = Vue.createApp({
+
+  // Data Properties
+  data() {
+      return { 
+
+          // ALL facilities arrray of objects
+          entries : [],
+
+          filteredEntries : [],
+
+          selectedCat : '',
+
+          selectedMonth : '',
+       
+          
+      }
+  },
+
+  created(){
+      axios.get("http://localhost:3000/HealthIsWealth/Mental_Health/journalling.html")
+      .then( response => { 
+
+          // fetch data
+          this.entries = JSON.parse(response.headers.journal);
+          
+      }
+      );
+  }, 
+
+  // Methods
+  methods: {
+
+      populateFilteredEntries(){
+
+        this.filteredEntries = [];
+
+        // if only category selected
+        if(this.selectedCat != '' && this.selectedMonth == ''){
+          for (let index = 0; index < this.entries.length; index++) {
+            if(this.entries[index].category == this.selectedCat){
+                this.filteredEntries.push(this.entries[index])
+            }
+          }
+        }
+
+        // if only month selected
+        else if(this.selectedCat == '' && this.selectedMonth != ''){
+          for (let index = 0; index < this.entries.length; index++) {
+
+            var month = this.entries[index].date.split(' ')[1]
+        
+            if(month == this.selectedMonth){
+                this.filteredEntries.push(this.entries[index])
+            }
+          }
+        }
+
+        // if both selected 
+        else if(this.selectedCat != '' && this.selectedMonth != ''){
+          for (let index = 0; index < this.entries.length; index++) {
+
+            var month = this.entries[index].date.split(' ')[1]
+
+            if(this.entries[index].category == this.selectedCat && month == this.selectedMonth){
+                this.filteredEntries.push(this.entries[index])
+            }
+          }
+        }
+
+        // if none selected
+        else if(this.selectedCat == '' && this.selectedMonth == ''){
+          for (let index = 0; index < this.entries.length; index++) {
+           
+            this.filteredEntries.push(this.entries[index])
+            
+          }
+        }
+      },
+
+      showAll(){
+        // clear the filter fields first
+        this.selectedCat = ''
+        this.selectedMonth = ''
+        this.filteredEntries = []
+
+        for (let index = 0; index < this.entries.length; index++) {
+           
+          this.filteredEntries.push(this.entries[index])
+          
+        }
+
+      }
+
+  }
+})
+
+root.mount("#root")
+
+
+
+
 function getDate() {
 
     days = {
@@ -35,4 +137,6 @@ function getDate() {
     extracted_date = `${days[out_day]}, ${out_date} ${months[out_month]} ${out_year}`;
 
     document.getElementById("curr_date").innerHTML = extracted_date
-  }
+}
+
+
