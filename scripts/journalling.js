@@ -126,7 +126,7 @@ function getDate() {
     out_month = date.getMonth();
     out_year = date.getFullYear();
     
-    extracted_date = `${out_date} ${months[out_month]} ${out_year}`;
+    extracted_date = `${out_date} ${months[out_month + 1]} ${out_year}`;
 
     document.getElementById("curr_date").innerHTML = extracted_date
 }
