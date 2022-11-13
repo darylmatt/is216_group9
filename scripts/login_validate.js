@@ -4,8 +4,6 @@ var user =
         password : "joynoelle123"
     }
 
-var login_check = false;
-
 function validateLogin(){
     var error_msgs = [];
 
@@ -21,18 +19,18 @@ function validateLogin(){
     if (email == "" || password == "") {
         if (email == "") {
             console.log(1);
-            error_msgs.push("Invalid Email");
+            error_msgs.push("Email cannot be empty");
         }
         if (password == "") {
             console.log(2);
-            error_msgs.push("Invalid Password")
+            error_msgs.push("Password cannot be empty")
         }
     }
 
     else{
         var email_check = email.split("@");
         // multiple @ in email
-        if (email_check.length>2) {
+        if (email_check.length!=2) {
             console.log(3);
             error_msgs.push("Invalid Email")
         }
@@ -74,16 +72,18 @@ function validateLogin(){
         
     }
 
-    console.log(error_msgs);
-    var error_text = `<span>Error Occured:</span><ul>`
-
-    for(msg of error_msgs){
-        error_text += `<li>${msg}</li>`;
+    if (error_msgs.length>0) {
+        console.log(error_msgs);
+        var error_text = `<span>Error Occured:</span><ul>`
+    
+        for(msg of error_msgs){
+            error_text += `<li>${msg}</li>`;
+        }
+        error_text += "</ul>"
+    
+    
+        document.getElementById("error_msg").innerHTML = error_text
     }
-    error_text += "</ul>"
-
-
-    document.getElementById("error_msg").innerHTML = error_text
 }
 
 
