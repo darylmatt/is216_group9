@@ -13,6 +13,12 @@ const root = Vue.createApp({
             selectedArray : [],
 
             selectedLocation : '',
+
+            select_option:"",
+
+            recommend:'',
+
+            show_popup: false
             
         }
     },
@@ -80,6 +86,60 @@ const root = Vue.createApp({
 
             tableBodyDiv.innerHTML  = tableStr;   
         },
+
+        check_quiz() {
+            if (this.show_popup == true) {
+                this.show_popup = false
+            }
+            else {
+                this.show_popup = true
+
+            }
+        },
+
+        start_quiz() {
+            // Second page - choose current emotion
+            this.select_option = ''
+            this.recommend = ''
+            document.getElementById("firstPage").hidden = true
+            document.getElementById("second_page").hidden = false
+
+        },
+
+        generate_result(){
+            document.getElementById("second_page").hidden = true
+            
+            if (this.select_option == "poly"){
+                this.recommend = "Polyclinic"
+            }
+            else if(this.select_option == "hosp"){
+                this.recommend = "Hospital"
+            }
+            else if(this.select_option == "gp"){
+                this.recommend = "General Practitioner (GP)"
+            }
+            else if(this.select_option == "dental"){
+                this.recommend = "Dental Clinic"
+            }
+            else if(this.select_option == "derm"){
+                this.recommend = "Dermatologist"
+            }
+            else if(this.select_option == "pharm"){
+                this.recommend = "Pharmacy"
+            }
+
+           
+
+            document.getElementById("third_page").hidden = false
+
+
+        },
+
+        restart(){
+            document.getElementById("firstPage").hidden = false
+            document.getElementById("second_page").hidden = true
+            document.getElementById("third_page").hidden = true
+        }
 
    
 

@@ -89,7 +89,7 @@
       padding: 0;
     }
 
-    #translate_btn {
+    #questionnaire_btn {
       position: fixed;
       bottom: 30px;
       right: 30px;
@@ -114,7 +114,7 @@
 <body onload="triggerBtnClick()" id="root">
 
   <!--  [START] Questionnaire -->
-  <button type="button" v-on:click="check_quiz()" id="translate_btn" class="btn btn-floating btn-black">
+  <button type="button" v-on:click="check_quiz()" id="questionnaire_btn" class="btn btn-floating btn-black">
     <i v-show="!show_popup" class="fas fa-search fa-lg"></i>
     <!-- <i v-show="!show_translate_option" class="fas fa-language fa-xl"></i> -->
     <i v-show="show_popup" class="fas fa-window-close fa-xl"></i>
