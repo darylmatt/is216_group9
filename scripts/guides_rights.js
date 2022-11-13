@@ -39,19 +39,30 @@ const root = Vue.createApp({
     methods: {
 
         setContent(guideId){
+
             var contentTitle = document.getElementById('modalTitle')
             var contentDiv = document.getElementById('modalContent')
+            var sourceDiv = document.getElementById('source')
+            var linkDiv = document.getElementById('link')
+
+
             
 
             for(let index = 0; index < this.filteredGuides.length; index++){
                 if(this.filteredGuides[index].guide_id == guideId){
-                    // contentDiv.innerHTML = this.filteredGuides[index].guide_content
 
-                    var content = this.filteredGuides[index].guide_content.split('\n\n').join('\n\n\n\n')
+                    var author = this.filteredGuides[index].guide_author
+                    sourceDiv.innerText = 'Author:  ' + author
+
+                    var link = this.filteredGuides[index].guide_src_url
+                    linkDiv.innerText = 'Source:  ' + link
+
+                    var content = this.filteredGuides[index].guide_content.split('xyzxyz').join('\n\n')
                     contentDiv.innerText = content
 
                     var title = this.filteredGuides[index].guide_title
                     contentTitle.innerText = title
+
 
                 }
             }
