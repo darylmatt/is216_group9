@@ -162,9 +162,9 @@
       
   </div>
 
-  <div class="container my-2">
+  <div class="container my-2 mx-auto text-center">
     <div class="row">
-      <div class="col-8 my-auto p-4">
+      <div class="col-12 col-lg-8 my-auto p-4">
         <h1>About Our Guides</h1> <br>
         <p id="demo" style="font-size:20px"></p>
 
@@ -172,7 +172,7 @@
 
       <script>
         var i = 0;
-        var txt = "Hi! I'm Dom, your tour guide for this page. Welcome to DomesticAID's guides! Here, you will find a few things: First, 3 different categories of guides which are namely 'Caregiving', 'Rights & Laws' and 'Navigation'. Check out the cards below to find out more about what each category of guides represent and click 'Read More' to explore the different guides of that category! We also have recommended guides for you below so that you can quickly start reading. Enjoy exploring! ";
+        var txt = "Hi! I'm Dom, your tour guide for this page. Welcome to DomesticAID's guides! Here, you will find a few things: First, 3 different categories of guides which are namely Caregiving, Rights & Laws and Navigation. Check out the cards below to find out more about what each category of guides represent and click 'Read More' to explore the different guides of that category! We also have recommended guides for you below so that you can quickly start reading. Enjoy exploring! ";
         var speed = 70;
         
         function typeWriter() {
@@ -185,12 +185,12 @@
         }
         </script>
 
-      <div class="col text-center">
+      <div class="col-12 col-lg-4 text-center">
           <lottie-player
           src="https://assets2.lottiefiles.com/packages/lf20_XIx1qBubPA.json"
           background="transparent"
           speed="1"
-          style="width: 400px; height: 400px"
+          style="width: auto"
           loop
           autoplay
           ></lottie-player>      
@@ -201,8 +201,8 @@
   
   <div class="container">
 
-        <div class="row justify-content-center">
-          <div class="col-xl-3 my-2 mx-5">
+        <div class="row">
+          <div class="col-xl-3 col-12 my-2 mx-5">
               <div class="card h-100 p-5" id="guidecard1" style="width: 22rem;">
                   <div class="card-body">
                     <h3 class="card-title fw-bold">Caregiving</h3>
@@ -212,7 +212,7 @@
                 </div>
           </div>
   
-          <div class="col-xl-3 my-2 mx-5">
+          <div class="col-xl-3 col-12 my-2 mx-5">
               <div class="card h-100 p-5" id="guidecard2" style="width: 22rem;">
                   <div class="card-body">
                     <h3 class="card-title fw-bold">Rights & Laws</h3>
@@ -222,7 +222,7 @@
                 </div>
           </div>
   
-          <div class="col-xl-3 my-2 mx-5">
+          <div class="col-xl-3 col-12 my-2 mx-5">
               <div class="card h-100 p-5" id="guidecard3" style="width: 22rem;">
                   <div class="card-body">
                     <h3 class="card-title fw-bold">Navigation</h3>
@@ -241,7 +241,7 @@
 
         <div id="carouselExampleInterval" class="carousel slide my-2" data-bs-ride="carousel">
     
-          <div class="carousel-inner">
+          <div class="carousel-inner rounded-5">
             <div class="carousel-item active" data-bs-interval="3000">
               <!-- <img src="..." class="d-block w-100" alt="..."> -->
               <div class="row justify-content-center">
@@ -251,20 +251,21 @@
                     <div class="row">
     
                       <div class="col-8">
-                          <h5 class="card-title">Navigating Singapore</h5>
+                          <h3 class="card-title fw-bold">Navigating Singapore</h3>
                           <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                           <p class="card-text">Learn how to get around Singapore and its world-class public transportation system! It may seem daunting at first, but you'll get the hang of it soon enough!  </p>
                           <div class="row text-center mt-5">
                             <div class="col-4"></div>
                             <div class="col">
-                              <a href="" class="btn btn-dark">Begin Reading</a>
+                              <a href="" class="btn btn-dark" id="guide_button2">Begin Reading</a>
                             </div>
                             <div class="col-4"></div>
                           </div>
                       </div>
     
                       <div class="col-4">
-                          <img src="../img/train.svg" alt="" style="width: 93%;">
+                        <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_ug4q6zc4.json"
+                        background="transparent" speed="1" style="width: auto;" loop autoplay></lottie-player>
                       </div>
                     
                     </div>
@@ -282,20 +283,21 @@
                     <div class="row">
     
                       <div class="col-8">
-                          <h5 class="card-title">How to get to make new friends in a foreign country</h5>
+                          <h3 class="card-title fw-bold">Making new friends in a foreign country</h3>
                           <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                           <p class="card-text">We often underestimate the importance of the company of friends, learn how to connect with others in a foreign country!</p>
                           <div class="row text-center mt-5">
                             <div class="col-4"></div>
                             <div class="col">
-                              <a href="" class="btn btn-dark">Begin Reading</a>
+                              <a href="" class="btn btn-dark" id="guide_button2">Begin Reading</a>
                             </div>
                             <div class="col-4"></div>
                           </div>
                       </div>
     
                       <div class="col-4">
-                          <img src="../img/friends.svg" alt="" style="width: 93%;">
+                        <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_fxo90szg.json"
+                        background="transparent" speed="1" style="width: auto;" loop autoplay></lottie-player>
                       </div>
                     
                     </div>
@@ -312,19 +314,20 @@
     
                       <div class="row">
                           <div class="col-8">
-                              <h5 class="card-title">How to Remit Money</h5>
+                              <h3 class="card-title fw-bold">How to Remit Money</h3>
                               <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                               <p class="card-text">Learn how to safely and easily send money back to your home country. Make sure your hard-earned money gets to where you intend it to go through our step-by-step guide.</p>
                               <div class="row text-center mt-5">
                                 <div class="col-4"></div>
                                 <div class="col">
-                                  <a href="" class="btn btn-dark">Begin Reading</a>
+                                  <a href="" class="btn btn-dark" id="guide_button2">Begin Reading</a>
                                 </div>
                                 <div class="col-4"></div>
                               </div>  
                           </div>
                           <div class="col-4">
-                              <img src="../img/money.svg" alt="" style="width: 93%;">
+                            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_jdcjfyhw.json"
+                            background="transparent" speed="1" style="width: auto;" loop autoplay></lottie-player>
                           </div>
                           
                       </div>

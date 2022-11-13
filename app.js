@@ -102,10 +102,10 @@ app.get('/Registration&Profiling/edit_profiling.html',(req,res)=>{
 })
 
 //LOGIN REG
-app.get('/Registration&Profiling/login_reg.html',(req,res)=>{
+app.get('/Registration&Profiling/register.html',(req,res)=>{
   console.log('index requested');
 
-  res.sendFile('/Registration&Profiling/login_reg.html', { root: __dirname });
+  res.sendFile('/Registration&Profiling/register.html', { root: __dirname });
 
   
 })
@@ -116,23 +116,42 @@ app.get('/Registration&Profiling/login.html',(req,res)=>{
   var input_email = req.query.email
   var input_password = req.query.password
   console.log(input_email)
-  console.log(input_password)
+
 
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("domesticaid");
-    const result = dbo.collection("accounts").find({email:input_email});
+    console.log(dbo);
+    const result = dbo.collection("accounts").find({email:input_email}).toArray();
     result.then(data => {
       //global threads = data;
+      console.log('hi')
       console.log(data);
       db.close()
+      if(data.length != 0){
+        console.log('account found');
+        user_password = data[0].password
+        console.log('verifying password')
+        if(input_password == user_password){
+          console.log('password correct')
+          res.sendFile('/Registration&Profiling/profiling.html', { root: __dirname });
+        }else{
+          console.log('password incorrect')
+          res.sendFile('/Registration&Profiling/login.html', { root: __dirname });
+        }
+
+       
+      }else{
+        console.log('account not found');
+        res.sendFile('/Registration&Profiling/login.html', { root: __dirname });
+      }
 
       
     })
     
   })
 
-  res.sendFile('/Registration&Profiling/login.html', { root: __dirname });
+
 })
 
 //PROFILE
