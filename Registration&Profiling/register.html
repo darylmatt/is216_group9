@@ -62,12 +62,14 @@
               <p class="text-center">Your first step to awesome</p>
               <form action="../Registration&Profiling/profiling.html">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
-                <div class="row">
+
+                <div class="text-danger" id="error_msg">
+
                 </div>
                 <!-- Email input -->
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <label for="input_email" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="input_email" aria-describedby="emailHelp">
                 </div>
 
                 <!-- <div class="form-outline mb-4">
@@ -82,8 +84,8 @@
             </div> -->
 
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <label for="input_password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="input_password">
                 </div>
 
                 <!-- <div class="form-outline mb-4">
@@ -92,8 +94,8 @@
             </div> -->
 
                 <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Confirm password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <label for="cfm_password" class="form-label">Confirm password</label>
+                  <input type="password" class="form-control" id="cfm_password">
                 </div>
 
                 <!-- Checkbox -->
@@ -118,11 +120,9 @@
             </button> -->
 
                 <div class="mt-5 text-center">
-                  <a href="/Registration&Profiling/edit_profiling.html">
                     <button class="btn btn-rounded btn-outline-secondary p-3 " style="border-radius:60px" type="button"
+                    onclick="registrationValidation()"
                     >Create an account</button>
-                  </a>
-                 
                 </div>
 
                 <!-- <a href="/HomeLandingAbout/homepage.html" class="btn btn-rounded btn-outline-secondary p-3" tabindex="-1" role="button" aria-disabled="true">Create account</a> -->
@@ -220,31 +220,11 @@
 
   <!-- Section: Design Block -->
 
-
-
-
-
+  <script src="../scripts/registration_validation.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
 
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-  <!-- <div id="footer">
-    <footer-template></footer-template>
-  </div>
-  <script src="../../scripts/nav_foot.js"></script>   -->
-  <script>
-    // var i = 0;
-    // var txt = 'Here for you.';
-    // var speed = 150;
-
-    // function typeWriter() {
-    //   if (i < txt.length) {
-    //     document.getElementById("demo").innerHTML += txt.charAt(i);
-    //     i++;
-    //     setTimeout(typeWriter, speed);
-    //   }
-    // }
-  </script>
 </body>
 
 </html>

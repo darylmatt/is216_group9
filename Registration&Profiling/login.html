@@ -33,7 +33,7 @@ rel="stylesheet"
 </head>
 
 
-<body onload="typeWriter()" style="background-image: linear-gradient(to right, #e7f6fd , #f5ebfa);">
+<body onload="typeWriter(); resetfields()" style="background-image: linear-gradient(to right, #e7f6fd , #f5ebfa);">
 <!-- Section: Design Block -->
 <section style="margin-top: 0px; ">
     <!-- Jumbotron -->
@@ -58,8 +58,7 @@ rel="stylesheet"
           <div class="col-lg-6 my-5">
               <div class="card" style="background-color: white">
                 <div class="card-body py-5 px-md-5 shadow ">
-                <form action="../scripts/login.php"> 
-                  <!-- 2 column grid layout with text inputs for the first and last names -->
+               
                   <div class="row">
                     
                     
@@ -68,7 +67,7 @@ rel="stylesheet"
                   <br>
                   <br>
 
-                  <div id="error_msg">
+                  <div class="text-danger" id="error_msg">
 
                   </div>
             
@@ -87,7 +86,7 @@ rel="stylesheet"
                   <!-- Checkbox -->
                   <div class="form-check d-flex justify-content-between">
                     <div>
-                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked/>
                       <label class="form-check-label" for="form2Example33">
                         Remember me
                       </label>
@@ -124,7 +123,6 @@ rel="stylesheet"
   
             
                   </div>
-                </form>
               </div>
             </div>
           </div>
