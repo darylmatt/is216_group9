@@ -14,16 +14,34 @@
 
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
 
   <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" /> -->
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" /> -->
+  <!-- MDB -->
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" /> -->
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+
   <!-- MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
 
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+
+  <!-- Vue JS -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
 
   <!-- Do NOT Remove -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -41,11 +59,17 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
   <!-- LINK VUEJS -->
+  <!-- Dont touch -->
   <script type="module" src="../../scripts/mental_health_places.js"></script>
-
+  <!-- Dont touch -->
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
 
 
   <style>
@@ -89,16 +113,14 @@
 
 <body onload="triggerBtnClick()" id="root">
 
-
-
-  <!-- Suggestion form -->
+  <!--  [START] Questionnaire -->
   <button type="button" v-on:click="check_quiz()" id="translate_btn" class="btn btn-floating btn-black">
     <i v-show="!show_popup" class="fas fa-search fa-lg"></i>
     <!-- <i v-show="!show_translate_option" class="fas fa-language fa-xl"></i> -->
     <i v-show="show_popup" class="fas fa-window-close fa-xl"></i>
   </button>
 
-  <div class="card" id="quizPop" v-show="show_popup" style="background-image: url(/img/soothing.jpeg); width: 40%;">
+  <div class="card" id="quizPop" v-show="show_popup" style="background-color: #f1e6fe; width: 40%;">
     <div class="card-body shadow" id="display_page">
 
       <div id="firstPage">
@@ -150,7 +172,8 @@
       <!-- Results -->
 
       <div id="third_page" hidden>
-        <h3>We recommend you to seek help from a <span class="text-danger" style="text-decoration:underline">{{this.recommend}}</span></h3>
+        <h3>We recommend you to seek help from a <span class="text-danger"
+            style="text-decoration:underline">{{this.recommend}}</span></h3>
         <br>
         <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_iombyzfq.json" background="transparent"
           speed="1" class="m-auto" loop autoplay style="height:80px;">
@@ -172,17 +195,7 @@
     </div>
   </div>
 
-
-  <!--  Generate button-->
-
-  </form>
-
-  </div>
-
-  </div>
-
-
-  </div>
+  <!-- [END] Questionnaire -->
 
 
 
@@ -283,7 +296,20 @@
               <img src="/img/jx.jpg" class="rounded-circle" height="22" alt="Portrait of a Woman" loading="lazy" />
             </a>
 
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenu">
+            <!-- End -->
+
+            <ul class="dropdown-menu dropdown-menu-md-end dropdown-menu-sm-start" aria-labelledby="navbarDropdownMenu">
+              <li>
+                <a class="dropdown-item mx-3" href="/Registration&Profiling/edit_profiling.html">My
+                  profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item mx-3" href="/HomeLandingAbout/about.html">Logout</a>
+              </li>
+            </ul>
+
+            <!-- Start -->
+            <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownMenu">
               <li>
                 <a class="dropdown-item mx-3" href="/Registration&Profiling/edit_profiling.html">My
                   profile</a>
@@ -293,6 +319,8 @@
               </li>
             </ul>
           </li>
+
+
 
           <!-- Icon dropdown -->
 
@@ -307,7 +335,8 @@
 
 
   <!-- Guide Starts Here -->
-  <div class="container-fluid" style="background-image: linear-gradient(to right, #e8e7fd , #ebf3fa);">
+  <div class="container-fluid"
+    style="background-image: linear-gradient(to right, #e8e7fd , #ebf3fa); padding-bottom:100px">
     <!-- <p>{{facilities}}</p>
     <p>{{subCategories}}</p>
     <p>{{selectedArray}}</p> -->
@@ -326,10 +355,11 @@
       <div class="col-xl-4 col-sm-12">
         <div class="facility-card">
           <img src="../../img/psychiatrist.jpg" class="card-img-top" />
-          <div class="card-body">
+          <div class="card-body text-center mt-3">
             <h3 class="card-title">Psychiatrists</h3>
-            <p class="card-text">Polyclinics are healthcare centres that provide primary care such as medical treatment,
-              preventive healthcare, and health education, at a subsidised cost</p>
+            <p class="card-text">
+              Psychiatrists are professionals who specialize in diagnosing and treating mental health disorders.
+            </p>
             <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('psychiatric')"
               type="button" id="psychiatrist" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Find Locations
@@ -342,10 +372,11 @@
       <div class="col-xl-4 col-sm-12">
         <div class="facility-card">
           <img src="../../img/counsellor.webp" class="card-img-top" />
-          <div class="card-body">
-            <h5 class="card-title">Counsellors</h5>
-            <p class="card-text">Hospitals provides affordable specialist care for patients, where you can go to when
-              you are facing any medical conditions that cannot be treated normally at general clinics. </p>
+          <div class="card-body text-center mt-3">
+            <h3 class="card-title">Counsellors</h3>
+            <p class="card-text">
+              Counsellors are professionals who will work you through your personal and emotional issues.
+            </p>
             <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('counselling')"
               type="button" id="counsellors" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Find Locations
@@ -363,40 +394,38 @@
       <div class="col-xl-4 col-sm-12">
         <div class="facility-card">
           <img style="height: 280px" src="../../img/socialworker.jpg" class="card-img-top" />
-          <div class="card-body">
-            <h5 class="card-title">Social Workers</h5>
-            <p class="card-text">General practitioners are doctors who provide nonsurgical medical care. General
-              practitioners evaluate patients through exams and tests and diagnose conditions such as diseases or
-              injuries.</p>
-            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('social')" type="button"
+          <div class="card-body text-center  mt-3">
+            <h3 class="card-title">Social Workers</h3>
+            <p class="card-text">Social workers are trained personnel who can assist you in your general struggles.</p>
+            <!-- <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('social')" type="button"
               id="social work" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-              Find Locations
+               -->
 
-              <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('social')" type="button"
-                id="social_work" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
-                Read More
-              </button>
+            <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('social')" type="button"
+              id="social_work" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+              Find Locations
+            </button>
           </div>
         </div>
       </div>
 
       <div class="col-xl-4 col-sm-12">
         <div class="facility-card">
-          <img src="../../img/imh.webp" class="card-img-top" />
-          <div class="card-body">
-            <h5 class="card-title">Mental Hospitals</h5>
-            <p class="card-text">A Dentist is responsible for performing oral surgery and routine cleanings on patients.
-              They repair and remove teeth, diagnose conditions and tell patients about how to best care for their teeth
-              and gums. </p>
+          <img style="height: 280px" src="../../img/imh.webp" class="card-img-top" />
+          <div class="card-body text-center mt-3">
+            <h3 class="card-title">Mental Health Institutions </h3>
+            <p class="card-text">
+              Mental Health Institutions are dedicated to the treatment of severe mental disorders.
+            </p>
 
             <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('imh')" type="button"
               id="mental hospitals" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Find Locations
 
-              <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('imh')" type="button"
+              <!-- <button class='btn' onclick="fillTitle(this.id)" v-on:click="fetchSelectedArray('imh')" type="button"
                 id="mental_hospitals" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
                 Read More
-              </button>
+              </button> -->
           </div>
         </div>
       </div>
