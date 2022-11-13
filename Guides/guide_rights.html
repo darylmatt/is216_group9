@@ -18,7 +18,7 @@
     />
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    
+
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
 
@@ -209,7 +209,7 @@
             <h5 class="card-title">{{filteredGuides[0].guide_title}}</h5>
             <!-- guide description here -->
             <p class="card-text">{{filteredGuides[0].guide_card_description}}</p>
-            <button type="button" v-on:click="setContent(1)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button id="guide_button2" type="button" v-on:click="setContent(1)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -225,7 +225,7 @@
               <h5 class="card-title">{{filteredGuides[1].guide_title}}</h5>
               <!-- guide description here -->
               <p class="card-text">{{filteredGuides[1].guide_card_description}}</p>
-            <button type="button" v-on:click="setContent(2)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button id="guide_button2" type="button" v-on:click="setContent(2)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -244,7 +244,7 @@
                <h5 class="card-title">{{filteredGuides[2].guide_title}}</h5>
                <!-- guide description here -->
                <p class="card-text">{{filteredGuides[2].guide_card_description}}</p>
-            <button type="button" v-on:click="setContent(3)" class="btn btn-dark mt-4" data-toggle="modal" data-target="#myModal">
+            <button id="guide_button2" type="button" v-on:click="setContent(3)" class="btn btn-dark mt-4" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
@@ -259,7 +259,7 @@
              <h5 class="card-title">{{filteredGuides[3].guide_title}}</h5>
              <!-- guide description here -->
              <p class="card-text">{{filteredGuides[3].guide_card_description}}</p>
-            <button  style='margin-top: 20px;' type="button" v-on:click="setContent(4)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
+            <button id="guide_button2" style='margin-top: 20px;' type="button" v-on:click="setContent(4)" class="btn btn-dark" data-toggle="modal" data-target="#myModal">
               Read More
             </button>
           </div>
